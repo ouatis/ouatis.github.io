@@ -3,11 +3,11 @@
   <title>笼城往事</title>
   
   <subtitle>Once Upon a Time in Sigil</subtitle>
-  <link href="http://example.com/atom.xml" rel="self"/>
+  <link href="https://ouatis.github.io/atom.xml" rel="self"/>
   
-  <link href="http://example.com/"/>
+  <link href="https://ouatis.github.io/"/>
   <updated>2022-06-08T13:00:00.000Z</updated>
-  <id>http://example.com/</id>
+  <id>https://ouatis.github.io/</id>
   
   <author>
     <name>SigiL</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>《飘》</title>
-    <link href="http://example.com/2022/06/08/piao/"/>
-    <id>http://example.com/2022/06/08/piao/</id>
+    <link href="https://ouatis.github.io/2022/06/08/piao/"/>
+    <id>https://ouatis.github.io/2022/06/08/piao/</id>
     <published>2022-06-08T13:00:00.000Z</published>
     <updated>2022-06-08T13:00:00.000Z</updated>
     
@@ -33,19 +33,19 @@
     
     
     
-    <category term="我不是来评论的" scheme="http://example.com/categories/%E6%88%91%E4%B8%8D%E6%98%AF%E6%9D%A5%E8%AF%84%E8%AE%BA%E7%9A%84/"/>
+    <category term="我不是来评论的" scheme="https://ouatis.github.io/categories/%E6%88%91%E4%B8%8D%E6%98%AF%E6%9D%A5%E8%AF%84%E8%AE%BA%E7%9A%84/"/>
     
-    <category term="我不是来写书评的" scheme="http://example.com/categories/%E6%88%91%E4%B8%8D%E6%98%AF%E6%9D%A5%E8%AF%84%E8%AE%BA%E7%9A%84/%E6%88%91%E4%B8%8D%E6%98%AF%E6%9D%A5%E5%86%99%E4%B9%A6%E8%AF%84%E7%9A%84/"/>
+    <category term="我不是来写书评的" scheme="https://ouatis.github.io/categories/%E6%88%91%E4%B8%8D%E6%98%AF%E6%9D%A5%E8%AF%84%E8%AE%BA%E7%9A%84/%E6%88%91%E4%B8%8D%E6%98%AF%E6%9D%A5%E5%86%99%E4%B9%A6%E8%AF%84%E7%9A%84/"/>
     
     
-    <category term="书" scheme="http://example.com/tags/%E4%B9%A6/"/>
+    <category term="书" scheme="https://ouatis.github.io/tags/%E4%B9%A6/"/>
     
   </entry>
   
   <entry>
     <title>关哈奇弃疾记</title>
-    <link href="http://example.com/2022/04/20/guan-ha-qi-qi-ji-ji/"/>
-    <id>http://example.com/2022/04/20/guan-ha-qi-qi-ji-ji/</id>
+    <link href="https://ouatis.github.io/2022/04/20/guan-ha-qi-qi-ji-ji/"/>
+    <id>https://ouatis.github.io/2022/04/20/guan-ha-qi-qi-ji-ji/</id>
     <published>2022-04-20T13:00:00.000Z</published>
     <updated>2022-04-20T13:00:00.000Z</updated>
     
@@ -60,17 +60,17 @@
     
     
     
-    <category term="记" scheme="http://example.com/categories/%E8%AE%B0/"/>
+    <category term="记" scheme="https://ouatis.github.io/categories/%E8%AE%B0/"/>
     
     
-    <category term="猫" scheme="http://example.com/tags/%E7%8C%AB/"/>
+    <category term="猫" scheme="https://ouatis.github.io/tags/%E7%8C%AB/"/>
     
   </entry>
   
   <entry>
     <title>《红猪》</title>
-    <link href="http://example.com/2021/07/15/hong-zhu/"/>
-    <id>http://example.com/2021/07/15/hong-zhu/</id>
+    <link href="https://ouatis.github.io/2021/07/15/hong-zhu/"/>
+    <id>https://ouatis.github.io/2021/07/15/hong-zhu/</id>
     <published>2021-07-15T13:00:00.000Z</published>
     <updated>2021-07-15T13:00:00.000Z</updated>
     
@@ -84,21 +84,21 @@
     
     
     
-    <category term="我不是来评论的" scheme="http://example.com/categories/%E6%88%91%E4%B8%8D%E6%98%AF%E6%9D%A5%E8%AF%84%E8%AE%BA%E7%9A%84/"/>
+    <category term="我不是来评论的" scheme="https://ouatis.github.io/categories/%E6%88%91%E4%B8%8D%E6%98%AF%E6%9D%A5%E8%AF%84%E8%AE%BA%E7%9A%84/"/>
     
-    <category term="我不是来写影评的" scheme="http://example.com/categories/%E6%88%91%E4%B8%8D%E6%98%AF%E6%9D%A5%E8%AF%84%E8%AE%BA%E7%9A%84/%E6%88%91%E4%B8%8D%E6%98%AF%E6%9D%A5%E5%86%99%E5%BD%B1%E8%AF%84%E7%9A%84/"/>
+    <category term="我不是来写影评的" scheme="https://ouatis.github.io/categories/%E6%88%91%E4%B8%8D%E6%98%AF%E6%9D%A5%E8%AF%84%E8%AE%BA%E7%9A%84/%E6%88%91%E4%B8%8D%E6%98%AF%E6%9D%A5%E5%86%99%E5%BD%B1%E8%AF%84%E7%9A%84/"/>
     
     
-    <category term="电影" scheme="http://example.com/tags/%E7%94%B5%E5%BD%B1/"/>
+    <category term="电影" scheme="https://ouatis.github.io/tags/%E7%94%B5%E5%BD%B1/"/>
     
-    <category term="宫崎骏" scheme="http://example.com/tags/%E5%AE%AB%E5%B4%8E%E9%AA%8F/"/>
+    <category term="宫崎骏" scheme="https://ouatis.github.io/tags/%E5%AE%AB%E5%B4%8E%E9%AA%8F/"/>
     
   </entry>
   
   <entry>
     <title>金承志2018</title>
-    <link href="http://example.com/2018/08/30/jin-cheng-zhi/"/>
-    <id>http://example.com/2018/08/30/jin-cheng-zhi/</id>
+    <link href="https://ouatis.github.io/2018/08/30/jin-cheng-zhi/"/>
+    <id>https://ouatis.github.io/2018/08/30/jin-cheng-zhi/</id>
     <published>2018-08-30T13:00:00.000Z</published>
     <updated>2018-08-30T13:00:00.000Z</updated>
     
@@ -112,19 +112,19 @@
     
     
     
-    <category term="业外" scheme="http://example.com/categories/%E4%B8%9A%E5%A4%96/"/>
+    <category term="业外" scheme="https://ouatis.github.io/categories/%E4%B8%9A%E5%A4%96/"/>
     
     
-    <category term="游戏" scheme="http://example.com/tags/%E6%B8%B8%E6%88%8F/"/>
+    <category term="游戏" scheme="https://ouatis.github.io/tags/%E6%B8%B8%E6%88%8F/"/>
     
-    <category term="洁本" scheme="http://example.com/tags/%E6%B4%81%E6%9C%AC/"/>
+    <category term="洁本" scheme="https://ouatis.github.io/tags/%E6%B4%81%E6%9C%AC/"/>
     
   </entry>
   
   <entry>
     <title>魔力牛2017</title>
-    <link href="http://example.com/2017/05/29/mo-li-niu/"/>
-    <id>http://example.com/2017/05/29/mo-li-niu/</id>
+    <link href="https://ouatis.github.io/2017/05/29/mo-li-niu/"/>
+    <id>https://ouatis.github.io/2017/05/29/mo-li-niu/</id>
     <published>2017-05-29T13:00:00.000Z</published>
     <updated>2017-05-29T13:00:00.000Z</updated>
     
@@ -138,19 +138,19 @@
     
     
     
-    <category term="业外" scheme="http://example.com/categories/%E4%B8%9A%E5%A4%96/"/>
+    <category term="业外" scheme="https://ouatis.github.io/categories/%E4%B8%9A%E5%A4%96/"/>
     
     
-    <category term="游戏" scheme="http://example.com/tags/%E6%B8%B8%E6%88%8F/"/>
+    <category term="游戏" scheme="https://ouatis.github.io/tags/%E6%B8%B8%E6%88%8F/"/>
     
-    <category term="洁本" scheme="http://example.com/tags/%E6%B4%81%E6%9C%AC/"/>
+    <category term="洁本" scheme="https://ouatis.github.io/tags/%E6%B4%81%E6%9C%AC/"/>
     
   </entry>
   
   <entry>
     <title>东京扫墓记</title>
-    <link href="http://example.com/2016/09/17/dong-jing-sao-mu-ji/"/>
-    <id>http://example.com/2016/09/17/dong-jing-sao-mu-ji/</id>
+    <link href="https://ouatis.github.io/2016/09/17/dong-jing-sao-mu-ji/"/>
+    <id>https://ouatis.github.io/2016/09/17/dong-jing-sao-mu-ji/</id>
     <published>2016-09-17T13:00:00.000Z</published>
     <updated>2016-09-17T13:00:00.000Z</updated>
     
@@ -164,17 +164,17 @@
     
     
     
-    <category term="记" scheme="http://example.com/categories/%E8%AE%B0/"/>
+    <category term="记" scheme="https://ouatis.github.io/categories/%E8%AE%B0/"/>
     
     
-    <category term="扫墓" scheme="http://example.com/tags/%E6%89%AB%E5%A2%93/"/>
+    <category term="扫墓" scheme="https://ouatis.github.io/tags/%E6%89%AB%E5%A2%93/"/>
     
   </entry>
   
   <entry>
     <title>《辣手摧花》</title>
-    <link href="http://example.com/2015/11/14/la-shou-cui-hua/"/>
-    <id>http://example.com/2015/11/14/la-shou-cui-hua/</id>
+    <link href="https://ouatis.github.io/2015/11/14/la-shou-cui-hua/"/>
+    <id>https://ouatis.github.io/2015/11/14/la-shou-cui-hua/</id>
     <published>2015-11-14T13:00:00.000Z</published>
     <updated>2015-11-14T13:00:00.000Z</updated>
     
@@ -188,21 +188,21 @@
     
     
     
-    <category term="我不是来评论的" scheme="http://example.com/categories/%E6%88%91%E4%B8%8D%E6%98%AF%E6%9D%A5%E8%AF%84%E8%AE%BA%E7%9A%84/"/>
+    <category term="我不是来评论的" scheme="https://ouatis.github.io/categories/%E6%88%91%E4%B8%8D%E6%98%AF%E6%9D%A5%E8%AF%84%E8%AE%BA%E7%9A%84/"/>
     
-    <category term="我不是来写影评的" scheme="http://example.com/categories/%E6%88%91%E4%B8%8D%E6%98%AF%E6%9D%A5%E8%AF%84%E8%AE%BA%E7%9A%84/%E6%88%91%E4%B8%8D%E6%98%AF%E6%9D%A5%E5%86%99%E5%BD%B1%E8%AF%84%E7%9A%84/"/>
+    <category term="我不是来写影评的" scheme="https://ouatis.github.io/categories/%E6%88%91%E4%B8%8D%E6%98%AF%E6%9D%A5%E8%AF%84%E8%AE%BA%E7%9A%84/%E6%88%91%E4%B8%8D%E6%98%AF%E6%9D%A5%E5%86%99%E5%BD%B1%E8%AF%84%E7%9A%84/"/>
     
     
-    <category term="电影" scheme="http://example.com/tags/%E7%94%B5%E5%BD%B1/"/>
+    <category term="电影" scheme="https://ouatis.github.io/tags/%E7%94%B5%E5%BD%B1/"/>
     
-    <category term="希区柯克" scheme="http://example.com/tags/%E5%B8%8C%E5%8C%BA%E6%9F%AF%E5%85%8B/"/>
+    <category term="希区柯克" scheme="https://ouatis.github.io/tags/%E5%B8%8C%E5%8C%BA%E6%9F%AF%E5%85%8B/"/>
     
   </entry>
   
   <entry>
     <title>《洛丽塔》（1962）</title>
-    <link href="http://example.com/2013/10/31/luo-li-ta/"/>
-    <id>http://example.com/2013/10/31/luo-li-ta/</id>
+    <link href="https://ouatis.github.io/2013/10/31/luo-li-ta/"/>
+    <id>https://ouatis.github.io/2013/10/31/luo-li-ta/</id>
     <published>2013-10-31T13:00:00.000Z</published>
     <updated>2013-10-31T13:00:00.000Z</updated>
     
@@ -216,16 +216,16 @@
     
     
     
-    <category term="我不是来评论的" scheme="http://example.com/categories/%E6%88%91%E4%B8%8D%E6%98%AF%E6%9D%A5%E8%AF%84%E8%AE%BA%E7%9A%84/"/>
+    <category term="我不是来评论的" scheme="https://ouatis.github.io/categories/%E6%88%91%E4%B8%8D%E6%98%AF%E6%9D%A5%E8%AF%84%E8%AE%BA%E7%9A%84/"/>
     
-    <category term="我不是来写影评的" scheme="http://example.com/categories/%E6%88%91%E4%B8%8D%E6%98%AF%E6%9D%A5%E8%AF%84%E8%AE%BA%E7%9A%84/%E6%88%91%E4%B8%8D%E6%98%AF%E6%9D%A5%E5%86%99%E5%BD%B1%E8%AF%84%E7%9A%84/"/>
+    <category term="我不是来写影评的" scheme="https://ouatis.github.io/categories/%E6%88%91%E4%B8%8D%E6%98%AF%E6%9D%A5%E8%AF%84%E8%AE%BA%E7%9A%84/%E6%88%91%E4%B8%8D%E6%98%AF%E6%9D%A5%E5%86%99%E5%BD%B1%E8%AF%84%E7%9A%84/"/>
     
     
-    <category term="电影" scheme="http://example.com/tags/%E7%94%B5%E5%BD%B1/"/>
+    <category term="电影" scheme="https://ouatis.github.io/tags/%E7%94%B5%E5%BD%B1/"/>
     
-    <category term="库布里克" scheme="http://example.com/tags/%E5%BA%93%E5%B8%83%E9%87%8C%E5%85%8B/"/>
+    <category term="库布里克" scheme="https://ouatis.github.io/tags/%E5%BA%93%E5%B8%83%E9%87%8C%E5%85%8B/"/>
     
-    <category term="纳博科夫" scheme="http://example.com/tags/%E7%BA%B3%E5%8D%9A%E7%A7%91%E5%A4%AB/"/>
+    <category term="纳博科夫" scheme="https://ouatis.github.io/tags/%E7%BA%B3%E5%8D%9A%E7%A7%91%E5%A4%AB/"/>
     
   </entry>
   

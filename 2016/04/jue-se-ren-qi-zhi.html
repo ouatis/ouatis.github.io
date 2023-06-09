@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="UTF-8">
+    
+    <link rel="apple-touch-icon" sizes="76x76" href="/null">
+    <link rel="icon" type="image/png" href="/null">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    <title>“角色任期制” - 笼城往事</title>
+    
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    
+    
+    <meta name="description" content="">
+    <meta name="author" content="SigiL">
+    <meta name="keywords" content="">
+    <meta property="og:title" content="“角色任期制”"/>
+    <style>
+
+
+    
+    :root{
+        --shadow-color: rgba(0,0,0,0.2);
+        --sec-shadow: rgba(0,0,0,0.03);
+        --shadow-hover-color: rgba(0,0,0,0.28);
+        --first-text-color: #475b6d;
+        --second-text-color: #37475b;
+        --third-text-color: #858585;
+        --default-text-color: #505050;
+        --default-link-color: #007bff;
+        --link-color: #000000;
+        --second-link-color: #4F9BFA;
+        --code-color:rgba(27,31,35,.05);
+        --post-bkg-color: #fff;
+        --page-bkg-color: #f2f5f8;
+        --nav-a-hover-color: #3498db;
+        --post-sec-text-color: #718096;
+        --sec-bkg: #f2f5f8;
+        --color-mode: 'light';
+        --bkg-h: rgba(255,255,255,0.6);
+        --bkg-m: #e1e4e8;
+        --home-title-color: #4169E1;
+        --shadow: 0 4px 10px rgba(0,2,4,0.06),0 0 1px rgba(0,2,4,0.11);
+        --hr-color: #ddd;
+        --bg-t: #f4f4f4;
+        --nav-bkg: rgba(255,255,255,0.6);
+    }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-mode: 'dark';
+  }
+
+  :root:not([data-theme]) {
+    --first-text-color: hsla(0,0%,100%,0.92);
+    --second-text-color: hsla(0,0%,100%,0.86);
+    --third-text-color: #a7a9ad;
+    --default-text-color: #505050;
+    --default-link-color: #1589e9;
+    --link-color: #000000;
+    --second-link-color: #30a9de;
+    --post-bkg-color: #252d38;
+    --page-bkg-color: #181c27;
+    --nav-a-hover-color: #3498db;
+    --post-sec-text-color: #a7a9ad;
+    --sec-bkg: #364151;
+    --bkg-h: rgba(255,255,255,0.2);
+    --bkg-m: rgba(255,255,255,0.1);
+    --home-title-color: rgb(226, 82, 90);
+    --code-color:#3e4b5e;
+    --shadow: none;
+    --hr-color: #718096;
+    --bg-t: #364151;
+    --nav-bkg: rgba(13,17,23,0.6);
+  }
+}
+
+[data-theme='dark'] {
+    --shadow-color: rgba(0,0,0,0.2);
+    --shadow-hover-color: rgba(0,0,0,0.28);
+    --first-text-color: hsla(0,0%,100%,0.92);
+    --second-text-color: hsla(0,0%,100%,0.86);
+    --third-text-color: #a7a9ad;
+    --default-text-color: #505050;
+    --default-link-color: #1589e9;
+    --link-color: #000000;
+    --second-link-color: #30a9de;
+    --post-bkg-color: #252d38;
+    --page-bkg-color: #181c27;
+    --nav-a-hover-color: #3498db;
+    --post-sec-text-color: #a7a9ad;
+    --sec-bkg: #364151;
+    --bkg-h: rgba(255,255,255,0.2);
+    --bkg-m: rgba(255,255,255,0.1);
+    --home-title-color: rgb(226, 82, 90);
+    --code-color:#3e4b5e;
+    --shadow: none;
+    --hr-color: #718096;
+    --bg-t: #364151;
+    --nav-bkg: rgba(13,17,23,0.6);
+}
+
+</style>
+
+
+
+<style>
+#page-main,footer,.p-btn{
+    display: none;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+body {
+    background-color: var(--page-bkg-color);
+    color: var(--second-text-color);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    transition: all .3s;
+}
+a {
+    color: var(--default-link-color);
+    text-decoration: none;
+    background-color: transparent;
+}
+a:hover{
+    color: var(--second-link-color);
+}
+.main-content,.post-card-main{
+    margin: 30px;
+}
+
+
+
+@media (max-width: 410px){
+    .post-card-main{
+        max-width: 350px!important;
+    }
+}
+
+@media (max-width: 980px){
+    .post-card-main{
+        max-width: 520px!important;
+    }
+}
+
+
+@media (min-width: 780px){ 
+    h3{
+        font-size: 1.5rem;
+        line-height: 1.5em;
+    }
+}
+@media (min-width: 1280px){ 
+    h3{
+        font-size: 1.7rem;
+        line-height: 1.5em;
+    }
+}
+@media (min-width: 2096px){ 
+    h3{
+        font-size: 1.8rem;
+        line-height: 1.5em;
+    }
+}
+
+.text-center{
+    text-align: center!important;
+}
+.middle-center{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    height: 100%;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    height: 54px;
+    padding: 0 1.25rem;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    border-bottom: 1px solid var(--bkg-m);
+    background-color: var(--nav-bkg);
+    backdrop-filter: blur(4px);
+    transition: all .3s;
+}
+header .header__left, header .header__right {
+    display: flex;
+    align-items: center;
+    font-family: rubik,sans-serif,Varela Round;
+}
+header .header__left .logo__text {
+    font-size: 18px;
+    font-weight: 450;
+    padding: 14.5px 10px;
+    border-radius: 5px;
+    color: var(--second-text-color);
+}
+header .header__right .navbar__menus {
+    height: 54px;
+    padding: 0 0 0 15px;
+}
+header .header__right .button {
+    color: var(--second-text-color);
+}
+header .header__right .navbar__menus .navbar-menu {
+    display: inline-block;
+    align-items: center;
+    height: 54px;
+    padding: 0 10px;
+    font-size: 16px;
+    line-height: 54px;
+}
+header .header__right .dropdown-icon {
+    display: none;
+    height: 54px;
+    padding: 15px 10px;
+    border: 0;
+    background-color: transparent;
+}
+header .header__right .dropdown-menus {
+    line-height: 2rem;
+    animation: slide-in .15s ease 1;
+    display: none;
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    top: calc(54px + 10px);
+    border-radius: 6px;
+    padding: 24px;
+    background-color: var(--page-bkg-color);
+    border: 1px solid var(--bkg-m);
+    z-index: 9999;
+    justify-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+header .header__right #btn-search, header .header__right #btn-toggle-dark{
+    display: inline-block;
+    padding:  18px 10px;
+    height: 25px;
+}
+header .header__right #btn-dropdown{
+  display: inline-block;
+  padding:  13.5px 0;
+}
+header .header__right .dropdown-menus .dropdown-menu {
+    padding: 10px;
+    color: var(--second-text-color);
+}
+@media screen and (max-width: 764px){
+.navbar__menus {
+    display: none!important;
+}
+.dropdown-icon {
+    display: inline-block!important;
+}
+}
+.p-btn{
+    position: fixed;
+    bottom: 1.2rem;
+    right: 1.2rem;
+    contain: layout;
+}
+.toc-btn,.click-btn{
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    align-items: center;
+    margin-top: .5rem;
+    font-size: .75rem;
+    background-color: var(--sec-bkg);
+    display: block;
+    padding: 0.9rem;
+    box-shadow: 0 0.3rem 0.6rem rgba(48,55,66,.15);
+    border: none;
+    border-radius: 0.5rem;
+    line-height: 1;
+    color: var(--first-text-color);
+}
+.toc-link{
+    color: var(--second-text-color);
+}
+
+#css-loading h3{
+    font-weight: 500;
+    font-size: 1.4rem;
+    text-align: center;
+    position: fixed;
+    top: 200px;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    animation: cssLoad;
+    animation-delay: 0.3s;
+    -webkit-animation: cssLoad;
+    -webkit-animation-delay: 0.3s;
+}
+@keyframes cssLoad {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0.9;
+    }
+}
+
+
+.memorial {
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
+    filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); filter:gray;
+}
+
+
+    .post-copyright:after {
+        position: absolute;
+        color: #fff;
+        background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 496 512'%3E%3Cpath fill='gray' d='M245.8 214.9l-33.2 17.3c-9.4-19.6-25.2-20-27.4-20-22.2 0-33.3 14.6-33.3 43.9 0 23.5 9.2 43.8 33.3 43.8 14.4 0 24.6-7 30.5-21.3l30.6 15.5a73.2 73.2 0 01-65.1 39c-22.6 0-74-10.3-74-77 0-58.7 43-77 72.6-77 30.8-.1 52.7 11.9 66 35.8zm143 0l-32.7 17.3c-9.5-19.8-25.7-20-27.9-20-22.1 0-33.2 14.6-33.2 43.9 0 23.5 9.2 43.8 33.2 43.8 14.5 0 24.7-7 30.5-21.3l31 15.5c-2 3.8-21.3 39-65 39-22.7 0-74-9.9-74-77 0-58.7 43-77 72.6-77C354 179 376 191 389 214.8zM247.7 8C104.7 8 0 123 0 256c0 138.4 113.6 248 247.6 248C377.5 504 496 403 496 256 496 118 389.4 8 247.6 8zm.8 450.8c-112.5 0-203.7-93-203.7-202.8 0-105.5 85.5-203.3 203.8-203.3A201.7 201.7 0 01451.3 256c0 121.7-99.7 202.9-202.9 202.9z'/%3E%3C/svg%3E");
+        content: ' ';
+        height: 10rem;
+        width: 10rem;
+        right: -2rem;
+        top: -2rem;
+        opacity: .1;
+    }
+
+</style>
+
+    
+
+    
+        <!--
+        <link rel="stylesheet" href="/css/page.css" media="print"
+            onload="this.media='all';this.onload=null">
+        <noscript>-->
+            <link rel="stylesheet" href="/css/page.css">
+        <!--</noscript>-->
+    
+    
+    <link rel="stylesheet" href="/css/main.css" media="print" onload="this.media='all';this.onload=null">
+    <noscript>
+        <link rel="stylesheet" href="/css/main.css">
+    </noscript>
+
+    
+    <script src="/js/main.js"></script>
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+    <body>
+        <header>
+            
+<div class="header__left">
+	<a href="/" class="button"><span class="logo__text">OUATIS</span></a>
+</div>
+<div class="header__right">
+	<div class="navbar__menus">
+		
+		<a href="/" class="button">
+			<div class="navbar-menu">首页</div>
+		</a>
+		
+		<a href="/archives/" class="button">
+			<div class="navbar-menu">归档</div>
+		</a>
+		
+		<a href="/categories/" class="button">
+			<div class="navbar-menu">分类</div>
+		</a>
+		
+		<a href="/tags/" class="button">
+			<div class="navbar-menu">标签</div>
+		</a>
+		
+	</div>
+	
+	<a href="/search/" class="button">
+		<div id="btn-search">
+			<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1024 1024" width="24" height="24" fill="currentColor"
+				stroke="currentColor" stroke-width="32">
+				<path
+					d="M192 448c0-141.152 114.848-256 256-256s256 114.848 256 256-114.848 256-256 256-256-114.848-256-256z m710.624 409.376l-206.88-206.88A318.784 318.784 0 0 0 768 448c0-176.736-143.264-320-320-320S128 271.264 128 448s143.264 320 320 320a318.784 318.784 0 0 0 202.496-72.256l206.88 206.88 45.248-45.248z">
+				</path>
+			</svg>
+		</div>
+	</a>
+	
+	<a href="javaScript:void(0);" class="button" id="btn-toggle-dark">
+		<div>
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none"
+				stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+			</svg>
+		</div>
+	</a>
+	<a href="javaScript:void(0);" class="dropdown-icon button">
+		<div id="btn-dropdown">
+			<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1024 1024" width="24" height="24" fill="currentColor"
+				stroke="currentColor" stroke-width="32" stroke-linecap="round">
+				<path
+					d="M903.43 561.52H148.8c-13.25 0-24-10.75-24-24s10.75-24 24-24h754.63c13.25 0 24 10.75 24 24s-10.75 24-24 24zM903.43 204.31H148.8c-13.25 0-24-10.75-24-24s10.75-24 24-24h754.63c13.25 0 24 10.75 24 24s-10.75 24-24 24zM903.43 918.73H148.8c-13.25 0-24-10.75-24-24s10.75-24 24-24h754.63c13.25 0 24 10.75 24 24s-10.75 24-24 24z"
+					fill="currentColor"></path>
+			</svg>
+		</div>
+	</a>
+	<div class="dropdown-menus" id="dropdown-menus">
+		
+		<a href="/" class="dropdown-menu button">首页</a>
+		<br>
+		
+		<a href="/archives/" class="dropdown-menu button">归档</a>
+		<br>
+		
+		<a href="/categories/" class="dropdown-menu button">分类</a>
+		<br>
+		
+		<a href="/tags/" class="dropdown-menu button">标签</a>
+		<br>
+		
+	</div>
+</div>
+
+        </header>
+        <div id="top"></div>
+        <div id="page-main" class="main-content">
+        <div class="mg-top">
+            
+
+<article class="page">
+<div id="post-meta-m">
+    <div class="post-meta" id="post-meta">
+  <h3>“角色任期制”</h3>
+    
+      <span class="post-meta-label">
+        SigiL
+      </span>
+    
+    
+      <span class="post-meta-label">
+        <span class="p-dot"></span>
+        <time datetime="2016-04-29 00:00" pubdate>
+          2016-04-29
+        </time>
+      </span>
+    
+    
+      
+      <span class="post-meta">
+        <span class="p-dot"></span>
+        共 3.7k 字
+      </span>
+    
+    
+    
+  </div>
+  
+</div>
+<div class="article-m">
+  <div class="post-toc">
+    
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%99%E8%BF%B0%E8%80%85"><span class="toc-number">1.</span> <span class="toc-text">叙述者</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BB%E8%A7%92"><span class="toc-number">2.</span> <span class="toc-text">主角</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%8F%E5%B0%94"><span class="toc-number">2.1.</span> <span class="toc-text">夏尔</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%89%BE%E7%8E%9B"><span class="toc-number">2.2.</span> <span class="toc-text">艾玛</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%A4%E4%BB%BB%E5%8C%85%E6%B3%95%E5%88%A9%E5%A4%AB%E4%BA%BA"><span class="toc-number">3.</span> <span class="toc-text">两任包法利夫人</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%9C%E6%AF%94%E5%85%8B%E5%AF%A1%E5%A6%87"><span class="toc-number">3.1.</span> <span class="toc-text">杜比克寡妇</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%89%BE%E7%8E%9B-1"><span class="toc-number">3.2.</span> <span class="toc-text">艾玛</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E4%BB%BB%E8%89%BE%E7%8E%9B%E7%9A%84%E6%83%85%E4%BA%BA"><span class="toc-number">4.</span> <span class="toc-text">四任艾玛的情人</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%90%E7%88%B5"><span class="toc-number">4.1.</span> <span class="toc-text">子爵</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AC%E8%AF%81%E5%AE%9E%E4%B9%A0%E7%94%9F%E8%8E%B1%E6%98%82"><span class="toc-number">4.2.</span> <span class="toc-text">公证实习生莱昂</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%97%E5%A4%9A%E5%A4%AB"><span class="toc-number">4.3.</span> <span class="toc-text">罗多夫</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AC%E8%AF%81%E5%91%98%E8%8E%B1%E6%98%82"><span class="toc-number">4.4.</span> <span class="toc-text">公证员莱昂</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%A4%E4%BB%BB%E5%A5%B3%E4%BB%86"><span class="toc-number">5.</span> <span class="toc-text">两任女仆</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A8%9C%E5%A1%94%E8%A5%BF"><span class="toc-number">5.1.</span> <span class="toc-text">娜塔西</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A8%E7%A6%8F"><span class="toc-number">5.2.</span> <span class="toc-text">全福</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E4%BB%BB%E5%8C%BB%E7%94%9F"><span class="toc-number">6.</span> <span class="toc-text">三任医生</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%8F%E5%B0%94-1"><span class="toc-number">6.1.</span> <span class="toc-text">夏尔</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%A1%E5%B0%BC%E9%9F%A6"><span class="toc-number">6.2.</span> <span class="toc-text">卡尼韦</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%89%E9%87%8C%E7%BB%B4%E8%80%B6"><span class="toc-number">6.3.</span> <span class="toc-text">拉里维耶</span></a></li></ol></li></ol>
+    
+  </div>
+    <div id="article">
+      <div id="post-content" class="markdown-body textretty">
+        <p>很多角色都实行“任期制”。光是“包法利夫人”就有两任，就像洛丽塔有两任。依靠这种你方唱罢我登场的任期制，作者铺出许多伏线。</p>
+<h2 id="叙述者"><a href="#叙述者" class="headerlink" title="叙述者"></a>叙述者</h2><p>“我们”。夏尔的同班同学，仅仅用他的眼睛和口吻观察了几页。</p>
+<p>上帝。不知不觉变成全知视角。</p>
+<h2 id="主角"><a href="#主角" class="headerlink" title="主角"></a>主角</h2><h3 id="夏尔"><a href="#夏尔" class="headerlink" title="夏尔"></a>夏尔</h3><p>愚钝、木讷是其底色，但这个人除了呆，也不是没有别的问题。他很容易被人左右，性格软弱，还“怪命运”。他不算一位真正有资格的医生，只是一位有证书、可以给人看病的卫生员。医术平庸也就罢了，更恶劣的是，沽名钓誉，缺一颗医者之心。夏尔给瘸子的脚踝做手术，不假思索就挑断了他的脚筋，毁了别人的一生。他对病人的痛苦不怎么在意，只是一心成名，把人当成了科研对象，在内翻足还是外翻足上纠缠不清。</p>
+<p>但他也有着某种稀有的品质。他潜意识中对艾玛的欣赏、着迷与爱，与艾玛的追求是一致的。艾玛的追求被毁灭，而他的这点儿潜意识，则被无视、被轻贱。如果是陀翁来写，也许会大肆宣扬这种品质。也是因为这种品质，夏尔在艾玛死后，心碎了，几乎变了一个人。</p>
+<p>先让他出场，我不知道福楼拜怎么想的。我们只见他“下坡花力！”（Charbovari！），戴千层饼一样的帽子，滑稽可笑。但让夏尔遇上艾玛，确实比艾玛遇上夏尔更有趣。我们从庸人的视角看见艾玛，而不是从艾玛的视角看见滑稽的庸人。艾玛的肖像呈现在读者面前，有若干步描写，而不是第一眼就详尽地看光。描写一步步展开，就像在生活中相遇本来的样子。</p>
+<p>在院子里，我们和夏尔看见她的“镶了三道花边的美里奴蓝袍”；夏尔帮卢欧老爹看腿，我们看见她扎破手指头，指甲白净，眼睛天真无邪又胆大。然后才是夏尔留下用餐，面对面，看见她吃东西露嘴唇，不说话就咬嘴唇。她的脖子、头发、脸蛋、玳瑁眼镜。</p>
+<p>这要是艾玛第一眼看夏尔，又该怎么写。怎么写都没法这么迷人。遇上夏尔这么个人，能有什么意思呢。夏尔和艾玛，总得有一个先出场，总得有一次相遇。我很同意，先让夏尔出场更好，最后再以他的死亡结尾，更好，就像画框包住了画。</p>
+<h3 id="艾玛"><a href="#艾玛" class="headerlink" title="艾玛"></a>艾玛</h3><p>真正的主角。</p>
+<h2 id="两任包法利夫人"><a href="#两任包法利夫人" class="headerlink" title="两任包法利夫人"></a>两任包法利夫人</h2><h3 id="杜比克寡妇"><a href="#杜比克寡妇" class="headerlink" title="杜比克寡妇"></a>杜比克寡妇</h3><p>第一部第一章上任，第二章解任。这个名字总是让我想起养蜥蜴常用的饲料，杜比亚蟑螂。她是包法利大娘给儿子娶的第一房媳妇。原是一个事务员的寡妇，四十五岁（历史原型为三十岁），长得丑，脸上还有粉刺，骨瘦如柴，还总是穿黑衣服，犹如“长剑入鞘”。但她一年有一千二百法郎的收入，所以不愁嫁，还能挑人。包大娘为了给儿子讨老婆，还巧施妙计，挫败一位劲敌，一个有神甫撑腰的猪肉店老板。与包法利结婚后，杜比克寡妇成了一家之主，处处限制包法利，又爱讨要关心。包法利对她惟命是听，但不开心。所有这一切都集中发生在第一章最后五段。</p>
+<p>我们刚刚认识杜比克寡妇，艾玛就登场了。夏尔对寡妇几乎没有感情，但与艾玛初相遇后，每次去看她都荣光焕发，我们这才感受到他的幸福，这也是最后他为艾玛置办盛大婚礼的根源。但包法利老是去看艾玛，寡妇大吵大闹，禁止他去。夏尔又顺从了，内心却要造反，于是学会了两面派的手法：“你能禁止我去看她，但是你能要我不爱她而爱你吗？”很快，为寡妇保管财产的公证人卷款潜逃。原来她撒谎了，抛开归零的存款不谈，房子、船股都没多少价值。她可怜地夸大了自己的财产。包法利父母为此与她吵了一架，“夏尔想为她说两句话”。一周后，寡妇在晾衣服时吐血，第二天就死了。这是一场短暂、灰暗的婚姻，夫妻之间感情淡薄，多是隔阂，少有依恋，完全谈不上幸福。办完丧事，夏尔回到家，为寡妇之死感到悲伤，“说来说去，她到底爱过他”。但不是他爱她。</p>
+<h3 id="艾玛-1"><a href="#艾玛-1" class="headerlink" title="艾玛"></a>艾玛</h3><p>第一部第二章上任。第一章的“我们”（夏尔的同学视角）、夏尔、包法利父母、杜比克寡妇轮番登台又下场，为她腾挪出了空间。夏尔找到了艾玛，不受束缚地追求艾玛，也娶到了她。围绕着艾玛，更多独特的细节开始异峰突起。原来她才是真正的主角。</p>
+<h2 id="四任艾玛的情人"><a href="#四任艾玛的情人" class="headerlink" title="四任艾玛的情人"></a>四任艾玛的情人</h2><h3 id="子爵"><a href="#子爵" class="headerlink" title="子爵"></a>子爵</h3><p>贯穿全书的、幽灵一样的情人。曾在舞会上带艾玛跳华尔兹，起初很慢，后来越跳越快，两个人转了起来，周围的一切也都开始旋转。此时艾玛已然精神出轨，整个段落艳而不淫，是没在床上的床戏。</p>
+<blockquote>
+<p>他们开始跳得慢，后来越跳越快。他们转了起来，周围的一切也在旋转：挂灯、家具、墙壁、地板，就像绕轴旋转的唱片一样。跳到门口，艾玛裙子的下边蹭着对方的裤管；他们的腿，有时你夹着我，有时我夹着你；男方的眼睛向下看着，女方的眼睛向上看着；她忽然觉得头晕，赶快停住。他们又跳了起来；子爵转得更快，一直把她带到走廊尽头，她气喘吁吁，几乎要跌倒了，一下把头靠着他的胸脯。后来，他还是一直转，只是转得慢些，最后，他把她送回原来的座位；她头往后一仰，靠在墙上，用手蒙住眼睛。</p>
+</blockquote>
+<p>舞会结束后，有一群骑马的人叼着雪茄，笑着从艾玛和夏尔的马车经过。艾玛相信她认出了子爵。夏尔在回家路上捡了一只雪茄烟匣。回家后，艾玛辞退了第一任女仆娜塔西。艾玛见过子爵后春心荡漾，整天幻想。夏尔不在家，就拿出他捡来的雪茄烟匣，当作宝贝闻味道，想象那是一个情妇送给子爵的礼物，而子爵正身处巴黎。以子爵为中心，艾玛建立起一个虚构的国度。这是她的梦想。</p>
+<p>在经典的“[[农业展览会]]”一章，艾玛经由罗多夫头发上的香味，又想起子爵的胡子，那里曾散发出香草和柠檬的香气。后来在她送给罗多夫的礼物中，有一个雪茄烟匣，“和子爵的那个一模一样”；有一次与莱昂偷情后，她经过当年住过的修道院，也曾回忆起子爵。到后来破产，她在教堂的甬道头昏眼花，看见马车上一个穿貂皮大衣的绅士，她认为那是子爵。但马车奔驰过去了，她想象中的子爵，一个教堂前的虚影，也消失不见了。紧接着，第二任女仆全福建议艾玛去找一个公证人借钱。艾玛去求情，被误以为卖身，愤然离去。</p>
+<h3 id="公证实习生莱昂"><a href="#公证实习生莱昂" class="headerlink" title="公证实习生莱昂"></a>公证实习生莱昂</h3><p>第二部第二章上任，第六章解任。公证实习生莱昂与公证员莱昂显然是两任不同的情人。实习生年轻漂亮，富有浪漫主义思想，与艾玛发乎情、止乎礼，最接近爱情。 “她爱莱昂，追寻寂寞，为了能更自由自在地玩味他的形象”，只是他胆小怕事，错把艾玛当成可望不可及的贤妻良母，放过了机会，到巴黎去了。</p>
+<h3 id="罗多夫"><a href="#罗多夫" class="headerlink" title="罗多夫"></a>罗多夫</h3><p>赤裸裸的婚外情。</p>
+<h3 id="公证员莱昂"><a href="#公证员莱昂" class="headerlink" title="公证员莱昂"></a>公证员莱昂</h3><p>艾玛的最后一任情人，仍然是莱昂，公证员阶段的莱昂。婚外情后的艾玛更加放浪，碰见成熟的莱昂，也大胆起来，而莱昂胜券在握，两个人在密不透风的马车里通奸。</p>
+<h2 id="两任女仆"><a href="#两任女仆" class="headerlink" title="两任女仆"></a>两任女仆</h2><h3 id="娜塔西"><a href="#娜塔西" class="headerlink" title="娜塔西"></a>娜塔西</h3><p>第一部第二章上任，第八章解任。据说是夏尔的第一个病人、当地最早的熟人。包法利夫妇婚礼后，娜塔西晚饭没做好，让新女主人先熟悉下家里的格局，艾玛看见了夏尔鞋子上的干泥、水晶瓶里第一任包法利夫人的婚礼捧花。这是一位笨拙、也没什么眼力劲儿的女仆。侯爵舞会后，艾玛心理有落差，见娜塔西没做晚饭，还顶嘴，大为光火，就辞退了她。</p>
+<h3 id="全福"><a href="#全福" class="headerlink" title="全福"></a>全福</h3><p>相比娜塔西，全福聪明许多，服服帖帖，没有怨言，也对艾玛的行为看破不说破。她每天晚晌从菜橱里偷一小包糖，做完祷告，一个人躺在床上吃；毫不爱惜艾玛的鞋子，轮到她擦鞋，决不在意，因为艾玛一看料子发旧，会直接送给她穿；晚上还和男人私会。包法利家破产，是她建议艾玛去找公证人借钱，导致后来卖身的误会，这一点也耐心寻人。此人天性凉薄，艾玛死后，卷走了她衣橱剩下的全部衣物，和男人私奔。</p>
+<h2 id="三任医生"><a href="#三任医生" class="headerlink" title="三任医生"></a>三任医生</h2><h3 id="夏尔-1"><a href="#夏尔-1" class="headerlink" title="夏尔"></a>夏尔</h3><p>技艺最差，其实算不得医生，只是“卫生官员”。</p>
+<h3 id="卡尼韦"><a href="#卡尼韦" class="headerlink" title="卡尼韦"></a>卡尼韦</h3><p>从鲁昂来，五十岁，医学博士，职位很高，足以鄙视带证药剂师。自信心很强，刚出场就发出瞧不起人的笑声，粗俗但有本事。给夏尔擦屁股，做了轰动荣镇的截肢手术。整体介于夏尔与拉里维耶之间，如果按虚荣心和社会地位排序，又处于夏尔 - 郝麦 - 卡尼韦的鄙视链顶端。</p>
+<h3 id="拉里维耶"><a href="#拉里维耶" class="headerlink" title="拉里维耶"></a>拉里维耶</h3><p>夏尔的老师，短暂出场的好医生，在艾玛病危时前来，宛如天神下凡，毋宁说，“天神出现也不见得会引起更大的骚动”。文中夸了拉里维耶博士一整段：</p>
+<blockquote>
+<p>他属于穿比夏白大褂的伟大外科学派，对于现在这一代人来说，知名度已经大不如前了。但他们既有理论，又能实践，如醉如痴地热爱医学，动起手术来精神振奋，头脑清醒！他一生起气来，医院上下都会震动，他的学生对他崇拜得五体投地，刚刚挂牌行医，就竭力模仿他的一举一动；结果附近城镇的医生，个个像他一样，穿棉里毛料的长外套，宽大的藏青色工作服；他的衣袖纽扣老是解开的，遮在他丰腴的双手上，手很好看，从来不戴手套，仿佛随时准备投入行动，救苦救难似的。他不把十字勋章、头衔、学院放在眼里，待人亲切，慷慨大方，济贫扶幼，施恩而不望回报，几乎可以说是一个圣人，但是他的智力敏锐，明察秋毫，使人怕他就像害怕魔鬼一样。他的目光比手术刀还更犀利，一直深入到你的灵魂深处，穿透一切托词、借口、不便启齿的言语，揭露出藏在下面的谎言假话来。这样，他既庄严肃穆，又平易近人，说明他意识到自己伟大的才能、顺利的处境，以及四十年来辛勤劳动、无可非议的生活。（许译）</p>
+</blockquote>
+<blockquote>
+<p>他属于毕莎（Bichat）实验室出来的外科大学派，学者而兼医生的一代，如今轻易也见不到，发狂地爱护他们的医道，行起医来，有的是热情的，有的是颖悟。他要一生气，全医院都抖擞，学生们恭敬过了分，不等挂起牌子，先模拟一个十足；所以在附近的城邑，你会看见他们，穿着他的羊绒长袍，他的宽大的黑斗蓬，花袖口翻上来，松了开，轻轻盖着他的一双肥手，非常美丽的手，从来不戴手套，好像一下子就要伸进痛苦里面。看不起十字勋章，看不起官衔，看不起学会，又厚道，又慷慨，待遇穷人又慈祥，一举一止全是道德，偏偏又不信道德，原可以叫人看做圣者，可惜他智慧的深致，又叫人怕的和遇了魔鬼一样。他的目光，比他解剖的刀子还要尖利，一直射入灵魂，无论说什么话，害什么羞，也会把一切的诳分解出来。就是这样他生活着，充满了软心肠的尊严，由四十年透明而勤劳的生涯，富裕与伟大的才能获有的一种尊严。（李译）</p>
+</blockquote>
+<p>其中一句“几乎可以说是一个圣人”，让拉里维耶不像个此书该有的角色。按照居斯塔夫外甥女的回忆录，也就是那篇知名的 [[《亲密的回忆》]]，博士的原型可能是居斯塔夫的父亲。[[主万译《洛丽塔》#二七|《洛丽塔》第二十七章]] 有一句“爱玛也决不会恢复体力，因为福氏的父亲及时的泪水里那同情的盐分而起死回生”，这里说的就是拉里维耶。</p>
+<p>主万译本的注释以为，福氏的父亲是指卢欧老爹，因为福氏曾说艾玛·包法利就是他，而卢欧老爹是艾玛的父亲。这样附会实在有些滑稽。</p>
+<p>译注明明也指出来了，卢欧老爹是在艾玛死后才赶到，所以他的眼泪不是很“及时”。但原文“及时的泪水”，指的应是拉里维耶看到艾玛以后，和夏尔两人你望我，我望你，“这个人虽然看惯了痛苦，也忍不住流下一滴眼泪，落在他的胸饰上”。</p>
+
+      </div>
+    </div>
+</div>
+
+<div class="post-category">
+
+    <div id="p-meta-i">
+        
+              
+                <a class="hover-with-bg" href="/categories/%E9%87%8D%E8%AF%BB%E3%80%8A%E5%8C%85%E6%B3%95%E5%88%A9%E5%A4%AB%E4%BA%BA%E3%80%8B/">重读《包法利夫人》</a>
+              
+          
+          
+              
+                <a class="hover-with-bg" href="/tags/%E4%B9%A6/"># 书</a>
+              
+                <a class="hover-with-bg" href="/tags/%E7%A6%8F%E6%A5%BC%E6%8B%9C/"># 福楼拜</a>
+              
+          
+    </div>
+</div>
+
+
+<div class="post-footer">
+  
+
+  <div class="post-copyright">
+    <p style="margin: 5px 0;">文章作者：<a href="/">SigiL</a></p>
+    <p style="margin: 5px 0;">文章链接：<a href="https://ouatis.github.io/2016/04/jue-se-ren-qi-zhi.html">https://ouatis.github.io/2016/04/jue-se-ren-qi-zhi.html</a></p>
+    <p style="margin: 5px 0;">版权声明：本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处，谢谢。</p>
+  </div>
+  
+</div>
+
+    <!-- Comments -->
+    <div class="comments">
+        
+        
+    <script src="https://giscus.app/client.js"
+        data-repo="ouatis/ouatis.github.io"
+        data-repo-id="ouatis/ouatis.github.io"
+        data-category="ouatis/ouatis.github.io"
+        data-category-id="ouatis/ouatis.github.io"
+        data-mapping="pathname"
+        data-term=""
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        data-loading=""
+        crossorigin="anonymous"
+        async> </script>
+
+    </div>
+
+</article>
+
+
+        </div>
+        
+<footer class="text-center">
+    
+    
+    
+    
+    
+    <p>&copy;  2012 - 2023&nbsp;&nbsp;Theme Miracle</p>
+    
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme by <a href="https://github.com/oCoke/hexo-theme-miracle" target="_blank">Miracle</a></p>
+    
+    
+</footer>
+
+<div class="p-btn">
+    
+        <a class="toc-btn" id="toc-btn"><i id="i-menu"></i></a>
+    
+    
+      <a class="toc-btn" id="share-btn"><i>
+        <svg t="1670124379155" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2683" width="25" height="25"><path d="M395.946667 234.666667v64H256v469.333333h512V522.666667h64V768a64 64 0 0 1-64 64H256a64 64 0 0 1-64-64V298.666667a64 64 0 0 1 64-64h139.946667z m335.850666-87.914667l150.848 150.826667-158.378666 158.4-45.269334-45.248L748.394667 341.333333H672c-121.685333 0-220.714667 97.024-223.914667 217.941334L448 565.333333v85.333334h-64v-85.333334C384 406.272 512.938667 277.333333 672 277.333333h99.861333l-85.312-85.333333 45.248-45.248z" p-id="2684" fill="var(--first-text-color)"></path></svg>
+      </i></a>
+    
+    <a href="javascript:window.scrollTo({top:0,behavior:'smooth'});" class="click-btn">
+      <i id="i-up"></i>
+    </a>
+</div>
+
+<!-- SCRIPTS -->
+
+
+
+
+
+
+<script>
+    document.getElementById("btn-dropdown").addEventListener('click', () => {
+      toggleClass("#dropdown-menus","display-inline");
+    });
+    console.log('\n' + ' %c Powered by Hexo Theme Miracle ' + ' %c https://github.com/hifun-team/hexo-theme-miracle ' + '\n' + '\n', 'color: #fff; background: #4F9BFA; padding:5px 0;', 'background: #FFF; padding:5px 0;');
+
+    
+
+    
+  /* 小彩蛋: 饮茶先啦 */
+  setTimeout(() => {
+    var time = new Date();
+    if (time.getHours() == 15) {
+      let comment = document.createComment(' 三点几嚟！饮茶先啦！ ');
+      document.body.insertBefore(comment, document.getElementsByTagName('header')[0]);
+    }
+  },1);
+    
+</script>
+
+
+<script>
+    var postImg = document.querySelectorAll("article[class=page] img");
+    for (let imgi = 0; imgi < postImg.length; imgi++) {
+        postImg[imgi].onclick = () => {
+            let zoomImg = document.createElement("div");
+            zoomImg.id = "zoomImg";
+            zoomImg.innerHTML = `<div id="zoom-picture"></div>
+    <div class="poptrox-overlay"
+        style="position: fixed; left: 0px; top: 0px; z-index: 20000; width: 100%; height: 100%; text-align: center; cursor: zoom-out; opacity: 1;">
+        <div style="display:inline-block;height:100%;vertical-align:middle;"></div>
+        <div
+            style="position:absolute;left:0;top:0;width:100%;height:100%;background:#000000;opacity:0;filter:alpha(opacity=0);">
+        </div>
+        <div class="poptrox-popup"
+            style="display: inline-block; vertical-align: middle; position: relative; z-index: 1; cursor: zoom-out; min-width: 10px; min-height: 10px; width: auto; height: auto;">
+            <div class="loader" style="display: none;"></div>
+            <div class="pic" style="text-indent: 0px;"><img
+                    src="${ postImg[imgi].srcset || postImg[imgi].src }" alt="Loading..."
+                    style="vertical-align: bottom; max-width: 85vw; max-height: 85vh;"></div>
+        </div>
+    </div>`;
+            document.body.appendChild(zoomImg);
+                document.querySelector("#zoomImg").onclick = () => {
+                    document.querySelector("#zoomImg").remove();
+                }
+        }
+    }
+    
+</script>
+
+
+
+
+    <script>
+        query("#toc-btn")[0].onclick = () => {
+            if (query(".post-toc")[0].innerHTML) {
+                toggleClass(".post-toc", "display-inline");
+            }
+        }
+
+        if (!query(".post-toc")[0].innerHTML) {
+            addClass("#toc-btn","display-none");
+        }
+    </script>
+
+
+
+    <script>
+        query("#share-btn")[0].onclick = async () => {
+            let url = `${location.protocol}//${location.hostname}${location.port ? ":"+location.port:location.port}${location.pathname}#read=${sessionStorage.getItem(location.pathname+"_read_y") || ""}`;
+            try {
+                await navigator.clipboard.writeText(url);
+                prompt_core("分享链接已经复制至剪贴板", 4800, true);
+            } catch(e) {
+                prompt_core("分享链接复制失败，请手动复制<br/>"+url, 4800, false);
+            }
+        }
+    </script>
+
+
+
+
+
+
+
+    <script>
+        const getScrollPosition = (el = window) => ({
+            x: el.pageXOffset !== undefined ? el.pageXOffset : el.scrollLeft,
+            y: el.pageYOffset !== undefined ? el.pageYOffset : el.scrollTop
+        });
+        // 此处的 750 是「页面元素的最大宽度」
+        var wx = document.getElementsByClassName("article-m")[0].clientWidth;
+        var wy = document.getElementsByClassName("article-m")[0].clientHeight;
+        function windowScroll() {
+            // 反复修改 确保页面尺寸不改变
+            wx = document.getElementsByClassName("article-m")[0].clientWidth;
+            wy = document.getElementsByClassName("article-m")[0].clientHeight;
+            let y = Math.round(getScrollPosition().y);
+            // console.log(y);
+            // 组合字符串，同时记录页面坐标，页面宽度和高度
+            let p = `${y}:${wx}:${wy}`;
+            // 写入到 sessionStorage 中
+            sessionStorage.setItem(location.pathname + "_read_y", p);
+        }
+        // URL 中是否包含传递的坐标信息
+        setTimeout(() => {
+            if (location.hash.split("#read=").length > 1) {
+                prompt_core("已有阅读进度，正在跳转", 4800, true);
+                // 分离字符串
+                let read_y = location.hash.split("#read=")[1];
+                read_y = read_y.split(":");
+                // 组合乘积，顺滑移动至坐标
+                window.scrollTo({top: Math.round(Number(read_y[0]) * Number(read_y[1] * Number(read_y[2] / wx / wy))), behavior: "smooth"});
+            } else {
+                // 从 sessionStorage 中获取
+                let read_y = sessionStorage.getItem(location.pathname + "_read_y") || "0:0:0";
+                read_y = read_y.split(":");
+                if (read_y[0] != "0") prompt_core("已有阅读进度，正在跳转", 4800, true);
+                window.scrollTo({top: Math.round(Number(read_y[0]) * Number(read_y[1] * Number(read_y[2] / wx / wy))), behavior: "smooth"});
+            }
+        }, 500);
+        window.onscroll = windowScroll;
+    </script>
+
+
+
+
+
+        </div>
+        <div id="css-loading">
+            <h3 class="text-center">加载中...</h3>
+        </div>
+        
+    </body>
+</html>

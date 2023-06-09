@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="UTF-8">
+    
+    <link rel="apple-touch-icon" sizes="76x76" href="/null">
+    <link rel="icon" type="image/png" href="/null">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    <title>笼城往事</title>
+    
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    
+    
+    <meta name="description" content="">
+    <meta name="author" content="SigiL">
+    <meta name="keywords" content="">
+    
+    <style>
+
+
+    
+    :root{
+        --shadow-color: rgba(0,0,0,0.2);
+        --sec-shadow: rgba(0,0,0,0.03);
+        --shadow-hover-color: rgba(0,0,0,0.28);
+        --first-text-color: #475b6d;
+        --second-text-color: #37475b;
+        --third-text-color: #858585;
+        --default-text-color: #505050;
+        --default-link-color: #007bff;
+        --link-color: #000000;
+        --second-link-color: #4F9BFA;
+        --code-color:rgba(27,31,35,.05);
+        --post-bkg-color: #fff;
+        --page-bkg-color: #f2f5f8;
+        --nav-a-hover-color: #3498db;
+        --post-sec-text-color: #718096;
+        --sec-bkg: #f2f5f8;
+        --color-mode: 'light';
+        --bkg-h: rgba(255,255,255,0.6);
+        --bkg-m: #e1e4e8;
+        --home-title-color: #4169E1;
+        --shadow: 0 4px 10px rgba(0,2,4,0.06),0 0 1px rgba(0,2,4,0.11);
+        --hr-color: #ddd;
+        --bg-t: #f4f4f4;
+        --nav-bkg: rgba(255,255,255,0.6);
+    }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-mode: 'dark';
+  }
+
+  :root:not([data-theme]) {
+    --first-text-color: hsla(0,0%,100%,0.92);
+    --second-text-color: hsla(0,0%,100%,0.86);
+    --third-text-color: #a7a9ad;
+    --default-text-color: #505050;
+    --default-link-color: #1589e9;
+    --link-color: #000000;
+    --second-link-color: #30a9de;
+    --post-bkg-color: #252d38;
+    --page-bkg-color: #181c27;
+    --nav-a-hover-color: #3498db;
+    --post-sec-text-color: #a7a9ad;
+    --sec-bkg: #364151;
+    --bkg-h: rgba(255,255,255,0.2);
+    --bkg-m: rgba(255,255,255,0.1);
+    --home-title-color: rgb(226, 82, 90);
+    --code-color:#3e4b5e;
+    --shadow: none;
+    --hr-color: #718096;
+    --bg-t: #364151;
+    --nav-bkg: rgba(13,17,23,0.6);
+  }
+}
+
+[data-theme='dark'] {
+    --shadow-color: rgba(0,0,0,0.2);
+    --shadow-hover-color: rgba(0,0,0,0.28);
+    --first-text-color: hsla(0,0%,100%,0.92);
+    --second-text-color: hsla(0,0%,100%,0.86);
+    --third-text-color: #a7a9ad;
+    --default-text-color: #505050;
+    --default-link-color: #1589e9;
+    --link-color: #000000;
+    --second-link-color: #30a9de;
+    --post-bkg-color: #252d38;
+    --page-bkg-color: #181c27;
+    --nav-a-hover-color: #3498db;
+    --post-sec-text-color: #a7a9ad;
+    --sec-bkg: #364151;
+    --bkg-h: rgba(255,255,255,0.2);
+    --bkg-m: rgba(255,255,255,0.1);
+    --home-title-color: rgb(226, 82, 90);
+    --code-color:#3e4b5e;
+    --shadow: none;
+    --hr-color: #718096;
+    --bg-t: #364151;
+    --nav-bkg: rgba(13,17,23,0.6);
+}
+
+</style>
+
+
+
+<style>
+#page-main,footer,.p-btn{
+    display: none;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+body {
+    background-color: var(--page-bkg-color);
+    color: var(--second-text-color);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    transition: all .3s;
+}
+a {
+    color: var(--default-link-color);
+    text-decoration: none;
+    background-color: transparent;
+}
+a:hover{
+    color: var(--second-link-color);
+}
+.main-content,.post-card-main{
+    margin: 30px;
+}
+
+
+
+@media (max-width: 410px){
+    .post-card-main{
+        max-width: 350px!important;
+    }
+}
+
+@media (max-width: 980px){
+    .post-card-main{
+        max-width: 520px!important;
+    }
+}
+
+
+@media (min-width: 780px){ 
+    h3{
+        font-size: 1.5rem;
+        line-height: 1.5em;
+    }
+}
+@media (min-width: 1280px){ 
+    h3{
+        font-size: 1.7rem;
+        line-height: 1.5em;
+    }
+}
+@media (min-width: 2096px){ 
+    h3{
+        font-size: 1.8rem;
+        line-height: 1.5em;
+    }
+}
+
+.text-center{
+    text-align: center!important;
+}
+.middle-center{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    height: 100%;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    height: 54px;
+    padding: 0 1.25rem;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    border-bottom: 1px solid var(--bkg-m);
+    background-color: var(--nav-bkg);
+    backdrop-filter: blur(4px);
+    transition: all .3s;
+}
+header .header__left, header .header__right {
+    display: flex;
+    align-items: center;
+    font-family: rubik,sans-serif,Varela Round;
+}
+header .header__left .logo__text {
+    font-size: 18px;
+    font-weight: 450;
+    padding: 14.5px 10px;
+    border-radius: 5px;
+    color: var(--second-text-color);
+}
+header .header__right .navbar__menus {
+    height: 54px;
+    padding: 0 0 0 15px;
+}
+header .header__right .button {
+    color: var(--second-text-color);
+}
+header .header__right .navbar__menus .navbar-menu {
+    display: inline-block;
+    align-items: center;
+    height: 54px;
+    padding: 0 10px;
+    font-size: 16px;
+    line-height: 54px;
+}
+header .header__right .dropdown-icon {
+    display: none;
+    height: 54px;
+    padding: 15px 10px;
+    border: 0;
+    background-color: transparent;
+}
+header .header__right .dropdown-menus {
+    line-height: 2rem;
+    animation: slide-in .15s ease 1;
+    display: none;
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    top: calc(54px + 10px);
+    border-radius: 6px;
+    padding: 24px;
+    background-color: var(--page-bkg-color);
+    border: 1px solid var(--bkg-m);
+    z-index: 9999;
+    justify-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+header .header__right #btn-search, header .header__right #btn-toggle-dark{
+    display: inline-block;
+    padding:  18px 10px;
+    height: 25px;
+}
+header .header__right #btn-dropdown{
+  display: inline-block;
+  padding:  13.5px 0;
+}
+header .header__right .dropdown-menus .dropdown-menu {
+    padding: 10px;
+    color: var(--second-text-color);
+}
+@media screen and (max-width: 764px){
+.navbar__menus {
+    display: none!important;
+}
+.dropdown-icon {
+    display: inline-block!important;
+}
+}
+.p-btn{
+    position: fixed;
+    bottom: 1.2rem;
+    right: 1.2rem;
+    contain: layout;
+}
+.toc-btn,.click-btn{
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    align-items: center;
+    margin-top: .5rem;
+    font-size: .75rem;
+    background-color: var(--sec-bkg);
+    display: block;
+    padding: 0.9rem;
+    box-shadow: 0 0.3rem 0.6rem rgba(48,55,66,.15);
+    border: none;
+    border-radius: 0.5rem;
+    line-height: 1;
+    color: var(--first-text-color);
+}
+.toc-link{
+    color: var(--second-text-color);
+}
+
+#css-loading h3{
+    font-weight: 500;
+    font-size: 1.4rem;
+    text-align: center;
+    position: fixed;
+    top: 200px;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    animation: cssLoad;
+    animation-delay: 0.3s;
+    -webkit-animation: cssLoad;
+    -webkit-animation-delay: 0.3s;
+}
+@keyframes cssLoad {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0.9;
+    }
+}
+
+
+.memorial {
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
+    filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); filter:gray;
+}
+
+
+    .post-copyright:after {
+        position: absolute;
+        color: #fff;
+        background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 496 512'%3E%3Cpath fill='gray' d='M245.8 214.9l-33.2 17.3c-9.4-19.6-25.2-20-27.4-20-22.2 0-33.3 14.6-33.3 43.9 0 23.5 9.2 43.8 33.3 43.8 14.4 0 24.6-7 30.5-21.3l30.6 15.5a73.2 73.2 0 01-65.1 39c-22.6 0-74-10.3-74-77 0-58.7 43-77 72.6-77 30.8-.1 52.7 11.9 66 35.8zm143 0l-32.7 17.3c-9.5-19.8-25.7-20-27.9-20-22.1 0-33.2 14.6-33.2 43.9 0 23.5 9.2 43.8 33.2 43.8 14.5 0 24.7-7 30.5-21.3l31 15.5c-2 3.8-21.3 39-65 39-22.7 0-74-9.9-74-77 0-58.7 43-77 72.6-77C354 179 376 191 389 214.8zM247.7 8C104.7 8 0 123 0 256c0 138.4 113.6 248 247.6 248C377.5 504 496 403 496 256 496 118 389.4 8 247.6 8zm.8 450.8c-112.5 0-203.7-93-203.7-202.8 0-105.5 85.5-203.3 203.8-203.3A201.7 201.7 0 01451.3 256c0 121.7-99.7 202.9-202.9 202.9z'/%3E%3C/svg%3E");
+        content: ' ';
+        height: 10rem;
+        width: 10rem;
+        right: -2rem;
+        top: -2rem;
+        opacity: .1;
+    }
+
+</style>
+
+    
+
+    
+    
+    <link rel="stylesheet" href="/css/main.css" media="print" onload="this.media='all';this.onload=null">
+    <noscript>
+        <link rel="stylesheet" href="/css/main.css">
+    </noscript>
+
+    
+    <script src="/js/main.js"></script>
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+    <body>
+        <header>
+            
+<div class="header__left">
+	<a href="/" class="button"><span class="logo__text">OUATIS</span></a>
+</div>
+<div class="header__right">
+	<div class="navbar__menus">
+		
+		<a href="/" class="button">
+			<div class="navbar-menu">首页</div>
+		</a>
+		
+		<a href="/archives/" class="button">
+			<div class="navbar-menu">归档</div>
+		</a>
+		
+		<a href="/categories/" class="button">
+			<div class="navbar-menu">分类</div>
+		</a>
+		
+		<a href="/tags/" class="button">
+			<div class="navbar-menu">标签</div>
+		</a>
+		
+	</div>
+	
+	<a href="/search/" class="button">
+		<div id="btn-search">
+			<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1024 1024" width="24" height="24" fill="currentColor"
+				stroke="currentColor" stroke-width="32">
+				<path
+					d="M192 448c0-141.152 114.848-256 256-256s256 114.848 256 256-114.848 256-256 256-256-114.848-256-256z m710.624 409.376l-206.88-206.88A318.784 318.784 0 0 0 768 448c0-176.736-143.264-320-320-320S128 271.264 128 448s143.264 320 320 320a318.784 318.784 0 0 0 202.496-72.256l206.88 206.88 45.248-45.248z">
+				</path>
+			</svg>
+		</div>
+	</a>
+	
+	<a href="javaScript:void(0);" class="button" id="btn-toggle-dark">
+		<div>
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none"
+				stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+			</svg>
+		</div>
+	</a>
+	<a href="javaScript:void(0);" class="dropdown-icon button">
+		<div id="btn-dropdown">
+			<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1024 1024" width="24" height="24" fill="currentColor"
+				stroke="currentColor" stroke-width="32" stroke-linecap="round">
+				<path
+					d="M903.43 561.52H148.8c-13.25 0-24-10.75-24-24s10.75-24 24-24h754.63c13.25 0 24 10.75 24 24s-10.75 24-24 24zM903.43 204.31H148.8c-13.25 0-24-10.75-24-24s10.75-24 24-24h754.63c13.25 0 24 10.75 24 24s-10.75 24-24 24zM903.43 918.73H148.8c-13.25 0-24-10.75-24-24s10.75-24 24-24h754.63c13.25 0 24 10.75 24 24s-10.75 24-24 24z"
+					fill="currentColor"></path>
+			</svg>
+		</div>
+	</a>
+	<div class="dropdown-menus" id="dropdown-menus">
+		
+		<a href="/" class="dropdown-menu button">首页</a>
+		<br>
+		
+		<a href="/archives/" class="dropdown-menu button">归档</a>
+		<br>
+		
+		<a href="/categories/" class="dropdown-menu button">分类</a>
+		<br>
+		
+		<a href="/tags/" class="dropdown-menu button">标签</a>
+		<br>
+		
+	</div>
+</div>
+
+        </header>
+        <div id="top"></div>
+        <div id="page-main" class="main-content">
+        <div class="mg-top">
+            
+
+<div class="post-card-center">
+<div class="post-card-main">
+
+    
+      <div class="index-card">
+        
+        <article class="index-card-info">
+          <h3 class="index-header">
+            <a href="/2017/05/mo-li-niu-2017.html">
+            
+            魔力牛2017</a>
+          </h3>
+          <p class="index-excerpt">
+              
+              
+                
+              
+              魔力牛（Peter Molyneux）来中国卖手游，高佬去采访，找我要了一部分采访提纲。很难得的机会，我趁机穿插一些自己真正关心、真正感兴趣的问题。
+2015 年以后，魔力牛几乎不接受媒体采访，到 2016 年，狮头工作室又解散了，都是最近两年发生的大事，所以想围绕这两点，听听他愿意说些什么。问答都不算尽如人意，所以只留三个。这次采访也是魔力牛第一次知道中国玩家叫他“魔力牛”。
+您如何看待狮头工作
+          </p>
+          <div class="index-btm post-metas">
+            
+              
+                <time datetime="2017-05-29 00:00" pubdate>
+                  2017-05-29
+                </time>
+              
+            
+            
+              
+                
+                  <span class="p-dot"></span><a href="/categories/%E4%B8%9A%E5%A4%96/">业外</a>
+                
+              
+            
+          </div>
+        </article>
+      </div>
+    
+  
+    
+      <div class="index-card">
+        
+        <article class="index-card-info">
+          <h3 class="index-header">
+            <a href="/2017/02/ming-pian-tou-nao-nei-xin-kao.html">
+            
+            名片头脑内心考</a>
+          </h3>
+          <p class="index-excerpt">
+              
+              
+                
+              
+              2005 年 3 月 10 日当地时间 10 点 30 分，旧金山莫斯克尼会议中心，游戏开发者大会，[[岩田聪]]“玩家之心”演讲。
+
+On my business card, I am a corporate president. In my mind, I am a game developer. But in my heart, I am a gamer.
+
+几乎是岩田先生最著名的一句话。由
+          </p>
+          <div class="index-btm post-metas">
+            
+              
+                <time datetime="2017-02-28 00:00" pubdate>
+                  2017-02-28
+                </time>
+              
+            
+            
+              
+                
+                  <span class="p-dot"></span><a href="/categories/%E4%B8%9A%E5%A4%96/">业外</a>
+                
+              
+            
+          </div>
+        </article>
+      </div>
+    
+  
+    
+      <div class="index-card">
+        
+        <article class="index-card-info">
+          <h3 class="index-header">
+            <a href="/2016/12/austin-jorgensen-2016.html">
+            
+            奥斯汀约根森2016</a>
+          </h3>
+          <p class="index-excerpt">
+              
+              
+                
+              
+              1《怒之铁拳》的男主角是个猛男，会自由搏击，又爱打游戏。奥斯汀约根森（Austin Jorgensen）打小的心愿也是当猛男。十五岁起，他就开始练武。之前也学过跆拳道，不喜欢。附近有家武术表演俱乐部，就去了那，一去七八年。后来他就成了一名武术表演艺术家。
+约根森的武术生涯很成功，拿过四个武术表演比赛的世界冠军，但他既没去打坏蛋，也没去挫败辛迪加。他只是在各种宾馆舞厅里表演。这份工作很累，报酬谈不上
+          </p>
+          <div class="index-btm post-metas">
+            
+              
+                <time datetime="2016-12-20 00:00" pubdate>
+                  2016-12-20
+                </time>
+              
+            
+            
+              
+                
+                  <span class="p-dot"></span><a href="/categories/%E4%B8%9A%E5%A4%96/">业外</a>
+                
+              
+            
+          </div>
+        </article>
+      </div>
+    
+  
+    
+      <div class="index-card">
+        
+        <article class="index-card-info">
+          <h3 class="index-header">
+            <a href="/2016/12/gong-qi-wen-shang-tian.html">
+            
+            宫崎英高问上田文人</a>
+          </h3>
+          <p class="index-excerpt">
+              
+              
+                
+              
+              “食人大鹫”发售后，《滚石》杂志旗下游戏频道，Glixel，邀请宫崎问上田任何事。这显然是一次隔空问答，但也确实是他们之间的第一次公开对谈。这家外媒如今已被解散，原文网页无法显示，但我保存了下来。
+宫崎问上田Glixel : 你的作品深受上田文人影响，如果能向他问任何事，你会问什么？
+宫崎：哎呀，光是想想就搞得我好紧张。了解我的人都知道，我是上田氏的铁粉。我肯定无法避免会从一个粉丝的角度来问问题，
+          </p>
+          <div class="index-btm post-metas">
+            
+              
+                <time datetime="2016-12-09 00:00" pubdate>
+                  2016-12-09
+                </time>
+              
+            
+            
+              
+                
+                  <span class="p-dot"></span><a href="/categories/%E4%B8%9A%E5%A4%96/">业外</a>
+                
+              
+            
+          </div>
+        </article>
+      </div>
+    
+  
+    
+      <div class="index-card">
+        
+        <article class="index-card-info">
+          <h3 class="index-header">
+            <a href="/2016/12/zui-hou-de-shou-hu-zhe.html">
+            
+            《最后的守护者》</a>
+          </h3>
+          <p class="index-excerpt">
+              
+              
+                
+              
+              上田文人说他要做一款少年与大鹫的游戏。你知道这款游戏是什么样子的。应该说，你早就知道这款游戏是什么样子的。只要你了解 ICO、了解《汪达与巨像》、了解上田，这 7 年时间足够你猜到这款游戏是什么样子。少年与食人的大鹫特里克，就像男孩 ICO 与女孩 Yorda，也像汪达与他的爱马阿格罗。你知道少年会同大鹫发生羁绊，知道他们从生分、甚至厌恶，再到妥协、合作，会历经重重冒险，越来越默契，越来越心有灵犀
+          </p>
+          <div class="index-btm post-metas">
+            
+              
+                <time datetime="2016-12-06 00:00" pubdate>
+                  2016-12-06
+                </time>
+              
+            
+            
+              
+                
+                  <span class="p-dot"></span><a href="/categories/%E4%BC%98%E7%A7%80%E8%AF%BB%E8%80%85%E7%9A%84%E5%9B%9B%E4%B8%AA%E6%9D%A1%E4%BB%B6/">优秀读者的四个条件</a>
+                
+              
+            
+          </div>
+        </article>
+      </div>
+    
+  
+    
+      <div class="index-card">
+        
+        <article class="index-card-info">
+          <h3 class="index-header">
+            <a href="/2016/09/dong-jing-sao-mu-ji.html">
+            
+            东京扫墓记</a>
+          </h3>
+          <p class="index-excerpt">
+              
+              
+                
+              
+              1夜晚在歌舞伎町附近酒店入住，这里和影视动漫游戏里一模一样，尤其是深夜的样子。形形色色来历不明的人四处游荡，也许都不过是观光客。酒店房间很小，但相当精致，东西一应俱全，马桶会喷水。打扫房间的是个菲律宾女佣，日语还没我好，但沟通十分顺畅，无非是对答一些从哪儿来、到哪儿去的问题。
+白天得了闲，就脱离队伍，准备前去扫墓。特意穿过日间的歌舞伎町，出来又见一条商业街，在绿灯时，行人挤满全向的十字路口人行道。
+          </p>
+          <div class="index-btm post-metas">
+            
+              
+                <time datetime="2016-09-17 00:00" pubdate>
+                  2016-09-17
+                </time>
+              
+            
+            
+              
+                
+                  <span class="p-dot"></span><a href="/categories/%E7%BC%AE%E5%86%99%E7%9B%92/">缮写盒</a>
+                
+              
+            
+          </div>
+        </article>
+      </div>
+    
+  
+    
+      <div class="index-card">
+        
+        <article class="index-card-info">
+          <h3 class="index-header">
+            <a href="/2016/08/shui-xia-lie-nong.html">
+            
+            水下列侬</a>
+          </h3>
+          <p class="index-excerpt">
+              
+              
+                
+              
+              四人参与录制的最后一张专辑中，I Want You (She’s So Heavy) 本来时长在 8 分钟左右，被列侬要求剪到 7 分 40 多秒，戛然而止。歌词一共十来个词，标题占了一大半。一般摇滚歌曲时长越长，歌曲越繁复，所以这首歌很另类。列侬对此解释过，人溺水时，不会说什么“如果有人注意到我溺水了并且过来帮忙那我会很感激”，而只是尖叫。
+
+I want youI want you so ba
+          </p>
+          <div class="index-btm post-metas">
+            
+              
+                <time datetime="2016-08-20 00:00" pubdate>
+                  2016-08-20
+                </time>
+              
+            
+            
+              
+                
+                  <span class="p-dot"></span><a href="/categories/%E7%BC%AE%E5%86%99%E7%9B%92/">缮写盒</a>
+                
+              
+            
+          </div>
+        </article>
+      </div>
+    
+  
+    
+      <div class="index-card">
+        
+        <article class="index-card-info">
+          <h3 class="index-header">
+            <a href="/2016/06/luo-jie-yi-an-hou.html">
+            
+            《罗杰疑案》后的推理小说阅读顺序</a>
+          </h3>
+          <p class="index-excerpt">
+              
+              
+                
+              
+              本月据说是《罗杰疑案》（1926）出版九十周年。这本书是天才之作。但我认为，在它出版后至少几十年里，“叙述者即凶手”的诡计都属于屠龙技。你看，六个字泄了一本书的底，这是读推理的最大灾难。“叙述性诡计”一经发现，便会大幅降低一本推理小说、乃至一批推理小说的阅读体验。尤其是第一人称凶手型叙诡，最为敏感，完全是不能说的秘密。任何一名推理爱好者，一旦通过一本叙诡获知了这种技巧，那么他小小的灰色细胞就会被激
+          </p>
+          <div class="index-btm post-metas">
+            
+              
+                <time datetime="2016-06-01 00:00" pubdate>
+                  2016-06-01
+                </time>
+              
+            
+            
+              
+                
+                  <span class="p-dot"></span><a href="/categories/%E5%BA%B8%E8%A7%81%E7%AC%94%E8%AE%B0/">庸见笔记</a>
+                
+              
+            
+          </div>
+        </article>
+      </div>
+    
+  
+    
+      <div class="index-card">
+        
+        <article class="index-card-info">
+          <h3 class="index-header">
+            <a href="/2016/05/bao-fa-li-fu-ren.html">
+            
+            如何写《包法利夫人》</a>
+          </h3>
+          <p class="index-excerpt">
+              
+              
+                
+              
+              客观，但是包法利夫人就是我“Madame Bovary, c’est moi”，据说这个句式来自塞万提斯的遗言，有人问他堂吉诃德的原型是谁，他竟说“就是我”。在十九世纪，普通读者乍一听说艾玛就是福楼拜，恐怕第一反应也会是：文豪又作惊人之语。毕竟福楼拜的文体关键词，都是一些从“客观”衍生而来的词语，恰恰处于“就是我”的对立面。
+这些词：绝对客观、纯客观、客观性艺术、客观的描写（Le Style Im
+          </p>
+          <div class="index-btm post-metas">
+            
+              
+                <time datetime="2016-05-04 00:00" pubdate>
+                  2016-05-04
+                </time>
+              
+            
+            
+              
+                
+                  <span class="p-dot"></span><a href="/categories/%E9%87%8D%E8%AF%BB%E3%80%8A%E5%8C%85%E6%B3%95%E5%88%A9%E5%A4%AB%E4%BA%BA%E3%80%8B/">重读《包法利夫人》</a>
+                
+              
+            
+          </div>
+        </article>
+      </div>
+    
+  
+    
+      <div class="index-card">
+        
+        <article class="index-card-info">
+          <h3 class="index-header">
+            <a href="/2016/05/ma-bian-zhu-ti.html">
+            
+            马鞭主题</a>
+          </h3>
+          <p class="index-excerpt">
+              
+              
+                
+              
+              福楼拜是个设计师，他设计了诸多主题，例如“马”“神甫石膏像”“声音”“三个医生”等。马的主题在《文学讲稿》中已经明确。但当时我读了三遍都没有注意到，不妨说，这是一个庞大的主题，马、骑马、马车、马蹄足、马鞭，等等，随处可见反而无迹可寻，每一种都可以进一步细化。
+其中，马鞭主题无疑是最为清晰的。如果书中还存在一个“[[礼物或信物主题]]”（这也是一个大主题），那马鞭与后面的雪茄烟匣也肯定是其中最重要的
+          </p>
+          <div class="index-btm post-metas">
+            
+              
+                <time datetime="2016-05-03 00:00" pubdate>
+                  2016-05-03
+                </time>
+              
+            
+            
+              
+                
+                  <span class="p-dot"></span><a href="/categories/%E9%87%8D%E8%AF%BB%E3%80%8A%E5%8C%85%E6%B3%95%E5%88%A9%E5%A4%AB%E4%BA%BA%E3%80%8B/">重读《包法利夫人》</a>
+                
+              
+            
+          </div>
+        </article>
+      </div>
+    
+  
+</div>
+</div>
+
+    <nav aria-label="navigation">
+      <span class="pagination" id="pagination">
+        <a class="extend prev" rel="prev" href="/page/4/">&lt;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/6/">&gt;</a>
+      </span>
+    </nav>
+
+        </div>
+        
+<footer class="text-center">
+    
+    
+    
+    
+    
+    <p>&copy;  2012 - 2023&nbsp;&nbsp;Theme Miracle</p>
+    
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme by <a href="https://github.com/oCoke/hexo-theme-miracle" target="_blank">Miracle</a></p>
+    
+    
+</footer>
+
+<div class="p-btn">
+    
+    
+    <a href="javascript:window.scrollTo({top:0,behavior:'smooth'});" class="click-btn">
+      <i id="i-up"></i>
+    </a>
+</div>
+
+<!-- SCRIPTS -->
+
+
+
+
+
+
+<script>
+    document.getElementById("btn-dropdown").addEventListener('click', () => {
+      toggleClass("#dropdown-menus","display-inline");
+    });
+    console.log('\n' + ' %c Powered by Hexo Theme Miracle ' + ' %c https://github.com/hifun-team/hexo-theme-miracle ' + '\n' + '\n', 'color: #fff; background: #4F9BFA; padding:5px 0;', 'background: #FFF; padding:5px 0;');
+
+    
+
+    
+  /* 小彩蛋: 饮茶先啦 */
+  setTimeout(() => {
+    var time = new Date();
+    if (time.getHours() == 15) {
+      let comment = document.createComment(' 三点几嚟！饮茶先啦！ ');
+      document.body.insertBefore(comment, document.getElementsByTagName('header')[0]);
+    }
+  },1);
+    
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+        <div id="css-loading">
+            <h3 class="text-center">加载中...</h3>
+        </div>
+        
+    </body>
+</html>

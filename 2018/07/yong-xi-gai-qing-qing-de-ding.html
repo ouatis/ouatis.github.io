@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="UTF-8">
+    
+    <link rel="apple-touch-icon" sizes="76x76" href="/null">
+    <link rel="icon" type="image/png" href="/null">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    <title>用膝盖轻轻地顶了他一下 - 笼城往事</title>
+    
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    
+    
+    <meta name="description" content="">
+    <meta name="author" content="SigiL">
+    <meta name="keywords" content="">
+    <meta property="og:title" content="用膝盖轻轻地顶了他一下"/>
+    <style>
+
+
+    
+    :root{
+        --shadow-color: rgba(0,0,0,0.2);
+        --sec-shadow: rgba(0,0,0,0.03);
+        --shadow-hover-color: rgba(0,0,0,0.28);
+        --first-text-color: #475b6d;
+        --second-text-color: #37475b;
+        --third-text-color: #858585;
+        --default-text-color: #505050;
+        --default-link-color: #007bff;
+        --link-color: #000000;
+        --second-link-color: #4F9BFA;
+        --code-color:rgba(27,31,35,.05);
+        --post-bkg-color: #fff;
+        --page-bkg-color: #f2f5f8;
+        --nav-a-hover-color: #3498db;
+        --post-sec-text-color: #718096;
+        --sec-bkg: #f2f5f8;
+        --color-mode: 'light';
+        --bkg-h: rgba(255,255,255,0.6);
+        --bkg-m: #e1e4e8;
+        --home-title-color: #4169E1;
+        --shadow: 0 4px 10px rgba(0,2,4,0.06),0 0 1px rgba(0,2,4,0.11);
+        --hr-color: #ddd;
+        --bg-t: #f4f4f4;
+        --nav-bkg: rgba(255,255,255,0.6);
+    }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-mode: 'dark';
+  }
+
+  :root:not([data-theme]) {
+    --first-text-color: hsla(0,0%,100%,0.92);
+    --second-text-color: hsla(0,0%,100%,0.86);
+    --third-text-color: #a7a9ad;
+    --default-text-color: #505050;
+    --default-link-color: #1589e9;
+    --link-color: #000000;
+    --second-link-color: #30a9de;
+    --post-bkg-color: #252d38;
+    --page-bkg-color: #181c27;
+    --nav-a-hover-color: #3498db;
+    --post-sec-text-color: #a7a9ad;
+    --sec-bkg: #364151;
+    --bkg-h: rgba(255,255,255,0.2);
+    --bkg-m: rgba(255,255,255,0.1);
+    --home-title-color: rgb(226, 82, 90);
+    --code-color:#3e4b5e;
+    --shadow: none;
+    --hr-color: #718096;
+    --bg-t: #364151;
+    --nav-bkg: rgba(13,17,23,0.6);
+  }
+}
+
+[data-theme='dark'] {
+    --shadow-color: rgba(0,0,0,0.2);
+    --shadow-hover-color: rgba(0,0,0,0.28);
+    --first-text-color: hsla(0,0%,100%,0.92);
+    --second-text-color: hsla(0,0%,100%,0.86);
+    --third-text-color: #a7a9ad;
+    --default-text-color: #505050;
+    --default-link-color: #1589e9;
+    --link-color: #000000;
+    --second-link-color: #30a9de;
+    --post-bkg-color: #252d38;
+    --page-bkg-color: #181c27;
+    --nav-a-hover-color: #3498db;
+    --post-sec-text-color: #a7a9ad;
+    --sec-bkg: #364151;
+    --bkg-h: rgba(255,255,255,0.2);
+    --bkg-m: rgba(255,255,255,0.1);
+    --home-title-color: rgb(226, 82, 90);
+    --code-color:#3e4b5e;
+    --shadow: none;
+    --hr-color: #718096;
+    --bg-t: #364151;
+    --nav-bkg: rgba(13,17,23,0.6);
+}
+
+</style>
+
+
+
+<style>
+#page-main,footer,.p-btn{
+    display: none;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+body {
+    background-color: var(--page-bkg-color);
+    color: var(--second-text-color);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    transition: all .3s;
+}
+a {
+    color: var(--default-link-color);
+    text-decoration: none;
+    background-color: transparent;
+}
+a:hover{
+    color: var(--second-link-color);
+}
+.main-content,.post-card-main{
+    margin: 30px;
+}
+
+
+
+@media (max-width: 410px){
+    .post-card-main{
+        max-width: 350px!important;
+    }
+}
+
+@media (max-width: 980px){
+    .post-card-main{
+        max-width: 520px!important;
+    }
+}
+
+
+@media (min-width: 780px){ 
+    h3{
+        font-size: 1.5rem;
+        line-height: 1.5em;
+    }
+}
+@media (min-width: 1280px){ 
+    h3{
+        font-size: 1.7rem;
+        line-height: 1.5em;
+    }
+}
+@media (min-width: 2096px){ 
+    h3{
+        font-size: 1.8rem;
+        line-height: 1.5em;
+    }
+}
+
+.text-center{
+    text-align: center!important;
+}
+.middle-center{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    height: 100%;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    height: 54px;
+    padding: 0 1.25rem;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    border-bottom: 1px solid var(--bkg-m);
+    background-color: var(--nav-bkg);
+    backdrop-filter: blur(4px);
+    transition: all .3s;
+}
+header .header__left, header .header__right {
+    display: flex;
+    align-items: center;
+    font-family: rubik,sans-serif,Varela Round;
+}
+header .header__left .logo__text {
+    font-size: 18px;
+    font-weight: 450;
+    padding: 14.5px 10px;
+    border-radius: 5px;
+    color: var(--second-text-color);
+}
+header .header__right .navbar__menus {
+    height: 54px;
+    padding: 0 0 0 15px;
+}
+header .header__right .button {
+    color: var(--second-text-color);
+}
+header .header__right .navbar__menus .navbar-menu {
+    display: inline-block;
+    align-items: center;
+    height: 54px;
+    padding: 0 10px;
+    font-size: 16px;
+    line-height: 54px;
+}
+header .header__right .dropdown-icon {
+    display: none;
+    height: 54px;
+    padding: 15px 10px;
+    border: 0;
+    background-color: transparent;
+}
+header .header__right .dropdown-menus {
+    line-height: 2rem;
+    animation: slide-in .15s ease 1;
+    display: none;
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    top: calc(54px + 10px);
+    border-radius: 6px;
+    padding: 24px;
+    background-color: var(--page-bkg-color);
+    border: 1px solid var(--bkg-m);
+    z-index: 9999;
+    justify-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+header .header__right #btn-search, header .header__right #btn-toggle-dark{
+    display: inline-block;
+    padding:  18px 10px;
+    height: 25px;
+}
+header .header__right #btn-dropdown{
+  display: inline-block;
+  padding:  13.5px 0;
+}
+header .header__right .dropdown-menus .dropdown-menu {
+    padding: 10px;
+    color: var(--second-text-color);
+}
+@media screen and (max-width: 764px){
+.navbar__menus {
+    display: none!important;
+}
+.dropdown-icon {
+    display: inline-block!important;
+}
+}
+.p-btn{
+    position: fixed;
+    bottom: 1.2rem;
+    right: 1.2rem;
+    contain: layout;
+}
+.toc-btn,.click-btn{
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    align-items: center;
+    margin-top: .5rem;
+    font-size: .75rem;
+    background-color: var(--sec-bkg);
+    display: block;
+    padding: 0.9rem;
+    box-shadow: 0 0.3rem 0.6rem rgba(48,55,66,.15);
+    border: none;
+    border-radius: 0.5rem;
+    line-height: 1;
+    color: var(--first-text-color);
+}
+.toc-link{
+    color: var(--second-text-color);
+}
+
+#css-loading h3{
+    font-weight: 500;
+    font-size: 1.4rem;
+    text-align: center;
+    position: fixed;
+    top: 200px;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    animation: cssLoad;
+    animation-delay: 0.3s;
+    -webkit-animation: cssLoad;
+    -webkit-animation-delay: 0.3s;
+}
+@keyframes cssLoad {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0.9;
+    }
+}
+
+
+.memorial {
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
+    filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); filter:gray;
+}
+
+
+    .post-copyright:after {
+        position: absolute;
+        color: #fff;
+        background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 496 512'%3E%3Cpath fill='gray' d='M245.8 214.9l-33.2 17.3c-9.4-19.6-25.2-20-27.4-20-22.2 0-33.3 14.6-33.3 43.9 0 23.5 9.2 43.8 33.3 43.8 14.4 0 24.6-7 30.5-21.3l30.6 15.5a73.2 73.2 0 01-65.1 39c-22.6 0-74-10.3-74-77 0-58.7 43-77 72.6-77 30.8-.1 52.7 11.9 66 35.8zm143 0l-32.7 17.3c-9.5-19.8-25.7-20-27.9-20-22.1 0-33.2 14.6-33.2 43.9 0 23.5 9.2 43.8 33.2 43.8 14.5 0 24.7-7 30.5-21.3l31 15.5c-2 3.8-21.3 39-65 39-22.7 0-74-9.9-74-77 0-58.7 43-77 72.6-77C354 179 376 191 389 214.8zM247.7 8C104.7 8 0 123 0 256c0 138.4 113.6 248 247.6 248C377.5 504 496 403 496 256 496 118 389.4 8 247.6 8zm.8 450.8c-112.5 0-203.7-93-203.7-202.8 0-105.5 85.5-203.3 203.8-203.3A201.7 201.7 0 01451.3 256c0 121.7-99.7 202.9-202.9 202.9z'/%3E%3C/svg%3E");
+        content: ' ';
+        height: 10rem;
+        width: 10rem;
+        right: -2rem;
+        top: -2rem;
+        opacity: .1;
+    }
+
+</style>
+
+    
+
+    
+        <!--
+        <link rel="stylesheet" href="/css/page.css" media="print"
+            onload="this.media='all';this.onload=null">
+        <noscript>-->
+            <link rel="stylesheet" href="/css/page.css">
+        <!--</noscript>-->
+    
+    
+    <link rel="stylesheet" href="/css/main.css" media="print" onload="this.media='all';this.onload=null">
+    <noscript>
+        <link rel="stylesheet" href="/css/main.css">
+    </noscript>
+
+    
+    <script src="/js/main.js"></script>
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+    <body>
+        <header>
+            
+<div class="header__left">
+	<a href="/" class="button"><span class="logo__text">OUATIS</span></a>
+</div>
+<div class="header__right">
+	<div class="navbar__menus">
+		
+		<a href="/" class="button">
+			<div class="navbar-menu">首页</div>
+		</a>
+		
+		<a href="/archives/" class="button">
+			<div class="navbar-menu">归档</div>
+		</a>
+		
+		<a href="/categories/" class="button">
+			<div class="navbar-menu">分类</div>
+		</a>
+		
+		<a href="/tags/" class="button">
+			<div class="navbar-menu">标签</div>
+		</a>
+		
+	</div>
+	
+	<a href="/search/" class="button">
+		<div id="btn-search">
+			<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1024 1024" width="24" height="24" fill="currentColor"
+				stroke="currentColor" stroke-width="32">
+				<path
+					d="M192 448c0-141.152 114.848-256 256-256s256 114.848 256 256-114.848 256-256 256-256-114.848-256-256z m710.624 409.376l-206.88-206.88A318.784 318.784 0 0 0 768 448c0-176.736-143.264-320-320-320S128 271.264 128 448s143.264 320 320 320a318.784 318.784 0 0 0 202.496-72.256l206.88 206.88 45.248-45.248z">
+				</path>
+			</svg>
+		</div>
+	</a>
+	
+	<a href="javaScript:void(0);" class="button" id="btn-toggle-dark">
+		<div>
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none"
+				stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+			</svg>
+		</div>
+	</a>
+	<a href="javaScript:void(0);" class="dropdown-icon button">
+		<div id="btn-dropdown">
+			<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1024 1024" width="24" height="24" fill="currentColor"
+				stroke="currentColor" stroke-width="32" stroke-linecap="round">
+				<path
+					d="M903.43 561.52H148.8c-13.25 0-24-10.75-24-24s10.75-24 24-24h754.63c13.25 0 24 10.75 24 24s-10.75 24-24 24zM903.43 204.31H148.8c-13.25 0-24-10.75-24-24s10.75-24 24-24h754.63c13.25 0 24 10.75 24 24s-10.75 24-24 24zM903.43 918.73H148.8c-13.25 0-24-10.75-24-24s10.75-24 24-24h754.63c13.25 0 24 10.75 24 24s-10.75 24-24 24z"
+					fill="currentColor"></path>
+			</svg>
+		</div>
+	</a>
+	<div class="dropdown-menus" id="dropdown-menus">
+		
+		<a href="/" class="dropdown-menu button">首页</a>
+		<br>
+		
+		<a href="/archives/" class="dropdown-menu button">归档</a>
+		<br>
+		
+		<a href="/categories/" class="dropdown-menu button">分类</a>
+		<br>
+		
+		<a href="/tags/" class="dropdown-menu button">标签</a>
+		<br>
+		
+	</div>
+</div>
+
+        </header>
+        <div id="top"></div>
+        <div id="page-main" class="main-content">
+        <div class="mg-top">
+            
+
+<article class="page">
+<div id="post-meta-m">
+    <div class="post-meta" id="post-meta">
+  <h3>用膝盖轻轻地顶了他一下</h3>
+    
+      <span class="post-meta-label">
+        SigiL
+      </span>
+    
+    
+      <span class="post-meta-label">
+        <span class="p-dot"></span>
+        <time datetime="2018-07-20 00:00" pubdate>
+          2018-07-20
+        </time>
+      </span>
+    
+    
+      
+      <span class="post-meta">
+        <span class="p-dot"></span>
+        共 4.7k 字
+      </span>
+    
+    
+    
+  </div>
+  
+</div>
+<div class="article-m">
+  <div class="post-toc">
+    
+      
+    
+  </div>
+    <div id="article">
+      <div id="post-content" class="markdown-body textretty">
+        <p>在写完“[[我的教育在某些方面大大地损害了我]]”后，卡夫卡短暂地记录了一小段新的主题，与男女有关。</p>
+<blockquote>
+<p>有人说，而我们也乐于相信，处在危险中的男人就是对漂亮的陌生女人也不屑一顾；如果他们在从失火的剧院里逃出来的时候遇到这些女人们的阻碍，他们就会用头和手、用膝和肘将她们推到墙边。这个时候，我们那些健谈的女人们顿时鸦雀无声，她们无边无际的言谈被粗暴地呵断，原来舒展的眉毛抬得高高的，呼吸带动的大腿和臀部的运动也骤然停止，因恐惧而自然闭上的嘴巴里流进了比平时更多的空气，两个腮帮子看上去微微鼓起。</p>
+</blockquote>
+<p>紧接着，他就开始第三个主题的描写。新主题可以称为“用膝盖轻轻地顶了他一下”，篇幅很长，是对话体，看得人昏昏沉沉。阅读这几段文字必须是一种理性的工作。</p>
+<p>“我”和“他”两个人讨论了其中一个人是否想睡觉，以及另一个人对于在教堂前经历的回忆。他们谈到了“上面”和“下面”的区别，以及在“必要的礼仪的建筑”下的限制，同时暗示了可能发生的某些事情。他们提到了一个门旁佣人的脸，事情仿佛与隐私和监视有关。开头极其晦涩难懂，但中段部分逐渐明晰。</p>
+<p>他们似乎是在谈论一个单身汉在社会中的处境和感受，他和社会的关系，以及这种关系可能带来的危险。这个单身汉想要离开社会、“上楼梯”，他觉得社会没有给他他想要的东西，所以他必须用强力去寻找他失去的东西。他的生命是自我残害的生命，他失去了很多东西，但仍在努力保持自己的位置，不想失去更多。</p>
+<p>“我”认为这种处境是由于缺乏核心、职业、爱情、家庭、年金等因素所致。且“我”和单身汉没有两样。但是单身汉不曾经历过“我”的青年时代，也没有体验过那个时代所带来的一切。单身汉的现在只是眼前这一刻，这一刻充满了痛苦和苦难，他没有未来，唯独眼前的生活需要他维持。他仿佛不在人类之中，他只是世界上某个被遗忘的存在，和其他被遗忘的人一样，注定要继续忍受痛苦和艰辛的生活。</p>
+<p>到后面我实在是看不下去了。文字意味模糊，似乎有对社会现实的批判和探讨，我只能自行解读和想象。</p>
+<blockquote>
+<p>“你，”我说，并用膝盖轻轻地顶了他一下（在突然讲话的时候，从嘴唇喷出来的少许唾液——不好的标记——飞向我），“没有睡着！”<br>“我没睡着，”他回答，并在睁开眼睛的时候摇摇头，“我要是睡着了，我怎么能看护你呢？而我能不这样吗？你当时在教堂前并没有因此紧紧抓住我呀？是呀，那已经很久了，我们知道这个，就把表放在口袋里吧。”<br>“现在已经太晚了。”我说道。我必须作出一点儿微笑，为了掩饰它，我努力地朝房子里看去。<br>“这真使你这么高兴么？你就喜欢上去，非常喜欢？可是你说说，我不会吃了你的。看，要是你认为上面比下面这儿对你更好，那就马上上去，马上，不要顾我。我的看法，就是一个随便行人的看法，就是，你不一会儿将又要下来，而且那会很不错的。如果一个人随便怎样站在这里，你绝不会看到他的脸，他却挽起你的胳膊，在附近的一家酒店里用葡萄酒使你振奋起来，然后把你领到他的房间，这个房间虽是那么简陋，但倒是有几块玻璃将自己与夜色隔开，以这种看法，你暂且可以吹吹口哨。这是千真万确的，我可以把你跟我说过的这些再跟别人说说，这里下面对我们不好。是的，对我们来说甚至是糟糕透顶，但如今再也不会有人帮助我了，虽然我这里处在排水沟的地方，雨水涌积，或者我在上面枝形吊灯之下用同样的嘴巴去饮香槟酒，它对我没有区别。另外，我在这两件事情之间真的没有什么选择。是啊，对我来说，还从没发生过那种让人注意的事情，这又怎么能在对我来说必要的礼仪的建筑下发生呢？在这种礼仪下我只能继续地爬行，比一只臭虫好不了多少。可是你，谁知道，什么所有的东西都在你肚子里藏着。你有勇气，至少你相信有这个勇气，试一试吧，你究竟敢于做什么——人们常常是从门旁佣人的脸上已经看清了自己，要是他注意的话。”<br>“要是我真的肯定知道你对我是真诚的话，我就早在上面待着了。我怎么只能说出你是否对我真诚的话来呢？你现在看着我，好像我就是一个小孩子，他什么也帮不了我，他只能把事情弄得更坏。但也许你想把事情弄得更坏。在这种情况下，我再也忍受不了街上的空气，这样，我就已经属于上面的社会了。要是我留神的话，这会使我的咽喉发痒，果不其然，我咳嗽了。你究竟知道不知道上面将会是怎样的呢？在我拖着另一只脚之前，我将要踏进大厅的那只脚已经变了。”<br>“你是对的，我对你不是真诚的。”<br>“我是想离开，想上楼梯，即使一定要来个倒栽葱的话。我期望社会给我我所没有的一切，首先是调动我所有的力量，这样一种激化对我的力量来说是不够的，就好像这样的激化是这位街头单身汉的唯一的希望。这位单身汉如果以他的、当然是破损的身体坚持住的话，如果吃上几顿饭的话，如果避开别人的影响的话，他就已经满足了，简而言之，他要在这个正在解体的世界上保持住尽可能多的东西。但他要花强力去寻找他失去的东西，不管是变化了、虚弱了，也不管看上去只是要再次去得到的他早先的财富（而且这是绝大多数情况）。他的生命说来是一条自我残害的生命，它只剩下了啃食自己肉体的牙齿和给自己的牙齿啃食的肉体。因为没有核心、没有职业、没有爱情、没有家庭、没有年金，就是说，没有一般面对世界，自然只是尝试地保持住自己的位置，不以庞大的整套财富在某种程度上使世界惊愕，人们也就不能防护眼前毁灭性的损失。这个衣服单薄、变着花样乞讨、有着苟延残喘的双腿和租金高得可怕的住房、以前被粉碎了的、这次经过长时间又重新唤起生命的单身汉用双臂将这一切抱在一起，不过总得失去他的两件东西，如果他有运气捕捉住任何一件微不足道的东西的话。当然这里有着真理，不是任何地方都这样清楚显示出来的真理。因为谁真的作为完善的市民出现，那就是说驾一艘船在海上行驶，前面浪花在飞溅，后面留下航道的轨迹，那就是说对周围产生了许多作用，完全不同于在几块木板上的男人漂在波浪中，这波浪互相冲撞着，而且向这里压迫过来——他，这位先生和市民，处于不算小的危险中。因为他和他的所有并不是一件东西，而是两样东西，而如果谁要击溃这种联系，谁也就同时击溃他自己。我们和我们的熟人在这方面一无所知，因为我们完全是被遮掩着的，比如我现在被我的职业、我想象出来的或者是真正的痛苦、文学的偏好等等所遮掩。可是正是我无时无刻，而且太强烈地感到我的缘由，我就连差不多的满意也不可能了。我只需要 15 分钟不断去感觉这种缘由，恶毒的世事就像水流进正将淹死人的口中一样流进我的嘴里。<br>“在我和这个单身汉之间眼前几乎没有任何区别，只是我还能思念在乡村的我的青年时代，而且也许能将自己抛回到那个地方，如果我想这么做，当然也许是以后，如果我的状况确实需要的话。可是单身汉在自己面前什么也没有，因而也没有经历过什么。在眼前是没有区别，可是单身汉只有这个眼前今天没有人能够认识那个时代，因为没有什么能像那个时代被如此地毁灭。在那个时代，他错过了这些，当他不断地感觉他的缘由的时候，就好像人们突然发现他的身体上有一个脓疮，这个脓疮是迄今我们身体上最后的脓疮。是呀，甚至于还不是最后的脓疮，因为它好像还没有生存，我们身体上与生俱来的（这个东西）现在比所有的东西还多。如果我们到目前为止以我们整个的身体专心致志于我们双手的工作，专心致志于我们眼睛看到的东西，专心致志于我们耳朵听到的东西，专心致志于我们双脚迈出的步子，这样，我们就会突然完全地转向对立的方面，就像山区里的风向标。<br>“如今不说昔时的离去，不管在这个最后的去向里怎样，因为只有离去才能保住他立在脚尖之上，只有脚尖能保住他立于世界。他没有这样，而是像冬天里有些地方的小孩躺在雪地里挨冻一样地躺下了。他和这些孩子，他们知道，那是他们的过错，他们躺下了，或者不论用什么方式屈服了；他们知道，他们本该可以不惜一切代价去做这些，可是他们不可能知道，在如今与他们一起在旷野或在城市里发生的变化之后，他们将会忘记每一个早先的过错和每一种束缚，他们会在新的适合自己的环境里活动，就似乎这是他们的第一环境，但是忘记在这里不是准确的用词。这个人的记忆和他的想象力一样都没受到什么损害，但就是群山也不能移动它们；这个人已经不在我们的民族之中，已经不在我们的人类之中，他常常饿得虚弱不堪。属于他的只是那眼前的一刻，永不中断的那个不幸的一刻，接着而来的并不是恢复的那一刻的光亮，他有的总只是一种东西：他的痛苦，而在这世界的整个圈子中就是没有能以医学自居的第二种东西。他所有的只是他双脚需要的那么多的地面，他所有的只是他双手盖住的那么多的支点，就是说比变化多端的空中飞人表演者还少得可怜，因为在这些表演者的下面还张有一张罗网。<br>“我们的过去和未来留住我们另一些人，留住我们。因而我们耗费了几乎所有的我们的空间和我们那么多的职业，以让它们在平衡中浮沉。未来在容量上先有的一切，过去在重量上取代了，而在它们的终点，这两者是不再有区别的了。最早的青年时代会在将来变得光辉的，就像未来，而未来的结束本来就已经与我们全部的叹息有了经验，未来的结束就是过去。这个圈子几乎就这样封闭起来了，我们沿着它的边缘行走。那么，这个圈子现在是属于我们的了，但它只是在我们能抓住它的那么长的时间里属于我们。我们现在仅仅向一旁移动了一下，在不论怎样的一种自我忘怀的状态中，在一种漫不经心中，一种恐怖中，一种惊异中，一种疲惫中，那么，我们已经失去了它的空间。我们从来就是将自己付于时间的长河，现在我们退却了，过去的弄潮儿，当今的闲散人，是毫无希望了。我们是法律之外的人，没有人知道这些，可是每个人都按法律对待我们。<br>“‘你现在可不必想我。你怎么也拿我与你作比较呢？我待在这个城市里已超过 20 年了。你只要好好地想一想，这意味着什么呀？我在这里度过了 20 个春夏秋冬呀。’——这时，他在我们的头顶上摇晃着握得松松的拳头。——‘这里的树不断地往上长了 20 年之久，在它们下面人们会是多么的渺小啊。你知道，在这许多的夜晚，在这些所有的住房里，人们有时候躺在这个墙边，有时候躺在那个墙边，这样，窗户便围着这个人转。在这些早晨，人们从窗口望去，从床边拉来沙发椅，坐上椅子喝咖啡。在这些晚上，人们支起胳膊，以手托腮。是呀，但愿这完全不是所有的一切！如果人们接受一些新的、就如这里每天在街道上都看得见的习惯该多好啊。——现在你大概有这样的感觉，好像我是在抱怨这些？可是不是，我为什么要抱怨这些，没有什么会允许我这么做的。我只有去散步，因此，这已足够了，在这方面，世界上还没有我不可以散步的地方。现在看上去竟又是如此了，好像我在为此自负。’”<br>“由此可见我是轻松的。我也许肯定不会在这里的房子前面站着的。”<br>“你不要在这里拿我跟你作比较，也别让我把你弄得晕头转向。你毕竟是一个成熟的人，你反正像看上去的那样，在这个城市里是颇孤独的。”<br>是的，快轮到我了。在这个城市里我这个要保护的生命看来已经解体了。在最初的日子里，我的感觉是美好的，因为这个解体是作为神化而发生的，在这个神化的时刻，所有维持住我们生命的一切，都从我们身上飞走了，但正在飞走的时候，这一切还用它人道的光辉最后一次地照耀我们。我就这样站立在我的单身汉面前，因此他可能非常地爱我，可是他并不明白为什么。偶尔，他的说话好像是说明，他熟悉、他知道面对的是谁，因此他对一切都那么随意。不，那不是这样的。还不如说他是用这种方法去迎合每一个人，因为他只能作为隐居者或寄生虫而活着。他只是无奈的隐居者，一旦通过他不知道的力量，这种无奈就被克服，他已经像一个尽可能死皮赖脸活着的寄生虫。在世界上，他当然是无可救药了，而且人们会从他的举止里想到一具溺死者的尸体，被某种水流冲上水面，撞到一位精疲力竭的游泳人，将双手放在游泳人的身上，并欲死死地抓住。尸体不会变活的，甚至也没人营救，但它却能把这个精疲力竭的游泳人拖下水。</p>
+</blockquote>
+<p>他念念不忘这个膝盖主题，到了 1911 年的 1 月 3 日，继续改写了开头。</p>
+<blockquote>
+<p>1 月 3 日。“喂。”我说，于是用膝盖轻轻地顶了他一下。“我想告辞了。”在突然说话的时候，嘴里向我飞出少许唾液，这是不好的标记。<br>“你可是早就考虑这个了。”他说着，离开墙壁，伸展四肢。<br>“不，我根本没有考虑过这个。”<br>“那你在思考什么呢？”<br>“我最后还为社会准备了一点点东西。你要做到你能够做到的那样的努力，你不会理解这一点的。我这个来自省城的随随便便的人，人们每时每刻都可以用那些如在火车站前成百上千地站在一起追逐某个班次列车的人中的一个与之交换。”</p>
+</blockquote>
+<p>在三天之后，又改写了这部分！</p>
+<blockquote>
+<p>1 月 6 日。“喂，”我说着，便用膝盖瞄准着轻轻地顶了他一下，“现在我可走了。如果你想一起看看这个的话，就把眼睛睁开。”<br>“是这样吗？”他问道。同时睁大眼睛，目光直对着我，可是那目光还是那么微弱，我完全可以一晃胳膊就能将它挡回去。“你真的要走吗？我怎么办呢？我不能抓住你。如果我能这样做的话，那我也不应这么做。因此，我只想向你弄清你的感觉，依照什么样的感觉你才能被我拦住呢。”他随即露出一脸低级仆人的模样，这些仆人用这样的嘴脸可以在一个一般有秩序的国家里使有体面的孩子顺从或害怕。</p>
+</blockquote>
+<p>总的来说，卡夫卡就是那种不停用膝盖顶你、但你还是不知道他想说什么的人。</p>
+
+      </div>
+    </div>
+</div>
+
+<div class="post-category">
+
+    <div id="p-meta-i">
+        
+              
+                <a class="hover-with-bg" href="/categories/%E7%BC%AE%E5%86%99%E7%9B%92/">缮写盒</a>
+              
+          
+          
+              
+                <a class="hover-with-bg" href="/tags/%E4%B9%A6/"># 书</a>
+              
+                <a class="hover-with-bg" href="/tags/%E5%8D%A1%E5%A4%AB%E5%8D%A1/"># 卡夫卡</a>
+              
+          
+    </div>
+</div>
+
+
+<div class="post-footer">
+  
+
+  <div class="post-copyright">
+    <p style="margin: 5px 0;">文章作者：<a href="/">SigiL</a></p>
+    <p style="margin: 5px 0;">文章链接：<a href="https://ouatis.github.io/2018/07/yong-xi-gai-qing-qing-de-ding.html">https://ouatis.github.io/2018/07/yong-xi-gai-qing-qing-de-ding.html</a></p>
+    <p style="margin: 5px 0;">版权声明：本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处，谢谢。</p>
+  </div>
+  
+</div>
+
+    <!-- Comments -->
+    <div class="comments">
+        
+        
+    <script src="https://giscus.app/client.js"
+        data-repo="ouatis/ouatis.github.io"
+        data-repo-id="ouatis/ouatis.github.io"
+        data-category="ouatis/ouatis.github.io"
+        data-category-id="ouatis/ouatis.github.io"
+        data-mapping="pathname"
+        data-term=""
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        data-loading=""
+        crossorigin="anonymous"
+        async> </script>
+
+    </div>
+
+</article>
+
+
+        </div>
+        
+<footer class="text-center">
+    
+    
+    
+    
+    
+    <p>&copy;  2012 - 2023&nbsp;&nbsp;Theme Miracle</p>
+    
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme by <a href="https://github.com/oCoke/hexo-theme-miracle" target="_blank">Miracle</a></p>
+    
+    
+</footer>
+
+<div class="p-btn">
+    
+        <a class="toc-btn" id="toc-btn"><i id="i-menu"></i></a>
+    
+    
+      <a class="toc-btn" id="share-btn"><i>
+        <svg t="1670124379155" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2683" width="25" height="25"><path d="M395.946667 234.666667v64H256v469.333333h512V522.666667h64V768a64 64 0 0 1-64 64H256a64 64 0 0 1-64-64V298.666667a64 64 0 0 1 64-64h139.946667z m335.850666-87.914667l150.848 150.826667-158.378666 158.4-45.269334-45.248L748.394667 341.333333H672c-121.685333 0-220.714667 97.024-223.914667 217.941334L448 565.333333v85.333334h-64v-85.333334C384 406.272 512.938667 277.333333 672 277.333333h99.861333l-85.312-85.333333 45.248-45.248z" p-id="2684" fill="var(--first-text-color)"></path></svg>
+      </i></a>
+    
+    <a href="javascript:window.scrollTo({top:0,behavior:'smooth'});" class="click-btn">
+      <i id="i-up"></i>
+    </a>
+</div>
+
+<!-- SCRIPTS -->
+
+
+
+
+
+
+<script>
+    document.getElementById("btn-dropdown").addEventListener('click', () => {
+      toggleClass("#dropdown-menus","display-inline");
+    });
+    console.log('\n' + ' %c Powered by Hexo Theme Miracle ' + ' %c https://github.com/hifun-team/hexo-theme-miracle ' + '\n' + '\n', 'color: #fff; background: #4F9BFA; padding:5px 0;', 'background: #FFF; padding:5px 0;');
+
+    
+
+    
+  /* 小彩蛋: 饮茶先啦 */
+  setTimeout(() => {
+    var time = new Date();
+    if (time.getHours() == 15) {
+      let comment = document.createComment(' 三点几嚟！饮茶先啦！ ');
+      document.body.insertBefore(comment, document.getElementsByTagName('header')[0]);
+    }
+  },1);
+    
+</script>
+
+
+<script>
+    var postImg = document.querySelectorAll("article[class=page] img");
+    for (let imgi = 0; imgi < postImg.length; imgi++) {
+        postImg[imgi].onclick = () => {
+            let zoomImg = document.createElement("div");
+            zoomImg.id = "zoomImg";
+            zoomImg.innerHTML = `<div id="zoom-picture"></div>
+    <div class="poptrox-overlay"
+        style="position: fixed; left: 0px; top: 0px; z-index: 20000; width: 100%; height: 100%; text-align: center; cursor: zoom-out; opacity: 1;">
+        <div style="display:inline-block;height:100%;vertical-align:middle;"></div>
+        <div
+            style="position:absolute;left:0;top:0;width:100%;height:100%;background:#000000;opacity:0;filter:alpha(opacity=0);">
+        </div>
+        <div class="poptrox-popup"
+            style="display: inline-block; vertical-align: middle; position: relative; z-index: 1; cursor: zoom-out; min-width: 10px; min-height: 10px; width: auto; height: auto;">
+            <div class="loader" style="display: none;"></div>
+            <div class="pic" style="text-indent: 0px;"><img
+                    src="${ postImg[imgi].srcset || postImg[imgi].src }" alt="Loading..."
+                    style="vertical-align: bottom; max-width: 85vw; max-height: 85vh;"></div>
+        </div>
+    </div>`;
+            document.body.appendChild(zoomImg);
+                document.querySelector("#zoomImg").onclick = () => {
+                    document.querySelector("#zoomImg").remove();
+                }
+        }
+    }
+    
+</script>
+
+
+
+
+    <script>
+        query("#toc-btn")[0].onclick = () => {
+            if (query(".post-toc")[0].innerHTML) {
+                toggleClass(".post-toc", "display-inline");
+            }
+        }
+
+        if (!query(".post-toc")[0].innerHTML) {
+            addClass("#toc-btn","display-none");
+        }
+    </script>
+
+
+
+    <script>
+        query("#share-btn")[0].onclick = async () => {
+            let url = `${location.protocol}//${location.hostname}${location.port ? ":"+location.port:location.port}${location.pathname}#read=${sessionStorage.getItem(location.pathname+"_read_y") || ""}`;
+            try {
+                await navigator.clipboard.writeText(url);
+                prompt_core("分享链接已经复制至剪贴板", 4800, true);
+            } catch(e) {
+                prompt_core("分享链接复制失败，请手动复制<br/>"+url, 4800, false);
+            }
+        }
+    </script>
+
+
+
+
+
+
+
+    <script>
+        const getScrollPosition = (el = window) => ({
+            x: el.pageXOffset !== undefined ? el.pageXOffset : el.scrollLeft,
+            y: el.pageYOffset !== undefined ? el.pageYOffset : el.scrollTop
+        });
+        // 此处的 750 是「页面元素的最大宽度」
+        var wx = document.getElementsByClassName("article-m")[0].clientWidth;
+        var wy = document.getElementsByClassName("article-m")[0].clientHeight;
+        function windowScroll() {
+            // 反复修改 确保页面尺寸不改变
+            wx = document.getElementsByClassName("article-m")[0].clientWidth;
+            wy = document.getElementsByClassName("article-m")[0].clientHeight;
+            let y = Math.round(getScrollPosition().y);
+            // console.log(y);
+            // 组合字符串，同时记录页面坐标，页面宽度和高度
+            let p = `${y}:${wx}:${wy}`;
+            // 写入到 sessionStorage 中
+            sessionStorage.setItem(location.pathname + "_read_y", p);
+        }
+        // URL 中是否包含传递的坐标信息
+        setTimeout(() => {
+            if (location.hash.split("#read=").length > 1) {
+                prompt_core("已有阅读进度，正在跳转", 4800, true);
+                // 分离字符串
+                let read_y = location.hash.split("#read=")[1];
+                read_y = read_y.split(":");
+                // 组合乘积，顺滑移动至坐标
+                window.scrollTo({top: Math.round(Number(read_y[0]) * Number(read_y[1] * Number(read_y[2] / wx / wy))), behavior: "smooth"});
+            } else {
+                // 从 sessionStorage 中获取
+                let read_y = sessionStorage.getItem(location.pathname + "_read_y") || "0:0:0";
+                read_y = read_y.split(":");
+                if (read_y[0] != "0") prompt_core("已有阅读进度，正在跳转", 4800, true);
+                window.scrollTo({top: Math.round(Number(read_y[0]) * Number(read_y[1] * Number(read_y[2] / wx / wy))), behavior: "smooth"});
+            }
+        }, 500);
+        window.onscroll = windowScroll;
+    </script>
+
+
+
+
+
+        </div>
+        <div id="css-loading">
+            <h3 class="text-center">加载中...</h3>
+        </div>
+        
+    </body>
+</html>

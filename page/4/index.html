@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="UTF-8">
+    
+    <link rel="apple-touch-icon" sizes="76x76" href="/null">
+    <link rel="icon" type="image/png" href="/null">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    <title>笼城往事</title>
+    
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    
+    
+    <meta name="description" content="">
+    <meta name="author" content="SigiL">
+    <meta name="keywords" content="">
+    
+    <style>
+
+
+    
+    :root{
+        --shadow-color: rgba(0,0,0,0.2);
+        --sec-shadow: rgba(0,0,0,0.03);
+        --shadow-hover-color: rgba(0,0,0,0.28);
+        --first-text-color: #475b6d;
+        --second-text-color: #37475b;
+        --third-text-color: #858585;
+        --default-text-color: #505050;
+        --default-link-color: #007bff;
+        --link-color: #000000;
+        --second-link-color: #4F9BFA;
+        --code-color:rgba(27,31,35,.05);
+        --post-bkg-color: #fff;
+        --page-bkg-color: #f2f5f8;
+        --nav-a-hover-color: #3498db;
+        --post-sec-text-color: #718096;
+        --sec-bkg: #f2f5f8;
+        --color-mode: 'light';
+        --bkg-h: rgba(255,255,255,0.6);
+        --bkg-m: #e1e4e8;
+        --home-title-color: #4169E1;
+        --shadow: 0 4px 10px rgba(0,2,4,0.06),0 0 1px rgba(0,2,4,0.11);
+        --hr-color: #ddd;
+        --bg-t: #f4f4f4;
+        --nav-bkg: rgba(255,255,255,0.6);
+    }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-mode: 'dark';
+  }
+
+  :root:not([data-theme]) {
+    --first-text-color: hsla(0,0%,100%,0.92);
+    --second-text-color: hsla(0,0%,100%,0.86);
+    --third-text-color: #a7a9ad;
+    --default-text-color: #505050;
+    --default-link-color: #1589e9;
+    --link-color: #000000;
+    --second-link-color: #30a9de;
+    --post-bkg-color: #252d38;
+    --page-bkg-color: #181c27;
+    --nav-a-hover-color: #3498db;
+    --post-sec-text-color: #a7a9ad;
+    --sec-bkg: #364151;
+    --bkg-h: rgba(255,255,255,0.2);
+    --bkg-m: rgba(255,255,255,0.1);
+    --home-title-color: rgb(226, 82, 90);
+    --code-color:#3e4b5e;
+    --shadow: none;
+    --hr-color: #718096;
+    --bg-t: #364151;
+    --nav-bkg: rgba(13,17,23,0.6);
+  }
+}
+
+[data-theme='dark'] {
+    --shadow-color: rgba(0,0,0,0.2);
+    --shadow-hover-color: rgba(0,0,0,0.28);
+    --first-text-color: hsla(0,0%,100%,0.92);
+    --second-text-color: hsla(0,0%,100%,0.86);
+    --third-text-color: #a7a9ad;
+    --default-text-color: #505050;
+    --default-link-color: #1589e9;
+    --link-color: #000000;
+    --second-link-color: #30a9de;
+    --post-bkg-color: #252d38;
+    --page-bkg-color: #181c27;
+    --nav-a-hover-color: #3498db;
+    --post-sec-text-color: #a7a9ad;
+    --sec-bkg: #364151;
+    --bkg-h: rgba(255,255,255,0.2);
+    --bkg-m: rgba(255,255,255,0.1);
+    --home-title-color: rgb(226, 82, 90);
+    --code-color:#3e4b5e;
+    --shadow: none;
+    --hr-color: #718096;
+    --bg-t: #364151;
+    --nav-bkg: rgba(13,17,23,0.6);
+}
+
+</style>
+
+
+
+<style>
+#page-main,footer,.p-btn{
+    display: none;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+body {
+    background-color: var(--page-bkg-color);
+    color: var(--second-text-color);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    transition: all .3s;
+}
+a {
+    color: var(--default-link-color);
+    text-decoration: none;
+    background-color: transparent;
+}
+a:hover{
+    color: var(--second-link-color);
+}
+.main-content,.post-card-main{
+    margin: 30px;
+}
+
+
+
+@media (max-width: 410px){
+    .post-card-main{
+        max-width: 350px!important;
+    }
+}
+
+@media (max-width: 980px){
+    .post-card-main{
+        max-width: 520px!important;
+    }
+}
+
+
+@media (min-width: 780px){ 
+    h3{
+        font-size: 1.5rem;
+        line-height: 1.5em;
+    }
+}
+@media (min-width: 1280px){ 
+    h3{
+        font-size: 1.7rem;
+        line-height: 1.5em;
+    }
+}
+@media (min-width: 2096px){ 
+    h3{
+        font-size: 1.8rem;
+        line-height: 1.5em;
+    }
+}
+
+.text-center{
+    text-align: center!important;
+}
+.middle-center{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    height: 100%;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    height: 54px;
+    padding: 0 1.25rem;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    border-bottom: 1px solid var(--bkg-m);
+    background-color: var(--nav-bkg);
+    backdrop-filter: blur(4px);
+    transition: all .3s;
+}
+header .header__left, header .header__right {
+    display: flex;
+    align-items: center;
+    font-family: rubik,sans-serif,Varela Round;
+}
+header .header__left .logo__text {
+    font-size: 18px;
+    font-weight: 450;
+    padding: 14.5px 10px;
+    border-radius: 5px;
+    color: var(--second-text-color);
+}
+header .header__right .navbar__menus {
+    height: 54px;
+    padding: 0 0 0 15px;
+}
+header .header__right .button {
+    color: var(--second-text-color);
+}
+header .header__right .navbar__menus .navbar-menu {
+    display: inline-block;
+    align-items: center;
+    height: 54px;
+    padding: 0 10px;
+    font-size: 16px;
+    line-height: 54px;
+}
+header .header__right .dropdown-icon {
+    display: none;
+    height: 54px;
+    padding: 15px 10px;
+    border: 0;
+    background-color: transparent;
+}
+header .header__right .dropdown-menus {
+    line-height: 2rem;
+    animation: slide-in .15s ease 1;
+    display: none;
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    top: calc(54px + 10px);
+    border-radius: 6px;
+    padding: 24px;
+    background-color: var(--page-bkg-color);
+    border: 1px solid var(--bkg-m);
+    z-index: 9999;
+    justify-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+header .header__right #btn-search, header .header__right #btn-toggle-dark{
+    display: inline-block;
+    padding:  18px 10px;
+    height: 25px;
+}
+header .header__right #btn-dropdown{
+  display: inline-block;
+  padding:  13.5px 0;
+}
+header .header__right .dropdown-menus .dropdown-menu {
+    padding: 10px;
+    color: var(--second-text-color);
+}
+@media screen and (max-width: 764px){
+.navbar__menus {
+    display: none!important;
+}
+.dropdown-icon {
+    display: inline-block!important;
+}
+}
+.p-btn{
+    position: fixed;
+    bottom: 1.2rem;
+    right: 1.2rem;
+    contain: layout;
+}
+.toc-btn,.click-btn{
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    align-items: center;
+    margin-top: .5rem;
+    font-size: .75rem;
+    background-color: var(--sec-bkg);
+    display: block;
+    padding: 0.9rem;
+    box-shadow: 0 0.3rem 0.6rem rgba(48,55,66,.15);
+    border: none;
+    border-radius: 0.5rem;
+    line-height: 1;
+    color: var(--first-text-color);
+}
+.toc-link{
+    color: var(--second-text-color);
+}
+
+#css-loading h3{
+    font-weight: 500;
+    font-size: 1.4rem;
+    text-align: center;
+    position: fixed;
+    top: 200px;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    animation: cssLoad;
+    animation-delay: 0.3s;
+    -webkit-animation: cssLoad;
+    -webkit-animation-delay: 0.3s;
+}
+@keyframes cssLoad {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0.9;
+    }
+}
+
+
+.memorial {
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
+    filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); filter:gray;
+}
+
+
+    .post-copyright:after {
+        position: absolute;
+        color: #fff;
+        background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 496 512'%3E%3Cpath fill='gray' d='M245.8 214.9l-33.2 17.3c-9.4-19.6-25.2-20-27.4-20-22.2 0-33.3 14.6-33.3 43.9 0 23.5 9.2 43.8 33.3 43.8 14.4 0 24.6-7 30.5-21.3l30.6 15.5a73.2 73.2 0 01-65.1 39c-22.6 0-74-10.3-74-77 0-58.7 43-77 72.6-77 30.8-.1 52.7 11.9 66 35.8zm143 0l-32.7 17.3c-9.5-19.8-25.7-20-27.9-20-22.1 0-33.2 14.6-33.2 43.9 0 23.5 9.2 43.8 33.2 43.8 14.5 0 24.7-7 30.5-21.3l31 15.5c-2 3.8-21.3 39-65 39-22.7 0-74-9.9-74-77 0-58.7 43-77 72.6-77C354 179 376 191 389 214.8zM247.7 8C104.7 8 0 123 0 256c0 138.4 113.6 248 247.6 248C377.5 504 496 403 496 256 496 118 389.4 8 247.6 8zm.8 450.8c-112.5 0-203.7-93-203.7-202.8 0-105.5 85.5-203.3 203.8-203.3A201.7 201.7 0 01451.3 256c0 121.7-99.7 202.9-202.9 202.9z'/%3E%3C/svg%3E");
+        content: ' ';
+        height: 10rem;
+        width: 10rem;
+        right: -2rem;
+        top: -2rem;
+        opacity: .1;
+    }
+
+</style>
+
+    
+
+    
+    
+    <link rel="stylesheet" href="/css/main.css" media="print" onload="this.media='all';this.onload=null">
+    <noscript>
+        <link rel="stylesheet" href="/css/main.css">
+    </noscript>
+
+    
+    <script src="/js/main.js"></script>
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+    <body>
+        <header>
+            
+<div class="header__left">
+	<a href="/" class="button"><span class="logo__text">OUATIS</span></a>
+</div>
+<div class="header__right">
+	<div class="navbar__menus">
+		
+		<a href="/" class="button">
+			<div class="navbar-menu">首页</div>
+		</a>
+		
+		<a href="/archives/" class="button">
+			<div class="navbar-menu">归档</div>
+		</a>
+		
+		<a href="/categories/" class="button">
+			<div class="navbar-menu">分类</div>
+		</a>
+		
+		<a href="/tags/" class="button">
+			<div class="navbar-menu">标签</div>
+		</a>
+		
+	</div>
+	
+	<a href="/search/" class="button">
+		<div id="btn-search">
+			<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1024 1024" width="24" height="24" fill="currentColor"
+				stroke="currentColor" stroke-width="32">
+				<path
+					d="M192 448c0-141.152 114.848-256 256-256s256 114.848 256 256-114.848 256-256 256-256-114.848-256-256z m710.624 409.376l-206.88-206.88A318.784 318.784 0 0 0 768 448c0-176.736-143.264-320-320-320S128 271.264 128 448s143.264 320 320 320a318.784 318.784 0 0 0 202.496-72.256l206.88 206.88 45.248-45.248z">
+				</path>
+			</svg>
+		</div>
+	</a>
+	
+	<a href="javaScript:void(0);" class="button" id="btn-toggle-dark">
+		<div>
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none"
+				stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+			</svg>
+		</div>
+	</a>
+	<a href="javaScript:void(0);" class="dropdown-icon button">
+		<div id="btn-dropdown">
+			<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1024 1024" width="24" height="24" fill="currentColor"
+				stroke="currentColor" stroke-width="32" stroke-linecap="round">
+				<path
+					d="M903.43 561.52H148.8c-13.25 0-24-10.75-24-24s10.75-24 24-24h754.63c13.25 0 24 10.75 24 24s-10.75 24-24 24zM903.43 204.31H148.8c-13.25 0-24-10.75-24-24s10.75-24 24-24h754.63c13.25 0 24 10.75 24 24s-10.75 24-24 24zM903.43 918.73H148.8c-13.25 0-24-10.75-24-24s10.75-24 24-24h754.63c13.25 0 24 10.75 24 24s-10.75 24-24 24z"
+					fill="currentColor"></path>
+			</svg>
+		</div>
+	</a>
+	<div class="dropdown-menus" id="dropdown-menus">
+		
+		<a href="/" class="dropdown-menu button">首页</a>
+		<br>
+		
+		<a href="/archives/" class="dropdown-menu button">归档</a>
+		<br>
+		
+		<a href="/categories/" class="dropdown-menu button">分类</a>
+		<br>
+		
+		<a href="/tags/" class="dropdown-menu button">标签</a>
+		<br>
+		
+	</div>
+</div>
+
+        </header>
+        <div id="top"></div>
+        <div id="page-main" class="main-content">
+        <div class="mg-top">
+            
+
+<div class="post-card-center">
+<div class="post-card-main">
+
+    
+      <div class="index-card">
+        
+        <article class="index-card-info">
+          <h3 class="index-header">
+            <a href="/2019/08/ne-zha-yu-xiao-zha.html">
+            
+            哪吒与孝吒</a>
+          </h3>
+          <p class="index-excerpt">
+              
+              
+                
+              
+              从我有记忆起，家里就有好几张动画片的碟。一盒《狮子王》合集，一盒是《大闹天宫》《哪吒闹海》《葫芦娃》《黑猫警长》合集，还有一张散装的《金猴降妖》，后来被人借走，没还。这里面每一部我都看过不下二十遍，台词说一句，我能接第二句。“爹爹，你的骨肉我还给你，我不连累你”，这是印象最深的一句。
+据说哪吒自刎这场戏，共用了 113 个镜头，占影片 607 个镜头的六分之一，长 963 尺，也占全片总时长的六分
+          </p>
+          <div class="index-btm post-metas">
+            
+              
+                <time datetime="2019-08-02 00:00" pubdate>
+                  2019-08-02
+                </time>
+              
+            
+            
+              
+                
+                  <span class="p-dot"></span><a href="/categories/%E4%BC%98%E7%A7%80%E8%AF%BB%E8%80%85%E7%9A%84%E5%9B%9B%E4%B8%AA%E6%9D%A1%E4%BB%B6/">优秀读者的四个条件</a>
+                
+              
+            
+          </div>
+        </article>
+      </div>
+    
+  
+    
+      <div class="index-card">
+        
+        <article class="index-card-info">
+          <h3 class="index-header">
+            <a href="/2019/06/na-la-chuang-lian-kao.html">
+            
+            纳博科夫拉窗帘考</a>
+          </h3>
+          <p class="index-excerpt">
+              
+              
+                
+              
+              纳博科夫拉了一辈子窗帘，每次拉都会提到不同的作家。刘云飞的版本，是说他在康奈尔大学授课，讲到托翁时，突然拉上教室的窗帘，还关掉所有的电灯，然后站到电灯开关旁，打开左侧的一盏灯，对学生说：“在俄国文学的苍穹上，这就是普希金。”接着他又打开中间那盏灯说道：“这就是果戈理。”然后，他再打开右侧那盏灯，又说道：“这就是契诃夫。”最后，他大步冲到窗前，一把扯开窗帘，指着直射进窗内的一束束灿烂阳光，大声地对学
+          </p>
+          <div class="index-btm post-metas">
+            
+              
+                <time datetime="2019-06-30 00:00" pubdate>
+                  2019-06-30
+                </time>
+              
+            
+            
+              
+                
+                  <span class="p-dot"></span><a href="/categories/%E7%BC%AE%E5%86%99%E7%9B%92/">缮写盒</a>
+                
+              
+            
+          </div>
+        </article>
+      </div>
+    
+  
+    
+      <div class="index-card">
+        
+        <article class="index-card-info">
+          <h3 class="index-header">
+            <a href="/2019/06/wang-lao-ju-2019.html">
+            
+            王老菊2019</a>
+          </h3>
+          <p class="index-excerpt">
+              
+              
+                
+              
+              是菊嫂免免给我开的门。她和王老菊都在家。房子不大，两室一厅，厅特别小。录视频的工作间正对他家门口，一进门就能看到。工作间约十来平的样子，两张桌子，三把椅子，好几块显示屏。每天下午，老菊就在这里录剪视频。一般素材录多久，完了就得剪多久。理想情况下，晚饭前后他能把视频做好，接着开始压制。压制要很长时间，到大概半夜，才能传好视频。因为视频网站的工作人员可能都下班了，经常得到凌晨，我们才能看到一个视频的发
+          </p>
+          <div class="index-btm post-metas">
+            
+              
+                <time datetime="2019-06-28 00:00" pubdate>
+                  2019-06-28
+                </time>
+              
+            
+            
+              
+                
+                  <span class="p-dot"></span><a href="/categories/%E4%B8%9A%E5%A4%96/">业外</a>
+                
+              
+            
+          </div>
+        </article>
+      </div>
+    
+  
+    
+      <div class="index-card">
+        
+        <article class="index-card-info">
+          <h3 class="index-header">
+            <a href="/2019/01/fei-dian-jing-tian-ye-diao-cha.html">
+            
+            菲律宾电竞田野调查</a>
+          </h3>
+          <p class="index-excerpt">
+              
+              
+                
+              
+              1在公众集会前演奏国歌是菲律宾的惯例，电竞比赛并不例外。全场观众都安静下来，立正挺胸，右手抬起，手掌紧贴胸口，行注目礼。 [[《金枝》]] 里头说，菲律宾群岛的原住民从不砍树，因为他们相信树上附着先祖的灵魂。眼下的景象正如同手机游戏上附着国王的荣誉。
+列侬他们也曾在马尼拉登陆。马尼拉，菲律宾最大的港口，“亚洲的纽约”。当时的第一夫人满心期待，邀请他们去总统府作客，但他们说不曾收到类似的邀约。总统夫
+          </p>
+          <div class="index-btm post-metas">
+            
+              
+                <time datetime="2019-01-19 00:00" pubdate>
+                  2019-01-19
+                </time>
+              
+            
+            
+              
+                
+                  <span class="p-dot"></span><a href="/categories/%E4%B8%9A%E5%A4%96/">业外</a>
+                
+              
+            
+          </div>
+        </article>
+      </div>
+    
+  
+    
+      <div class="index-card">
+        
+        <article class="index-card-info">
+          <h3 class="index-header">
+            <a href="/2018/10/bian-yuan-shi-jie-huai-dang-ji.html">
+            
+            《边缘世界》坏档记</a>
+          </h3>
+          <p class="index-excerpt">
+              
+              
+                
+              
+              在卡桑德拉的故事里，亚瑟王、吉尔、泡泡糖公主的逃生舱坠落在一个残酷狂飙的世界。一落地，三人便开始如火如荼的建设，仿佛对周遭的环境了如指掌，甚至没有人记得拿起武器。也没有人注意到，一头母座狼偷偷潜入了营地，伏击了他们的母牛，柳树。柳树是除亚瑟王几人外，飞船上唯一幸存下来的生物。大家原期待它能像奥雷里亚诺第二的牲畜一样，带领殖民地发家致富。母座狼的袭击毫无预警，大家四散而逃。逃到一半，吉尔才反应过来，
+          </p>
+          <div class="index-btm post-metas">
+            
+              
+                <time datetime="2018-10-17 00:00" pubdate>
+                  2018-10-17
+                </time>
+              
+            
+            
+              
+                
+                  <span class="p-dot"></span><a href="/categories/%E7%BC%AE%E5%86%99%E7%9B%92/">缮写盒</a>
+                
+              
+            
+          </div>
+        </article>
+      </div>
+    
+  
+    
+      <div class="index-card">
+        
+        <article class="index-card-info">
+          <h3 class="index-header">
+            <a href="/2018/08/jing-cheng-zhi-2018.html">
+            
+            金承志2018</a>
+          </h3>
+          <p class="index-excerpt">
+              
+              
+                
+              
+              上海彩虹室内合唱团的新歌，《肥宅群侠传》，据团长金承志的说法，是根据他本人生活经历改编的“反战”歌曲，“只要游戏常伴吾身，只要新番每周都更，每天快快乐乐吃吃喝喝又没伤害谁，为什么要跟你们都一样？”
+彩虹的歌向来跟游戏颇有渊源。成名曲《感觉身体被掏空》，有一个充满戏剧性的开头：钢琴前奏起初大气磅礴，几个音节又急转直下，仿佛想宣泄，但一下就怂了。许多人觉得这个前奏像王心凌的《睫毛弯弯》，但它其实是来自
+          </p>
+          <div class="index-btm post-metas">
+            
+              
+                <time datetime="2018-08-30 00:00" pubdate>
+                  2018-08-30
+                </time>
+              
+            
+            
+              
+                
+                  <span class="p-dot"></span><a href="/categories/%E4%B8%9A%E5%A4%96/">业外</a>
+                
+              
+            
+          </div>
+        </article>
+      </div>
+    
+  
+    
+      <div class="index-card">
+        
+        <article class="index-card-info">
+          <h3 class="index-header">
+            <a href="/2018/08/zheng-zi-cheng-2018.html">
+            
+            郑子诚2018</a>
+          </h3>
+          <p class="index-excerpt">
+              
+              
+                
+              
+              郑子诚是一名非常有趣的演员兼 DJ。因为在 TVB 常演反派，绰号“完美奸人”，一张脸被香港的男女老少恨之入骨。香港网上流传一个“郑子诚现象”。意思是他老演反派，只要一出场，就必定有阴谋，所以也被称为“阴谋诚”。但更为香港网民所议论的，是他另一重反差极大的身份，“音乐情人”。
+香港有一档电台叫《音乐情人》，宣传语是“以磁性沉厚的声线与倾诉心声，与听众在大气电波建立情谊”，总是播七八九十年代的粤语金
+          </p>
+          <div class="index-btm post-metas">
+            
+              
+                <time datetime="2018-08-07 00:00" pubdate>
+                  2018-08-07
+                </time>
+              
+            
+            
+              
+                
+                  <span class="p-dot"></span><a href="/categories/%E4%B8%9A%E5%A4%96/">业外</a>
+                
+              
+            
+          </div>
+        </article>
+      </div>
+    
+  
+    
+      <div class="index-card">
+        
+        <article class="index-card-info">
+          <h3 class="index-header">
+            <a href="/2018/07/yong-xi-gai-qing-qing-de-ding.html">
+            
+            用膝盖轻轻地顶了他一下</a>
+          </h3>
+          <p class="index-excerpt">
+              
+              
+                
+              
+              在写完“[[我的教育在某些方面大大地损害了我]]”后，卡夫卡短暂地记录了一小段新的主题，与男女有关。
+
+有人说，而我们也乐于相信，处在危险中的男人就是对漂亮的陌生女人也不屑一顾；如果他们在从失火的剧院里逃出来的时候遇到这些女人们的阻碍，他们就会用头和手、用膝和肘将她们推到墙边。这个时候，我们那些健谈的女人们顿时鸦雀无声，她们无边无际的言谈被粗暴地呵断，原来舒展的眉毛抬得高高的，呼吸带动的大腿和臀部
+          </p>
+          <div class="index-btm post-metas">
+            
+              
+                <time datetime="2018-07-20 00:00" pubdate>
+                  2018-07-20
+                </time>
+              
+            
+            
+              
+                
+                  <span class="p-dot"></span><a href="/categories/%E7%BC%AE%E5%86%99%E7%9B%92/">缮写盒</a>
+                
+              
+            
+          </div>
+        </article>
+      </div>
+    
+  
+    
+      <div class="index-card">
+        
+        <article class="index-card-info">
+          <h3 class="index-header">
+            <a href="/2018/07/wo-de-jiao-yu-sun-hai-wo.html">
+            
+            我的教育在某些方面大大地损害了我</a>
+          </h3>
+          <p class="index-excerpt">
+              
+              
+                
+              
+              1910 年 7 月 19 日，星期日，卡博士睡觉、醒来、睡觉、醒来，过着一种“可怜的生活”。如往常一样，他在日记中进行写作训练。其中一个主题是“我的教育在某些方面大大地损害了我”。他就这个主题改写了三遍段落。
+在第一版中，他被教育损害，于是渴望在群山的废墟上接受教育，像野外的常春藤一样生长，口吻是抽象的。大概意思，是他想摆脱曾经的教育，寻求某种自由放养般的状态。
+
+我要是思考这些的话，那么，我必
+          </p>
+          <div class="index-btm post-metas">
+            
+              
+                <time datetime="2018-07-19 00:00" pubdate>
+                  2018-07-19
+                </time>
+              
+            
+            
+              
+                
+                  <span class="p-dot"></span><a href="/categories/%E7%BC%AE%E5%86%99%E7%9B%92/">缮写盒</a>
+                
+              
+            
+          </div>
+        </article>
+      </div>
+    
+  
+    
+      <div class="index-card">
+        
+        <article class="index-card-info">
+          <h3 class="index-header">
+            <a href="/2017/12/deng-ta-yu-chong-sheng-cang.html">
+            
+            灯塔与重生舱</a>
+          </h3>
+          <p class="index-excerpt">
+              
+              
+                
+              
+              《生化奇兵：无限》的开局是灯塔，结局也是灯塔，灯塔是平行宇宙之门，灯塔之海就是多元宇宙的信标，但为什么非要用灯塔？为什么不用世界之树、发光的传送门、或者 1 比 4 比 9 黑色石碑？
+灯塔这个意向没那么单纯。在 [[《生化奇兵》]] 开场，主角遭遇海上空难，也是走进灯塔，从潜水舱闯进销魂城。灯塔是故事的起点，到了《无限》，又成了所有故事的节点。
+好游戏都讲传承。灯塔以外，还有重生舱（Vita C
+          </p>
+          <div class="index-btm post-metas">
+            
+              
+                <time datetime="2017-12-08 00:00" pubdate>
+                  2017-12-08
+                </time>
+              
+            
+            
+              
+                
+                  <span class="p-dot"></span><a href="/categories/%E4%BC%98%E7%A7%80%E8%AF%BB%E8%80%85%E7%9A%84%E5%9B%9B%E4%B8%AA%E6%9D%A1%E4%BB%B6/">优秀读者的四个条件</a>
+                
+              
+            
+          </div>
+        </article>
+      </div>
+    
+  
+</div>
+</div>
+
+    <nav aria-label="navigation">
+      <span class="pagination" id="pagination">
+        <a class="extend prev" rel="prev" href="/page/3/">&lt;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/5/">&gt;</a>
+      </span>
+    </nav>
+
+        </div>
+        
+<footer class="text-center">
+    
+    
+    
+    
+    
+    <p>&copy;  2012 - 2023&nbsp;&nbsp;Theme Miracle</p>
+    
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme by <a href="https://github.com/oCoke/hexo-theme-miracle" target="_blank">Miracle</a></p>
+    
+    
+</footer>
+
+<div class="p-btn">
+    
+    
+    <a href="javascript:window.scrollTo({top:0,behavior:'smooth'});" class="click-btn">
+      <i id="i-up"></i>
+    </a>
+</div>
+
+<!-- SCRIPTS -->
+
+
+
+
+
+
+<script>
+    document.getElementById("btn-dropdown").addEventListener('click', () => {
+      toggleClass("#dropdown-menus","display-inline");
+    });
+    console.log('\n' + ' %c Powered by Hexo Theme Miracle ' + ' %c https://github.com/hifun-team/hexo-theme-miracle ' + '\n' + '\n', 'color: #fff; background: #4F9BFA; padding:5px 0;', 'background: #FFF; padding:5px 0;');
+
+    
+
+    
+  /* 小彩蛋: 饮茶先啦 */
+  setTimeout(() => {
+    var time = new Date();
+    if (time.getHours() == 15) {
+      let comment = document.createComment(' 三点几嚟！饮茶先啦！ ');
+      document.body.insertBefore(comment, document.getElementsByTagName('header')[0]);
+    }
+  },1);
+    
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+        <div id="css-loading">
+            <h3 class="text-center">加载中...</h3>
+        </div>
+        
+    </body>
+</html>

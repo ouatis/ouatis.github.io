@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="UTF-8">
+    
+    <link rel="apple-touch-icon" sizes="76x76" href="/null">
+    <link rel="icon" type="image/png" href="/null">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    <title>笼城往事</title>
+    
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    
+    
+    <meta name="description" content="">
+    <meta name="author" content="SigiL">
+    <meta name="keywords" content="">
+    
+    <style>
+
+
+    
+    :root{
+        --shadow-color: rgba(0,0,0,0.2);
+        --sec-shadow: rgba(0,0,0,0.03);
+        --shadow-hover-color: rgba(0,0,0,0.28);
+        --first-text-color: #475b6d;
+        --second-text-color: #37475b;
+        --third-text-color: #858585;
+        --default-text-color: #505050;
+        --default-link-color: #007bff;
+        --link-color: #000000;
+        --second-link-color: #4F9BFA;
+        --code-color:rgba(27,31,35,.05);
+        --post-bkg-color: #fff;
+        --page-bkg-color: #f2f5f8;
+        --nav-a-hover-color: #3498db;
+        --post-sec-text-color: #718096;
+        --sec-bkg: #f2f5f8;
+        --color-mode: 'light';
+        --bkg-h: rgba(255,255,255,0.6);
+        --bkg-m: #e1e4e8;
+        --home-title-color: #4169E1;
+        --shadow: 0 4px 10px rgba(0,2,4,0.06),0 0 1px rgba(0,2,4,0.11);
+        --hr-color: #ddd;
+        --bg-t: #f4f4f4;
+        --nav-bkg: rgba(255,255,255,0.6);
+    }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-mode: 'dark';
+  }
+
+  :root:not([data-theme]) {
+    --first-text-color: hsla(0,0%,100%,0.92);
+    --second-text-color: hsla(0,0%,100%,0.86);
+    --third-text-color: #a7a9ad;
+    --default-text-color: #505050;
+    --default-link-color: #1589e9;
+    --link-color: #000000;
+    --second-link-color: #30a9de;
+    --post-bkg-color: #252d38;
+    --page-bkg-color: #181c27;
+    --nav-a-hover-color: #3498db;
+    --post-sec-text-color: #a7a9ad;
+    --sec-bkg: #364151;
+    --bkg-h: rgba(255,255,255,0.2);
+    --bkg-m: rgba(255,255,255,0.1);
+    --home-title-color: rgb(226, 82, 90);
+    --code-color:#3e4b5e;
+    --shadow: none;
+    --hr-color: #718096;
+    --bg-t: #364151;
+    --nav-bkg: rgba(13,17,23,0.6);
+  }
+}
+
+[data-theme='dark'] {
+    --shadow-color: rgba(0,0,0,0.2);
+    --shadow-hover-color: rgba(0,0,0,0.28);
+    --first-text-color: hsla(0,0%,100%,0.92);
+    --second-text-color: hsla(0,0%,100%,0.86);
+    --third-text-color: #a7a9ad;
+    --default-text-color: #505050;
+    --default-link-color: #1589e9;
+    --link-color: #000000;
+    --second-link-color: #30a9de;
+    --post-bkg-color: #252d38;
+    --page-bkg-color: #181c27;
+    --nav-a-hover-color: #3498db;
+    --post-sec-text-color: #a7a9ad;
+    --sec-bkg: #364151;
+    --bkg-h: rgba(255,255,255,0.2);
+    --bkg-m: rgba(255,255,255,0.1);
+    --home-title-color: rgb(226, 82, 90);
+    --code-color:#3e4b5e;
+    --shadow: none;
+    --hr-color: #718096;
+    --bg-t: #364151;
+    --nav-bkg: rgba(13,17,23,0.6);
+}
+
+</style>
+
+
+
+<style>
+#page-main,footer,.p-btn{
+    display: none;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+body {
+    background-color: var(--page-bkg-color);
+    color: var(--second-text-color);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    transition: all .3s;
+}
+a {
+    color: var(--default-link-color);
+    text-decoration: none;
+    background-color: transparent;
+}
+a:hover{
+    color: var(--second-link-color);
+}
+.main-content,.post-card-main{
+    margin: 30px;
+}
+
+
+
+@media (max-width: 410px){
+    .post-card-main{
+        max-width: 350px!important;
+    }
+}
+
+@media (max-width: 980px){
+    .post-card-main{
+        max-width: 520px!important;
+    }
+}
+
+
+@media (min-width: 780px){ 
+    h3{
+        font-size: 1.5rem;
+        line-height: 1.5em;
+    }
+}
+@media (min-width: 1280px){ 
+    h3{
+        font-size: 1.7rem;
+        line-height: 1.5em;
+    }
+}
+@media (min-width: 2096px){ 
+    h3{
+        font-size: 1.8rem;
+        line-height: 1.5em;
+    }
+}
+
+.text-center{
+    text-align: center!important;
+}
+.middle-center{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    height: 100%;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    height: 54px;
+    padding: 0 1.25rem;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    border-bottom: 1px solid var(--bkg-m);
+    background-color: var(--nav-bkg);
+    backdrop-filter: blur(4px);
+    transition: all .3s;
+}
+header .header__left, header .header__right {
+    display: flex;
+    align-items: center;
+    font-family: rubik,sans-serif,Varela Round;
+}
+header .header__left .logo__text {
+    font-size: 18px;
+    font-weight: 450;
+    padding: 14.5px 10px;
+    border-radius: 5px;
+    color: var(--second-text-color);
+}
+header .header__right .navbar__menus {
+    height: 54px;
+    padding: 0 0 0 15px;
+}
+header .header__right .button {
+    color: var(--second-text-color);
+}
+header .header__right .navbar__menus .navbar-menu {
+    display: inline-block;
+    align-items: center;
+    height: 54px;
+    padding: 0 10px;
+    font-size: 16px;
+    line-height: 54px;
+}
+header .header__right .dropdown-icon {
+    display: none;
+    height: 54px;
+    padding: 15px 10px;
+    border: 0;
+    background-color: transparent;
+}
+header .header__right .dropdown-menus {
+    line-height: 2rem;
+    animation: slide-in .15s ease 1;
+    display: none;
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    top: calc(54px + 10px);
+    border-radius: 6px;
+    padding: 24px;
+    background-color: var(--page-bkg-color);
+    border: 1px solid var(--bkg-m);
+    z-index: 9999;
+    justify-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+header .header__right #btn-search, header .header__right #btn-toggle-dark{
+    display: inline-block;
+    padding:  18px 10px;
+    height: 25px;
+}
+header .header__right #btn-dropdown{
+  display: inline-block;
+  padding:  13.5px 0;
+}
+header .header__right .dropdown-menus .dropdown-menu {
+    padding: 10px;
+    color: var(--second-text-color);
+}
+@media screen and (max-width: 764px){
+.navbar__menus {
+    display: none!important;
+}
+.dropdown-icon {
+    display: inline-block!important;
+}
+}
+.p-btn{
+    position: fixed;
+    bottom: 1.2rem;
+    right: 1.2rem;
+    contain: layout;
+}
+.toc-btn,.click-btn{
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    align-items: center;
+    margin-top: .5rem;
+    font-size: .75rem;
+    background-color: var(--sec-bkg);
+    display: block;
+    padding: 0.9rem;
+    box-shadow: 0 0.3rem 0.6rem rgba(48,55,66,.15);
+    border: none;
+    border-radius: 0.5rem;
+    line-height: 1;
+    color: var(--first-text-color);
+}
+.toc-link{
+    color: var(--second-text-color);
+}
+
+#css-loading h3{
+    font-weight: 500;
+    font-size: 1.4rem;
+    text-align: center;
+    position: fixed;
+    top: 200px;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    animation: cssLoad;
+    animation-delay: 0.3s;
+    -webkit-animation: cssLoad;
+    -webkit-animation-delay: 0.3s;
+}
+@keyframes cssLoad {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0.9;
+    }
+}
+
+
+.memorial {
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
+    filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); filter:gray;
+}
+
+
+    .post-copyright:after {
+        position: absolute;
+        color: #fff;
+        background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 496 512'%3E%3Cpath fill='gray' d='M245.8 214.9l-33.2 17.3c-9.4-19.6-25.2-20-27.4-20-22.2 0-33.3 14.6-33.3 43.9 0 23.5 9.2 43.8 33.3 43.8 14.4 0 24.6-7 30.5-21.3l30.6 15.5a73.2 73.2 0 01-65.1 39c-22.6 0-74-10.3-74-77 0-58.7 43-77 72.6-77 30.8-.1 52.7 11.9 66 35.8zm143 0l-32.7 17.3c-9.5-19.8-25.7-20-27.9-20-22.1 0-33.2 14.6-33.2 43.9 0 23.5 9.2 43.8 33.2 43.8 14.5 0 24.7-7 30.5-21.3l31 15.5c-2 3.8-21.3 39-65 39-22.7 0-74-9.9-74-77 0-58.7 43-77 72.6-77C354 179 376 191 389 214.8zM247.7 8C104.7 8 0 123 0 256c0 138.4 113.6 248 247.6 248C377.5 504 496 403 496 256 496 118 389.4 8 247.6 8zm.8 450.8c-112.5 0-203.7-93-203.7-202.8 0-105.5 85.5-203.3 203.8-203.3A201.7 201.7 0 01451.3 256c0 121.7-99.7 202.9-202.9 202.9z'/%3E%3C/svg%3E");
+        content: ' ';
+        height: 10rem;
+        width: 10rem;
+        right: -2rem;
+        top: -2rem;
+        opacity: .1;
+    }
+
+</style>
+
+    
+
+    
+    
+    <link rel="stylesheet" href="/css/main.css" media="print" onload="this.media='all';this.onload=null">
+    <noscript>
+        <link rel="stylesheet" href="/css/main.css">
+    </noscript>
+
+    
+    <script src="/js/main.js"></script>
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+    <body>
+        <header>
+            
+<div class="header__left">
+	<a href="/" class="button"><span class="logo__text">OUATIS</span></a>
+</div>
+<div class="header__right">
+	<div class="navbar__menus">
+		
+		<a href="/" class="button">
+			<div class="navbar-menu">首页</div>
+		</a>
+		
+		<a href="/archives/" class="button">
+			<div class="navbar-menu">归档</div>
+		</a>
+		
+		<a href="/categories/" class="button">
+			<div class="navbar-menu">分类</div>
+		</a>
+		
+		<a href="/tags/" class="button">
+			<div class="navbar-menu">标签</div>
+		</a>
+		
+	</div>
+	
+	<a href="/search/" class="button">
+		<div id="btn-search">
+			<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1024 1024" width="24" height="24" fill="currentColor"
+				stroke="currentColor" stroke-width="32">
+				<path
+					d="M192 448c0-141.152 114.848-256 256-256s256 114.848 256 256-114.848 256-256 256-256-114.848-256-256z m710.624 409.376l-206.88-206.88A318.784 318.784 0 0 0 768 448c0-176.736-143.264-320-320-320S128 271.264 128 448s143.264 320 320 320a318.784 318.784 0 0 0 202.496-72.256l206.88 206.88 45.248-45.248z">
+				</path>
+			</svg>
+		</div>
+	</a>
+	
+	<a href="javaScript:void(0);" class="button" id="btn-toggle-dark">
+		<div>
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none"
+				stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+			</svg>
+		</div>
+	</a>
+	<a href="javaScript:void(0);" class="dropdown-icon button">
+		<div id="btn-dropdown">
+			<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1024 1024" width="24" height="24" fill="currentColor"
+				stroke="currentColor" stroke-width="32" stroke-linecap="round">
+				<path
+					d="M903.43 561.52H148.8c-13.25 0-24-10.75-24-24s10.75-24 24-24h754.63c13.25 0 24 10.75 24 24s-10.75 24-24 24zM903.43 204.31H148.8c-13.25 0-24-10.75-24-24s10.75-24 24-24h754.63c13.25 0 24 10.75 24 24s-10.75 24-24 24zM903.43 918.73H148.8c-13.25 0-24-10.75-24-24s10.75-24 24-24h754.63c13.25 0 24 10.75 24 24s-10.75 24-24 24z"
+					fill="currentColor"></path>
+			</svg>
+		</div>
+	</a>
+	<div class="dropdown-menus" id="dropdown-menus">
+		
+		<a href="/" class="dropdown-menu button">首页</a>
+		<br>
+		
+		<a href="/archives/" class="dropdown-menu button">归档</a>
+		<br>
+		
+		<a href="/categories/" class="dropdown-menu button">分类</a>
+		<br>
+		
+		<a href="/tags/" class="dropdown-menu button">标签</a>
+		<br>
+		
+	</div>
+</div>
+
+        </header>
+        <div id="top"></div>
+        <div id="page-main" class="main-content">
+        <div class="mg-top">
+            
+
+<div class="post-card-center">
+<div class="post-card-main">
+
+    
+      <div class="index-card">
+        
+        <article class="index-card-info">
+          <h3 class="index-header">
+            <a href="/2016/05/qian-ceng-bing-zhu-ti.html">
+            
+            “千层饼”主题</a>
+          </h3>
+          <p class="index-excerpt">
+              
+              
+                
+              
+              纳博科夫在讲稿中提到的又一个主题。小说开头，夏尔刚刚入学，因为行为举止太过笨拙，还有他那顶帽子，被同学们群嘲。透过一个学生的双眼，他的帽子显得格外引人注目，“像是一盘大杂烩，看不出到底是皮帽、军帽、圆顶帽、尖嘴帽还是睡帽”。这顶帽子的描写极尽铺陈、虚张声势，几乎是在炫耀法语词汇量，但在把所有细节合并到一起后，我们已无从想象帽子究竟长什么样。按照现实的逻辑，我们没法将这样一顶帽子当真。类似的“奇观”
+          </p>
+          <div class="index-btm post-metas">
+            
+              
+                <time datetime="2016-05-02 00:00" pubdate>
+                  2016-05-02
+                </time>
+              
+            
+            
+              
+                
+                  <span class="p-dot"></span><a href="/categories/%E9%87%8D%E8%AF%BB%E3%80%8A%E5%8C%85%E6%B3%95%E5%88%A9%E5%A4%AB%E4%BA%BA%E3%80%8B/">重读《包法利夫人》</a>
+                
+              
+            
+          </div>
+        </article>
+      </div>
+    
+  
+    
+      <div class="index-card">
+        
+        <article class="index-card-info">
+          <h3 class="index-header">
+            <a href="/2016/05/li-wu-huo-xin-wu-zhu-ti.html">
+            
+            礼物或信物主题</a>
+          </h3>
+          <p class="index-excerpt">
+              
+              
+                
+              
+              雪茄烟匣主题在艾玛送给鲁道夫的礼物中，除了马鞭，还有一只雪茄烟匣，是夏尔在侯爵舞会后捡到的。当时他还拿马鞭抽了小马。夏尔不会抽烟却非要抽，惹得艾玛心烦。于是她将烟匣偷偷藏了起来，时不时取出嗅嗅，作为重温旧梦的材料。
+鲁道夫后来成了子爵幻想的投射，连他头发上发油的香味都让艾玛想起子爵。因为曾见过鲁道夫抽雪茄，艾玛后来将烟匣作为礼物，转赠给了他。在艾玛的葬礼后，鲁道夫叼着雪茄与夏尔交谈。
+在另一本书中
+          </p>
+          <div class="index-btm post-metas">
+            
+              
+                <time datetime="2016-05-01 00:00" pubdate>
+                  2016-05-01
+                </time>
+              
+            
+            
+              
+                
+                  <span class="p-dot"></span><a href="/categories/%E9%87%8D%E8%AF%BB%E3%80%8A%E5%8C%85%E6%B3%95%E5%88%A9%E5%A4%AB%E4%BA%BA%E3%80%8B/">重读《包法利夫人》</a>
+                
+              
+            
+          </div>
+        </article>
+      </div>
+    
+  
+    
+      <div class="index-card">
+        
+        <article class="index-card-info">
+          <h3 class="index-header">
+            <a href="/2016/04/shi-wu-zhu-ti.html">
+            
+            失物主题</a>
+          </h3>
+          <p class="index-excerpt">
+              
+              
+                
+              
+              这是显而易见的，包法利一家从托特搬到荣镇，是文学史上最为精心设计的一次搬家。这次搬家象征了艾玛的堕落，经济的、性的堕落，从梦幻、虚幻到现实、丑陋的转变。堕落过程中，她丢失了许多东西。迷信地说，东西丢失就是一个个不祥预兆。
+神甫石膏像主题一条简洁清晰的线索是神甫石膏像，它原本位于包法利夫妇的新居花园中。这一花园是很规矩的，呈长方形，有一个日晷、四个对称的花坛；构造也朴素，堪称简陋，只有两道土墙、一道
+          </p>
+          <div class="index-btm post-metas">
+            
+              
+                <time datetime="2016-04-30 00:00" pubdate>
+                  2016-04-30
+                </time>
+              
+            
+            
+              
+                
+                  <span class="p-dot"></span><a href="/categories/%E9%87%8D%E8%AF%BB%E3%80%8A%E5%8C%85%E6%B3%95%E5%88%A9%E5%A4%AB%E4%BA%BA%E3%80%8B/">重读《包法利夫人》</a>
+                
+              
+            
+          </div>
+        </article>
+      </div>
+    
+  
+    
+      <div class="index-card">
+        
+        <article class="index-card-info">
+          <h3 class="index-header">
+            <a href="/2016/04/jue-se-ren-qi-zhi.html">
+            
+            “角色任期制”</a>
+          </h3>
+          <p class="index-excerpt">
+              
+              
+                
+              
+              很多角色都实行“任期制”。光是“包法利夫人”就有两任，就像洛丽塔有两任。依靠这种你方唱罢我登场的任期制，作者铺出许多伏线。
+叙述者“我们”。夏尔的同班同学，仅仅用他的眼睛和口吻观察了几页。
+上帝。不知不觉变成全知视角。
+主角夏尔愚钝、木讷是其底色，但这个人除了呆，也不是没有别的问题。他很容易被人左右，性格软弱，还“怪命运”。他不算一位真正有资格的医生，只是一位有证书、可以给人看病的卫生员。医术平庸
+          </p>
+          <div class="index-btm post-metas">
+            
+              
+                <time datetime="2016-04-29 00:00" pubdate>
+                  2016-04-29
+                </time>
+              
+            
+            
+              
+                
+                  <span class="p-dot"></span><a href="/categories/%E9%87%8D%E8%AF%BB%E3%80%8A%E5%8C%85%E6%B3%95%E5%88%A9%E5%A4%AB%E4%BA%BA%E3%80%8B/">重读《包法利夫人》</a>
+                
+              
+            
+          </div>
+        </article>
+      </div>
+    
+  
+    
+      <div class="index-card">
+        
+        <article class="index-card-info">
+          <h3 class="index-header">
+            <a href="/2016/04/ai-ma-de-shu-dan.html">
+            
+            艾玛的书单</a>
+          </h3>
+          <p class="index-excerpt">
+              
+              
+                
+              
+              “如果现在有人——比如，堂吉诃德或者 [[《包法利夫人》]] ——坚持要把虚构小说与生活混淆起来，非要生活得像小说里那个模样不可，其结果常常是悲惨的。”（赵德明译本 [[《给青年小说家的信》]]）
+这里的包法利夫人不用加书名号。她和堂吉诃德一样，是文学史上最著名的狂热读者。“Don Quixote or Madame Bovary”，应该是人名并列关系。堂吉诃德读骑士小说，女吉诃德读浪漫小说。安娜
+          </p>
+          <div class="index-btm post-metas">
+            
+              
+                <time datetime="2016-04-29 00:00" pubdate>
+                  2016-04-29
+                </time>
+              
+            
+            
+              
+                
+                  <span class="p-dot"></span><a href="/categories/%E9%87%8D%E8%AF%BB%E3%80%8A%E5%8C%85%E6%B3%95%E5%88%A9%E5%A4%AB%E4%BA%BA%E3%80%8B/">重读《包法利夫人》</a>
+                
+              
+            
+          </div>
+        </article>
+      </div>
+    
+  
+    
+      <div class="index-card">
+        
+        <article class="index-card-info">
+          <h3 class="index-header">
+            <a href="/2015/12/battleship-potemkin.html">
+            
+            《战舰波将金号》</a>
+          </h3>
+          <p class="index-excerpt">
+              
+              
+                
+              
+              第四幕，那段著名的“敖德萨阶梯”往前，人们扬起风帆，乘坐小船去为波将金号提供食物的场景，我一直想搞清楚是不是真的。这难道不是整部电影中最动人的场景么？太乌托邦了，简直像动画片。海上的雾消散了，诗意的哀伤也已经过去，敖德萨人民箪食壶浆，与波将金水兵团结在一起，海上画面如同《悲惨世界》中的合唱，无比抒情。然后才是暴风骤雨般的血腥镇压。
+我们很容易查到，历史上的敖德萨阶梯从未有过如此大规模的屠杀——不过
+          </p>
+          <div class="index-btm post-metas">
+            
+              
+                <time datetime="2015-12-24 00:00" pubdate>
+                  2015-12-24
+                </time>
+              
+            
+            
+              
+                
+                  <span class="p-dot"></span><a href="/categories/%E4%BC%98%E7%A7%80%E8%AF%BB%E8%80%85%E7%9A%84%E5%9B%9B%E4%B8%AA%E6%9D%A1%E4%BB%B6/">优秀读者的四个条件</a>
+                
+              
+            
+          </div>
+        </article>
+      </div>
+    
+  
+    
+      <div class="index-card">
+        
+        <article class="index-card-info">
+          <h3 class="index-header">
+            <a href="/2015/12/dao-huo-xian.html">
+            
+            《盗火线》</a>
+          </h3>
+          <p class="index-excerpt">
+              
+              
+                
+              
+              几乎每一个男人都和女人有关，但似乎每一个女人又都无关紧要。德尼罗的女人是他的点缀，帕西诺的老婆、女儿也是点缀，即便我们记住与她们相关的情节，也还是难以回忆起这些女人的具体神情、姿态、动作。但是我们记得一个男人后退躲进墙角的阴影，另一个男人拍打一台黑白电视机。倒是方·基默的老婆，艾什莉·贾德，在阳台上“露了一手”，令人印象深刻，但这对夫妻并不算真正的主角。
+《盗火线》有两个非常明显的主题。一是警察与
+          </p>
+          <div class="index-btm post-metas">
+            
+              
+                <time datetime="2015-12-15 00:00" pubdate>
+                  2015-12-15
+                </time>
+              
+            
+            
+              
+                
+                  <span class="p-dot"></span><a href="/categories/%E4%BC%98%E7%A7%80%E8%AF%BB%E8%80%85%E7%9A%84%E5%9B%9B%E4%B8%AA%E6%9D%A1%E4%BB%B6/">优秀读者的四个条件</a>
+                
+              
+            
+          </div>
+        </article>
+      </div>
+    
+  
+    
+      <div class="index-card">
+        
+        <article class="index-card-info">
+          <h3 class="index-header">
+            <a href="/2015/11/shadow-of-a-doubt.html">
+            
+            《辣手摧花》</a>
+          </h3>
+          <p class="index-excerpt">
+              
+              
+                
+              
+              据说在希区柯克的作品中，他自己最喜欢这一部，有过否认，但肯定的次数居多，肯定这是他的“最爱”，要么是“最喜欢的之一”“最令人满意的一部”。理解任何一位艺术家，都不该仅仅听从他的只言片语。他们嘴上要说，《辣手摧花》总的主题是“爱和良好的秩序并不能抵御邪恶”，但实际电影的情节恰恰相反，外甥女查莉明明抵御住了恶的传教，最后还反杀了查理舅舅。所以我认为，希区柯克的心里话，或者说他的内在美学，应该是“爱和良
+          </p>
+          <div class="index-btm post-metas">
+            
+              
+                <time datetime="2015-11-14 00:00" pubdate>
+                  2015-11-14
+                </time>
+              
+            
+            
+              
+                
+                  <span class="p-dot"></span><a href="/categories/%E4%BC%98%E7%A7%80%E8%AF%BB%E8%80%85%E7%9A%84%E5%9B%9B%E4%B8%AA%E6%9D%A1%E4%BB%B6/">优秀读者的四个条件</a>
+                
+              
+            
+          </div>
+        </article>
+      </div>
+    
+  
+    
+      <div class="index-card">
+        
+        <article class="index-card-info">
+          <h3 class="index-header">
+            <a href="/2015/08/xia-ri-xue-che-ji.html">
+            
+            夏日学车记</a>
+          </h3>
+          <p class="index-excerpt">
+              
+              
+                
+              
+              “黑炭”。教练，相处时间长达一周。他的肤色乌黑，像晒出病来了，熟悉他的人都管他叫“黑炭”。“黑炭”对此颇有微词，偶尔也怨几句，说自己“实际上不算黑的”，我们听了都笑。他的前额左侧有一道结疤的竖痕，正切着外眼角划下，颜色发深，丑陋，像流着瘀血。走动或站立的时候，他就挺起胸脯，身子也轻微地扭动起来，轻佻，呈现一种自认为是的潇洒；坐到副驾驶室上了，又整个人佝偻着，剪脚趾甲，有时也剥趾缝里快褪落的皮。爱说
+          </p>
+          <div class="index-btm post-metas">
+            
+              
+                <time datetime="2015-08-31 00:00" pubdate>
+                  2015-08-31
+                </time>
+              
+            
+            
+              
+                
+                  <span class="p-dot"></span><a href="/categories/%E7%BC%AE%E5%86%99%E7%9B%92/">缮写盒</a>
+                
+              
+            
+          </div>
+        </article>
+      </div>
+    
+  
+    
+      <div class="index-card">
+        
+        <article class="index-card-info">
+          <h3 class="index-header">
+            <a href="/2015/07/ri-ben-ou-ren-ji.html">
+            
+            日本友人记</a>
+          </h3>
+          <p class="index-excerpt">
+              
+              
+                
+              
+              毕业了，现在要决定去留。我思来想去，觉得还是得去图书馆。书太重了。我也没那么喜欢实体书。我留下一本包法利、一本盖茨比、一本《枯枝败叶》，其余捐赠了图书馆。专门挑错误的书架分类，把小说塞进政治、插入法律、穿透经济，等待有缘的图书管理员发现。最后还剩三册日本友人送的漫画，富坚义博的《LEVEL E》，不舍得丢。
+这么一想，马尔克斯已经死了有些年了。我刚认识佐佐木的时候，就告诉她我不是一个太会社交的人。
+          </p>
+          <div class="index-btm post-metas">
+            
+              
+                <time datetime="2015-07-01 00:00" pubdate>
+                  2015-07-01
+                </time>
+              
+            
+            
+              
+                
+                  <span class="p-dot"></span><a href="/categories/%E7%BC%AE%E5%86%99%E7%9B%92/">缮写盒</a>
+                
+              
+            
+          </div>
+        </article>
+      </div>
+    
+  
+</div>
+</div>
+
+    <nav aria-label="navigation">
+      <span class="pagination" id="pagination">
+        <a class="extend prev" rel="prev" href="/page/5/">&lt;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/7/">&gt;</a>
+      </span>
+    </nav>
+
+        </div>
+        
+<footer class="text-center">
+    
+    
+    
+    
+    
+    <p>&copy;  2012 - 2023&nbsp;&nbsp;Theme Miracle</p>
+    
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme by <a href="https://github.com/oCoke/hexo-theme-miracle" target="_blank">Miracle</a></p>
+    
+    
+</footer>
+
+<div class="p-btn">
+    
+    
+    <a href="javascript:window.scrollTo({top:0,behavior:'smooth'});" class="click-btn">
+      <i id="i-up"></i>
+    </a>
+</div>
+
+<!-- SCRIPTS -->
+
+
+
+
+
+
+<script>
+    document.getElementById("btn-dropdown").addEventListener('click', () => {
+      toggleClass("#dropdown-menus","display-inline");
+    });
+    console.log('\n' + ' %c Powered by Hexo Theme Miracle ' + ' %c https://github.com/hifun-team/hexo-theme-miracle ' + '\n' + '\n', 'color: #fff; background: #4F9BFA; padding:5px 0;', 'background: #FFF; padding:5px 0;');
+
+    
+
+    
+  /* 小彩蛋: 饮茶先啦 */
+  setTimeout(() => {
+    var time = new Date();
+    if (time.getHours() == 15) {
+      let comment = document.createComment(' 三点几嚟！饮茶先啦！ ');
+      document.body.insertBefore(comment, document.getElementsByTagName('header')[0]);
+    }
+  },1);
+    
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+        <div id="css-loading">
+            <h3 class="text-center">加载中...</h3>
+        </div>
+        
+    </body>
+</html>

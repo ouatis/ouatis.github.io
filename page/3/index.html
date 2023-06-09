@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="UTF-8">
+    
+    <link rel="apple-touch-icon" sizes="76x76" href="/null">
+    <link rel="icon" type="image/png" href="/null">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    <title>笼城往事</title>
+    
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    
+    
+    <meta name="description" content="">
+    <meta name="author" content="SigiL">
+    <meta name="keywords" content="">
+    
+    <style>
+
+
+    
+    :root{
+        --shadow-color: rgba(0,0,0,0.2);
+        --sec-shadow: rgba(0,0,0,0.03);
+        --shadow-hover-color: rgba(0,0,0,0.28);
+        --first-text-color: #475b6d;
+        --second-text-color: #37475b;
+        --third-text-color: #858585;
+        --default-text-color: #505050;
+        --default-link-color: #007bff;
+        --link-color: #000000;
+        --second-link-color: #4F9BFA;
+        --code-color:rgba(27,31,35,.05);
+        --post-bkg-color: #fff;
+        --page-bkg-color: #f2f5f8;
+        --nav-a-hover-color: #3498db;
+        --post-sec-text-color: #718096;
+        --sec-bkg: #f2f5f8;
+        --color-mode: 'light';
+        --bkg-h: rgba(255,255,255,0.6);
+        --bkg-m: #e1e4e8;
+        --home-title-color: #4169E1;
+        --shadow: 0 4px 10px rgba(0,2,4,0.06),0 0 1px rgba(0,2,4,0.11);
+        --hr-color: #ddd;
+        --bg-t: #f4f4f4;
+        --nav-bkg: rgba(255,255,255,0.6);
+    }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-mode: 'dark';
+  }
+
+  :root:not([data-theme]) {
+    --first-text-color: hsla(0,0%,100%,0.92);
+    --second-text-color: hsla(0,0%,100%,0.86);
+    --third-text-color: #a7a9ad;
+    --default-text-color: #505050;
+    --default-link-color: #1589e9;
+    --link-color: #000000;
+    --second-link-color: #30a9de;
+    --post-bkg-color: #252d38;
+    --page-bkg-color: #181c27;
+    --nav-a-hover-color: #3498db;
+    --post-sec-text-color: #a7a9ad;
+    --sec-bkg: #364151;
+    --bkg-h: rgba(255,255,255,0.2);
+    --bkg-m: rgba(255,255,255,0.1);
+    --home-title-color: rgb(226, 82, 90);
+    --code-color:#3e4b5e;
+    --shadow: none;
+    --hr-color: #718096;
+    --bg-t: #364151;
+    --nav-bkg: rgba(13,17,23,0.6);
+  }
+}
+
+[data-theme='dark'] {
+    --shadow-color: rgba(0,0,0,0.2);
+    --shadow-hover-color: rgba(0,0,0,0.28);
+    --first-text-color: hsla(0,0%,100%,0.92);
+    --second-text-color: hsla(0,0%,100%,0.86);
+    --third-text-color: #a7a9ad;
+    --default-text-color: #505050;
+    --default-link-color: #1589e9;
+    --link-color: #000000;
+    --second-link-color: #30a9de;
+    --post-bkg-color: #252d38;
+    --page-bkg-color: #181c27;
+    --nav-a-hover-color: #3498db;
+    --post-sec-text-color: #a7a9ad;
+    --sec-bkg: #364151;
+    --bkg-h: rgba(255,255,255,0.2);
+    --bkg-m: rgba(255,255,255,0.1);
+    --home-title-color: rgb(226, 82, 90);
+    --code-color:#3e4b5e;
+    --shadow: none;
+    --hr-color: #718096;
+    --bg-t: #364151;
+    --nav-bkg: rgba(13,17,23,0.6);
+}
+
+</style>
+
+
+
+<style>
+#page-main,footer,.p-btn{
+    display: none;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+body {
+    background-color: var(--page-bkg-color);
+    color: var(--second-text-color);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    transition: all .3s;
+}
+a {
+    color: var(--default-link-color);
+    text-decoration: none;
+    background-color: transparent;
+}
+a:hover{
+    color: var(--second-link-color);
+}
+.main-content,.post-card-main{
+    margin: 30px;
+}
+
+
+
+@media (max-width: 410px){
+    .post-card-main{
+        max-width: 350px!important;
+    }
+}
+
+@media (max-width: 980px){
+    .post-card-main{
+        max-width: 520px!important;
+    }
+}
+
+
+@media (min-width: 780px){ 
+    h3{
+        font-size: 1.5rem;
+        line-height: 1.5em;
+    }
+}
+@media (min-width: 1280px){ 
+    h3{
+        font-size: 1.7rem;
+        line-height: 1.5em;
+    }
+}
+@media (min-width: 2096px){ 
+    h3{
+        font-size: 1.8rem;
+        line-height: 1.5em;
+    }
+}
+
+.text-center{
+    text-align: center!important;
+}
+.middle-center{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    height: 100%;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    height: 54px;
+    padding: 0 1.25rem;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    border-bottom: 1px solid var(--bkg-m);
+    background-color: var(--nav-bkg);
+    backdrop-filter: blur(4px);
+    transition: all .3s;
+}
+header .header__left, header .header__right {
+    display: flex;
+    align-items: center;
+    font-family: rubik,sans-serif,Varela Round;
+}
+header .header__left .logo__text {
+    font-size: 18px;
+    font-weight: 450;
+    padding: 14.5px 10px;
+    border-radius: 5px;
+    color: var(--second-text-color);
+}
+header .header__right .navbar__menus {
+    height: 54px;
+    padding: 0 0 0 15px;
+}
+header .header__right .button {
+    color: var(--second-text-color);
+}
+header .header__right .navbar__menus .navbar-menu {
+    display: inline-block;
+    align-items: center;
+    height: 54px;
+    padding: 0 10px;
+    font-size: 16px;
+    line-height: 54px;
+}
+header .header__right .dropdown-icon {
+    display: none;
+    height: 54px;
+    padding: 15px 10px;
+    border: 0;
+    background-color: transparent;
+}
+header .header__right .dropdown-menus {
+    line-height: 2rem;
+    animation: slide-in .15s ease 1;
+    display: none;
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    top: calc(54px + 10px);
+    border-radius: 6px;
+    padding: 24px;
+    background-color: var(--page-bkg-color);
+    border: 1px solid var(--bkg-m);
+    z-index: 9999;
+    justify-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+header .header__right #btn-search, header .header__right #btn-toggle-dark{
+    display: inline-block;
+    padding:  18px 10px;
+    height: 25px;
+}
+header .header__right #btn-dropdown{
+  display: inline-block;
+  padding:  13.5px 0;
+}
+header .header__right .dropdown-menus .dropdown-menu {
+    padding: 10px;
+    color: var(--second-text-color);
+}
+@media screen and (max-width: 764px){
+.navbar__menus {
+    display: none!important;
+}
+.dropdown-icon {
+    display: inline-block!important;
+}
+}
+.p-btn{
+    position: fixed;
+    bottom: 1.2rem;
+    right: 1.2rem;
+    contain: layout;
+}
+.toc-btn,.click-btn{
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    align-items: center;
+    margin-top: .5rem;
+    font-size: .75rem;
+    background-color: var(--sec-bkg);
+    display: block;
+    padding: 0.9rem;
+    box-shadow: 0 0.3rem 0.6rem rgba(48,55,66,.15);
+    border: none;
+    border-radius: 0.5rem;
+    line-height: 1;
+    color: var(--first-text-color);
+}
+.toc-link{
+    color: var(--second-text-color);
+}
+
+#css-loading h3{
+    font-weight: 500;
+    font-size: 1.4rem;
+    text-align: center;
+    position: fixed;
+    top: 200px;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    animation: cssLoad;
+    animation-delay: 0.3s;
+    -webkit-animation: cssLoad;
+    -webkit-animation-delay: 0.3s;
+}
+@keyframes cssLoad {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0.9;
+    }
+}
+
+
+.memorial {
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
+    filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); filter:gray;
+}
+
+
+    .post-copyright:after {
+        position: absolute;
+        color: #fff;
+        background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 496 512'%3E%3Cpath fill='gray' d='M245.8 214.9l-33.2 17.3c-9.4-19.6-25.2-20-27.4-20-22.2 0-33.3 14.6-33.3 43.9 0 23.5 9.2 43.8 33.3 43.8 14.4 0 24.6-7 30.5-21.3l30.6 15.5a73.2 73.2 0 01-65.1 39c-22.6 0-74-10.3-74-77 0-58.7 43-77 72.6-77 30.8-.1 52.7 11.9 66 35.8zm143 0l-32.7 17.3c-9.5-19.8-25.7-20-27.9-20-22.1 0-33.2 14.6-33.2 43.9 0 23.5 9.2 43.8 33.2 43.8 14.5 0 24.7-7 30.5-21.3l31 15.5c-2 3.8-21.3 39-65 39-22.7 0-74-9.9-74-77 0-58.7 43-77 72.6-77C354 179 376 191 389 214.8zM247.7 8C104.7 8 0 123 0 256c0 138.4 113.6 248 247.6 248C377.5 504 496 403 496 256 496 118 389.4 8 247.6 8zm.8 450.8c-112.5 0-203.7-93-203.7-202.8 0-105.5 85.5-203.3 203.8-203.3A201.7 201.7 0 01451.3 256c0 121.7-99.7 202.9-202.9 202.9z'/%3E%3C/svg%3E");
+        content: ' ';
+        height: 10rem;
+        width: 10rem;
+        right: -2rem;
+        top: -2rem;
+        opacity: .1;
+    }
+
+</style>
+
+    
+
+    
+    
+    <link rel="stylesheet" href="/css/main.css" media="print" onload="this.media='all';this.onload=null">
+    <noscript>
+        <link rel="stylesheet" href="/css/main.css">
+    </noscript>
+
+    
+    <script src="/js/main.js"></script>
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+    <body>
+        <header>
+            
+<div class="header__left">
+	<a href="/" class="button"><span class="logo__text">OUATIS</span></a>
+</div>
+<div class="header__right">
+	<div class="navbar__menus">
+		
+		<a href="/" class="button">
+			<div class="navbar-menu">首页</div>
+		</a>
+		
+		<a href="/archives/" class="button">
+			<div class="navbar-menu">归档</div>
+		</a>
+		
+		<a href="/categories/" class="button">
+			<div class="navbar-menu">分类</div>
+		</a>
+		
+		<a href="/tags/" class="button">
+			<div class="navbar-menu">标签</div>
+		</a>
+		
+	</div>
+	
+	<a href="/search/" class="button">
+		<div id="btn-search">
+			<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1024 1024" width="24" height="24" fill="currentColor"
+				stroke="currentColor" stroke-width="32">
+				<path
+					d="M192 448c0-141.152 114.848-256 256-256s256 114.848 256 256-114.848 256-256 256-256-114.848-256-256z m710.624 409.376l-206.88-206.88A318.784 318.784 0 0 0 768 448c0-176.736-143.264-320-320-320S128 271.264 128 448s143.264 320 320 320a318.784 318.784 0 0 0 202.496-72.256l206.88 206.88 45.248-45.248z">
+				</path>
+			</svg>
+		</div>
+	</a>
+	
+	<a href="javaScript:void(0);" class="button" id="btn-toggle-dark">
+		<div>
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none"
+				stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+			</svg>
+		</div>
+	</a>
+	<a href="javaScript:void(0);" class="dropdown-icon button">
+		<div id="btn-dropdown">
+			<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1024 1024" width="24" height="24" fill="currentColor"
+				stroke="currentColor" stroke-width="32" stroke-linecap="round">
+				<path
+					d="M903.43 561.52H148.8c-13.25 0-24-10.75-24-24s10.75-24 24-24h754.63c13.25 0 24 10.75 24 24s-10.75 24-24 24zM903.43 204.31H148.8c-13.25 0-24-10.75-24-24s10.75-24 24-24h754.63c13.25 0 24 10.75 24 24s-10.75 24-24 24zM903.43 918.73H148.8c-13.25 0-24-10.75-24-24s10.75-24 24-24h754.63c13.25 0 24 10.75 24 24s-10.75 24-24 24z"
+					fill="currentColor"></path>
+			</svg>
+		</div>
+	</a>
+	<div class="dropdown-menus" id="dropdown-menus">
+		
+		<a href="/" class="dropdown-menu button">首页</a>
+		<br>
+		
+		<a href="/archives/" class="dropdown-menu button">归档</a>
+		<br>
+		
+		<a href="/categories/" class="dropdown-menu button">分类</a>
+		<br>
+		
+		<a href="/tags/" class="dropdown-menu button">标签</a>
+		<br>
+		
+	</div>
+</div>
+
+        </header>
+        <div id="top"></div>
+        <div id="page-main" class="main-content">
+        <div class="mg-top">
+            
+
+<div class="post-card-center">
+<div class="post-card-main">
+
+    
+      <div class="index-card">
+        
+        <article class="index-card-info">
+          <h3 class="index-header">
+            <a href="/2022/01/xia-xue-tian-bao-jing-ji.html">
+            
+            下雪天报警记</a>
+          </h3>
+          <p class="index-excerpt">
+              
+              
+                
+              
+              北京下了 2022 年的第一场雪，我在路上看见一个“疯女人”。对于这个词，人们似乎总是冠以“可怜的”或者“阁楼上的”，而在我这里是“马路上的”。最近一个月上下班老是碰到她。年龄不太确定，浑身上下脏脏的，头发没洗，身穿黑色大衣不曾换过，双眼失神，在马路边来回转悠。雪天气温零度以下，她外套领口敞开，里面没有其他衣物。看到她我总是想起斯麦尔佳科夫的母亲。
+鼓足勇气，问她要不要帮忙。她说不需要，然后面朝我
+          </p>
+          <div class="index-btm post-metas">
+            
+              
+                <time datetime="2022-01-20 00:00" pubdate>
+                  2022-01-20
+                </time>
+              
+            
+            
+              
+                
+                  <span class="p-dot"></span><a href="/categories/%E7%BC%AE%E5%86%99%E7%9B%92/">缮写盒</a>
+                
+              
+            
+          </div>
+        </article>
+      </div>
+    
+  
+    
+      <div class="index-card">
+        
+        <article class="index-card-info">
+          <h3 class="index-header">
+            <a href="/2021/08/zhu-yuan-ji.html">
+            
+            住院记</a>
+          </h3>
+          <p class="index-excerpt">
+              
+              
+                
+              
+              有生以来第一次被 120 拉走。我躺在担架上问大夫，是不是阑尾，我还没有割过阑尾。大夫让我少说点话，先去医院。我没有停止的意思，听说以前一个阑尾要找几个小时，我很害怕。你听谁说的。我说 [[王小波]]。大夫说他没听说过。这是我来北京那么多年，第一次去医院，初中开始跑步后，我就很少生病。我刚才还在吃拉面，头一晕，就吐了一地血。
+到了医院，他们把我抬进一个形似太空舱的玩意儿。我抱着审慎的心态进去，一瞬
+          </p>
+          <div class="index-btm post-metas">
+            
+              
+                <time datetime="2021-08-01 00:00" pubdate>
+                  2021-08-01
+                </time>
+              
+            
+            
+              
+                
+                  <span class="p-dot"></span><a href="/categories/%E7%BC%AE%E5%86%99%E7%9B%92/">缮写盒</a>
+                
+              
+            
+          </div>
+        </article>
+      </div>
+    
+  
+    
+      <div class="index-card">
+        
+        <article class="index-card-info">
+          <h3 class="index-header">
+            <a href="/2021/07/hong-zhu.html">
+            
+            《红猪》</a>
+          </h3>
+          <p class="index-excerpt">
+              
+              
+                
+              
+              今年北影节有《红猪》，来说点什么，祝福自己抢到票。那从哪儿说起呢？我注意到许多人都很纠结，为什么主角非得是一头猪，他又为什么非得变成猪不可。这是两个不同的问题，宫先生都没有给出强有力的、明确的答案，仿佛犯了讲故事的忌讳。剖析创作者心理不是我的喜好，但我可以给出一部分线索，交由各位心理学家判断。
+所以第一个问题，主角为什么非得是一头猪。这你得问《[[宫崎骏]] の雑想ノート》，一个满是战舰、飞机、坦
+          </p>
+          <div class="index-btm post-metas">
+            
+              
+                <time datetime="2021-07-15 00:00" pubdate>
+                  2021-07-15
+                </time>
+              
+            
+            
+              
+                
+                  <span class="p-dot"></span><a href="/categories/%E4%BC%98%E7%A7%80%E8%AF%BB%E8%80%85%E7%9A%84%E5%9B%9B%E4%B8%AA%E6%9D%A1%E4%BB%B6/">优秀读者的四个条件</a>
+                
+              
+            
+          </div>
+        </article>
+      </div>
+    
+  
+    
+      <div class="index-card">
+        
+        <article class="index-card-info">
+          <h3 class="index-header">
+            <a href="/2021/05/shao-nian-pai.html">
+            
+            《少年派的奇幻漂流》</a>
+          </h3>
+          <p class="index-excerpt">
+              
+              
+                
+              
+              《少年派》有一个故事底本，一部中篇小说，[[《马科斯与猫科动物》]]，背景故事是一个犹太人和一头美洲豹同乘一船，隐喻犹太人大屠杀。小说作者是莫瓦西尔·斯克利亚，来自巴西。
+以一部短篇就给我留下深刻印象的巴西作家，此前只有若昂·吉马朗埃斯·罗萨，但连这个名字我也是需要现查的。
+与它的巴西姻亲相比，《少年派》的隐喻野心要更大一些，一个信仰三种宗教的少年，和一头老虎同时被困救生艇，这是一种更接近人类文明
+          </p>
+          <div class="index-btm post-metas">
+            
+              
+                <time datetime="2021-05-21 00:00" pubdate>
+                  2021-05-21
+                </time>
+              
+            
+            
+              
+                
+                  <span class="p-dot"></span><a href="/categories/%E4%BC%98%E7%A7%80%E8%AF%BB%E8%80%85%E7%9A%84%E5%9B%9B%E4%B8%AA%E6%9D%A1%E4%BB%B6/">优秀读者的四个条件</a>
+                
+              
+            
+          </div>
+        </article>
+      </div>
+    
+  
+    
+      <div class="index-card">
+        
+        <article class="index-card-info">
+          <h3 class="index-header">
+            <a href="/2021/05/leng-xue-dong-wu-si-yang-ji.html">
+            
+            冷血动物饲养记</a>
+          </h3>
+          <p class="index-excerpt">
+              
+              
+                
+              
+              经济独立后第一次养宠物，是养了两只鬃狮蜥蜴。这个物种来自澳大利亚，日行性，地栖型，生活在沙漠地区，生气时会把下巴撑大，像狮子一样，表皮干燥、粗糙，算是相对不恶心的冷血动物。
+之所以养它们，主要是当时的女朋友想养，我们就去花鸟市场买了一公一母，一只几十厘米长的人造板保温箱。母蜥蜴呈血红色，后来叫小诸；公的呈皮革色，叫小葛。那时家里的扫地机器人叫小亮。
+养蜥蜴前我做了很多调研和评估，判断自己的生活、工
+          </p>
+          <div class="index-btm post-metas">
+            
+              
+                <time datetime="2021-05-10 00:00" pubdate>
+                  2021-05-10
+                </time>
+              
+            
+            
+              
+                
+                  <span class="p-dot"></span><a href="/categories/%E7%BC%AE%E5%86%99%E7%9B%92/">缮写盒</a>
+                
+              
+            
+          </div>
+        </article>
+      </div>
+    
+  
+    
+      <div class="index-card">
+        
+        <article class="index-card-info">
+          <h3 class="index-header">
+            <a href="/2020/11/shi-guang-zhi-xue-ji.html">
+            
+            时光之穴记</a>
+          </h3>
+          <p class="index-excerpt">
+              
+              
+                
+              
+              没钱的时候，对电影的认知就是露天电影和盗版资源，从来不去电影院，也不看院线电影。直到公司组团，上映首日，去包场看了《魔兽》。导演拍过《月球》和《源代码》，还是大卫鲍伊的儿子。但是电影很烂，几乎没记住什么，后来打魔兽也是一样。以前觉得，错过了魔兽最辉煌的时代，会有点可惜，碰上怀旧服的机会，应该去试一试。没玩两个小时，又头疼难忍。月卡不用白不用，才开始玩正式服，版本号大概八点几。
+还是和我玩网游的传统
+          </p>
+          <div class="index-btm post-metas">
+            
+              
+                <time datetime="2020-11-20 00:00" pubdate>
+                  2020-11-20
+                </time>
+              
+            
+            
+              
+                
+                  <span class="p-dot"></span><a href="/categories/%E7%BC%AE%E5%86%99%E7%9B%92/">缮写盒</a>
+                
+              
+            
+          </div>
+        </article>
+      </div>
+    
+  
+    
+      <div class="index-card">
+        
+        <article class="index-card-info">
+          <h3 class="index-header">
+            <a href="/2020/09/ck3-kuai-su-po-ju.html">
+            
+            《十字军之王3》剧本快速破局攻略</a>
+          </h3>
+          <p class="index-excerpt">
+              
+              
+                
+              
+              《十字军之王 3》本质上只有两个剧本，867 年剧本和 1066 年剧本。三代目前的机制，决定了当国家发展到一定阶段，玩点不会有什么实质性区别。因此剧本与剧本之间的趣味主要在于前期破局。
+1066 年波希米亚“白手起家之公爵弗拉季斯拉夫”剧本是最适合新手的剧本，波希米亚是真正的新手村。比新手教学中的爱尔兰发展潜力更高，只是邻国偏多，又在神圣罗马帝国治下，可能更混乱一些。
+
+守住直辖伯爵领；
+守住布
+          </p>
+          <div class="index-btm post-metas">
+            
+              
+                <time datetime="2020-09-01 00:00" pubdate>
+                  2020-09-01
+                </time>
+              
+            
+            
+              
+                
+                  <span class="p-dot"></span><a href="/categories/%E4%B8%9A%E5%A4%96/">业外</a>
+                
+              
+            
+          </div>
+        </article>
+      </div>
+    
+  
+    
+      <div class="index-card">
+        
+        <article class="index-card-info">
+          <h3 class="index-header">
+            <a href="/2020/01/zhuang-zi-hua-xie-yuan-xing-kao.html">
+            
+            庄子画蟹原型考</a>
+          </h3>
+          <p class="index-excerpt">
+              
+              
+                
+              
+              《庄子》汪洋恣肆，我们的“小说”一词最早就出自其中。庄子也是我们文学的源流。一些国外的现代作家也对庄子很感兴趣，但时常把他的典故弄错。
+“有中国梁代君王权杖的传说，每位新君王可得到权杖的一半；这样权杖就少一半；虽然权杖因君王更迭而缩短，但它始终存在着”（ 阿喀琉斯和乌龟永恒的赛跑），疑为《庄子》“一尺之棰，日取其半，万世不竭”与秦始皇“二世三世至于万世，传之无穷”杂糅之误。
+但到底是不是博尔赫斯弄
+          </p>
+          <div class="index-btm post-metas">
+            
+              
+                <time datetime="2020-01-11 00:00" pubdate>
+                  2020-01-11
+                </time>
+              
+            
+            
+              
+                
+                  <span class="p-dot"></span><a href="/categories/%E7%BC%AE%E5%86%99%E7%9B%92/">缮写盒</a>
+                
+              
+            
+          </div>
+        </article>
+      </div>
+    
+  
+    
+      <div class="index-card">
+        
+        <article class="index-card-info">
+          <h3 class="index-header">
+            <a href="/2019/12/qing-tian-ji.html">
+            
+            晴天记</a>
+          </h3>
+          <p class="index-excerpt">
+              
+              
+                
+              
+              2016 年以前我住在海淀。2016 年我住在通州，跟大量年轻人一样，白天在朝阳工作，晚上回通州睡觉，每天坐八通线、一号线上下班。当然地铁上也有好玩的人，但总归大家都是通勤路上趋同的上班族。2017 年我又住到了石景山，第一次住在公司附近，下班回家我竟然能闻到小区饭香。那一刻的感觉实在是太奇妙了，我仿佛回到小学时候。那时我家在小学附近租了个老房子，中午我能回家吃饭。2018 年后，我住到昌平、朝阳
+          </p>
+          <div class="index-btm post-metas">
+            
+              
+                <time datetime="2019-12-31 00:00" pubdate>
+                  2019-12-31
+                </time>
+              
+            
+            
+              
+                
+                  <span class="p-dot"></span><a href="/categories/%E7%BC%AE%E5%86%99%E7%9B%92/">缮写盒</a>
+                
+              
+            
+          </div>
+        </article>
+      </div>
+    
+  
+    
+      <div class="index-card">
+        
+        <article class="index-card-info">
+          <h3 class="index-header">
+            <a href="/2019/10/bai-hu-jian-sao-mu-ji.html">
+            
+            白虎涧扫墓记</a>
+          </h3>
+          <p class="index-excerpt">
+              
+              
+                
+              
+              下午去了趟白虎涧。不算远，先坐三站地铁，再乘一路公交，最后步行一程，来回大约四个小时，有一小时在走路。京郊的风景很好，远离现代化建设，道路两边都是松柏、鸟叫、牵牛花。附近也有人家，院子里拴着大狗，见人就吼，小狗摇摇晃晃，也看着你。喜鹊站在路中间，车来了蹦跳往外逃。跟佛山陵园外坐着的大爷点头致意，他也点头。
+陵园位于西山余脉，尽头处的石头山坡上，刻着一个大“佛”字。因为不是忌日，这里冷冷清清。入园从
+          </p>
+          <div class="index-btm post-metas">
+            
+              
+                <time datetime="2019-10-06 00:00" pubdate>
+                  2019-10-06
+                </time>
+              
+            
+            
+              
+                
+                  <span class="p-dot"></span><a href="/categories/%E7%BC%AE%E5%86%99%E7%9B%92/">缮写盒</a>
+                
+              
+            
+          </div>
+        </article>
+      </div>
+    
+  
+</div>
+</div>
+
+    <nav aria-label="navigation">
+      <span class="pagination" id="pagination">
+        <a class="extend prev" rel="prev" href="/page/2/">&lt;</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/4/">&gt;</a>
+      </span>
+    </nav>
+
+        </div>
+        
+<footer class="text-center">
+    
+    
+    
+    
+    
+    <p>&copy;  2012 - 2023&nbsp;&nbsp;Theme Miracle</p>
+    
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme by <a href="https://github.com/oCoke/hexo-theme-miracle" target="_blank">Miracle</a></p>
+    
+    
+</footer>
+
+<div class="p-btn">
+    
+    
+    <a href="javascript:window.scrollTo({top:0,behavior:'smooth'});" class="click-btn">
+      <i id="i-up"></i>
+    </a>
+</div>
+
+<!-- SCRIPTS -->
+
+
+
+
+
+
+<script>
+    document.getElementById("btn-dropdown").addEventListener('click', () => {
+      toggleClass("#dropdown-menus","display-inline");
+    });
+    console.log('\n' + ' %c Powered by Hexo Theme Miracle ' + ' %c https://github.com/hifun-team/hexo-theme-miracle ' + '\n' + '\n', 'color: #fff; background: #4F9BFA; padding:5px 0;', 'background: #FFF; padding:5px 0;');
+
+    
+
+    
+  /* 小彩蛋: 饮茶先啦 */
+  setTimeout(() => {
+    var time = new Date();
+    if (time.getHours() == 15) {
+      let comment = document.createComment(' 三点几嚟！饮茶先啦！ ');
+      document.body.insertBefore(comment, document.getElementsByTagName('header')[0]);
+    }
+  },1);
+    
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+        <div id="css-loading">
+            <h3 class="text-center">加载中...</h3>
+        </div>
+        
+    </body>
+</html>

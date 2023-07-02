@@ -1,493 +1,102 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-
-
-<head>
-    <meta charset="UTF-8">
-    
-    <link rel="apple-touch-icon" sizes="76x76" href="https://api.iconify.design/icon-park-solid:ring.svg">
-    <link rel="icon" type="image/png" href="https://api.iconify.design/icon-park-solid:ring.svg">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
-    <title>失物主题 - 笼城往事</title>
-    
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-    
-    
-    <meta name="description" content="">
-    <meta name="author" content="SigiL">
-    <meta name="keywords" content="">
-    <meta property="og:title" content="失物主题"/>
-    <style>
-
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0,  viewport-fit=cover" name="viewport" />
+    <meta name="description" content="失物主题" />
+    <meta name="hexo-theme-A4" content="v1.7.0" />
+    <link rel="alternate icon" type="image/webp" href="https://api.iconify.design/icon-park-solid:ring.svg">
+    <title>笼城往事 | Once Upon a Time in SigiL</title>
 
     
-    :root{
-        --shadow-color: rgba(0,0,0,0.2);
-        --sec-shadow: rgba(0,0,0,0.03);
-        --shadow-hover-color: rgba(0,0,0,0.28);
-        --first-text-color: #475b6d;
-        --second-text-color: #37475b;
-        --third-text-color: #858585;
-        --default-text-color: #505050;
-        --default-link-color: #007bff;
-        --link-color: #000000;
-        --second-link-color: #4F9BFA;
-        --code-color:rgba(27,31,35,.05);
-        --post-bkg-color: #fff;
-        --page-bkg-color: #f2f5f8;
-        --nav-a-hover-color: #3498db;
-        --post-sec-text-color: #718096;
-        --sec-bkg: #f2f5f8;
-        --color-mode: 'light';
-        --bkg-h: rgba(255,255,255,0.6);
-        --bkg-m: #e1e4e8;
-        --home-title-color: #4169E1;
-        --shadow: 0 4px 10px rgba(0,2,4,0.06),0 0 1px rgba(0,2,4,0.11);
-        --hr-color: #ddd;
-        --bg-t: #f4f4f4;
-        --nav-bkg: rgba(255,255,255,0.6);
-    }
+        
+            
+<link rel="stylesheet" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/reset.css">
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-mode: 'dark';
-  }
+            
+<link rel="stylesheet" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/markdown.css">
 
-  :root:not([data-theme]) {
-    --first-text-color: hsla(0,0%,100%,0.92);
-    --second-text-color: hsla(0,0%,100%,0.86);
-    --third-text-color: #a7a9ad;
-    --default-text-color: #505050;
-    --default-link-color: #1589e9;
-    --link-color: #000000;
-    --second-link-color: #30a9de;
-    --post-bkg-color: #252d38;
-    --page-bkg-color: #181c27;
-    --nav-a-hover-color: #3498db;
-    --post-sec-text-color: #a7a9ad;
-    --sec-bkg: #364151;
-    --bkg-h: rgba(255,255,255,0.2);
-    --bkg-m: rgba(255,255,255,0.1);
-    --home-title-color: rgb(226, 82, 90);
-    --code-color:#3e4b5e;
-    --shadow: none;
-    --hr-color: #718096;
-    --bg-t: #364151;
-    --nav-bkg: rgba(13,17,23,0.6);
-  }
-}
-
-[data-theme='dark'] {
-    --shadow-color: rgba(0,0,0,0.2);
-    --shadow-hover-color: rgba(0,0,0,0.28);
-    --first-text-color: hsla(0,0%,100%,0.92);
-    --second-text-color: hsla(0,0%,100%,0.86);
-    --third-text-color: #a7a9ad;
-    --default-text-color: #505050;
-    --default-link-color: #1589e9;
-    --link-color: #000000;
-    --second-link-color: #30a9de;
-    --post-bkg-color: #252d38;
-    --page-bkg-color: #181c27;
-    --nav-a-hover-color: #3498db;
-    --post-sec-text-color: #a7a9ad;
-    --sec-bkg: #364151;
-    --bkg-h: rgba(255,255,255,0.2);
-    --bkg-m: rgba(255,255,255,0.1);
-    --home-title-color: rgb(226, 82, 90);
-    --code-color:#3e4b5e;
-    --shadow: none;
-    --hr-color: #718096;
-    --bg-t: #364151;
-    --nav-bkg: rgba(13,17,23,0.6);
-}
-
-</style>
-
-
-
-<style>
-#page-main,footer,.p-btn{
-    display: none;
-}
-html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-}
-body {
-    background-color: var(--page-bkg-color);
-    color: var(--second-text-color);
-    overflow-y: scroll;
-    overflow-x: hidden;
-    transition: all .3s;
-}
-a {
-    color: var(--default-link-color);
-    text-decoration: none;
-    background-color: transparent;
-}
-a:hover{
-    color: var(--second-link-color);
-}
-.main-content,.post-card-main{
-    margin: 30px;
-}
-
-
-
-@media (max-width: 410px){
-    .post-card-main{
-        max-width: 350px!important;
-    }
-}
-
-@media (max-width: 980px){
-    .post-card-main{
-        max-width: 520px!important;
-    }
-}
-
-
-@media (min-width: 780px){ 
-    h3{
-        font-size: 1.5rem;
-        line-height: 1.5em;
-    }
-}
-@media (min-width: 1280px){ 
-    h3{
-        font-size: 1.7rem;
-        line-height: 1.5em;
-    }
-}
-@media (min-width: 2096px){ 
-    h3{
-        font-size: 1.8rem;
-        line-height: 1.5em;
-    }
-}
-
-.text-center{
-    text-align: center!important;
-}
-.middle-center{
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    height: 100%;
-}
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    height: 54px;
-    padding: 0 1.25rem;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 10;
-    border-bottom: 1px solid var(--bkg-m);
-    background-color: var(--nav-bkg);
-    backdrop-filter: blur(4px);
-    transition: all .3s;
-}
-header .header__left, header .header__right {
-    display: flex;
-    align-items: center;
-    font-family: rubik,sans-serif,Varela Round;
-}
-header .header__left .logo__text {
-    font-size: 18px;
-    font-weight: 450;
-    padding: 14.5px 10px;
-    border-radius: 5px;
-    color: var(--second-text-color);
-}
-header .header__right .navbar__menus {
-    height: 54px;
-    padding: 0 0 0 15px;
-}
-header .header__right .button {
-    color: var(--second-text-color);
-}
-header .header__right .navbar__menus .navbar-menu {
-    display: inline-block;
-    align-items: center;
-    height: 54px;
-    padding: 0 10px;
-    font-size: 16px;
-    line-height: 54px;
-}
-header .header__right .dropdown-icon {
-    display: none;
-    height: 54px;
-    padding: 15px 10px;
-    border: 0;
-    background-color: transparent;
-}
-header .header__right .dropdown-menus {
-    line-height: 2rem;
-    animation: slide-in .15s ease 1;
-    display: none;
-    position: absolute;
-    left: 12px;
-    right: 12px;
-    top: calc(54px + 10px);
-    border-radius: 6px;
-    padding: 24px;
-    background-color: var(--page-bkg-color);
-    border: 1px solid var(--bkg-m);
-    z-index: 9999;
-    justify-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-header .header__right #btn-search, header .header__right #btn-toggle-dark{
-    display: inline-block;
-    padding:  18px 10px;
-    height: 25px;
-}
-header .header__right #btn-dropdown{
-  display: inline-block;
-  padding:  13.5px 0;
-}
-header .header__right .dropdown-menus .dropdown-menu {
-    padding: 10px;
-    color: var(--second-text-color);
-}
-@media screen and (max-width: 764px){
-.navbar__menus {
-    display: none!important;
-}
-.dropdown-icon {
-    display: inline-block!important;
-}
-}
-.p-btn{
-    position: fixed;
-    bottom: 1.2rem;
-    right: 1.2rem;
-    contain: layout;
-}
-.toc-btn,.click-btn{
-    cursor: pointer;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    align-items: center;
-    margin-top: .5rem;
-    font-size: .75rem;
-    background-color: var(--sec-bkg);
-    display: block;
-    padding: 0.9rem;
-    box-shadow: 0 0.3rem 0.6rem rgba(48,55,66,.15);
-    border: none;
-    border-radius: 0.5rem;
-    line-height: 1;
-    color: var(--first-text-color);
-}
-.toc-link{
-    color: var(--second-text-color);
-}
-
-#css-loading h3{
-    font-weight: 500;
-    font-size: 1.4rem;
-    text-align: center;
-    position: fixed;
-    top: 200px;
-    left: 0;
-    right: 0;
-    opacity: 0;
-    animation: cssLoad;
-    animation-delay: 0.3s;
-    -webkit-animation: cssLoad;
-    -webkit-animation-delay: 0.3s;
-}
-@keyframes cssLoad {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 0.9;
-    }
-}
-
-
-.memorial {
-    -webkit-filter: grayscale(100%);
-    -moz-filter: grayscale(100%);
-    -ms-filter: grayscale(100%);
-    -o-filter: grayscale(100%);
-    filter: grayscale(100%);
-    filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); filter:gray;
-}
-
-
-    .post-copyright:after {
-        position: absolute;
-        color: #fff;
-        background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 496 512'%3E%3Cpath fill='gray' d='M245.8 214.9l-33.2 17.3c-9.4-19.6-25.2-20-27.4-20-22.2 0-33.3 14.6-33.3 43.9 0 23.5 9.2 43.8 33.3 43.8 14.4 0 24.6-7 30.5-21.3l30.6 15.5a73.2 73.2 0 01-65.1 39c-22.6 0-74-10.3-74-77 0-58.7 43-77 72.6-77 30.8-.1 52.7 11.9 66 35.8zm143 0l-32.7 17.3c-9.5-19.8-25.7-20-27.9-20-22.1 0-33.2 14.6-33.2 43.9 0 23.5 9.2 43.8 33.2 43.8 14.5 0 24.7-7 30.5-21.3l31 15.5c-2 3.8-21.3 39-65 39-22.7 0-74-9.9-74-77 0-58.7 43-77 72.6-77C354 179 376 191 389 214.8zM247.7 8C104.7 8 0 123 0 256c0 138.4 113.6 248 247.6 248C377.5 504 496 403 496 256 496 118 389.4 8 247.6 8zm.8 450.8c-112.5 0-203.7-93-203.7-202.8 0-105.5 85.5-203.3 203.8-203.3A201.7 201.7 0 01451.3 256c0 121.7-99.7 202.9-202.9 202.9z'/%3E%3C/svg%3E");
-        content: ' ';
-        height: 10rem;
-        width: 10rem;
-        right: -2rem;
-        top: -2rem;
-        opacity: .1;
-    }
-
-</style>
-
-    
-
-    
-        <!--
-        <link rel="stylesheet" href="/css/page.css" media="print"
-            onload="this.media='all';this.onload=null">
-        <noscript>-->
-            <link rel="stylesheet" href="/css/page.css">
-        <!--</noscript>-->
+            
+<link rel="stylesheet" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/fonts.css">
+ 
+            <!--注意：首页既不是post也不是page-->
+            
+        
     
     
-    <link rel="stylesheet" href="/css/main.css" media="print" onload="this.media='all';this.onload=null">
-    <noscript>
-        <link rel="stylesheet" href="/css/main.css">
-    </noscript>
-
-    <meta name="google-site-verification" content="digJaGp7JYW7c_R1BNuHNHaaLHYzaCHwcPsEFrcuFvw" />
-    <script src="/js/main.js"></script>
+<link rel="stylesheet" href="/css/ui.css">
+ 
     
+<link rel="stylesheet" href="/css/style.css">
+
 <meta name="generator" content="Hexo 6.3.0"></head>
-
+    
     <body>
-        <header>
+        <div class="paper">
             
-<div class="header__left">
-	<a href="/" class="button"><span class="logo__text">OUATIS</span></a>
-</div>
-<div class="header__right">
-	<div class="navbar__menus">
-		
-		<a href="/" class="button">
-			<div class="navbar-menu">首页</div>
-		</a>
-		
-		<a href="/archives/" class="button">
-			<div class="navbar-menu">归档</div>
-		</a>
-		
-		<a href="/categories/" class="button">
-			<div class="navbar-menu">分类</div>
-		</a>
-		
-		<a href="/tags/" class="button">
-			<div class="navbar-menu">标签</div>
-		</a>
-		
-	</div>
-	
-	<a href="/search/" class="button">
-		<div id="btn-search">
-			<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1024 1024" width="24" height="24" fill="currentColor"
-				stroke="currentColor" stroke-width="32">
-				<path
-					d="M192 448c0-141.152 114.848-256 256-256s256 114.848 256 256-114.848 256-256 256-256-114.848-256-256z m710.624 409.376l-206.88-206.88A318.784 318.784 0 0 0 768 448c0-176.736-143.264-320-320-320S128 271.264 128 448s143.264 320 320 320a318.784 318.784 0 0 0 202.496-72.256l206.88 206.88 45.248-45.248z">
-				</path>
-			</svg>
-		</div>
-	</a>
-	
-	<a href="javaScript:void(0);" class="button" id="btn-toggle-dark">
-		<div>
-			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none"
-				stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-				<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-			</svg>
-		</div>
-	</a>
-	<a href="javaScript:void(0);" class="dropdown-icon button">
-		<div id="btn-dropdown">
-			<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1024 1024" width="24" height="24" fill="currentColor"
-				stroke="currentColor" stroke-width="32" stroke-linecap="round">
-				<path
-					d="M903.43 561.52H148.8c-13.25 0-24-10.75-24-24s10.75-24 24-24h754.63c13.25 0 24 10.75 24 24s-10.75 24-24 24zM903.43 204.31H148.8c-13.25 0-24-10.75-24-24s10.75-24 24-24h754.63c13.25 0 24 10.75 24 24s-10.75 24-24 24zM903.43 918.73H148.8c-13.25 0-24-10.75-24-24s10.75-24 24-24h754.63c13.25 0 24 10.75 24 24s-10.75 24-24 24z"
-					fill="currentColor"></path>
-			</svg>
-		</div>
-	</a>
-	<div class="dropdown-menus" id="dropdown-menus">
-		
-		<a href="/" class="dropdown-menu button">首页</a>
-		<br>
-		
-		<a href="/archives/" class="dropdown-menu button">归档</a>
-		<br>
-		
-		<a href="/categories/" class="dropdown-menu button">分类</a>
-		<br>
-		
-		<a href="/tags/" class="dropdown-menu button">标签</a>
-		<br>
-		
-	</div>
-</div>
-
-        </header>
-        <div id="top"></div>
-        <div id="page-main" class="main-content">
-        <div class="mg-top">
             
+            
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+<div class="header">
+    <div class="header-container">
+        <img style="
+        width: 56px;
+        height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/img/favicon.webp" width="10%"></img>
+        <div class="header-content">
+            <a class="logo" href="/">笼城往事</a> 
+            <span class="description"></span> 
+        </div>
+        
+    </div>
+    
+   
+    <ul class="nav">
+        
+            
+                <li><a href="/">首页</a></li>
+            
+        
+            
+                <li><a href="/list/">文章</a></li>
+            
+        
+            
+                <li><a href="/tags/">标签</a></li>
+            
+        
+            
+                <li><a href="/categories/">分类</a></li>
+            
+        
+    </ul>
+</div> 
+        
+                    
+                    
 
-<article class="page">
-<div id="post-meta-m">
-    <div class="post-meta" id="post-meta">
-  <h3>失物主题</h3>
+                    
+                    
+                    
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+
     
-      <span class="post-meta-label">
-        SigiL
-      </span>
-    
-    
-      <span class="post-meta-label">
-        <span class="p-dot"></span>
-        <time datetime="2016-04-30 00:00" pubdate>
-          2016-04-30
-        </time>
-      </span>
-    
-    
+        <div class="post-main-title">
+            失物主题
+        </div>
       
-      <span class="post-meta">
-        <span class="p-dot"></span>
-        共 4.5k 字
-      </span>
     
-    
-    
-  </div>
-  
-</div>
-<div class="article-m">
-  <div class="post-toc">
-    
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A5%9E%E7%94%AB%E7%9F%B3%E8%86%8F%E5%83%8F%E4%B8%BB%E9%A2%98"><span class="toc-number">1.</span> <span class="toc-text">神甫石膏像主题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E9%83%A8%E7%AC%AC%E4%BA%94%E7%AB%A0%EF%BC%8C%E6%96%B0%E5%B1%85%E8%8A%B1%E5%9B%AD"><span class="toc-number">1.1.</span> <span class="toc-text">第一部第五章，新居花园</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E9%83%A8%E7%AC%AC%E5%85%AB%E7%AB%A0%EF%BC%8C%E8%88%9E%E4%BC%9A%E5%9B%9E%E6%9D%A5%E7%AC%AC%E4%BA%8C%E5%A4%A9"><span class="toc-number">1.2.</span> <span class="toc-text">第一部第八章，舞会回来第二天</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E9%83%A8%E7%AC%AC%E4%B9%9D%E7%AB%A0%EF%BC%8C%E5%A9%9A%E5%90%8E%E4%B8%80%E5%B9%B4"><span class="toc-number">1.3.</span> <span class="toc-text">第一部第九章，婚后一年</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E9%83%A8%E7%AC%AC%E4%B9%9D%E7%AB%A0%EF%BC%8C%E6%90%AC%E5%AE%B6%E5%8E%BB%E8%8D%A3%E9%95%87"><span class="toc-number">1.4.</span> <span class="toc-text">第二部第九章，搬家去荣镇</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8C%8E%E7%8A%AC%E4%B8%BB%E9%A2%98"><span class="toc-number">2.</span> <span class="toc-text">猎犬主题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E9%83%A8%E7%AC%AC%E4%B8%83%E7%AB%A0%EF%BC%8C%E8%89%BE%E7%8E%9B%E5%B8%A6%E7%8C%8E%E7%8A%AC%E6%95%A3%E6%AD%A5"><span class="toc-number">2.1.</span> <span class="toc-text">第一部第七章，艾玛带猎犬散步</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E9%83%A8%E7%AC%AC%E4%B9%9D%E7%AB%A0%EF%BC%8C%E4%BE%AF%E7%88%B5%E8%88%9E%E4%BC%9A%E5%90%8E"><span class="toc-number">2.2.</span> <span class="toc-text">第一部第九章，侯爵舞会后</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E9%83%A8%E7%AC%AC%E4%B8%80%E7%AB%A0%EF%BC%8C%E6%90%AC%E5%AE%B6%E5%8E%BB%E8%8D%A3%E9%95%87"><span class="toc-number">2.3.</span> <span class="toc-text">第二部第一章，搬家去荣镇</span></a></li></ol></li></ol>
-    
-  </div>
-    <div id="article">
-      <div id="post-content" class="markdown-body textretty">
+
+    <div class="post-md">
+        
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%A5%9E%E7%94%AB%E7%9F%B3%E8%86%8F%E5%83%8F%E4%B8%BB%E9%A2%98"><span class="post-toc-text">神甫石膏像主题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%AC%AC%E4%B8%80%E9%83%A8%E7%AC%AC%E4%BA%94%E7%AB%A0%EF%BC%8C%E6%96%B0%E5%B1%85%E8%8A%B1%E5%9B%AD"><span class="post-toc-text">第一部第五章，新居花园</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%AC%AC%E4%B8%80%E9%83%A8%E7%AC%AC%E5%85%AB%E7%AB%A0%EF%BC%8C%E8%88%9E%E4%BC%9A%E5%9B%9E%E6%9D%A5%E7%AC%AC%E4%BA%8C%E5%A4%A9"><span class="post-toc-text">第一部第八章，舞会回来第二天</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%AC%AC%E4%B8%80%E9%83%A8%E7%AC%AC%E4%B9%9D%E7%AB%A0%EF%BC%8C%E5%A9%9A%E5%90%8E%E4%B8%80%E5%B9%B4"><span class="post-toc-text">第一部第九章，婚后一年</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%AC%AC%E4%BA%8C%E9%83%A8%E7%AC%AC%E4%B9%9D%E7%AB%A0%EF%BC%8C%E6%90%AC%E5%AE%B6%E5%8E%BB%E8%8D%A3%E9%95%87"><span class="post-toc-text">第二部第九章，搬家去荣镇</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%8C%8E%E7%8A%AC%E4%B8%BB%E9%A2%98"><span class="post-toc-text">猎犬主题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%AC%AC%E4%B8%80%E9%83%A8%E7%AC%AC%E4%B8%83%E7%AB%A0%EF%BC%8C%E8%89%BE%E7%8E%9B%E5%B8%A6%E7%8C%8E%E7%8A%AC%E6%95%A3%E6%AD%A5"><span class="post-toc-text">第一部第七章，艾玛带猎犬散步</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%AC%AC%E4%B8%80%E9%83%A8%E7%AC%AC%E4%B9%9D%E7%AB%A0%EF%BC%8C%E4%BE%AF%E7%88%B5%E8%88%9E%E4%BC%9A%E5%90%8E"><span class="post-toc-text">第一部第九章，侯爵舞会后</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%AC%AC%E4%BA%8C%E9%83%A8%E7%AC%AC%E4%B8%80%E7%AB%A0%EF%BC%8C%E6%90%AC%E5%AE%B6%E5%8E%BB%E8%8D%A3%E9%95%87"><span class="post-toc-text">第二部第一章，搬家去荣镇</span></a></li></ol></li></ol>
+        
         <p>这是显而易见的，包法利一家从托特搬到荣镇，是文学史上最为精心设计的一次搬家。这次搬家象征了艾玛的堕落，经济的、性的堕落，从梦幻、虚幻到现实、丑陋的转变。堕落过程中，她丢失了许多东西。迷信地说，东西丢失就是一个个不祥预兆。</p>
 <h2 id="神甫石膏像主题"><a href="#神甫石膏像主题" class="headerlink" title="神甫石膏像主题"></a>神甫石膏像主题</h2><p>一条简洁清晰的线索是神甫石膏像，它原本位于包法利夫妇的新居花园中。这一花园是很规矩的，呈长方形，有一个日晷、四个对称的花坛；构造也朴素，堪称简陋，只有两道土墙、一道荆棘篱笆，外面望见的是田野；日晷是青石板制的，座子是砖砌的；种植物轻装饰、重实用，有成行成方的果树、菜地，野蔷薇稀疏。唯一的特殊之处就在于，在一颗雪松底下，有那座神甫诵经的石膏像。</p>
-<p>侯爵舞会回来的第二天，艾玛站在石像前，开始厌烦，“她的心也一样：一经富贵熏染，再也不肯褪色”，如此一年，“戴三角帽还在诵经的神甫的石膏像掉了右脚，甚至石膏也冻脱了皮，在神甫脸上留下了白癣”。故事从第一部过渡到第二部后，包法利夫妇搬家离开托特，在去荣镇的路上，“那座神甫的石膏像，因为颠簸得太厉害，从大车上掉了下来，在坎康布瓦的石板路上摔得粉碎”。<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="以下引用文本均为李译在前，许译在后。
-">[1]</span></a></sup></p>
+<p>侯爵舞会回来的第二天，艾玛站在石像前，开始厌烦，“她的心也一样：一经富贵熏染，再也不肯褪色”，如此一年，“戴三角帽还在诵经的神甫的石膏像掉了右脚，甚至石膏也冻脱了皮，在神甫脸上留下了白癣”。故事从第一部过渡到第二部后，包法利夫妇搬家离开托特，在去荣镇的路上，“那座神甫的石膏像，因为颠簸得太厉害，从大车上掉了下来，在坎康布瓦的石板路上摔得粉碎”。<a href="%E4%BB%A5%E4%B8%8B%E5%BC%95%E7%94%A8%E6%96%87%E6%9C%AC%E5%9D%87%E4%B8%BA%E6%9D%8E%E8%AF%91%E5%9C%A8%E5%89%8D%EF%BC%8C%E8%AE%B8%E8%AF%91%E5%9C%A8%E5%90%8E%E3%80%82">^1</a></p>
 <h3 id="第一部第五章，新居花园"><a href="#第一部第五章，新居花园" class="headerlink" title="第一部第五章，新居花园"></a>第一部第五章，新居花园</h3><blockquote>
 <p>花园长过于宽，夹在土墙当中，沿墙是果实累累的杏树，靠近田野，有一道荆棘篱笆隔开。当中是一个石座青石日晷。四畦瘦小野蔷薇，互相对称，环绕着一块较为实用的方菜地。院子深处云杉底下，有一座读祷告书的石膏堂长像。</p>
 </blockquote>
@@ -528,236 +137,99 @@ header .header__right .dropdown-menus .dropdown-menu {
 <p>他穿衣时，艾玛有时把他羊毛衫的红边塞到背心底下去，帮他重新打好领带，把他舍不得丢掉的、褪了色的旧手套扔到一边；这一切并不是像他相信的那样是为他着想，而是为了她自己，她个人的好恶扩大到他身上，看到不顺眼的东西就恼火。有时，她也同他谈谈她读过的书，例如小说中的一段，新戏中的一出，或者报纸上登载的“上流社会”的趣闻轶事；因为，说到底，夏尔总是一个人，总有听话的耳朵，总有唯唯诺诺的嘴。她不是对她的小猎狗都讲过不少知心话吗？没有猎狗，她恐怕要对壁炉里的木柴和壁炉上的钟摆推心置腹了。</p>
 </blockquote>
 <h3 id="第二部第一章，搬家去荣镇"><a href="#第二部第一章，搬家去荣镇" class="headerlink" title="第二部第一章，搬家去荣镇"></a>第二部第一章，搬家去荣镇</h3><blockquote>
-<p>路上发生意外，车回来迟了；包法利夫人的猎犬，在田地迷失了。大家足喊 <sup id="fnref:2" class="footnote-ref"><a href="#fn:2" rel="footnote"><span class="hint--top hint--rounded" aria-label="原文为吹口哨。
-">[2]</span></a></sup> 了一刻钟。伊韦尔甚至倒回了半古里路，时刻以为瞥见了，偏又不是；但是没有时间再找，非赶路不可。爱玛又是哭，又是生气，直抱怨查理不好。布商勒乐先生，凑巧同车，试着安慰她，举了许多例子：狗丢了，经过多年，又找到主人。他听人讲起一条狗，从君士坦丁堡回到巴黎。还有一条狗，照直走了五十古里路，泅过四条河；他的父亲有一条长毛狗，不见了十二年，有一天黄昏，他到城里用饭，狗在街头冷不防跳上他的后背。</p>
+<p>路上发生意外，车回来迟了；包法利夫人的猎犬，在田地迷失了。大家足喊 <a href="%E5%8E%9F%E6%96%87%E4%B8%BA%E5%90%B9%E5%8F%A3%E5%93%A8%E3%80%82">^2</a> 了一刻钟。伊韦尔甚至倒回了半古里路，时刻以为瞥见了，偏又不是；但是没有时间再找，非赶路不可。爱玛又是哭，又是生气，直抱怨查理不好。布商勒乐先生，凑巧同车，试着安慰她，举了许多例子：狗丢了，经过多年，又找到主人。他听人讲起一条狗，从君士坦丁堡回到巴黎。还有一条狗，照直走了五十古里路，泅过四条河；他的父亲有一条长毛狗，不见了十二年，有一天黄昏，他到城里用饭，狗在街头冷不防跳上他的后背。</p>
 </blockquote>
 <blockquote>
 <p>一件意外的事使班车回来晚了：包法利夫人的狗在田野里不知去向。大家足足吹了一刻钟口哨，喊狗回来。伊韦尔甚至开了半古里倒车，总误以为看见狗了；但是不得不赶路呀。艾玛气得哭了，总怪夏尔倒霉。布贩子勒合先生和她同车，想法子安慰她，举了好多例子，说狗丢了几年之后，还认得它的旧主人。他听人说，有一条狗从君士坦丁堡回到了巴黎。另外一条笔直走了五十古里，泅过了四条河；他的父亲有一条鬈毛狗，丢失了十二年，一天晚上，他进城吃晚餐，不料忽然在街上碰见这条狗，它一下就跳到他的背上去了。</p>
 </blockquote>
-<section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span>以下引用文本均为李译在前，许译在后。
-<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:2" class="footnote-text"><span>原文为吹口哨。
-<a href="#fnref:2" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
-      </div>
-    </div>
-</div>
-
-<div class="post-category">
-
-    <div id="p-meta-i">
-        
-              
-                <a class="hover-with-bg" href="/categories/%E9%87%8D%E8%AF%BB%E3%80%8A%E5%8C%85%E6%B3%95%E5%88%A9%E5%A4%AB%E4%BA%BA%E3%80%8B/">重读《包法利夫人》</a>
-              
-          
-          
-              
-                <a class="hover-with-bg" href="/tags/%E4%B9%A6/"># 书</a>
-              
-                <a class="hover-with-bg" href="/tags/%E7%A6%8F%E6%A5%BC%E6%8B%9C/"># 福楼拜</a>
-              
-          
-    </div>
-</div>
-
-
-<div class="post-footer">
-  
-
-</div>
-
-    <!-- Comments -->
-    <div class="comments">
-        
-        
-    <script src="https://giscus.app/client.js"
-        data-repo="ouatis/ouatis.github.io"
-        data-repo-id="ouatis/ouatis.github.io"
-        data-category="ouatis/ouatis.github.io"
-        data-category-id="ouatis/ouatis.github.io"
-        data-mapping="pathname"
-        data-term=""
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="bottom"
-        data-theme="preferred_color_scheme"
-        data-lang="zh-CN"
-        data-loading=""
-        crossorigin="anonymous"
-        async> </script>
 
     </div>
 
-</article>
-
-
-        </div>
+    <div class="post-meta">
+        <i>
         
-<footer class="text-center">
+            <span>2016-04-30</span>
+            
+                <span>该篇文章被 SigiL</span>
+            
+            
+                <span>打上标签:
+                    
+                    
+                        <a href='/tags/%E4%B9%A6/'>
+                            书
+                        </a>
+                    
+                        <a href='/tags/%E7%A6%8F%E6%A5%BC%E6%8B%9C/'>
+                            福楼拜
+                        </a>
+                    
+                </span>
+             
+             
+                <span>归为分类:
+                    
+                    
+                        <a href='/categories/%E9%87%8D%E8%AF%BB%E3%80%8A%E5%8C%85%E6%B3%95%E5%88%A9%E5%A4%AB%E4%BA%BA%E3%80%8B/'>
+                            重读《包法利夫人》
+                        </a>
+                    
+                </span>
+            
+        
+        </i>
+    </div>
     
-    
-    
-    
-    
-    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme by <a href="https://github.com/oCoke/hexo-theme-miracle" target="_blank">Miracle</a></p>
-    
-    
-</footer>
+        
 
-<div class="p-btn">
-    
-        <a class="toc-btn" id="toc-btn"><i id="i-menu"></i></a>
-    
-    
-      <a class="toc-btn" id="share-btn"><i>
-        <svg t="1670124379155" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2683" width="25" height="25"><path d="M395.946667 234.666667v64H256v469.333333h512V522.666667h64V768a64 64 0 0 1-64 64H256a64 64 0 0 1-64-64V298.666667a64 64 0 0 1 64-64h139.946667z m335.850666-87.914667l150.848 150.826667-158.378666 158.4-45.269334-45.248L748.394667 341.333333H672c-121.685333 0-220.714667 97.024-223.914667 217.941334L448 565.333333v85.333334h-64v-85.333334C384 406.272 512.938667 277.333333 672 277.333333h99.861333l-85.312-85.333333 45.248-45.248z" p-id="2684" fill="var(--first-text-color)"></path></svg>
-      </i></a>
-    
-    <a href="javascript:window.scrollTo({top:0,behavior:'smooth'});" class="click-btn">
-      <i id="i-up"></i>
-    </a>
+     
 </div>
 
-<!-- SCRIPTS -->
 
 
+                    
+                    
+                    <div class="footer">
+    
+        <span> 
+            © 2012-2023 
+
+            
+                
+
+            
+        </span>
+    
+</div>
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>IMAGINE UNPOETIC LIONS</span>
+            
+                <span class="footer-last-span-right"><i>本站由<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a>驱动｜使用<a target="_blank" rel="noopener" href="https://github.com/HiNinoJay/hexo-theme-A4">Hexo-theme-A4</a>主题</i></span>
+            
+    
+</div>
 
 
+    
+        
+<link rel="stylesheet" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/a11y-dark.min.css">
+
+        
+<script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/highlight.min.js"></script>
+
+        
+<script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/highlightjs-line-numbers.js"></script>
+
+    
 
 
 <script>
-    document.getElementById("btn-dropdown").addEventListener('click', () => {
-      toggleClass("#dropdown-menus","display-inline");
-    });
-    console.log('\n' + ' %c Powered by Hexo Theme Miracle ' + ' %c https://github.com/hifun-team/hexo-theme-miracle ' + '\n' + '\n', 'color: #fff; background: #4F9BFA; padding:5px 0;', 'background: #FFF; padding:5px 0;');
-
-    
-
-    
-  /* 小彩蛋: 饮茶先啦 */
-  setTimeout(() => {
-    var time = new Date();
-    if (time.getHours() == 15) {
-      let comment = document.createComment(' 三点几嚟！饮茶先啦！ ');
-      document.body.insertBefore(comment, document.getElementsByTagName('header')[0]);
-    }
-  },1);
-    
+    hljs.initHighlightingOnLoad();
+    hljs.initLineNumbersOnLoad();
 </script>
-
-
-<script>
-    var postImg = document.querySelectorAll("article[class=page] img");
-    for (let imgi = 0; imgi < postImg.length; imgi++) {
-        postImg[imgi].onclick = () => {
-            let zoomImg = document.createElement("div");
-            zoomImg.id = "zoomImg";
-            zoomImg.innerHTML = `<div id="zoom-picture"></div>
-    <div class="poptrox-overlay"
-        style="position: fixed; left: 0px; top: 0px; z-index: 20000; width: 100%; height: 100%; text-align: center; cursor: zoom-out; opacity: 1;">
-        <div style="display:inline-block;height:100%;vertical-align:middle;"></div>
-        <div
-            style="position:absolute;left:0;top:0;width:100%;height:100%;background:#000000;opacity:0;filter:alpha(opacity=0);">
-        </div>
-        <div class="poptrox-popup"
-            style="display: inline-block; vertical-align: middle; position: relative; z-index: 1; cursor: zoom-out; min-width: 10px; min-height: 10px; width: auto; height: auto;">
-            <div class="loader" style="display: none;"></div>
-            <div class="pic" style="text-indent: 0px;"><img
-                    src="${ postImg[imgi].srcset || postImg[imgi].src }" alt="Loading..."
-                    style="vertical-align: bottom; max-width: 85vw; max-height: 85vh;"></div>
-        </div>
-    </div>`;
-            document.body.appendChild(zoomImg);
-                document.querySelector("#zoomImg").onclick = () => {
-                    document.querySelector("#zoomImg").remove();
-                }
-        }
-    }
-    
-</script>
-
-
-
-
-    <script>
-        query("#toc-btn")[0].onclick = () => {
-            if (query(".post-toc")[0].innerHTML) {
-                toggleClass(".post-toc", "display-inline");
-            }
-        }
-
-        if (!query(".post-toc")[0].innerHTML) {
-            addClass("#toc-btn","display-none");
-        }
-    </script>
-
-
-
-    <script>
-        query("#share-btn")[0].onclick = async () => {
-            let url = `${location.protocol}//${location.hostname}${location.port ? ":"+location.port:location.port}${location.pathname}#read=${sessionStorage.getItem(location.pathname+"_read_y") || ""}`;
-            try {
-                await navigator.clipboard.writeText(url);
-                prompt_core("分享链接已经复制至剪贴板", 4800, true);
-            } catch(e) {
-                prompt_core("分享链接复制失败，请手动复制<br/>"+url, 4800, false);
-            }
-        }
-    </script>
-
-
-
-
-
-
-
-    <script>
-        const getScrollPosition = (el = window) => ({
-            x: el.pageXOffset !== undefined ? el.pageXOffset : el.scrollLeft,
-            y: el.pageYOffset !== undefined ? el.pageYOffset : el.scrollTop
-        });
-        // 此处的 750 是「页面元素的最大宽度」
-        var wx = document.getElementsByClassName("article-m")[0].clientWidth;
-        var wy = document.getElementsByClassName("article-m")[0].clientHeight;
-        function windowScroll() {
-            // 反复修改 确保页面尺寸不改变
-            wx = document.getElementsByClassName("article-m")[0].clientWidth;
-            wy = document.getElementsByClassName("article-m")[0].clientHeight;
-            let y = Math.round(getScrollPosition().y);
-            // console.log(y);
-            // 组合字符串，同时记录页面坐标，页面宽度和高度
-            let p = `${y}:${wx}:${wy}`;
-            // 写入到 sessionStorage 中
-            sessionStorage.setItem(location.pathname + "_read_y", p);
-        }
-        // URL 中是否包含传递的坐标信息
-        setTimeout(() => {
-            if (location.hash.split("#read=").length > 1) {
-                prompt_core("已有阅读进度，正在跳转", 4800, true);
-                // 分离字符串
-                let read_y = location.hash.split("#read=")[1];
-                read_y = read_y.split(":");
-                // 组合乘积，顺滑移动至坐标
-                window.scrollTo({top: Math.round(Number(read_y[0]) * Number(read_y[1] * Number(read_y[2] / wx / wy))), behavior: "smooth"});
-            } else {
-                // 从 sessionStorage 中获取
-                let read_y = sessionStorage.getItem(location.pathname + "_read_y") || "0:0:0";
-                read_y = read_y.split(":");
-                if (read_y[0] != "0") prompt_core("已有阅读进度，正在跳转", 4800, true);
-                window.scrollTo({top: Math.round(Number(read_y[0]) * Number(read_y[1] * Number(read_y[2] / wx / wy))), behavior: "smooth"});
-            }
-        }, 500);
-        window.onscroll = windowScroll;
-    </script>
-
-
-
-
-
-        </div>
-        <div id="css-loading">
-            <h3 class="text-center">加载中...</h3>
-        </div>
-        
+                </div>
+            
     </body>
 </html>

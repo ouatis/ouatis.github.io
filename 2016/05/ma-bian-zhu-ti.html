@@ -1,499 +1,107 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-
-
-<head>
-    <meta charset="UTF-8">
-    
-    <link rel="apple-touch-icon" sizes="76x76" href="https://api.iconify.design/icon-park-solid:ring.svg">
-    <link rel="icon" type="image/png" href="https://api.iconify.design/icon-park-solid:ring.svg">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
-    <title>马鞭主题 - 笼城往事</title>
-    
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-    
-    
-    <meta name="description" content="">
-    <meta name="author" content="SigiL">
-    <meta name="keywords" content="">
-    <meta property="og:title" content="马鞭主题"/>
-    <style>
-
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0,  viewport-fit=cover" name="viewport" />
+    <meta name="description" content="马鞭主题" />
+    <meta name="hexo-theme-A4" content="v1.7.0" />
+    <link rel="alternate icon" type="image/webp" href="https://api.iconify.design/icon-park-solid:ring.svg">
+    <title>笼城往事 | Once Upon a Time in SigiL</title>
 
     
-    :root{
-        --shadow-color: rgba(0,0,0,0.2);
-        --sec-shadow: rgba(0,0,0,0.03);
-        --shadow-hover-color: rgba(0,0,0,0.28);
-        --first-text-color: #475b6d;
-        --second-text-color: #37475b;
-        --third-text-color: #858585;
-        --default-text-color: #505050;
-        --default-link-color: #007bff;
-        --link-color: #000000;
-        --second-link-color: #4F9BFA;
-        --code-color:rgba(27,31,35,.05);
-        --post-bkg-color: #fff;
-        --page-bkg-color: #f2f5f8;
-        --nav-a-hover-color: #3498db;
-        --post-sec-text-color: #718096;
-        --sec-bkg: #f2f5f8;
-        --color-mode: 'light';
-        --bkg-h: rgba(255,255,255,0.6);
-        --bkg-m: #e1e4e8;
-        --home-title-color: #4169E1;
-        --shadow: 0 4px 10px rgba(0,2,4,0.06),0 0 1px rgba(0,2,4,0.11);
-        --hr-color: #ddd;
-        --bg-t: #f4f4f4;
-        --nav-bkg: rgba(255,255,255,0.6);
-    }
+        
+            
+<link rel="stylesheet" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/reset.css">
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-mode: 'dark';
-  }
+            
+<link rel="stylesheet" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/markdown.css">
 
-  :root:not([data-theme]) {
-    --first-text-color: hsla(0,0%,100%,0.92);
-    --second-text-color: hsla(0,0%,100%,0.86);
-    --third-text-color: #a7a9ad;
-    --default-text-color: #505050;
-    --default-link-color: #1589e9;
-    --link-color: #000000;
-    --second-link-color: #30a9de;
-    --post-bkg-color: #252d38;
-    --page-bkg-color: #181c27;
-    --nav-a-hover-color: #3498db;
-    --post-sec-text-color: #a7a9ad;
-    --sec-bkg: #364151;
-    --bkg-h: rgba(255,255,255,0.2);
-    --bkg-m: rgba(255,255,255,0.1);
-    --home-title-color: rgb(226, 82, 90);
-    --code-color:#3e4b5e;
-    --shadow: none;
-    --hr-color: #718096;
-    --bg-t: #364151;
-    --nav-bkg: rgba(13,17,23,0.6);
-  }
-}
-
-[data-theme='dark'] {
-    --shadow-color: rgba(0,0,0,0.2);
-    --shadow-hover-color: rgba(0,0,0,0.28);
-    --first-text-color: hsla(0,0%,100%,0.92);
-    --second-text-color: hsla(0,0%,100%,0.86);
-    --third-text-color: #a7a9ad;
-    --default-text-color: #505050;
-    --default-link-color: #1589e9;
-    --link-color: #000000;
-    --second-link-color: #30a9de;
-    --post-bkg-color: #252d38;
-    --page-bkg-color: #181c27;
-    --nav-a-hover-color: #3498db;
-    --post-sec-text-color: #a7a9ad;
-    --sec-bkg: #364151;
-    --bkg-h: rgba(255,255,255,0.2);
-    --bkg-m: rgba(255,255,255,0.1);
-    --home-title-color: rgb(226, 82, 90);
-    --code-color:#3e4b5e;
-    --shadow: none;
-    --hr-color: #718096;
-    --bg-t: #364151;
-    --nav-bkg: rgba(13,17,23,0.6);
-}
-
-</style>
-
-
-
-<style>
-#page-main,footer,.p-btn{
-    display: none;
-}
-html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-}
-body {
-    background-color: var(--page-bkg-color);
-    color: var(--second-text-color);
-    overflow-y: scroll;
-    overflow-x: hidden;
-    transition: all .3s;
-}
-a {
-    color: var(--default-link-color);
-    text-decoration: none;
-    background-color: transparent;
-}
-a:hover{
-    color: var(--second-link-color);
-}
-.main-content,.post-card-main{
-    margin: 30px;
-}
-
-
-
-@media (max-width: 410px){
-    .post-card-main{
-        max-width: 350px!important;
-    }
-}
-
-@media (max-width: 980px){
-    .post-card-main{
-        max-width: 520px!important;
-    }
-}
-
-
-@media (min-width: 780px){ 
-    h3{
-        font-size: 1.5rem;
-        line-height: 1.5em;
-    }
-}
-@media (min-width: 1280px){ 
-    h3{
-        font-size: 1.7rem;
-        line-height: 1.5em;
-    }
-}
-@media (min-width: 2096px){ 
-    h3{
-        font-size: 1.8rem;
-        line-height: 1.5em;
-    }
-}
-
-.text-center{
-    text-align: center!important;
-}
-.middle-center{
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    height: 100%;
-}
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    height: 54px;
-    padding: 0 1.25rem;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 10;
-    border-bottom: 1px solid var(--bkg-m);
-    background-color: var(--nav-bkg);
-    backdrop-filter: blur(4px);
-    transition: all .3s;
-}
-header .header__left, header .header__right {
-    display: flex;
-    align-items: center;
-    font-family: rubik,sans-serif,Varela Round;
-}
-header .header__left .logo__text {
-    font-size: 18px;
-    font-weight: 450;
-    padding: 14.5px 10px;
-    border-radius: 5px;
-    color: var(--second-text-color);
-}
-header .header__right .navbar__menus {
-    height: 54px;
-    padding: 0 0 0 15px;
-}
-header .header__right .button {
-    color: var(--second-text-color);
-}
-header .header__right .navbar__menus .navbar-menu {
-    display: inline-block;
-    align-items: center;
-    height: 54px;
-    padding: 0 10px;
-    font-size: 16px;
-    line-height: 54px;
-}
-header .header__right .dropdown-icon {
-    display: none;
-    height: 54px;
-    padding: 15px 10px;
-    border: 0;
-    background-color: transparent;
-}
-header .header__right .dropdown-menus {
-    line-height: 2rem;
-    animation: slide-in .15s ease 1;
-    display: none;
-    position: absolute;
-    left: 12px;
-    right: 12px;
-    top: calc(54px + 10px);
-    border-radius: 6px;
-    padding: 24px;
-    background-color: var(--page-bkg-color);
-    border: 1px solid var(--bkg-m);
-    z-index: 9999;
-    justify-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-header .header__right #btn-search, header .header__right #btn-toggle-dark{
-    display: inline-block;
-    padding:  18px 10px;
-    height: 25px;
-}
-header .header__right #btn-dropdown{
-  display: inline-block;
-  padding:  13.5px 0;
-}
-header .header__right .dropdown-menus .dropdown-menu {
-    padding: 10px;
-    color: var(--second-text-color);
-}
-@media screen and (max-width: 764px){
-.navbar__menus {
-    display: none!important;
-}
-.dropdown-icon {
-    display: inline-block!important;
-}
-}
-.p-btn{
-    position: fixed;
-    bottom: 1.2rem;
-    right: 1.2rem;
-    contain: layout;
-}
-.toc-btn,.click-btn{
-    cursor: pointer;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    align-items: center;
-    margin-top: .5rem;
-    font-size: .75rem;
-    background-color: var(--sec-bkg);
-    display: block;
-    padding: 0.9rem;
-    box-shadow: 0 0.3rem 0.6rem rgba(48,55,66,.15);
-    border: none;
-    border-radius: 0.5rem;
-    line-height: 1;
-    color: var(--first-text-color);
-}
-.toc-link{
-    color: var(--second-text-color);
-}
-
-#css-loading h3{
-    font-weight: 500;
-    font-size: 1.4rem;
-    text-align: center;
-    position: fixed;
-    top: 200px;
-    left: 0;
-    right: 0;
-    opacity: 0;
-    animation: cssLoad;
-    animation-delay: 0.3s;
-    -webkit-animation: cssLoad;
-    -webkit-animation-delay: 0.3s;
-}
-@keyframes cssLoad {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 0.9;
-    }
-}
-
-
-.memorial {
-    -webkit-filter: grayscale(100%);
-    -moz-filter: grayscale(100%);
-    -ms-filter: grayscale(100%);
-    -o-filter: grayscale(100%);
-    filter: grayscale(100%);
-    filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); filter:gray;
-}
-
-
-    .post-copyright:after {
-        position: absolute;
-        color: #fff;
-        background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 496 512'%3E%3Cpath fill='gray' d='M245.8 214.9l-33.2 17.3c-9.4-19.6-25.2-20-27.4-20-22.2 0-33.3 14.6-33.3 43.9 0 23.5 9.2 43.8 33.3 43.8 14.4 0 24.6-7 30.5-21.3l30.6 15.5a73.2 73.2 0 01-65.1 39c-22.6 0-74-10.3-74-77 0-58.7 43-77 72.6-77 30.8-.1 52.7 11.9 66 35.8zm143 0l-32.7 17.3c-9.5-19.8-25.7-20-27.9-20-22.1 0-33.2 14.6-33.2 43.9 0 23.5 9.2 43.8 33.2 43.8 14.5 0 24.7-7 30.5-21.3l31 15.5c-2 3.8-21.3 39-65 39-22.7 0-74-9.9-74-77 0-58.7 43-77 72.6-77C354 179 376 191 389 214.8zM247.7 8C104.7 8 0 123 0 256c0 138.4 113.6 248 247.6 248C377.5 504 496 403 496 256 496 118 389.4 8 247.6 8zm.8 450.8c-112.5 0-203.7-93-203.7-202.8 0-105.5 85.5-203.3 203.8-203.3A201.7 201.7 0 01451.3 256c0 121.7-99.7 202.9-202.9 202.9z'/%3E%3C/svg%3E");
-        content: ' ';
-        height: 10rem;
-        width: 10rem;
-        right: -2rem;
-        top: -2rem;
-        opacity: .1;
-    }
-
-</style>
-
-    
-
-    
-        <!--
-        <link rel="stylesheet" href="/css/page.css" media="print"
-            onload="this.media='all';this.onload=null">
-        <noscript>-->
-            <link rel="stylesheet" href="/css/page.css">
-        <!--</noscript>-->
+            
+<link rel="stylesheet" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/fonts.css">
+ 
+            <!--注意：首页既不是post也不是page-->
+            
+        
     
     
-    <link rel="stylesheet" href="/css/main.css" media="print" onload="this.media='all';this.onload=null">
-    <noscript>
-        <link rel="stylesheet" href="/css/main.css">
-    </noscript>
-
-    <meta name="google-site-verification" content="digJaGp7JYW7c_R1BNuHNHaaLHYzaCHwcPsEFrcuFvw" />
-    <script src="/js/main.js"></script>
+<link rel="stylesheet" href="/css/ui.css">
+ 
     
+<link rel="stylesheet" href="/css/style.css">
+
 <meta name="generator" content="Hexo 6.3.0"></head>
-
+    
     <body>
-        <header>
+        <div class="paper">
             
-<div class="header__left">
-	<a href="/" class="button"><span class="logo__text">OUATIS</span></a>
-</div>
-<div class="header__right">
-	<div class="navbar__menus">
-		
-		<a href="/" class="button">
-			<div class="navbar-menu">首页</div>
-		</a>
-		
-		<a href="/archives/" class="button">
-			<div class="navbar-menu">归档</div>
-		</a>
-		
-		<a href="/categories/" class="button">
-			<div class="navbar-menu">分类</div>
-		</a>
-		
-		<a href="/tags/" class="button">
-			<div class="navbar-menu">标签</div>
-		</a>
-		
-	</div>
-	
-	<a href="/search/" class="button">
-		<div id="btn-search">
-			<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1024 1024" width="24" height="24" fill="currentColor"
-				stroke="currentColor" stroke-width="32">
-				<path
-					d="M192 448c0-141.152 114.848-256 256-256s256 114.848 256 256-114.848 256-256 256-256-114.848-256-256z m710.624 409.376l-206.88-206.88A318.784 318.784 0 0 0 768 448c0-176.736-143.264-320-320-320S128 271.264 128 448s143.264 320 320 320a318.784 318.784 0 0 0 202.496-72.256l206.88 206.88 45.248-45.248z">
-				</path>
-			</svg>
-		</div>
-	</a>
-	
-	<a href="javaScript:void(0);" class="button" id="btn-toggle-dark">
-		<div>
-			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none"
-				stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-				<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-			</svg>
-		</div>
-	</a>
-	<a href="javaScript:void(0);" class="dropdown-icon button">
-		<div id="btn-dropdown">
-			<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1024 1024" width="24" height="24" fill="currentColor"
-				stroke="currentColor" stroke-width="32" stroke-linecap="round">
-				<path
-					d="M903.43 561.52H148.8c-13.25 0-24-10.75-24-24s10.75-24 24-24h754.63c13.25 0 24 10.75 24 24s-10.75 24-24 24zM903.43 204.31H148.8c-13.25 0-24-10.75-24-24s10.75-24 24-24h754.63c13.25 0 24 10.75 24 24s-10.75 24-24 24zM903.43 918.73H148.8c-13.25 0-24-10.75-24-24s10.75-24 24-24h754.63c13.25 0 24 10.75 24 24s-10.75 24-24 24z"
-					fill="currentColor"></path>
-			</svg>
-		</div>
-	</a>
-	<div class="dropdown-menus" id="dropdown-menus">
-		
-		<a href="/" class="dropdown-menu button">首页</a>
-		<br>
-		
-		<a href="/archives/" class="dropdown-menu button">归档</a>
-		<br>
-		
-		<a href="/categories/" class="dropdown-menu button">分类</a>
-		<br>
-		
-		<a href="/tags/" class="dropdown-menu button">标签</a>
-		<br>
-		
-	</div>
-</div>
-
-        </header>
-        <div id="top"></div>
-        <div id="page-main" class="main-content">
-        <div class="mg-top">
             
+            
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+<div class="header">
+    <div class="header-container">
+        <img style="
+        width: 56px;
+        height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/img/favicon.webp" width="10%"></img>
+        <div class="header-content">
+            <a class="logo" href="/">笼城往事</a> 
+            <span class="description"></span> 
+        </div>
+        
+    </div>
+    
+   
+    <ul class="nav">
+        
+            
+                <li><a href="/">首页</a></li>
+            
+        
+            
+                <li><a href="/list/">文章</a></li>
+            
+        
+            
+                <li><a href="/tags/">标签</a></li>
+            
+        
+            
+                <li><a href="/categories/">分类</a></li>
+            
+        
+    </ul>
+</div> 
+        
+                    
+                    
 
-<article class="page">
-<div id="post-meta-m">
-    <div class="post-meta" id="post-meta">
-  <h3>马鞭主题</h3>
+                    
+                    
+                    
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+
     
-      <span class="post-meta-label">
-        SigiL
-      </span>
-    
-    
-      <span class="post-meta-label">
-        <span class="p-dot"></span>
-        <time datetime="2016-05-03 00:00" pubdate>
-          2016-05-03
-        </time>
-      </span>
-    
-    
+        <div class="post-main-title">
+            马鞭主题
+        </div>
       
-      <span class="post-meta">
-        <span class="p-dot"></span>
-        共 2.4k 字
-      </span>
     
-    
-    
-  </div>
-  
-</div>
-<div class="article-m">
-  <div class="post-toc">
-    
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E9%83%A8%E7%AC%AC%E4%BA%8C%E7%AB%A0%EF%BC%8C%E9%A9%AC%E9%9E%AD%E4%BC%A0%E6%83%85"><span class="toc-number">1.</span> <span class="toc-text">第一部第二章，马鞭传情</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E9%83%A8%E7%AC%AC%E4%B9%9D%E7%AB%A0%EF%BC%8C%E6%A0%91%E6%9E%97%E9%AA%91%E9%A9%AC%E5%B9%BD%E4%BC%9A%E5%89%8D"><span class="toc-number">2.</span> <span class="toc-text">第一部第九章，树林骑马幽会前</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E9%83%A8%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0%EF%BC%8C%E7%BB%99%E7%BD%97%E5%A4%9A%E5%A4%AB%E4%B9%B0%E7%A4%BC%E7%89%A9"><span class="toc-number">3.</span> <span class="toc-text">第二部第十二章，给罗多夫买礼物</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E9%83%A8%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0%EF%BC%8C%E7%BD%97%E5%A4%9A%E5%A4%AB%E6%94%B6%E5%88%B0%E7%A4%BC%E7%89%A9"><span class="toc-number">4.</span> <span class="toc-text">第二部第十二章，罗多夫收到礼物</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E9%83%A8%E7%AC%AC%E5%85%AB%E7%AB%A0%EF%BC%8C%E9%A9%AC%E9%9E%AD%E7%9A%84%E7%BB%93%E5%B1%80"><span class="toc-number">5.</span> <span class="toc-text">第三部第八章，马鞭的结局</span></a></li></ol>
-    
-  </div>
-    <div id="article">
-      <div id="post-content" class="markdown-body textretty">
+
+    <div class="post-md">
+        
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%AC%AC%E4%B8%80%E9%83%A8%E7%AC%AC%E4%BA%8C%E7%AB%A0%EF%BC%8C%E9%A9%AC%E9%9E%AD%E4%BC%A0%E6%83%85"><span class="post-toc-text">第一部第二章，马鞭传情</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%AC%AC%E4%B8%80%E9%83%A8%E7%AC%AC%E4%B9%9D%E7%AB%A0%EF%BC%8C%E6%A0%91%E6%9E%97%E9%AA%91%E9%A9%AC%E5%B9%BD%E4%BC%9A%E5%89%8D"><span class="post-toc-text">第一部第九章，树林骑马幽会前</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%AC%AC%E4%BA%8C%E9%83%A8%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0%EF%BC%8C%E7%BB%99%E7%BD%97%E5%A4%9A%E5%A4%AB%E4%B9%B0%E7%A4%BC%E7%89%A9"><span class="post-toc-text">第二部第十二章，给罗多夫买礼物</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%AC%AC%E4%BA%8C%E9%83%A8%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0%EF%BC%8C%E7%BD%97%E5%A4%9A%E5%A4%AB%E6%94%B6%E5%88%B0%E7%A4%BC%E7%89%A9"><span class="post-toc-text">第二部第十二章，罗多夫收到礼物</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%AC%AC%E4%B8%89%E9%83%A8%E7%AC%AC%E5%85%AB%E7%AB%A0%EF%BC%8C%E9%A9%AC%E9%9E%AD%E7%9A%84%E7%BB%93%E5%B1%80"><span class="post-toc-text">第三部第八章，马鞭的结局</span></a></li></ol>
+        
         <p>福楼拜是个设计师，他设计了诸多主题，例如“马”“神甫石膏像”“声音”“三个医生”等。马的主题在《文学讲稿》中已经明确。但当时我读了三遍都没有注意到，不妨说，这是一个庞大的主题，马、骑马、马车、马蹄足、马鞭，等等，随处可见反而无迹可寻，每一种都可以进一步细化。</p>
 <p>其中，马鞭主题无疑是最为清晰的。如果书中还存在一个“[[礼物或信物主题]]”（这也是一个大主题），那马鞭与后面的雪茄烟匣也肯定是其中最重要的组成部分。</p>
-<p>起初，一条马鞭经了艾玛的手被递给包法利；在与罗多夫幽会时，又一条马鞭被艾玛用来回答孩子的飞吻；后来，还有一条马鞭连同雪茄烟匣、印章被送给罗多夫，艾玛因此欠了勒和的债；为了还债，她向罗多夫借钱，遭到拒绝，生气之下，她忘记了马鞭其实是自己送给他的礼物。从某种意义上说，这其实是“同一条”马鞭，艾玛先给包法利，后给罗多夫，给包法利的艾玛主动收回了，送罗多夫的却没有能收回。<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="以下引用文本均为李译在前，许译在后。
-">[1]</span></a></sup></p>
+<p>起初，一条马鞭经了艾玛的手被递给包法利；在与罗多夫幽会时，又一条马鞭被艾玛用来回答孩子的飞吻；后来，还有一条马鞭连同雪茄烟匣、印章被送给罗多夫，艾玛因此欠了勒和的债；为了还债，她向罗多夫借钱，遭到拒绝，生气之下，她忘记了马鞭其实是自己送给他的礼物。从某种意义上说，这其实是“同一条”马鞭，艾玛先给包法利，后给罗多夫，给包法利的艾玛主动收回了，送罗多夫的却没有能收回。<a href="%E4%BB%A5%E4%B8%8B%E5%BC%95%E7%94%A8%E6%96%87%E6%9C%AC%E5%9D%87%E4%B8%BA%E6%9D%8E%E8%AF%91%E5%9C%A8%E5%89%8D%EF%BC%8C%E8%AE%B8%E8%AF%91%E5%9C%A8%E5%90%8E%E3%80%82">^1</a></p>
 <h2 id="第一部第二章，马鞭传情"><a href="#第一部第二章，马鞭传情" class="headerlink" title="第一部第二章，马鞭传情"></a>第一部第二章，马鞭传情</h2><blockquote>
 <p>查理上楼，向卢欧老爹告辞，然后在走以前，又回到厅房。她站着朝花园望，额头贴住窗户。先前起风，吹倒园里的豆架。她转回身，问道：<br>“您找什么东西？”<br>他答道：<br>“对不住，我的鞭子。”<br>他开始在床上、门背后、椅子底下寻找；原来掉在口袋和墙壁之间的地上。爱玛小姐瞥见了；她伏到小麦口袋上。查理表示殷勤，连忙跑过去，也同样伸出胳膊，女孩子弯在底下，他觉出他的胸脯蹭到她的后背。她涨红了脸，立直了，朝后望，递鞭子给他。</p>
 </blockquote>
 <blockquote>
-<p>夏尔上楼向卢奥老爹辞行后，又回到厅子里，发现她站在窗前，额头贴着窗户，正在眺望豆架被风刮倒的园子。她回转身来问道：<br>“你找什么东西吗？”<br>“对不起，我的鞭子，”他答道。<br>他开始在床上，门背后，椅子底下寻找；不料鞭子却掉在小麦口袋和墙壁之间的地上。艾玛小姐眼快，就伏到口袋上去捡。夏尔为了讨好，也赶快跑过去，同样伸出胳膊，他感到他的胸脯蹭到她伏在口袋上的背脊。她站直了，涨红了脸，向后望了一眼，把牛筋鞭子 <sup id="fnref:2" class="footnote-ref"><a href="#fn:2" rel="footnote"><span class="hint--top hint--rounded" aria-label="法语原文为“nerf de bœuf”，特指一种由牛的阴茎制成的马鞭，李译没有译出。众所周知，“包法利”的意思就是牛。
-">[2]</span></a></sup> 递给他。</p>
+<p>夏尔上楼向卢奥老爹辞行后，又回到厅子里，发现她站在窗前，额头贴着窗户，正在眺望豆架被风刮倒的园子。她回转身来问道：<br>“你找什么东西吗？”<br>“对不起，我的鞭子，”他答道。<br>他开始在床上，门背后，椅子底下寻找；不料鞭子却掉在小麦口袋和墙壁之间的地上。艾玛小姐眼快，就伏到口袋上去捡。夏尔为了讨好，也赶快跑过去，同样伸出胳膊，他感到他的胸脯蹭到她伏在口袋上的背脊。她站直了，涨红了脸，向后望了一眼，把牛筋鞭子 [^2] 递给他。</p>
 </blockquote>
 <h2 id="第一部第九章，树林骑马幽会前"><a href="#第一部第九章，树林骑马幽会前" class="headerlink" title="第一部第九章，树林骑马幽会前"></a>第一部第九章，树林骑马幽会前</h2><blockquote>
 <p>她听见头上有响声：原来是全福哄小白尔特，敲打玻璃窗。小孩子远远递了她一个吻；母亲的回答是摇摇鞭子把儿。</p>
@@ -511,8 +119,7 @@ header .header__right .dropdown-menus .dropdown-menu {
 <p>除去银头镀金马鞭之外，罗道耳弗还收下一颗印章，上面刻着这句格言：“心心相印”。另外还有一条围巾料子，最后还有一只雪茄匣，和子爵的雪茄匣一般模样，查理先前在路上捡到的，爱玛还保存着。不过这些礼物使他难堪，有几件就谢绝了，她一坚持，罗道耳弗结局收是收了，不过嫌她盛气凌人，过分强人所难。</p>
 </blockquote>
 <blockquote>
-<p>除了银头镀金马鞭以外，罗多夫还收到了一个印章，上面刻了一句箴言：真心相爱。另外还有一条披肩，可以作围巾用；最后还有一个雪茄烟匣，和子爵的那个一模一样 <sup id="fnref:3" class="footnote-ref"><a href="#fn:3" rel="footnote"><span class="hint--top hint--rounded" aria-label="这是很厉害的一句话，许译比李译要强、要狠，理应如此。
-">[3]</span></a></sup>，就是夏尔在路上捡到、艾玛还保存着的那一个。然而，这些礼物使他丢面子。他拒绝了好几件；她一坚持，罗多夫结果只好收下，但认为她太专横，过分强人所难。</p>
+<p>除了银头镀金马鞭以外，罗多夫还收到了一个印章，上面刻了一句箴言：真心相爱。另外还有一条披肩，可以作围巾用；最后还有一个雪茄烟匣，和子爵的那个一模一样 [^3]，就是夏尔在路上捡到、艾玛还保存着的那一个。然而，这些礼物使他丢面子。他拒绝了好几件；她一坚持，罗多夫结果只好收下，但认为她太专横，过分强人所难。</p>
 </blockquote>
 <h2 id="第三部第八章，马鞭的结局"><a href="#第三部第八章，马鞭的结局" class="headerlink" title="第三部第八章，马鞭的结局"></a>第三部第八章，马鞭的结局</h2><blockquote>
 <p>“可是人要是穷呀，铳把子不会镶银！”<br>她指着布勒时钟，继续道：<br>“也不会买镶介壳的钟！也不会给马鞭来一串镀金的银叫子！”<br>她摸着这些银叫子。“也不会给他表上来一串小玩艺链子！嗐！他什么也不缺！屋里还有一顶酒橱；因为你爱你自己，你过舒服日子，你有一所庄园、几处田庄、几座树林；你骑马打猎，你远游巴黎……单单就是这个……”<br>她抓起壁炉上的袖口纽扣，喊道：<br>“这顶小的小玩艺儿，就能变出钱来！……嗐！我不要你的！留着好了。”<br>她拿两个纽扣丢得老远，小金链碰在墙上，断了。</p>
@@ -520,231 +127,95 @@ header .header__right .dropdown-menus .dropdown-menu {
 <blockquote>
 <p>“要是你真没有钱，你的枪托上就不会镶嵌银丝！你也不会买珍珠贝壳装饰的座钟！”她指着布尔的座钟继续说，“更不会给马鞭接上镀金的银哨子——（她动手摸摸银哨）——当然不会在金表上挂些琳琅满目的小玩意了！唉！你什么也不缺！甚至卧房里还有一个放酒瓶、酒杯的柜子；因为你不肯亏待自己，你要生活得舒服。你有房子，田产，树林；你去围场打猎，去巴黎旅行⋯⋯咳！哪怕就是这小玩艺儿，”她拿起壁炉上的衬衫纽扣来，高声说，“就是这微不足道的小东西！也值好多钱呵！⋯⋯啊！我并不要你的，你自己留着吧！”</p>
 </blockquote>
-<section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span>以下引用文本均为李译在前，许译在后。
-<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:2" class="footnote-text"><span>法语原文为“nerf de bœuf”，特指一种由牛的阴茎制成的马鞭，李译没有译出。众所周知，“包法利”的意思就是牛。
-<a href="#fnref:2" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:3" class="footnote-text"><span>这是很厉害的一句话，许译比李译要强、要狠，理应如此。
-<a href="#fnref:3" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
-      </div>
-    </div>
-</div>
-
-<div class="post-category">
-
-    <div id="p-meta-i">
-        
-              
-                <a class="hover-with-bg" href="/categories/%E9%87%8D%E8%AF%BB%E3%80%8A%E5%8C%85%E6%B3%95%E5%88%A9%E5%A4%AB%E4%BA%BA%E3%80%8B/">重读《包法利夫人》</a>
-              
-          
-          
-              
-                <a class="hover-with-bg" href="/tags/%E4%B9%A6/"># 书</a>
-              
-                <a class="hover-with-bg" href="/tags/%E7%A6%8F%E6%A5%BC%E6%8B%9C/"># 福楼拜</a>
-              
-          
-    </div>
-</div>
-
-
-<div class="post-footer">
-  
-
-</div>
-
-    <!-- Comments -->
-    <div class="comments">
-        
-        
-    <script src="https://giscus.app/client.js"
-        data-repo="ouatis/ouatis.github.io"
-        data-repo-id="ouatis/ouatis.github.io"
-        data-category="ouatis/ouatis.github.io"
-        data-category-id="ouatis/ouatis.github.io"
-        data-mapping="pathname"
-        data-term=""
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="bottom"
-        data-theme="preferred_color_scheme"
-        data-lang="zh-CN"
-        data-loading=""
-        crossorigin="anonymous"
-        async> </script>
+<p>[^2]: 法语原文为“nerf de bœuf”，特指一种由牛的阴茎制成的马鞭，李译没有译出。众所周知，“包法利”的意思就是牛。<br>[^3]: 这是很厉害的一句话，许译比李译要强、要狠，理应如此。</p>
 
     </div>
 
-</article>
-
-
-        </div>
+    <div class="post-meta">
+        <i>
         
-<footer class="text-center">
+            <span>2016-05-03</span>
+            
+                <span>该篇文章被 SigiL</span>
+            
+            
+                <span>打上标签:
+                    
+                    
+                        <a href='/tags/%E4%B9%A6/'>
+                            书
+                        </a>
+                    
+                        <a href='/tags/%E7%A6%8F%E6%A5%BC%E6%8B%9C/'>
+                            福楼拜
+                        </a>
+                    
+                </span>
+             
+             
+                <span>归为分类:
+                    
+                    
+                        <a href='/categories/%E9%87%8D%E8%AF%BB%E3%80%8A%E5%8C%85%E6%B3%95%E5%88%A9%E5%A4%AB%E4%BA%BA%E3%80%8B/'>
+                            重读《包法利夫人》
+                        </a>
+                    
+                </span>
+            
+        
+        </i>
+    </div>
     
-    
-    
-    
-    
-    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme by <a href="https://github.com/oCoke/hexo-theme-miracle" target="_blank">Miracle</a></p>
-    
-    
-</footer>
+        
 
-<div class="p-btn">
-    
-        <a class="toc-btn" id="toc-btn"><i id="i-menu"></i></a>
-    
-    
-      <a class="toc-btn" id="share-btn"><i>
-        <svg t="1670124379155" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2683" width="25" height="25"><path d="M395.946667 234.666667v64H256v469.333333h512V522.666667h64V768a64 64 0 0 1-64 64H256a64 64 0 0 1-64-64V298.666667a64 64 0 0 1 64-64h139.946667z m335.850666-87.914667l150.848 150.826667-158.378666 158.4-45.269334-45.248L748.394667 341.333333H672c-121.685333 0-220.714667 97.024-223.914667 217.941334L448 565.333333v85.333334h-64v-85.333334C384 406.272 512.938667 277.333333 672 277.333333h99.861333l-85.312-85.333333 45.248-45.248z" p-id="2684" fill="var(--first-text-color)"></path></svg>
-      </i></a>
-    
-    <a href="javascript:window.scrollTo({top:0,behavior:'smooth'});" class="click-btn">
-      <i id="i-up"></i>
-    </a>
+     
 </div>
 
-<!-- SCRIPTS -->
 
 
+                    
+                    
+                    <div class="footer">
+    
+        <span> 
+            © 2012-2023 
+
+            
+                
+
+            
+        </span>
+    
+</div>
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>IMAGINE UNPOETIC LIONS</span>
+            
+                <span class="footer-last-span-right"><i>本站由<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a>驱动｜使用<a target="_blank" rel="noopener" href="https://github.com/HiNinoJay/hexo-theme-A4">Hexo-theme-A4</a>主题</i></span>
+            
+    
+</div>
 
 
+    
+        
+<link rel="stylesheet" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/a11y-dark.min.css">
+
+        
+<script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/highlight.min.js"></script>
+
+        
+<script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/highlightjs-line-numbers.js"></script>
+
+    
 
 
 <script>
-    document.getElementById("btn-dropdown").addEventListener('click', () => {
-      toggleClass("#dropdown-menus","display-inline");
-    });
-    console.log('\n' + ' %c Powered by Hexo Theme Miracle ' + ' %c https://github.com/hifun-team/hexo-theme-miracle ' + '\n' + '\n', 'color: #fff; background: #4F9BFA; padding:5px 0;', 'background: #FFF; padding:5px 0;');
-
-    
-
-    
-  /* 小彩蛋: 饮茶先啦 */
-  setTimeout(() => {
-    var time = new Date();
-    if (time.getHours() == 15) {
-      let comment = document.createComment(' 三点几嚟！饮茶先啦！ ');
-      document.body.insertBefore(comment, document.getElementsByTagName('header')[0]);
-    }
-  },1);
-    
+    hljs.initHighlightingOnLoad();
+    hljs.initLineNumbersOnLoad();
 </script>
-
-
-<script>
-    var postImg = document.querySelectorAll("article[class=page] img");
-    for (let imgi = 0; imgi < postImg.length; imgi++) {
-        postImg[imgi].onclick = () => {
-            let zoomImg = document.createElement("div");
-            zoomImg.id = "zoomImg";
-            zoomImg.innerHTML = `<div id="zoom-picture"></div>
-    <div class="poptrox-overlay"
-        style="position: fixed; left: 0px; top: 0px; z-index: 20000; width: 100%; height: 100%; text-align: center; cursor: zoom-out; opacity: 1;">
-        <div style="display:inline-block;height:100%;vertical-align:middle;"></div>
-        <div
-            style="position:absolute;left:0;top:0;width:100%;height:100%;background:#000000;opacity:0;filter:alpha(opacity=0);">
-        </div>
-        <div class="poptrox-popup"
-            style="display: inline-block; vertical-align: middle; position: relative; z-index: 1; cursor: zoom-out; min-width: 10px; min-height: 10px; width: auto; height: auto;">
-            <div class="loader" style="display: none;"></div>
-            <div class="pic" style="text-indent: 0px;"><img
-                    src="${ postImg[imgi].srcset || postImg[imgi].src }" alt="Loading..."
-                    style="vertical-align: bottom; max-width: 85vw; max-height: 85vh;"></div>
-        </div>
-    </div>`;
-            document.body.appendChild(zoomImg);
-                document.querySelector("#zoomImg").onclick = () => {
-                    document.querySelector("#zoomImg").remove();
-                }
-        }
-    }
-    
-</script>
-
-
-
-
-    <script>
-        query("#toc-btn")[0].onclick = () => {
-            if (query(".post-toc")[0].innerHTML) {
-                toggleClass(".post-toc", "display-inline");
-            }
-        }
-
-        if (!query(".post-toc")[0].innerHTML) {
-            addClass("#toc-btn","display-none");
-        }
-    </script>
-
-
-
-    <script>
-        query("#share-btn")[0].onclick = async () => {
-            let url = `${location.protocol}//${location.hostname}${location.port ? ":"+location.port:location.port}${location.pathname}#read=${sessionStorage.getItem(location.pathname+"_read_y") || ""}`;
-            try {
-                await navigator.clipboard.writeText(url);
-                prompt_core("分享链接已经复制至剪贴板", 4800, true);
-            } catch(e) {
-                prompt_core("分享链接复制失败，请手动复制<br/>"+url, 4800, false);
-            }
-        }
-    </script>
-
-
-
-
-
-
-
-    <script>
-        const getScrollPosition = (el = window) => ({
-            x: el.pageXOffset !== undefined ? el.pageXOffset : el.scrollLeft,
-            y: el.pageYOffset !== undefined ? el.pageYOffset : el.scrollTop
-        });
-        // 此处的 750 是「页面元素的最大宽度」
-        var wx = document.getElementsByClassName("article-m")[0].clientWidth;
-        var wy = document.getElementsByClassName("article-m")[0].clientHeight;
-        function windowScroll() {
-            // 反复修改 确保页面尺寸不改变
-            wx = document.getElementsByClassName("article-m")[0].clientWidth;
-            wy = document.getElementsByClassName("article-m")[0].clientHeight;
-            let y = Math.round(getScrollPosition().y);
-            // console.log(y);
-            // 组合字符串，同时记录页面坐标，页面宽度和高度
-            let p = `${y}:${wx}:${wy}`;
-            // 写入到 sessionStorage 中
-            sessionStorage.setItem(location.pathname + "_read_y", p);
-        }
-        // URL 中是否包含传递的坐标信息
-        setTimeout(() => {
-            if (location.hash.split("#read=").length > 1) {
-                prompt_core("已有阅读进度，正在跳转", 4800, true);
-                // 分离字符串
-                let read_y = location.hash.split("#read=")[1];
-                read_y = read_y.split(":");
-                // 组合乘积，顺滑移动至坐标
-                window.scrollTo({top: Math.round(Number(read_y[0]) * Number(read_y[1] * Number(read_y[2] / wx / wy))), behavior: "smooth"});
-            } else {
-                // 从 sessionStorage 中获取
-                let read_y = sessionStorage.getItem(location.pathname + "_read_y") || "0:0:0";
-                read_y = read_y.split(":");
-                if (read_y[0] != "0") prompt_core("已有阅读进度，正在跳转", 4800, true);
-                window.scrollTo({top: Math.round(Number(read_y[0]) * Number(read_y[1] * Number(read_y[2] / wx / wy))), behavior: "smooth"});
-            }
-        }, 500);
-        window.onscroll = windowScroll;
-    </script>
-
-
-
-
-
-        </div>
-        <div id="css-loading">
-            <h3 class="text-center">加载中...</h3>
-        </div>
-        
+                </div>
+            
     </body>
 </html>

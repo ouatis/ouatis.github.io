@@ -1,489 +1,99 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-
-
-<head>
-    <meta charset="UTF-8">
-    
-    <link rel="apple-touch-icon" sizes="76x76" href="https://api.iconify.design/icon-park-solid:ring.svg">
-    <link rel="icon" type="image/png" href="https://api.iconify.design/icon-park-solid:ring.svg">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
-    <title>《最后的守护者》 - 笼城往事</title>
-    
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-    
-    
-    <meta name="description" content="">
-    <meta name="author" content="SigiL">
-    <meta name="keywords" content="">
-    <meta property="og:title" content="《最后的守护者》"/>
-    <style>
-
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0,  viewport-fit=cover" name="viewport" />
+    <meta name="description" content="《最后的守护者》" />
+    <meta name="hexo-theme-A4" content="v1.7.0" />
+    <link rel="alternate icon" type="image/webp" href="https://api.iconify.design/icon-park-solid:ring.svg">
+    <title>笼城往事 | Once Upon a Time in SigiL</title>
 
     
-    :root{
-        --shadow-color: rgba(0,0,0,0.2);
-        --sec-shadow: rgba(0,0,0,0.03);
-        --shadow-hover-color: rgba(0,0,0,0.28);
-        --first-text-color: #475b6d;
-        --second-text-color: #37475b;
-        --third-text-color: #858585;
-        --default-text-color: #505050;
-        --default-link-color: #007bff;
-        --link-color: #000000;
-        --second-link-color: #4F9BFA;
-        --code-color:rgba(27,31,35,.05);
-        --post-bkg-color: #fff;
-        --page-bkg-color: #f2f5f8;
-        --nav-a-hover-color: #3498db;
-        --post-sec-text-color: #718096;
-        --sec-bkg: #f2f5f8;
-        --color-mode: 'light';
-        --bkg-h: rgba(255,255,255,0.6);
-        --bkg-m: #e1e4e8;
-        --home-title-color: #4169E1;
-        --shadow: 0 4px 10px rgba(0,2,4,0.06),0 0 1px rgba(0,2,4,0.11);
-        --hr-color: #ddd;
-        --bg-t: #f4f4f4;
-        --nav-bkg: rgba(255,255,255,0.6);
-    }
+        
+            
+<link rel="stylesheet" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/reset.css">
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-mode: 'dark';
-  }
+            
+<link rel="stylesheet" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/markdown.css">
 
-  :root:not([data-theme]) {
-    --first-text-color: hsla(0,0%,100%,0.92);
-    --second-text-color: hsla(0,0%,100%,0.86);
-    --third-text-color: #a7a9ad;
-    --default-text-color: #505050;
-    --default-link-color: #1589e9;
-    --link-color: #000000;
-    --second-link-color: #30a9de;
-    --post-bkg-color: #252d38;
-    --page-bkg-color: #181c27;
-    --nav-a-hover-color: #3498db;
-    --post-sec-text-color: #a7a9ad;
-    --sec-bkg: #364151;
-    --bkg-h: rgba(255,255,255,0.2);
-    --bkg-m: rgba(255,255,255,0.1);
-    --home-title-color: rgb(226, 82, 90);
-    --code-color:#3e4b5e;
-    --shadow: none;
-    --hr-color: #718096;
-    --bg-t: #364151;
-    --nav-bkg: rgba(13,17,23,0.6);
-  }
-}
-
-[data-theme='dark'] {
-    --shadow-color: rgba(0,0,0,0.2);
-    --shadow-hover-color: rgba(0,0,0,0.28);
-    --first-text-color: hsla(0,0%,100%,0.92);
-    --second-text-color: hsla(0,0%,100%,0.86);
-    --third-text-color: #a7a9ad;
-    --default-text-color: #505050;
-    --default-link-color: #1589e9;
-    --link-color: #000000;
-    --second-link-color: #30a9de;
-    --post-bkg-color: #252d38;
-    --page-bkg-color: #181c27;
-    --nav-a-hover-color: #3498db;
-    --post-sec-text-color: #a7a9ad;
-    --sec-bkg: #364151;
-    --bkg-h: rgba(255,255,255,0.2);
-    --bkg-m: rgba(255,255,255,0.1);
-    --home-title-color: rgb(226, 82, 90);
-    --code-color:#3e4b5e;
-    --shadow: none;
-    --hr-color: #718096;
-    --bg-t: #364151;
-    --nav-bkg: rgba(13,17,23,0.6);
-}
-
-</style>
-
-
-
-<style>
-#page-main,footer,.p-btn{
-    display: none;
-}
-html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-}
-body {
-    background-color: var(--page-bkg-color);
-    color: var(--second-text-color);
-    overflow-y: scroll;
-    overflow-x: hidden;
-    transition: all .3s;
-}
-a {
-    color: var(--default-link-color);
-    text-decoration: none;
-    background-color: transparent;
-}
-a:hover{
-    color: var(--second-link-color);
-}
-.main-content,.post-card-main{
-    margin: 30px;
-}
-
-
-
-@media (max-width: 410px){
-    .post-card-main{
-        max-width: 350px!important;
-    }
-}
-
-@media (max-width: 980px){
-    .post-card-main{
-        max-width: 520px!important;
-    }
-}
-
-
-@media (min-width: 780px){ 
-    h3{
-        font-size: 1.5rem;
-        line-height: 1.5em;
-    }
-}
-@media (min-width: 1280px){ 
-    h3{
-        font-size: 1.7rem;
-        line-height: 1.5em;
-    }
-}
-@media (min-width: 2096px){ 
-    h3{
-        font-size: 1.8rem;
-        line-height: 1.5em;
-    }
-}
-
-.text-center{
-    text-align: center!important;
-}
-.middle-center{
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    height: 100%;
-}
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    height: 54px;
-    padding: 0 1.25rem;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 10;
-    border-bottom: 1px solid var(--bkg-m);
-    background-color: var(--nav-bkg);
-    backdrop-filter: blur(4px);
-    transition: all .3s;
-}
-header .header__left, header .header__right {
-    display: flex;
-    align-items: center;
-    font-family: rubik,sans-serif,Varela Round;
-}
-header .header__left .logo__text {
-    font-size: 18px;
-    font-weight: 450;
-    padding: 14.5px 10px;
-    border-radius: 5px;
-    color: var(--second-text-color);
-}
-header .header__right .navbar__menus {
-    height: 54px;
-    padding: 0 0 0 15px;
-}
-header .header__right .button {
-    color: var(--second-text-color);
-}
-header .header__right .navbar__menus .navbar-menu {
-    display: inline-block;
-    align-items: center;
-    height: 54px;
-    padding: 0 10px;
-    font-size: 16px;
-    line-height: 54px;
-}
-header .header__right .dropdown-icon {
-    display: none;
-    height: 54px;
-    padding: 15px 10px;
-    border: 0;
-    background-color: transparent;
-}
-header .header__right .dropdown-menus {
-    line-height: 2rem;
-    animation: slide-in .15s ease 1;
-    display: none;
-    position: absolute;
-    left: 12px;
-    right: 12px;
-    top: calc(54px + 10px);
-    border-radius: 6px;
-    padding: 24px;
-    background-color: var(--page-bkg-color);
-    border: 1px solid var(--bkg-m);
-    z-index: 9999;
-    justify-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-header .header__right #btn-search, header .header__right #btn-toggle-dark{
-    display: inline-block;
-    padding:  18px 10px;
-    height: 25px;
-}
-header .header__right #btn-dropdown{
-  display: inline-block;
-  padding:  13.5px 0;
-}
-header .header__right .dropdown-menus .dropdown-menu {
-    padding: 10px;
-    color: var(--second-text-color);
-}
-@media screen and (max-width: 764px){
-.navbar__menus {
-    display: none!important;
-}
-.dropdown-icon {
-    display: inline-block!important;
-}
-}
-.p-btn{
-    position: fixed;
-    bottom: 1.2rem;
-    right: 1.2rem;
-    contain: layout;
-}
-.toc-btn,.click-btn{
-    cursor: pointer;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    align-items: center;
-    margin-top: .5rem;
-    font-size: .75rem;
-    background-color: var(--sec-bkg);
-    display: block;
-    padding: 0.9rem;
-    box-shadow: 0 0.3rem 0.6rem rgba(48,55,66,.15);
-    border: none;
-    border-radius: 0.5rem;
-    line-height: 1;
-    color: var(--first-text-color);
-}
-.toc-link{
-    color: var(--second-text-color);
-}
-
-#css-loading h3{
-    font-weight: 500;
-    font-size: 1.4rem;
-    text-align: center;
-    position: fixed;
-    top: 200px;
-    left: 0;
-    right: 0;
-    opacity: 0;
-    animation: cssLoad;
-    animation-delay: 0.3s;
-    -webkit-animation: cssLoad;
-    -webkit-animation-delay: 0.3s;
-}
-@keyframes cssLoad {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 0.9;
-    }
-}
-
-
-.memorial {
-    -webkit-filter: grayscale(100%);
-    -moz-filter: grayscale(100%);
-    -ms-filter: grayscale(100%);
-    -o-filter: grayscale(100%);
-    filter: grayscale(100%);
-    filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); filter:gray;
-}
-
-
-    .post-copyright:after {
-        position: absolute;
-        color: #fff;
-        background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 496 512'%3E%3Cpath fill='gray' d='M245.8 214.9l-33.2 17.3c-9.4-19.6-25.2-20-27.4-20-22.2 0-33.3 14.6-33.3 43.9 0 23.5 9.2 43.8 33.3 43.8 14.4 0 24.6-7 30.5-21.3l30.6 15.5a73.2 73.2 0 01-65.1 39c-22.6 0-74-10.3-74-77 0-58.7 43-77 72.6-77 30.8-.1 52.7 11.9 66 35.8zm143 0l-32.7 17.3c-9.5-19.8-25.7-20-27.9-20-22.1 0-33.2 14.6-33.2 43.9 0 23.5 9.2 43.8 33.2 43.8 14.5 0 24.7-7 30.5-21.3l31 15.5c-2 3.8-21.3 39-65 39-22.7 0-74-9.9-74-77 0-58.7 43-77 72.6-77C354 179 376 191 389 214.8zM247.7 8C104.7 8 0 123 0 256c0 138.4 113.6 248 247.6 248C377.5 504 496 403 496 256 496 118 389.4 8 247.6 8zm.8 450.8c-112.5 0-203.7-93-203.7-202.8 0-105.5 85.5-203.3 203.8-203.3A201.7 201.7 0 01451.3 256c0 121.7-99.7 202.9-202.9 202.9z'/%3E%3C/svg%3E");
-        content: ' ';
-        height: 10rem;
-        width: 10rem;
-        right: -2rem;
-        top: -2rem;
-        opacity: .1;
-    }
-
-</style>
-
-    
-
-    
-        <!--
-        <link rel="stylesheet" href="/css/page.css" media="print"
-            onload="this.media='all';this.onload=null">
-        <noscript>-->
-            <link rel="stylesheet" href="/css/page.css">
-        <!--</noscript>-->
+            
+<link rel="stylesheet" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/fonts.css">
+ 
+            <!--注意：首页既不是post也不是page-->
+            
+        
     
     
-    <link rel="stylesheet" href="/css/main.css" media="print" onload="this.media='all';this.onload=null">
-    <noscript>
-        <link rel="stylesheet" href="/css/main.css">
-    </noscript>
-
-    <meta name="google-site-verification" content="digJaGp7JYW7c_R1BNuHNHaaLHYzaCHwcPsEFrcuFvw" />
-    <script src="/js/main.js"></script>
+<link rel="stylesheet" href="/css/ui.css">
+ 
     
+<link rel="stylesheet" href="/css/style.css">
+
 <meta name="generator" content="Hexo 6.3.0"></head>
-
+    
     <body>
-        <header>
+        <div class="paper">
             
-<div class="header__left">
-	<a href="/" class="button"><span class="logo__text">OUATIS</span></a>
-</div>
-<div class="header__right">
-	<div class="navbar__menus">
-		
-		<a href="/" class="button">
-			<div class="navbar-menu">首页</div>
-		</a>
-		
-		<a href="/archives/" class="button">
-			<div class="navbar-menu">归档</div>
-		</a>
-		
-		<a href="/categories/" class="button">
-			<div class="navbar-menu">分类</div>
-		</a>
-		
-		<a href="/tags/" class="button">
-			<div class="navbar-menu">标签</div>
-		</a>
-		
-	</div>
-	
-	<a href="/search/" class="button">
-		<div id="btn-search">
-			<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1024 1024" width="24" height="24" fill="currentColor"
-				stroke="currentColor" stroke-width="32">
-				<path
-					d="M192 448c0-141.152 114.848-256 256-256s256 114.848 256 256-114.848 256-256 256-256-114.848-256-256z m710.624 409.376l-206.88-206.88A318.784 318.784 0 0 0 768 448c0-176.736-143.264-320-320-320S128 271.264 128 448s143.264 320 320 320a318.784 318.784 0 0 0 202.496-72.256l206.88 206.88 45.248-45.248z">
-				</path>
-			</svg>
-		</div>
-	</a>
-	
-	<a href="javaScript:void(0);" class="button" id="btn-toggle-dark">
-		<div>
-			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none"
-				stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-				<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-			</svg>
-		</div>
-	</a>
-	<a href="javaScript:void(0);" class="dropdown-icon button">
-		<div id="btn-dropdown">
-			<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1024 1024" width="24" height="24" fill="currentColor"
-				stroke="currentColor" stroke-width="32" stroke-linecap="round">
-				<path
-					d="M903.43 561.52H148.8c-13.25 0-24-10.75-24-24s10.75-24 24-24h754.63c13.25 0 24 10.75 24 24s-10.75 24-24 24zM903.43 204.31H148.8c-13.25 0-24-10.75-24-24s10.75-24 24-24h754.63c13.25 0 24 10.75 24 24s-10.75 24-24 24zM903.43 918.73H148.8c-13.25 0-24-10.75-24-24s10.75-24 24-24h754.63c13.25 0 24 10.75 24 24s-10.75 24-24 24z"
-					fill="currentColor"></path>
-			</svg>
-		</div>
-	</a>
-	<div class="dropdown-menus" id="dropdown-menus">
-		
-		<a href="/" class="dropdown-menu button">首页</a>
-		<br>
-		
-		<a href="/archives/" class="dropdown-menu button">归档</a>
-		<br>
-		
-		<a href="/categories/" class="dropdown-menu button">分类</a>
-		<br>
-		
-		<a href="/tags/" class="dropdown-menu button">标签</a>
-		<br>
-		
-	</div>
-</div>
-
-        </header>
-        <div id="top"></div>
-        <div id="page-main" class="main-content">
-        <div class="mg-top">
             
+            
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+<div class="header">
+    <div class="header-container">
+        <img style="
+        width: 56px;
+        height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/img/favicon.webp" width="10%"></img>
+        <div class="header-content">
+            <a class="logo" href="/">笼城往事</a> 
+            <span class="description"></span> 
+        </div>
+        
+    </div>
+    
+   
+    <ul class="nav">
+        
+            
+                <li><a href="/">首页</a></li>
+            
+        
+            
+                <li><a href="/list/">文章</a></li>
+            
+        
+            
+                <li><a href="/tags/">标签</a></li>
+            
+        
+            
+                <li><a href="/categories/">分类</a></li>
+            
+        
+    </ul>
+</div> 
+        
+                    
+                    
 
-<article class="page">
-<div id="post-meta-m">
-    <div class="post-meta" id="post-meta">
-  <h3>《最后的守护者》</h3>
+                    
+                    
+                    
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+
     
-      <span class="post-meta-label">
-        SigiL
-      </span>
-    
-    
-      <span class="post-meta-label">
-        <span class="p-dot"></span>
-        <time datetime="2016-12-06 00:00" pubdate>
-          2016-12-06
-        </time>
-      </span>
-    
-    
-      
-      <span class="post-meta">
-        <span class="p-dot"></span>
-        共 3.6k 字
-      </span>
-    
-    
-    
-  </div>
-  
-</div>
-<div class="article-m">
-  <div class="post-toc">
-    
+        <div class="post-main-title">
+            《最后的守护者》
+        </div>
       
     
-  </div>
-    <div id="article">
-      <div id="post-content" class="markdown-body textretty">
+
+    <div class="post-md">
+        
+            
+        
         <p>上田文人说他要做一款少年与大鹫的游戏。你知道这款游戏是什么样子的。应该说，你早就知道这款游戏是什么样子的。只要你了解 ICO、了解《汪达与巨像》、了解上田，这 7 年时间足够你猜到这款游戏是什么样子。少年与食人的大鹫特里克，就像男孩 ICO 与女孩 Yorda，也像汪达与他的爱马阿格罗。你知道少年会同大鹫发生羁绊，知道他们从生分、甚至厌恶，再到妥协、合作，会历经重重冒险，越来越默契，越来越心有灵犀，最后亲密无间，再也不能够分离。你知道当少年昏迷，睁开双眼最先看到的会是大鹫将他唤醒；你看到大鹫有害怕的东西，猜测到终有一刻它会为了少年克服恐惧；大鹫的翅膀暂时无力飞行，但总会有飞起来的时刻；你知道结局可能是你为了救大鹫而牺牲，也有可能是大鹫为了救你而牺牲，但在字幕之后，也许还有一个美满结局——上田说过，他喜欢美满结局。如果你也曾如此猜想过，那么，我证明，《最后的守护者》就是这个样子。在这个命题下，你应该相信他。《最后的守护者》无疑会实现上田式的情感体验，少年与大鹫的故事确实也和你想象中的一样，满是冒险与羁绊。但既然你已经知道了他们的故事，现在的问题就在于，你是否能真正地代入少年，并且爱上食人的大鹫特里克呢？</p>
 <p>我花了 15 个小时通关《最后的守护者》。我爱上了特里克。在经历种种过后，我很难不爱上特里克。它带我奔跑、跳跃，为我缓冲，为我战斗，它也依赖我喂食，依赖我为它开门，为它指引方向。更重要的是，它浑身上下都是互动细节。它会突然伸过头来，要我抚摸；当我拔出刺进它身体的长矛，它会因疼痛哀嚎；看着它的大眼睛凝视别处，我感觉它若有所思。整个电子游戏史上可能还没有如此刻画生动的巨兽。上田在某一次采访中说，“大鹫不像我们在其他游戏里看到的可爱宠物，你让它干什么，它就干什么，不是那样的。大鹫与主角是一种很暧昧的、不确定的关系，这是我们想在游戏中表达的精神，所以它不会对你唯命是从。这是《最后的守护者》的主题之一。这是一种我想带给大家的全新体验。”这确实是一种全新的体验。你可以直接对大鹫下达指令，但它可能有反应时间，甚至偶尔无动于衷（是的，Yorda 偶尔也这样，但没有逻辑可循，大鹫却越来越听话，虽然不听话的时候也比 Yorda 更气人）。这对于所有习惯了即时反馈的玩家来说，是一种前所未见的东西。上田和他的开发团队为大鹫 AI 写了大量代码，他们赋予这个生物思想，使它有自己的意志做出行动，而它的行动又会影响到游戏中的方方面面。像这样的 NPC，并不是没有，但大鹫的身份特殊，它是一只庞然巨兽，不会说话，只会用肢体动作以及眼睛的颜色表达情绪。要在游戏史上要创造这样一头生物，不爱用语言的上田就是最适合的人选之一。在其他游戏里，你要骑马，靠近后按下按键，再推摇杆就是人马合一。而在《最后的守护者》中，你得跳起来抓住大鹫的羽毛，攀爬上去（想起什么没有？是的，就跟汪达爬在巨像身上一样，只不过抓、爬、刺剑变成了抓、爬、拔矛），再发指令引导它，而它还不一定听。上田别出心裁地把非即时反馈也做成互动，这样的互动更加符合现实。</p>
 <p>但这当然也是有代价的。大鹫有它工具性的作用，它是一头坐骑，是你解谜的合作伙伴。《最后的守护者》最为独特的交互方式之一，就是针对大鹫的指令，你可以叫它去往某个方向，叫它跳跃，叫它潜水。最需要这类指令的地方，是在“动作冒险”部分，那些你需要跑跑跳跳、却又跑不快也跳不高的地方。如果是在平地，我的建议是从大鹫身上下来，自己跑，跑到合适位置，再呼唤大鹫过来——不要试图像遛马一样尝试骑着大鹫漫步，它很难听你的，在更加激烈的地方，你才更需要骑上它。这些激烈的动作冒险元素，同上田缺席的七年来涌现出的大量游戏没有区别，它们也比 ICO、《汪达与巨像》的演出更加壮观，大鹫同样是个走哪塌哪的狠角。你会感觉到这部分似曾相识，但骑在大鹫上走哪塌哪，也是件别有趣味的事情——没有人这么做过。与指令相关的另一方面，是“解谜”部分，如 ICO 一样的合作解谜。最基础的解谜与体型有关。因为大鹫太大，你得发挥你小的优势，攀岩、爬墙、钻洞、荡绳索，最后打开机关，为它开门，然后它才发挥大的优势，进入到动作冒险部分，带你跳上你没法借力、没法攀爬的地方，前往下一个你需要继续为它开门的谜题。另外一种解谜需要创造万事俱备、只欠东风的条件。是你准备好一切，推箱子、拉矿车、扔木桶，最后等大鹫来做最关键的一步，你响应这一步，又打开一处机关，或者前往到下个地点，再为它开门，或者唤它过来。这同我玩 ICO 时的体会如出一辙，上田和他的团队并不以解谜设计见长，解谜只是他们用来实现双人互动的方式。整个《最后的守护者》游戏流程，没有特别复杂的机关，只要你有双人互动的意识，把眼睛放亮一点，再对大鹫有点耐心，那么，所有的解谜都只是时间问题，不是智力、操作或者运气问题。上田他们做了足够的引导和提示，埋下了各种伏笔。当你发现这一点，解谜就像插入门锁的钥匙，咔嚓一声，极其悦耳。但这跟 ICO 的合作解谜又有何区别呢？大鹫比 Yorda 更大、大鹫比 Yorda 多了条尾巴，这些多出来的要素都会在解谜中用到。但要说“真正”的差异，实际上并不大。包括轻量级的战斗在内，《最终的守护者》有意无意总会造成 ICO 的既视感。在 ICO 里，女孩 Yorda 弱不禁风，你得时刻牵着她的手，一旦稍微远离，阴影就会出现绑走她，你必须挥舞棍子把它们都赶跑。而在《最后的守护者》里，这反了过来，你不会战斗，最多只是冲撞，到战斗场景，那些遗迹卫士也会绑走你，你狂按方向键和右边四键，挣脱它们，但最终，还是需要大鹫来把你拯救。但是这回你有一面镜子，镜子的反光照到哪里，大鹫尾巴就会射出闪电击中哪里。不过在很长一段时间里，你会遗失这面镜子，如果它失而复得，你应该知道最终战斗就要来临。</p>
@@ -492,225 +102,89 @@ header .header__right .dropdown-menus .dropdown-menu {
 <p>当然，这一点也可以是不重要的。如果你没有玩过 ICO 或者《汪达与巨像》，你也没听过上田是谁，那么，《最后的守护者》已然成为爱上他的最佳选择。毕竟，上田还是那个上田，全世界又只有一个「上田文人」。可是除了大鹫本身，《最后的守护者》对其他开发者可能不会像 ICO《汪达与巨像》那么有意义了，在十多年后，玩其他游戏你也能发现上田的独特遗产。这款游戏有 ICO 那样出色的情感体验、有比它更好的演出、有通过动作冒险成分平衡出来更好的节奏，但确实可能不会有那么影响深远、意义重大。</p>
 <p>而除了大鹫本身，你如果问我最喜欢《最后的守护者》中的什么，我会回答它设置的地点和场景。ICO 设置在古堡，《汪达与巨像》则在平原，《最后的守护者》结合两者，把故事放在一处平原上的城堡，它被环状的绝壁围绕，想象一个火山口，把它放宽、放大，中心是建筑和遗迹，而且是最适合大鹫冒险的建筑和遗迹。这里有耸立的巨塔、插入峭壁的壁画、高空中的栈道，我甚至怀疑 GenDesign 反过来借鉴了《兄弟：双子传说》中在巨人国的高空冒险，并将之做到了极致，做到了适合大鹫的建筑主题。就像宫崎英高的《黑暗之魂》，这又是一部“Architecture Porn”。正是在这个地方我玩了十几个小时仍不觉生厌，有些场景在通关过后即可记住，但没有一处地方因为难度，让我逗留太久。我卡到烦恼的关卡主要有两处。一处是我自己南辕北辙，并不关大鹫的事（你看，我都愿意为它说好话了），它一直在给我提示，但我却以为是它贪玩；另一处则是因为盲点，正巧是最终 Boss 战前的一个小谜题，打个比方就是，钥匙都已经插上了锁，但我却没想到可以去转动。这两处卡关的共同之处在于，大鹫“贪玩”的行为以及无意识充当了钥匙的行为都被我忽略。所以我给打算玩《最后的守护者》的玩家一个建议，除此之外，你没必要看任何攻略，以自己体验为佳：当你卡关的时候，看看大鹫在干什么，它的行为、它的姿势，都可能是解谜的关键。如果你觉得大鹫不听你话，蠢得无可救药，那有可能是你的解谜思路出了方向性问题，也有可能是你没下正确的指令。在《最后的守护者》正式发布前，大鹫不听话的消息不胫而走，我愿意为它辩护。特里克其实很少出大问题，它是不听话，但只是在一些细枝末节上不听话，那耽搁不了你几分钟，如果耽搁了，那我只能说你运气不好。我只被它真正耽搁过一次，我原谅了它。这是一只值得信赖的大鹫。在《最后的守护者》中，有一次最为重要的跳跃，去玩的朋友将会知道我在说哪。跳跃前，我下达了指令，特里克久久没有反馈，它转着头，凝视夕阳，身上的每一根羽毛都在随风闪耀。我竟然明白过来，它也许是在感受风向与风速，也许是在平复心情，总之我发自内心地去理解了它，正是在那一刹那，它通过了我私人的图灵测试。我最终又按下跳跃指令，只按了一下。特里克一气呵成，绝尘而去。</p>
 
-      </div>
-    </div>
-</div>
-
-<div class="post-category">
-
-    <div id="p-meta-i">
-        
-              
-                <a class="hover-with-bg" href="/categories/%E4%BC%98%E7%A7%80%E8%AF%BB%E8%80%85%E7%9A%84%E5%9B%9B%E4%B8%AA%E6%9D%A1%E4%BB%B6/">优秀读者的四个条件</a>
-              
-          
-          
-              
-                <a class="hover-with-bg" href="/tags/%E6%B8%B8%E6%88%8F/"># 游戏</a>
-              
-          
-    </div>
-</div>
-
-
-<div class="post-footer">
-  
-
-</div>
-
-    <!-- Comments -->
-    <div class="comments">
-        
-        
-    <script src="https://giscus.app/client.js"
-        data-repo="ouatis/ouatis.github.io"
-        data-repo-id="ouatis/ouatis.github.io"
-        data-category="ouatis/ouatis.github.io"
-        data-category-id="ouatis/ouatis.github.io"
-        data-mapping="pathname"
-        data-term=""
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="bottom"
-        data-theme="preferred_color_scheme"
-        data-lang="zh-CN"
-        data-loading=""
-        crossorigin="anonymous"
-        async> </script>
-
     </div>
 
-</article>
-
-
-        </div>
+    <div class="post-meta">
+        <i>
         
-<footer class="text-center">
+            <span>2016-12-06</span>
+            
+                <span>该篇文章被 SigiL</span>
+            
+            
+                <span>打上标签:
+                    
+                    
+                        <a href='/tags/%E6%B8%B8%E6%88%8F/'>
+                            游戏
+                        </a>
+                    
+                </span>
+             
+             
+                <span>归为分类:
+                    
+                    
+                        <a href='/categories/%E4%BC%98%E7%A7%80%E8%AF%BB%E8%80%85%E7%9A%84%E5%9B%9B%E4%B8%AA%E6%9D%A1%E4%BB%B6/'>
+                            优秀读者的四个条件
+                        </a>
+                    
+                </span>
+            
+        
+        </i>
+    </div>
     
-    
-    
-    
-    
-    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme by <a href="https://github.com/oCoke/hexo-theme-miracle" target="_blank">Miracle</a></p>
-    
-    
-</footer>
+        
 
-<div class="p-btn">
-    
-        <a class="toc-btn" id="toc-btn"><i id="i-menu"></i></a>
-    
-    
-      <a class="toc-btn" id="share-btn"><i>
-        <svg t="1670124379155" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2683" width="25" height="25"><path d="M395.946667 234.666667v64H256v469.333333h512V522.666667h64V768a64 64 0 0 1-64 64H256a64 64 0 0 1-64-64V298.666667a64 64 0 0 1 64-64h139.946667z m335.850666-87.914667l150.848 150.826667-158.378666 158.4-45.269334-45.248L748.394667 341.333333H672c-121.685333 0-220.714667 97.024-223.914667 217.941334L448 565.333333v85.333334h-64v-85.333334C384 406.272 512.938667 277.333333 672 277.333333h99.861333l-85.312-85.333333 45.248-45.248z" p-id="2684" fill="var(--first-text-color)"></path></svg>
-      </i></a>
-    
-    <a href="javascript:window.scrollTo({top:0,behavior:'smooth'});" class="click-btn">
-      <i id="i-up"></i>
-    </a>
+     
 </div>
 
-<!-- SCRIPTS -->
 
 
+                    
+                    
+                    <div class="footer">
+    
+        <span> 
+            © 2012-2023 
+
+            
+                
+
+            
+        </span>
+    
+</div>
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>IMAGINE UNPOETIC LIONS</span>
+            
+                <span class="footer-last-span-right"><i>本站由<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a>驱动｜使用<a target="_blank" rel="noopener" href="https://github.com/HiNinoJay/hexo-theme-A4">Hexo-theme-A4</a>主题</i></span>
+            
+    
+</div>
 
 
+    
+        
+<link rel="stylesheet" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/a11y-dark.min.css">
+
+        
+<script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/highlight.min.js"></script>
+
+        
+<script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/highlightjs-line-numbers.js"></script>
+
+    
 
 
 <script>
-    document.getElementById("btn-dropdown").addEventListener('click', () => {
-      toggleClass("#dropdown-menus","display-inline");
-    });
-    console.log('\n' + ' %c Powered by Hexo Theme Miracle ' + ' %c https://github.com/hifun-team/hexo-theme-miracle ' + '\n' + '\n', 'color: #fff; background: #4F9BFA; padding:5px 0;', 'background: #FFF; padding:5px 0;');
-
-    
-
-    
-  /* 小彩蛋: 饮茶先啦 */
-  setTimeout(() => {
-    var time = new Date();
-    if (time.getHours() == 15) {
-      let comment = document.createComment(' 三点几嚟！饮茶先啦！ ');
-      document.body.insertBefore(comment, document.getElementsByTagName('header')[0]);
-    }
-  },1);
-    
+    hljs.initHighlightingOnLoad();
+    hljs.initLineNumbersOnLoad();
 </script>
-
-
-<script>
-    var postImg = document.querySelectorAll("article[class=page] img");
-    for (let imgi = 0; imgi < postImg.length; imgi++) {
-        postImg[imgi].onclick = () => {
-            let zoomImg = document.createElement("div");
-            zoomImg.id = "zoomImg";
-            zoomImg.innerHTML = `<div id="zoom-picture"></div>
-    <div class="poptrox-overlay"
-        style="position: fixed; left: 0px; top: 0px; z-index: 20000; width: 100%; height: 100%; text-align: center; cursor: zoom-out; opacity: 1;">
-        <div style="display:inline-block;height:100%;vertical-align:middle;"></div>
-        <div
-            style="position:absolute;left:0;top:0;width:100%;height:100%;background:#000000;opacity:0;filter:alpha(opacity=0);">
-        </div>
-        <div class="poptrox-popup"
-            style="display: inline-block; vertical-align: middle; position: relative; z-index: 1; cursor: zoom-out; min-width: 10px; min-height: 10px; width: auto; height: auto;">
-            <div class="loader" style="display: none;"></div>
-            <div class="pic" style="text-indent: 0px;"><img
-                    src="${ postImg[imgi].srcset || postImg[imgi].src }" alt="Loading..."
-                    style="vertical-align: bottom; max-width: 85vw; max-height: 85vh;"></div>
-        </div>
-    </div>`;
-            document.body.appendChild(zoomImg);
-                document.querySelector("#zoomImg").onclick = () => {
-                    document.querySelector("#zoomImg").remove();
-                }
-        }
-    }
-    
-</script>
-
-
-
-
-    <script>
-        query("#toc-btn")[0].onclick = () => {
-            if (query(".post-toc")[0].innerHTML) {
-                toggleClass(".post-toc", "display-inline");
-            }
-        }
-
-        if (!query(".post-toc")[0].innerHTML) {
-            addClass("#toc-btn","display-none");
-        }
-    </script>
-
-
-
-    <script>
-        query("#share-btn")[0].onclick = async () => {
-            let url = `${location.protocol}//${location.hostname}${location.port ? ":"+location.port:location.port}${location.pathname}#read=${sessionStorage.getItem(location.pathname+"_read_y") || ""}`;
-            try {
-                await navigator.clipboard.writeText(url);
-                prompt_core("分享链接已经复制至剪贴板", 4800, true);
-            } catch(e) {
-                prompt_core("分享链接复制失败，请手动复制<br/>"+url, 4800, false);
-            }
-        }
-    </script>
-
-
-
-
-
-
-
-    <script>
-        const getScrollPosition = (el = window) => ({
-            x: el.pageXOffset !== undefined ? el.pageXOffset : el.scrollLeft,
-            y: el.pageYOffset !== undefined ? el.pageYOffset : el.scrollTop
-        });
-        // 此处的 750 是「页面元素的最大宽度」
-        var wx = document.getElementsByClassName("article-m")[0].clientWidth;
-        var wy = document.getElementsByClassName("article-m")[0].clientHeight;
-        function windowScroll() {
-            // 反复修改 确保页面尺寸不改变
-            wx = document.getElementsByClassName("article-m")[0].clientWidth;
-            wy = document.getElementsByClassName("article-m")[0].clientHeight;
-            let y = Math.round(getScrollPosition().y);
-            // console.log(y);
-            // 组合字符串，同时记录页面坐标，页面宽度和高度
-            let p = `${y}:${wx}:${wy}`;
-            // 写入到 sessionStorage 中
-            sessionStorage.setItem(location.pathname + "_read_y", p);
-        }
-        // URL 中是否包含传递的坐标信息
-        setTimeout(() => {
-            if (location.hash.split("#read=").length > 1) {
-                prompt_core("已有阅读进度，正在跳转", 4800, true);
-                // 分离字符串
-                let read_y = location.hash.split("#read=")[1];
-                read_y = read_y.split(":");
-                // 组合乘积，顺滑移动至坐标
-                window.scrollTo({top: Math.round(Number(read_y[0]) * Number(read_y[1] * Number(read_y[2] / wx / wy))), behavior: "smooth"});
-            } else {
-                // 从 sessionStorage 中获取
-                let read_y = sessionStorage.getItem(location.pathname + "_read_y") || "0:0:0";
-                read_y = read_y.split(":");
-                if (read_y[0] != "0") prompt_core("已有阅读进度，正在跳转", 4800, true);
-                window.scrollTo({top: Math.round(Number(read_y[0]) * Number(read_y[1] * Number(read_y[2] / wx / wy))), behavior: "smooth"});
-            }
-        }, 500);
-        window.onscroll = windowScroll;
-    </script>
-
-
-
-
-
-        </div>
-        <div id="css-loading">
-            <h3 class="text-center">加载中...</h3>
-        </div>
-        
+                </div>
+            
     </body>
 </html>

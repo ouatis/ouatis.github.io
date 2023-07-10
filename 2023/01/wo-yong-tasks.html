@@ -104,16 +104,16 @@
 <p>很无聊的一件事是，我发现盖茨比在分秒数字之间使用句点，起初以为是排版错误，翻了英文原版，竟然没错。研究了下，德国人，还有部分国家，就是用句点分隔时间。而盖茨比小时候上的是路德派学校。当然也有可能是我想多了。</p>
 <p>米格尔街有个人叫泰特斯·霍伊特，他早上五点半起床，读一些希腊哲学家的书到六点，再花十五分钟洗澡和锻炼，花五分钟读晨报，十分钟吃早饭。跟小盖茨比做的是一回事，他觉得只要遵照这个时间表，三四年内将成为一个有学问有修养的人。</p>
 <p>多年以后，信息时代人类做时间表，已经有大量软件应用可选。不至于像小盖茨比、泰特斯·霍伊特那样，拿一张可怜的纸条记录，有修改还得涂抹。</p>
-<p>我正经开始做时间表，是在安装了 Obsidian 以后了，主要用到 Tasks 插件，好处是可以使用语句，搜寻、过滤、罗列散落在 Vault 文件里的各个任务。语句非常简单，字面意思就很清楚。基于这个功能，我把日常任务和提醒，分为三栏。</p>
-<p>因为试图在其中加入一点点文化人的要素，这则笔记被我叫做 [[G.T.K.]]，类似“Getting Things Done”吧，但我这是“Ganzer Tag Kanzlei”的缩写。这也是第一栏的小标题，标题下是今天截止、或今天有什么安排的任务，按优先级排序，一目了然。这一栏最常用到。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">```tasks </span><br><span class="line">not done </span><br><span class="line">(due on today) OR (scheduled on today) </span><br><span class="line">group by priority</span><br><span class="line">```</span><br></pre></td></tr></table></figure>
+<p>正经开始做时间表，是在安装了 Obsidian 以后了，主要用到 Tasks 插件，好处是可以使用语句，搜寻、过滤、罗列散落在 Vault 文件里的各个任务。语句非常简单，字面意思就很清楚。基于这个功能，我把日常任务和提醒，分为三栏。</p>
+<p>因为试图在其中加入一点点文化人的要素，这则笔记被我叫做 [[G.T.K.]]，戏仿“Getting Things Done”，其实是“Ganzer Tag Kanzlei”的缩写。这也是第一栏的小标题，标题下是今天截止、或今天有什么安排的任务，按优先级排序，一目了然。这一栏最常用到。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">```tasks </span><br><span class="line">not done </span><br><span class="line">(due before today) OR (due on today) OR (scheduled on today) </span><br><span class="line">group by priority</span><br><span class="line">```</span><br></pre></td></tr></table></figure>
 
 <p>第二栏和第三栏分别是“Nicht Gearbeitet”和“Lage Unverändert”。前者是过期未完成的任务和明天的任务，按优先级排序，偶尔用到；后者是明天之后的任务，按截止日期排序，很少用到，因为前两栏任务基本都做不完。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">```tasks </span><br><span class="line">not done </span><br><span class="line">(due before today) OR (due on tomorrow) OR (scheduled on tomorrow) </span><br><span class="line">group by priority</span><br><span class="line">```</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">```tasks </span><br><span class="line">not done </span><br><span class="line">(due on tomorrow) OR (scheduled on tomorrow) </span><br><span class="line">group by priority</span><br><span class="line">```</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">```tasks</span><br><span class="line">not done</span><br><span class="line">NOT (due before tomorrow)</span><br><span class="line">sort by priority</span><br><span class="line">group by due</span><br><span class="line">```</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">```tasks</span><br><span class="line">not done</span><br><span class="line">NOT (due on tomorrow)</span><br><span class="line">NOT (due before tomorrow)</span><br><span class="line">sort by priority</span><br><span class="line">group by due</span><br><span class="line">```</span><br></pre></td></tr></table></figure>
 
-<p>这个插件的截止时间无法精确到每时每分，最小单位就是天。像小盖茨比那样，有更细的提醒需求，可以寻找另外的插件。</p>
+<p>这个插件的截止时间无法精确到每时每分，最小单位就是天。如像小盖茨比那样，有更细的提醒需求，可以寻找另外的插件。</p>
 
     </div>
 

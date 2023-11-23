@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0,  viewport-fit=cover" name="viewport" />
     <meta name="description" content="王老菊2019" />
-    <meta name="hexo-theme-A4" content="v1.7.1" />
+    <meta name="hexo-theme-A4" content="v1.7.5" />
     <link rel="alternate icon" type="image/webp" href="/img/favicon.png">
     <title>笼城往事 | Once Upon a Time in SigiL</title>
 
@@ -27,9 +27,25 @@
     
 <link rel="stylesheet" href="/css/style.css">
 
+
+    <!--返回顶部css-->
+    
+<link rel="stylesheet" href="/css/returnToTop.css">
+
+    
+<link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/unicons.css">
+
+
+    <!--目录-->
+    
+<link rel="stylesheet" href="/css/toc.css">
+
 <meta name="generator" content="Hexo 6.3.0"></head>
     
     <body>
+        
+            <nav id="toc" class="bs-docs-sidebar"></nav>
+        
         <div class="paper">
             
             
@@ -89,8 +105,6 @@
     
 
     <div class="post-md">
-        
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%A6%BB%E8%81%8C"><span class="post-toc-text">离职</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%AE%B6%E5%BA%AD%E4%B8%8E%E5%AD%A6%E4%B9%A0"><span class="post-toc-text">家庭与学习</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%B8%B8%E6%88%8F"><span class="post-toc-text">游戏</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%B7%A5%E4%BD%9C"><span class="post-toc-text">工作</span></a></li></ol>
         
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/hint.css/2.7.0/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>是“菊嫂”免免给我开的门。她和王老菊都在家。房子不大，两室一厅，厅特别小。录视频的工作间正对他家门口，一进门就能看到。工作间约十来平的样子，两张桌子，三把椅子，好几块显示屏。每天下午，老菊就在这里录剪视频。一般素材录多久，完了就得剪多久。理想情况下，晚饭前后他能把视频做好，接着开始压制。压制要很长时间，到大概半夜，才能传好视频。因为视频网站的工作人员可能都下班了，经常得到凌晨，我们才能看到一个视频的发布。</p>
 <p>免免一般坐他身后，两个人几乎背靠背。她说老菊录视频的时候，自己有时会选择刻意不进这个房间，有时也在，但她会尽量保持不出声。老菊说出声了他也不在意。办正事前，免免递给我一根冰棍，给我腾出了她的位置，自己搬了条小凳子，坐在门边，开始边玩手机，边听我们聊，偶尔插几句评论，就像她在老菊视频中那样。和老菊主要聊他的一些“幕后”，并且试图“深入内心”，但我不擅长这个。老菊开始也摆出一副防御姿态，后来好多了。有些怪问题他倒是答得认真，免免在一旁乐。最终结果七零八落的，这里是洁本。</p>
@@ -155,6 +169,7 @@
 
 
 
+                                      
                     
                     
                     <div class="footer">
@@ -195,7 +210,64 @@
     hljs.initHighlightingOnLoad();
     hljs.initLineNumbersOnLoad();
 </script>
+
+
+<!--回到顶部按钮-->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+
+<script src="/js/returnToTop.js"></script>
+
+
+<!--目录-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js" type="text/javascript" ></script>
+
+<script src="/js/toc.js"></script>
+
+
+
+
+<script src="/js/randomHeaderContent.js"></script>
+
+                </div>
+            
+            
+                <!-- 回到顶部的按钮-->  
+                <div class="progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
                 </div>
             
     </body>
+
+
+    <!--暗黑模式-->
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+    <script>
+        function addDarkmodeWidget() {
+        const options = {
+            bottom: '53px', // default: '32px'
+            right: 'unset', // default: '32px'
+            left: '42px', // default: 'unset'
+            time: '0.3s', // default: '0.3s'
+            mixColor: '#fff', // default: '#fff'
+            backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+            buttonColorDark: '#100f2c',  // default: '#100f2c'
+            buttonColorLight: '#fff', // default: '#fff'
+            saveInCookies: true, // default: true,
+            label: '🌓', // default: ''
+            autoMatchOsTheme: true // default: true
+        }
+    
+        const darkmode = new Darkmode(options);
+        darkmode.showWidget();
+        
+        }
+        window.addEventListener('load', addDarkmodeWidget);
+    </script>
+  
 </html>

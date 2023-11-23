@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0,  viewport-fit=cover" name="viewport" />
     <meta name="description" content="纳博科夫窗帘考" />
-    <meta name="hexo-theme-A4" content="v1.7.1" />
+    <meta name="hexo-theme-A4" content="v1.7.5" />
     <link rel="alternate icon" type="image/webp" href="/img/favicon.png">
     <title>笼城往事 | Once Upon a Time in SigiL</title>
 
@@ -27,9 +27,25 @@
     
 <link rel="stylesheet" href="/css/style.css">
 
+
+    <!--返回顶部css-->
+    
+<link rel="stylesheet" href="/css/returnToTop.css">
+
+    
+<link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/unicons.css">
+
+
+    <!--目录-->
+    
+<link rel="stylesheet" href="/css/toc.css">
+
 <meta name="generator" content="Hexo 6.3.0"></head>
     
     <body>
+        
+            <nav id="toc" class="bs-docs-sidebar"></nav>
+        
         <div class="paper">
             
             
@@ -90,8 +106,6 @@
 
     <div class="post-md">
         
-            
-        
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/hint.css/2.7.0/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>纳博科夫拉了一辈子窗帘，每次拉都会提到不同的作家。刘云飞的版本，是说他在康奈尔大学授课，讲到托尔斯泰，突然拉上教室的窗帘，还关掉所有的电灯，然后站到电灯开关旁，打开左侧的一盏灯，对学生说：“在俄国文学的苍穹上，这就是普希金。”接着他又打开中间那盏灯说道：“这就是果戈理。”然后，他再打开右侧那盏灯，又说道：“这就是契诃夫。”最后，他大步冲到窗前，一把扯开窗帘，指着直射进窗内的一束束灿烂阳光，大声地对学生们喊道：“而这，就是托尔斯泰！”</p>
 <p>同一段文字，刘老师贴在自己不同的出版物里。他不止一本俄国文学史著作。</p>
 <p>开门见山地说，这段引文中“普 - 果 - 契 - 托”的顺序才是正确且符合逻辑的。这就是时间顺序，俄罗斯文学的循序渐进。任何调换顺序、塞入陀思妥耶夫斯基的版本，都很滑稽。</p>
@@ -102,7 +116,8 @@
 <p>One bright January day in 1953, when both teacher and students were losing concentration, he suddenly turned off the three overhead lights and pulled all the shades. Stalking back to the podium and the light switch, he proclaimed:</p>
 <p>‘’In the firmament of Russian literature…this is Pushkin!’’ as he flipped one switch. ‘’This is Gogol!’’ The second globe lit up. ‘’This is Chekhov!’’ as the third light bloomed. Then, walking to the windows, he let the central shade crash to the top of its roller and boomed ‘’And that is Tolstoy!’’ as sunlight streamed into the room.</p>
 </blockquote>
-<p>无论如何，在这个课堂小故事中插入陀翁，使其作为托翁的垫脚石，是很滑稽的。以我的观察来看，俄罗斯文学在数量上相当贫瘠，没什么长远的传统，十九世纪前只见历史价值，一路讲下去，熟悉的人才变多，最值得一书的，先是普，后面跟着果、莱、屠、托、陀、契，没了，剩下就是二十世纪。</p>
+<p>无论如何，在这个课堂小故事中插入陀翁，使其作为托翁的垫脚石，是很滑稽的。纳博科夫是不喜欢陀翁，他为一部俄国文学选集所写的引言时，宣称陀翁的任何一页文字都不值得收录（博尔赫斯狡猾地说，这说明不应以陀氏的任何一页文字，而应以组成整部作品的所有文字来衡量他）。</p>
+<p>以我的观察来看，俄罗斯文学在数量上相当贫瘠，没什么长远的传统，十九世纪前只见历史价值，一路讲下去，熟悉的人才变多，最值得一书的，先是普，后面跟着果、莱、屠、托、陀、契，没了，剩下就是二十世纪。</p>
 <p>十九世纪的俄罗斯，天才纷纷降生，如异象，但人少，清楚。起初被西欧文学影响，再反过来影响回去。要把这批天才比作一盏盏明灯，首先得剔除陀翁。哪怕纳老师再不待见他，也不能用灯比喻，那太让人不舒服。</p>
 <p>倒不如说，当托尔斯泰的阳光充满教室，每个人脚下却都聚起了一道长长的阴影。</p>
 
@@ -154,6 +169,7 @@
 
 
 
+                                      
                     
                     
                     <div class="footer">
@@ -194,7 +210,64 @@
     hljs.initHighlightingOnLoad();
     hljs.initLineNumbersOnLoad();
 </script>
+
+
+<!--回到顶部按钮-->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+
+<script src="/js/returnToTop.js"></script>
+
+
+<!--目录-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js" type="text/javascript" ></script>
+
+<script src="/js/toc.js"></script>
+
+
+
+
+<script src="/js/randomHeaderContent.js"></script>
+
+                </div>
+            
+            
+                <!-- 回到顶部的按钮-->  
+                <div class="progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
                 </div>
             
     </body>
+
+
+    <!--暗黑模式-->
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+    <script>
+        function addDarkmodeWidget() {
+        const options = {
+            bottom: '53px', // default: '32px'
+            right: 'unset', // default: '32px'
+            left: '42px', // default: 'unset'
+            time: '0.3s', // default: '0.3s'
+            mixColor: '#fff', // default: '#fff'
+            backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+            buttonColorDark: '#100f2c',  // default: '#100f2c'
+            buttonColorLight: '#fff', // default: '#fff'
+            saveInCookies: true, // default: true,
+            label: '🌓', // default: ''
+            autoMatchOsTheme: true // default: true
+        }
+    
+        const darkmode = new Darkmode(options);
+        darkmode.showWidget();
+        
+        }
+        window.addEventListener('load', addDarkmodeWidget);
+    </script>
+  
 </html>

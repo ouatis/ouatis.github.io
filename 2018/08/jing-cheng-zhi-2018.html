@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0,  viewport-fit=cover" name="viewport" />
     <meta name="description" content="金承志2018" />
-    <meta name="hexo-theme-A4" content="v1.7.1" />
+    <meta name="hexo-theme-A4" content="v1.7.5" />
     <link rel="alternate icon" type="image/webp" href="/img/favicon.png">
     <title>笼城往事 | Once Upon a Time in SigiL</title>
 
@@ -27,9 +27,25 @@
     
 <link rel="stylesheet" href="/css/style.css">
 
+
+    <!--返回顶部css-->
+    
+<link rel="stylesheet" href="/css/returnToTop.css">
+
+    
+<link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/unicons.css">
+
+
+    <!--目录-->
+    
+<link rel="stylesheet" href="/css/toc.css">
+
 <meta name="generator" content="Hexo 6.3.0"></head>
     
     <body>
+        
+            <nav id="toc" class="bs-docs-sidebar"></nav>
+        
         <div class="paper">
             
             
@@ -89,8 +105,6 @@
     
 
     <div class="post-md">
-        
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1"><span class="post-toc-text">1</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2"><span class="post-toc-text">2</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3"><span class="post-toc-text">3</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4"><span class="post-toc-text">4</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5"><span class="post-toc-text">5</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6"><span class="post-toc-text">6</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#7"><span class="post-toc-text">7</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#8"><span class="post-toc-text">8</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#9"><span class="post-toc-text">9</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#10"><span class="post-toc-text">10</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#11"><span class="post-toc-text">11</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#12"><span class="post-toc-text">12</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#13"><span class="post-toc-text">13</span></a></li></ol>
         
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/hint.css/2.7.0/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>上海彩虹室内合唱团的新歌，《肥宅群侠传》，据团长金承志的说法，是根据他本人生活经历改编的“反战”歌曲，“只要游戏常伴吾身，只要新番每周都更，每天快快乐乐吃吃喝喝又没伤害谁，为什么要跟你们都一样？”</p>
 <p>彩虹的歌向来跟游戏颇有渊源。成名曲《感觉身体被掏空》，有一个充满戏剧性的开头：钢琴前奏起初大气磅礴，几个音节又急转直下，仿佛想宣泄，但一下就怂了。许多人觉得这个前奏像王心凌的《睫毛弯弯》，但它其实是来自 1985 年 [[科乐美]] 的 FC 游戏《功夫》；而在另一首成名曲《张士超你昨天晚上到底把我家钥匙放在哪里了？》中，还有一段西部片风格的旋律，很大程度上致敬了 1988 年的 FC 游戏《荒野大镖客》。</p>
@@ -164,6 +178,7 @@
 
 
 
+                                      
                     
                     
                     <div class="footer">
@@ -204,7 +219,64 @@
     hljs.initHighlightingOnLoad();
     hljs.initLineNumbersOnLoad();
 </script>
+
+
+<!--回到顶部按钮-->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+
+<script src="/js/returnToTop.js"></script>
+
+
+<!--目录-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js" type="text/javascript" ></script>
+
+<script src="/js/toc.js"></script>
+
+
+
+
+<script src="/js/randomHeaderContent.js"></script>
+
+                </div>
+            
+            
+                <!-- 回到顶部的按钮-->  
+                <div class="progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
                 </div>
             
     </body>
+
+
+    <!--暗黑模式-->
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+    <script>
+        function addDarkmodeWidget() {
+        const options = {
+            bottom: '53px', // default: '32px'
+            right: 'unset', // default: '32px'
+            left: '42px', // default: 'unset'
+            time: '0.3s', // default: '0.3s'
+            mixColor: '#fff', // default: '#fff'
+            backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+            buttonColorDark: '#100f2c',  // default: '#100f2c'
+            buttonColorLight: '#fff', // default: '#fff'
+            saveInCookies: true, // default: true,
+            label: '🌓', // default: ''
+            autoMatchOsTheme: true // default: true
+        }
+    
+        const darkmode = new Darkmode(options);
+        darkmode.showWidget();
+        
+        }
+        window.addEventListener('load', addDarkmodeWidget);
+    </script>
+  
 </html>

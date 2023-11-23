@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0,  viewport-fit=cover" name="viewport" />
     <meta name="description" content="我用双向链接" />
-    <meta name="hexo-theme-A4" content="v1.7.1" />
+    <meta name="hexo-theme-A4" content="v1.7.5" />
     <link rel="alternate icon" type="image/webp" href="/img/favicon.png">
     <title>笼城往事 | Once Upon a Time in SigiL</title>
 
@@ -27,9 +27,25 @@
     
 <link rel="stylesheet" href="/css/style.css">
 
+
+    <!--返回顶部css-->
+    
+<link rel="stylesheet" href="/css/returnToTop.css">
+
+    
+<link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/unicons.css">
+
+
+    <!--目录-->
+    
+<link rel="stylesheet" href="/css/toc.css">
+
 <meta name="generator" content="Hexo 6.3.0"></head>
     
     <body>
+        
+            <nav id="toc" class="bs-docs-sidebar"></nav>
+        
         <div class="paper">
             
             
@@ -90,13 +106,11 @@
 
     <div class="post-md">
         
-            
-        
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/hint.css/2.7.0/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>记性是优秀读者的四个条件之一，而双向链接是记忆和思维的辅助。以往没有工具，很多事情只能靠记性蛮干。[[伊万·屠格涅夫]] 不用 Obsidian，他要记一份写作纲要，主要还是靠大脑。即便将思维付诸纸笔，最终还是要求助记忆：</p>
 <blockquote>
 <p>“萨宾娜……身材细柔、匀称，双腿的线条像М的一样，而嘴唇则像季佳的一样”；“一个美好的俄罗斯小姐（脸部借用公爵小姐叶·利沃娃的）”；“面貌像那个同我一起进午餐的大夫……借用科拉什”；“描摹谢尔班”。</p>
 </blockquote>
-<p>但他这份纲要中展露出来的写作方法，其实已经体现了双向链接思维。每一个人名都适合打上 [[]]，跳转到另一条笔记，调用一段已有的、实实在在的外貌描写，使记忆如插图一般呈现。这就构成了一则典型的双链笔记：</p>
+<p>但他这份纲要中展露出来的写作方法，其实已经体现了双向链接思维。每一个人名都适合打上双重方括号，跳转到另一条笔记，调用一段已有的、实实在在的外貌描写，使记忆如插图一般呈现。这就构成了一则典型的双链笔记：</p>
 <blockquote>
 <p>“萨宾娜……身材细柔、匀称，双腿的线条像 [[М]] 的一样，而嘴唇则像 [[季佳]] 的一样”；“一个美好的俄罗斯小姐（脸部借用 [[公爵小姐叶·利沃娃]] 的）”；“面貌像 [[那个同我一起进午餐的大夫]]……借用 [[科拉什]]”；“描摹 [[谢尔班]]”。</p>
 </blockquote>
@@ -109,7 +123,7 @@
 <p>二是不要老是在同一篇笔记中出现那么多重复性用词，这跟写作是一样的；</p>
 <p>三是拒绝将通用名词作为文件名、作为反向链接，而是以井号标签形式保存，让通用名词归标签，专有名词归反向链接；</p>
 <p>四是创造自己的专有名词、短语或句子作为反向链接，记忆就是存储和提取，存储越难，提取越容易，而最难的存储就是创造。</p>
-<p>同样的，分类也无法被双链取代。根据一篇 2008 年的论文（我没有看原文，全都是道听途说），树形，而非星形、环形、云形、聚类结构，才是最符合人类认知特点的抽象知识储存结构。</p>
+<p>同样的，分类也无法被双链取代。分类就是大卡片盒子。那天我翻开一本书，教你用卡片盒写论文，书中内容就是成果示范，证明很多用卡片盒写的论文着实无聊。但这不关卡片盒的事。根据一篇 2008 年的论文（我没有看原文，全都是道听途说），树形，而非星形、环形、云形、聚类结构，才是最符合人类认知特点的抽象知识储存结构。</p>
 <p>双向链接、分类、标签，基础功能都是索引，使用索引是为了解放大脑记忆。就体感而言，我也觉得树状图最好记忆，记住院子里种了几棵树并不困难，只要分类的层级够浅，类似矮树丛。我的矮树丛最多两层。</p>
 <p>相反，双向链接和标签只要数量一多，就会像网、像云，不好记忆。随着笔记日积月累，关系图谱与标签云将不可避免地变得庞杂。此时，局部的系统网络逐渐变得比整体更加重要，整体的关系图谱和标签云将只提供宏观视角。</p>
 <p>卢曼曾说，“每条笔记都是引用和反向引用系统网络中的一个元素，笔记的质量就取决于这个网格”。</p>
@@ -155,6 +169,7 @@
 
 
 
+                                      
                     
                     
                     <div class="footer">
@@ -195,7 +210,64 @@
     hljs.initHighlightingOnLoad();
     hljs.initLineNumbersOnLoad();
 </script>
+
+
+<!--回到顶部按钮-->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+
+<script src="/js/returnToTop.js"></script>
+
+
+<!--目录-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js" type="text/javascript" ></script>
+
+<script src="/js/toc.js"></script>
+
+
+
+
+<script src="/js/randomHeaderContent.js"></script>
+
+                </div>
+            
+            
+                <!-- 回到顶部的按钮-->  
+                <div class="progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
                 </div>
             
     </body>
+
+
+    <!--暗黑模式-->
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+    <script>
+        function addDarkmodeWidget() {
+        const options = {
+            bottom: '53px', // default: '32px'
+            right: 'unset', // default: '32px'
+            left: '42px', // default: 'unset'
+            time: '0.3s', // default: '0.3s'
+            mixColor: '#fff', // default: '#fff'
+            backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+            buttonColorDark: '#100f2c',  // default: '#100f2c'
+            buttonColorLight: '#fff', // default: '#fff'
+            saveInCookies: true, // default: true,
+            label: '🌓', // default: ''
+            autoMatchOsTheme: true // default: true
+        }
+    
+        const darkmode = new Darkmode(options);
+        darkmode.showWidget();
+        
+        }
+        window.addEventListener('load', addDarkmodeWidget);
+    </script>
+  
 </html>

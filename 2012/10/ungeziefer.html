@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0,  viewport-fit=cover" name="viewport" />
     <meta name="description" content="Ungeziefer" />
-    <meta name="hexo-theme-A4" content="v1.7.1" />
+    <meta name="hexo-theme-A4" content="v1.7.5" />
     <link rel="alternate icon" type="image/webp" href="/img/favicon.png">
     <title>笼城往事 | Once Upon a Time in SigiL</title>
 
@@ -27,9 +27,25 @@
     
 <link rel="stylesheet" href="/css/style.css">
 
+
+    <!--返回顶部css-->
+    
+<link rel="stylesheet" href="/css/returnToTop.css">
+
+    
+<link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/unicons.css">
+
+
+    <!--目录-->
+    
+<link rel="stylesheet" href="/css/toc.css">
+
 <meta name="generator" content="Hexo 6.3.0"></head>
     
     <body>
+        
+            <nav id="toc" class="bs-docs-sidebar"></nav>
+        
         <div class="paper">
             
             
@@ -90,9 +106,7 @@
 
     <div class="post-md">
         
-            
-        
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/hint.css/2.7.0/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>在 1912 年 11 月 17 日到 12 月 7 日之间，卡夫卡完成了一个“令人作呕的故事”。纳博科夫说这是个纯粹黑白两色的故事。传记作家的说法是“这是关于仇恨魔法和虚伪力量的有毒童话”。纳博科夫的说法好听许多。</p>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/hint.css/2.7.0/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>在 1912 年 11 月 17 日到 12 月 7 日之间，卡夫卡完成了一个“令人作呕的故事”。纳博科夫称之为，一个纯粹黑白两色的故事。传记作家的说法是“这是关于仇恨魔法和虚伪力量的有毒童话”。纳博科夫的说法好听许多。</p>
 <p>可怜的格里高尔·萨姆沙，他变成的“Ungeziefer”，据说在中古高地德语中，字面意思是“不适合献祭的不洁动物”，有时被口语化地用于表示“虫子”，特指“肮脏、讨厌的虫子”，因此也可以翻译作“害虫”，与“Schädlinge”同义。这个词还有一种意思，“不事生产的人”（Lästling）。</p>
 <p>这种害虫不是蟑螂，不是老妈子口中的蜣螂（Mistkäfer），也不是陀思妥耶夫斯基常写的“社会害虫”，而应该是划在昆虫纲、鞘翅目下的某种甲虫，一种受折磨的害虫。</p>
 <p>它身形卵圆，通体发黑，也有可能是暗褐色，或者其他的什么颜色，这一点无关紧要。重要的是，无论是黑是褐，那颜色都不反光；甲虫的外骨骼坚硬而敏感，穹顶似的棕色肚子被分成好几块弧形硬片，凹凸有致，完美且平衡；甲虫背部的凸起则要比肚子尖更加陡峭，生硬的曲线急转直下。</p>
@@ -140,6 +154,7 @@
 
 
 
+                                      
                     
                     
                     <div class="footer">
@@ -180,7 +195,64 @@
     hljs.initHighlightingOnLoad();
     hljs.initLineNumbersOnLoad();
 </script>
+
+
+<!--回到顶部按钮-->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+
+<script src="/js/returnToTop.js"></script>
+
+
+<!--目录-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js" type="text/javascript" ></script>
+
+<script src="/js/toc.js"></script>
+
+
+
+
+<script src="/js/randomHeaderContent.js"></script>
+
+                </div>
+            
+            
+                <!-- 回到顶部的按钮-->  
+                <div class="progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
                 </div>
             
     </body>
+
+
+    <!--暗黑模式-->
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+    <script>
+        function addDarkmodeWidget() {
+        const options = {
+            bottom: '53px', // default: '32px'
+            right: 'unset', // default: '32px'
+            left: '42px', // default: 'unset'
+            time: '0.3s', // default: '0.3s'
+            mixColor: '#fff', // default: '#fff'
+            backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+            buttonColorDark: '#100f2c',  // default: '#100f2c'
+            buttonColorLight: '#fff', // default: '#fff'
+            saveInCookies: true, // default: true,
+            label: '🌓', // default: ''
+            autoMatchOsTheme: true // default: true
+        }
+    
+        const darkmode = new Darkmode(options);
+        darkmode.showWidget();
+        
+        }
+        window.addEventListener('load', addDarkmodeWidget);
+    </script>
+  
 </html>

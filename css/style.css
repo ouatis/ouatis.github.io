@@ -18,13 +18,13 @@ p
 
 body
 {
-    /* font-family: "Montserrat", "SF UI Text", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Segoe UI", "Helvetica Neue", Helvetica, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif; */
-    font-family: "Times New Roman";
-    font-size: 16px;
-    line-height: 1.75;
-    letter-spacing: 0.6px;
+    font-family: "Times New Roman", Helvetica, Tahoma, Arial, "notoserifsc-medium", "Microsoft YaHei", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
+    font-size: 16.8px;
+    line-height: 1.7;
+    /* letter-spacing: 0.6px; */
     color: var(--font-color-1);
     background: #e4e4e4;
+    height: 100%;
 }
 a
 {
@@ -113,7 +113,7 @@ a
 
 .nav
 {
-    margin: 0 0 4px;
+    margin: 4px -1px -3px;
     flex: 0 0 100%;
     display: flex;
     flex-direction: row;
@@ -656,5 +656,9 @@ margin-left: 10px; /* 调整a标签和span之间的距离 */
 
 .darkmode-layer, .darkmode-toggle {
     z-index: 500;
+}
+
+.darkmode-background {
+    background: transparent !important;
 }
 

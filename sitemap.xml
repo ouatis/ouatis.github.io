@@ -83,7 +83,7 @@
   </url>
   
   <url>
-    <loc>https://ouatis.github.io/2018/04/er-tong-shi-yi-shi-pi-bao.html</loc>
+    <loc>https://ouatis.github.io/2023/04/ba-bao-shan-sao-mu-ji.html</loc>
     
     <lastmod>2023-04-04</lastmod>
     
@@ -92,7 +92,7 @@
   </url>
   
   <url>
-    <loc>https://ouatis.github.io/2023/04/ba-bao-shan-sao-mu-ji.html</loc>
+    <loc>https://ouatis.github.io/2018/04/er-tong-shi-yi-shi-pi-bao.html</loc>
     
     <lastmod>2023-04-04</lastmod>
     
@@ -1169,6 +1169,13 @@
   </url>
   
   <url>
+    <loc>https://ouatis.github.io/tags/%E9%99%80%E6%80%9D%E5%A6%A5%E8%80%B6%E5%A4%AB%E6%96%AF%E5%9F%BA/</loc>
+    <lastmod>2024-02-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://ouatis.github.io/tags/%E5%8A%A8%E7%94%BB/</loc>
     <lastmod>2024-02-08</lastmod>
     <changefreq>weekly</changefreq>
@@ -1177,13 +1184,6 @@
   
   <url>
     <loc>https://ouatis.github.io/tags/%E5%8C%97%E4%BA%AC/</loc>
-    <lastmod>2024-02-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://ouatis.github.io/tags/%E9%99%80%E6%80%9D%E5%A6%A5%E8%80%B6%E5%A4%AB%E6%96%AF%E5%9F%BA/</loc>
     <lastmod>2024-02-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1316,14 +1316,14 @@
   </url>
   
   <url>
-    <loc>https://ouatis.github.io/tags/%E4%B8%89%E5%9B%BD/</loc>
+    <loc>https://ouatis.github.io/tags/%E6%AD%A6%E6%B1%89/</loc>
     <lastmod>2024-02-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://ouatis.github.io/tags/%E6%AD%A6%E6%B1%89/</loc>
+    <loc>https://ouatis.github.io/tags/%E4%B8%89%E5%9B%BD/</loc>
     <lastmod>2024-02-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

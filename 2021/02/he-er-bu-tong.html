@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
     <meta name="description" content="《和而不同》" />
-    <meta name="hexo-theme-A4" content="v1.8.8" />
+    <meta name="hexo-theme-A4" content="v1.9.0" />
     <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
     <title>笼城往事 | Once Upon a Time in SigiL</title>
 
@@ -59,10 +59,31 @@
 <link rel="stylesheet" href="/css/lightgallery.min.css">
 
 
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.2.0"></head>
+    
     
     
     <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '53px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
         
             <div class="left-toc-container">
                 <nav id="toc" class="bs-docs-sidebar"></nav>
@@ -140,11 +161,11 @@
 <p>如果说《黄金时代 - 美丽新世界》的核心思路是提升人口作用、限制城市爆铺、强调城市规划，那么《和而不同》主要遵循的是以下两点原则：提倡建设性、而非破坏性的城市发展；追求文明之间的和而不同——这很“文明”。从未用过“和而不同”这个词，属于这个系列的损失。</p>
 <p>有了指导思想，《和而不同》根治了原版的一系列顽疾：首先限制了砍树和劫掠的收益；同时提升区域、建筑、奇观的产出，大幅增强人口和专家的重要性；又对文明、领袖、总督作差异化处理，力图消灭白板，消灭同质化，优化平衡性。</p>
 <p>什么叫收官，这才叫收官。我建议所有的六代玩家都试试《和而不同》，如果有余力，不妨也试试《黄金时代 - 美丽新世界》。有五代《超级大国》的先例，加上六代两个大型模组分庭抗礼，未来这个系列可能越做越大、越做越差，依赖人民群众的补完。</p>
-</div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
-        var options = {
+</div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if("undefined"!=typeof lightGallery) {
+        var options1 = {
             selector: '.gallery-item'
         };
-        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1);
         }</script>
     </div>
 
@@ -156,19 +177,6 @@
                 <span>该篇文章被 SigiL</span>
             
             
-                <span>打上标签:
-                    
-                    
-                        <a href='/tags/%E9%97%A8/'>
-                            门
-                        </a>
-                    
-                        <a href='/tags/%E6%B8%B8%E6%88%8F/'>
-                            游戏
-                        </a>
-                    
-                </span>
-             
              
                 <span>归为分类:
                     
@@ -279,31 +287,4 @@
                 </div>
             
     </body>
-
-
-    <!--暗黑模式-->
-    <script src="/js/darkmode-js.min.js"></script>
-    <script>
-        function addDarkmodeWidget() {
-        const options = {
-            bottom: '53px', // default: '32px'
-            right: 'unset', // default: '32px'
-            left: '42px', // default: 'unset'
-            time: '0.3s', // default: '0.3s'
-            mixColor: '#fff', // default: '#fff'
-            backgroundColor: ' #e4e4e4 ',  // default: '#fff'
-            buttonColorDark: '#100f2c',  // default: '#100f2c'
-            buttonColorLight: '#fff', // default: '#fff'
-            saveInCookies: true, // default: true,
-            label: '🌓', // default: ''
-            autoMatchOsTheme: true // default: true
-        }
-    
-        const darkmode = new Darkmode(options);
-        darkmode.showWidget();
-        
-        }
-        window.addEventListener('load', addDarkmodeWidget);
-    </script>
-  
 </html>

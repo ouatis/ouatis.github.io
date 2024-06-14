@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
     <meta name="description" content="菲律宾2019" />
-    <meta name="hexo-theme-A4" content="v1.8.8" />
+    <meta name="hexo-theme-A4" content="v1.9.0" />
     <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
     <title>笼城往事 | Once Upon a Time in SigiL</title>
 
@@ -59,10 +59,31 @@
 <link rel="stylesheet" href="/css/lightgallery.min.css">
 
 
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.2.0"></head>
+    
     
     
     <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '53px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
         
             <div class="left-toc-container">
                 <nav id="toc" class="bs-docs-sidebar"></nav>
@@ -146,11 +167,11 @@
 <p>有两位工作人员从商场那头走过来，他们的衣服胸口绣着品牌商标，这是每个玩家打开游戏时都会看到的东西。他们走在商场路上、在餐厅，都有保安、服务生指指点点。有一次去大排档吃海鲜，他们的文化衫被认出来了，玩家要求合影，然后所有人豆要求合影。</p>
 <p>入夜以后，露天广场的观众反而更多了。一位女玩家坐在旁边的楼梯口，一边自己打游戏，一边隔着楼梯围栏，听大屏幕那边的解说。虽然当天是周六，但她一身装束，看着像刚下班。我们坐在阶梯最上方，往下看是一小片露天观众席。大家站着，或者坐在台阶上、花坛边缘上，要么盯着屏幕，要么玩自己手机上的游戏。绝大多数人穿着短袖，有的还背着包，少数人戴着马尼拉麻披肩。过一会儿比赛结束，他们可能会直接提起包，穿过商场，陆陆续续赶回家。此时从他们的背影望过去，就像是在某个夏夜看一场露天电影。</p>
 <p>比赛结束后，我告别菲律宾人。赛事主办方请吃饭，邀请我们前往一个天台酒吧。楼层很高，喝酒的都是欧美面孔，穿着很清凉。</p>
-</div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
-        var options = {
+</div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if("undefined"!=typeof lightGallery) {
+        var options1 = {
             selector: '.gallery-item'
         };
-        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1);
         }</script>
     </div>
 
@@ -164,10 +185,6 @@
             
                 <span>打上标签:
                     
-                    
-                        <a href='/tags/%E6%B8%B8%E6%88%8F/'>
-                            游戏
-                        </a>
                     
                         <a href='/tags/%E4%B8%9A%E5%A4%96/'>
                             业外
@@ -285,31 +302,4 @@
                 </div>
             
     </body>
-
-
-    <!--暗黑模式-->
-    <script src="/js/darkmode-js.min.js"></script>
-    <script>
-        function addDarkmodeWidget() {
-        const options = {
-            bottom: '53px', // default: '32px'
-            right: 'unset', // default: '32px'
-            left: '42px', // default: 'unset'
-            time: '0.3s', // default: '0.3s'
-            mixColor: '#fff', // default: '#fff'
-            backgroundColor: ' #e4e4e4 ',  // default: '#fff'
-            buttonColorDark: '#100f2c',  // default: '#100f2c'
-            buttonColorLight: '#fff', // default: '#fff'
-            saveInCookies: true, // default: true,
-            label: '🌓', // default: ''
-            autoMatchOsTheme: true // default: true
-        }
-    
-        const darkmode = new Darkmode(options);
-        darkmode.showWidget();
-        
-        }
-        window.addEventListener('load', addDarkmodeWidget);
-    </script>
-  
 </html>

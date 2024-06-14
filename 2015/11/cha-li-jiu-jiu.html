@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
     <meta name="description" content="查理舅舅" />
-    <meta name="hexo-theme-A4" content="v1.8.8" />
+    <meta name="hexo-theme-A4" content="v1.9.0" />
     <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
     <title>笼城往事 | Once Upon a Time in SigiL</title>
 
@@ -59,10 +59,31 @@
 <link rel="stylesheet" href="/css/lightgallery.min.css">
 
 
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.2.0"></head>
+    
     
     
     <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '53px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
         
             <div class="left-toc-container">
                 <nav id="toc" class="bs-docs-sidebar"></nav>
@@ -142,11 +163,11 @@
 <p>非要揣摩个中意图，那也得用于学习与创作。神秘的反派该如何刻画？让他一吐烟圈就像控制了整个家庭；悬念揭晓又该如何表达？让镜头如倒吸一口冷气般后退；悬疑片中的幽默到底怎样拿捏？在没事讨论怎么杀人以外，还可以试试请一位严肃早熟的眼睛女孩；而要讲好一个“邪恶降临小镇”的故事，究竟有没有什么诀窍？首先你得让邪恶一表人才。多研究技巧和实际问题，少谈些理论和主义，我印象中，希区也说过这是他拍电影的方法。</p>
 <p>在雷蒙德钱德勒的设定里，马洛正是出生于《辣手摧花》的取景地，圣罗萨。他向粉丝写信介绍马洛生平时，就说希区柯克曾在那儿拍过电影。真是一个人杰地灵的所在，我看地图，圣罗萨位于旧金山以北，现在也是个不小的城市了。当年它被剧组称为“一个很美国化的小镇”，平静祥和，非常适合演绎发生在我们身边的犯罪。</p>
 <p>朴赞郁的《<strong>斯托克</strong>》虽说是学《辣手摧花》，也着实发掘出了本片某些隐藏的魅力，使之更现代，但整体上拍得好像童话，不够日常，没有那种死亡阴影笼罩在生活上空的悬疑感。他缺乏一个圣罗萨。对比之下，倒也不能说朴导就虚浮（毕竟“斯托克”本就代表了哥特恐怖），只是更显得希区真实、准确和严格。</p>
-</div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
-        var options = {
+</div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if("undefined"!=typeof lightGallery) {
+        var options1 = {
             selector: '.gallery-item'
         };
-        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1);
         }</script>
     </div>
 
@@ -160,10 +181,6 @@
             
                 <span>打上标签:
                     
-                    
-                        <a href='/tags/%E9%97%A8/'>
-                            门
-                        </a>
                     
                         <a href='/tags/%E5%B8%8C%E5%8C%BA%E6%9F%AF%E5%85%8B/'>
                             希区柯克
@@ -281,31 +298,4 @@
                 </div>
             
     </body>
-
-
-    <!--暗黑模式-->
-    <script src="/js/darkmode-js.min.js"></script>
-    <script>
-        function addDarkmodeWidget() {
-        const options = {
-            bottom: '53px', // default: '32px'
-            right: 'unset', // default: '32px'
-            left: '42px', // default: 'unset'
-            time: '0.3s', // default: '0.3s'
-            mixColor: '#fff', // default: '#fff'
-            backgroundColor: ' #e4e4e4 ',  // default: '#fff'
-            buttonColorDark: '#100f2c',  // default: '#100f2c'
-            buttonColorLight: '#fff', // default: '#fff'
-            saveInCookies: true, // default: true,
-            label: '🌓', // default: ''
-            autoMatchOsTheme: true // default: true
-        }
-    
-        const darkmode = new Darkmode(options);
-        darkmode.showWidget();
-        
-        }
-        window.addEventListener('load', addDarkmodeWidget);
-    </script>
-  
 </html>

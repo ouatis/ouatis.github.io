@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
     <meta name="description" content="送葬团1880" />
-    <meta name="hexo-theme-A4" content="v1.8.8" />
+    <meta name="hexo-theme-A4" content="v1.9.0" />
     <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
     <title>笼城往事 | Once Upon a Time in SigiL</title>
 
@@ -59,10 +59,31 @@
 <link rel="stylesheet" href="/css/lightgallery.min.css">
 
 
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.2.0"></head>
+    
     
     
     <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '53px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
         
             <div class="left-toc-container">
                 <nav id="toc" class="bs-docs-sidebar"></nav>
@@ -143,11 +164,11 @@
 <p>卡罗琳的女儿，也就是前文提到的福楼拜外甥女，后来嫁给了一个木材商人，叫厄内斯特·康曼维尔。此公几乎是郝麦和勒乐的合体，长于也乐于投机，一门心思只想赚钱。他跟卡罗琳的婚姻很快走向不幸，1875 年春，他经营失败，眼看破产。福楼拜把房产卖了，维护外甥女的幸福。</p>
 <p>按照龚古尔们的说法，木材商也出席了福楼拜的葬礼。在那之后，还想利用福楼拜的文学遗产牟利，是个十足的骗子。葬礼当晚，他“动作优雅地给自己切了七片火腿”。</p>
 <p>庞维勒和戈贝也出席了这场晚宴。当致哀者集体坐下，发现在场人数不吉利，拢共十三人。《鹦鹉》的福楼拜年表里说，庞维勒非常迷信，坚持要再找一个客人，于是戈蒂埃的女婿，埃米尔·贝热拉（我想应该就是汉学家朱迪丝·戈蒂埃的丈夫吧），被派出去，满大街找人。在遭到几次拒绝后，他找回来了一个正在休假的士兵。这个士兵从未听闻过福楼拜，但渴望与戈贝见面。</p>
-</div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
-        var options = {
+</div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if("undefined"!=typeof lightGallery) {
+        var options1 = {
             selector: '.gallery-item'
         };
-        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1);
         }</script>
     </div>
 
@@ -162,12 +183,12 @@
                 <span>打上标签:
                     
                     
-                        <a href='/tags/%E7%A6%8F%E6%A5%BC%E6%8B%9C/'>
-                            福楼拜
-                        </a>
-                    
                         <a href='/tags/%E5%8C%85%E6%B3%95%E5%88%A9%E5%A4%AB%E4%BA%BA/'>
                             包法利夫人
+                        </a>
+                    
+                        <a href='/tags/%E7%A6%8F%E6%A5%BC%E6%8B%9C/'>
+                            福楼拜
                         </a>
                     
                 </span>
@@ -282,31 +303,4 @@
                 </div>
             
     </body>
-
-
-    <!--暗黑模式-->
-    <script src="/js/darkmode-js.min.js"></script>
-    <script>
-        function addDarkmodeWidget() {
-        const options = {
-            bottom: '53px', // default: '32px'
-            right: 'unset', // default: '32px'
-            left: '42px', // default: 'unset'
-            time: '0.3s', // default: '0.3s'
-            mixColor: '#fff', // default: '#fff'
-            backgroundColor: ' #e4e4e4 ',  // default: '#fff'
-            buttonColorDark: '#100f2c',  // default: '#100f2c'
-            buttonColorLight: '#fff', // default: '#fff'
-            saveInCookies: true, // default: true,
-            label: '🌓', // default: ''
-            autoMatchOsTheme: true // default: true
-        }
-    
-        const darkmode = new Darkmode(options);
-        darkmode.showWidget();
-        
-        }
-        window.addEventListener('load', addDarkmodeWidget);
-    </script>
-  
 </html>

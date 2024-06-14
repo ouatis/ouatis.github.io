@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
     <meta name="description" content="陀翁也通俗" />
-    <meta name="hexo-theme-A4" content="v1.8.8" />
+    <meta name="hexo-theme-A4" content="v1.9.0" />
     <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
     <title>笼城往事 | Once Upon a Time in SigiL</title>
 
@@ -59,10 +59,31 @@
 <link rel="stylesheet" href="/css/lightgallery.min.css">
 
 
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.2.0"></head>
+    
     
     
     <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '53px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
         
             <div class="left-toc-container">
                 <nav id="toc" class="bs-docs-sidebar"></nav>
@@ -145,11 +166,11 @@
 <p>布列松的《扒手》拍摄了有趣的那部分，专心地用镜头暴露小偷如何行窃。拥挤的人群，手、钱包、口袋、面孔的特写，一个人转移注意力，另一个人探囊取物、移交赃物。他们来回作案，精确、优雅。受害者浑然不知，我们却一览无余，仿佛看一场芭蕾。但到了女性救赎的部分就很没劲。</p>
 <p>因为没劲我反而也感到幽默。想起手冢先生的同名漫画。最后一幕是这样的，革命爆发当天，大学生站在乱哄哄的城市广场，他亲吻大地，“是我为了钱杀死放高利贷的老太婆的！是我杀的！”呼喊声被淹没。他一个人走过混乱疯狂的城市，走向街道的另一端。陀翁写大学生母亲：“一连好几天，她访遍了全城所有的人。由于有些人抱怨她偏爱别人，于是就排好了次序，每家都预先有人等着她来念信。”有时也想到古典戏剧，感叹号没完没了，奇怪地感染人。</p>
 <p>写这本书的时候，陀翁从西伯利亚流放回来，身无分文，饥寒交迫，又经常卧病在床，忍受着时间的催促，几乎陷于绝境，迫于无奈，只有连载小说才能赚钱，所以争分夺秒。就这样，他还沿袭司各特、狄更斯的技法，把东西写得引人入胜一些。他也学巴尔扎克（乔治·斯坦纳称之为“城市哥特作家”），拼命研究人，油漆匠、寡妇、高利贷者，每个人都是大学生的一种答案，不被信服的那种答案。</p>
-</div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
-        var options = {
+</div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if("undefined"!=typeof lightGallery) {
+        var options1 = {
             selector: '.gallery-item'
         };
-        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1);
         }</script>
     </div>
 
@@ -164,12 +185,8 @@
                 <span>打上标签:
                     
                     
-                        <a href='/tags/%E9%97%A8/'>
-                            门
-                        </a>
-                    
-                        <a href='/tags/%E9%99%80%E6%80%9D%E5%A6%A5%E8%80%B6%E5%A4%AB%E6%96%AF%E5%9F%BA/'>
-                            陀思妥耶夫斯基
+                        <a href='/tags/%E5%85%AB%E9%83%A8%E5%8D%8A/'>
+                            八部半
                         </a>
                     
                 </span>
@@ -284,31 +301,4 @@
                 </div>
             
     </body>
-
-
-    <!--暗黑模式-->
-    <script src="/js/darkmode-js.min.js"></script>
-    <script>
-        function addDarkmodeWidget() {
-        const options = {
-            bottom: '53px', // default: '32px'
-            right: 'unset', // default: '32px'
-            left: '42px', // default: 'unset'
-            time: '0.3s', // default: '0.3s'
-            mixColor: '#fff', // default: '#fff'
-            backgroundColor: ' #e4e4e4 ',  // default: '#fff'
-            buttonColorDark: '#100f2c',  // default: '#100f2c'
-            buttonColorLight: '#fff', // default: '#fff'
-            saveInCookies: true, // default: true,
-            label: '🌓', // default: ''
-            autoMatchOsTheme: true // default: true
-        }
-    
-        const darkmode = new Darkmode(options);
-        darkmode.showWidget();
-        
-        }
-        window.addEventListener('load', addDarkmodeWidget);
-    </script>
-  
 </html>

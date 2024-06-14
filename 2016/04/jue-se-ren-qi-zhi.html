@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
     <meta name="description" content="角色任期制" />
-    <meta name="hexo-theme-A4" content="v1.8.8" />
+    <meta name="hexo-theme-A4" content="v1.9.0" />
     <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
     <title>笼城往事 | Once Upon a Time in SigiL</title>
 
@@ -59,10 +59,31 @@
 <link rel="stylesheet" href="/css/lightgallery.min.css">
 
 
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.2.0"></head>
+    
     
     
     <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '53px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
         
             <div class="left-toc-container">
                 <nav id="toc" class="bs-docs-sidebar"></nav>
@@ -154,11 +175,11 @@
 <h3 id="艾玛-1"><a href="#艾玛-1" class="headerlink" title="艾玛"></a>艾玛</h3><p>第一部第二章上任。第一章的“我们”（夏尔的同学视角）、夏尔、包法利父母、杜比克寡妇轮番登台又下场，为她腾挪出了空间。夏尔找到了艾玛，不受束缚地追求艾玛，也娶到了她。围绕着艾玛，更多独特的细节开始异峰突起。原来她才是真正的主角。</p>
 <h2 id="艾玛的四任情人"><a href="#艾玛的四任情人" class="headerlink" title="[[艾玛的四任情人]]"></a>[[艾玛的四任情人]]</h2><h2 id="两任女仆"><a href="#两任女仆" class="headerlink" title="两任女仆"></a>两任女仆</h2><h3 id="娜塔西"><a href="#娜塔西" class="headerlink" title="娜塔西"></a>娜塔西</h3><p>第一部第二章上任，第八章解任。据说是夏尔的第一个病人、当地最早的熟人。包法利夫妇婚礼后，娜塔西晚饭没做好，让新女主人先熟悉下家里的格局，艾玛看见了夏尔鞋子上的干泥、水晶瓶里第一任包法利夫人的婚礼捧花。这是一位笨拙、也没什么眼力劲儿的女仆。侯爵舞会后，艾玛心理有落差，见娜塔西没做晚饭，还顶嘴，大为光火，就辞退了她。</p>
 <h3 id="全福"><a href="#全福" class="headerlink" title="全福"></a>全福</h3><p>相比娜塔西，全福聪明许多，服服帖帖，没有怨言，也对艾玛的行为看破不说破。她每天晚晌从菜橱里偷一小包糖，做完祷告，一个人躺在床上吃；毫不爱惜艾玛的鞋子，轮到她擦鞋，决不在意，因为艾玛一看料子发旧，会直接送给她穿；晚上还和男人私会。包法利家破产，是她建议艾玛去找公证人借钱，导致后来卖身的误会，这一点也耐心寻人。此人天性凉薄，艾玛死后，卷走了她衣橱剩下的全部衣物，和男人私奔。</p>
-<h2 id="三任医生"><a href="#三任医生" class="headerlink" title="[[三任医生]]"></a>[[三任医生]]</h2></div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
-        var options = {
+<h2 id="三任医生"><a href="#三任医生" class="headerlink" title="[[三任医生]]"></a>[[三任医生]]</h2></div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if("undefined"!=typeof lightGallery) {
+        var options1 = {
             selector: '.gallery-item'
         };
-        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1);
         }</script>
     </div>
 
@@ -289,31 +310,4 @@
                 </div>
             
     </body>
-
-
-    <!--暗黑模式-->
-    <script src="/js/darkmode-js.min.js"></script>
-    <script>
-        function addDarkmodeWidget() {
-        const options = {
-            bottom: '53px', // default: '32px'
-            right: 'unset', // default: '32px'
-            left: '42px', // default: 'unset'
-            time: '0.3s', // default: '0.3s'
-            mixColor: '#fff', // default: '#fff'
-            backgroundColor: ' #e4e4e4 ',  // default: '#fff'
-            buttonColorDark: '#100f2c',  // default: '#100f2c'
-            buttonColorLight: '#fff', // default: '#fff'
-            saveInCookies: true, // default: true,
-            label: '🌓', // default: ''
-            autoMatchOsTheme: true // default: true
-        }
-    
-        const darkmode = new Darkmode(options);
-        darkmode.showWidget();
-        
-        }
-        window.addEventListener('load', addDarkmodeWidget);
-    </script>
-  
 </html>

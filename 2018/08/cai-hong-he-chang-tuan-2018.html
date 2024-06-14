@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
     <meta name="description" content="上海彩虹室内合唱团2018" />
-    <meta name="hexo-theme-A4" content="v1.8.8" />
+    <meta name="hexo-theme-A4" content="v1.9.0" />
     <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
     <title>笼城往事 | Once Upon a Time in SigiL</title>
 
@@ -59,10 +59,31 @@
 <link rel="stylesheet" href="/css/lightgallery.min.css">
 
 
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.2.0"></head>
+    
     
     
     <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '53px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
         
             <div class="left-toc-container">
                 <nav id="toc" class="bs-docs-sidebar"></nav>
@@ -140,11 +161,11 @@
 <p>金承志也会跟彩虹合唱团团员一起玩游戏，但过程比较曲折。金承志曾给彩虹合唱团的团员们发过一个问卷，里面有一个问题是“如果周六不排练，你们会干什么”。他想借此了解排练这件事对于大家来说究竟意味着什么，就像一个魔兽公会周六晚上不打公会任务，大家会干什么，是去健身房还是去游泳。与健身这些事情相比，每周六晚付出三个小时的时间排练，又能给团员带来什么。很有趣，这个问题收到最多的答案是“不知道”。除此之外，男生最多是玩游戏，女生则是出去吃饭、看电影，都是“普通人会做的事”。而金承志自己的答案自然是玩游戏。</p>
 <p>像高中时战队训练一样，他现在仍可以从早玩到晚，最近就在玩新开的魔兽 8.0 新版本，“很奇怪，就我自己一个人玩（魔兽）。为什么？因为我的朋友们都在部落啊……”好不容易，彩虹合唱团内部组了一个都是联盟的七人小分队，但大家却各自为战，“就从来没有人跟我一起玩过，明明大家都在一个服务器……”他自己解释说，七个人的层次不一样，有的才刚开始玩，有的却接近满级。他有一次跟团队吐槽，他自己一个人玩，虽然比较休闲，经常游山玩水，发发呆，但练级太累了，又没有什么能加速练小号的传家宝。所以在生日那天，三位团员分别给他打了 50 块钱，说让他“叮”一下，花钱直升满级。</p>
 <p>后来彩虹来北京巡演，送了我两张票，我带同事去看，听到《阿妹》一曲，感慨万千。</p>
-</div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
-        var options = {
+</div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if("undefined"!=typeof lightGallery) {
+        var options1 = {
             selector: '.gallery-item'
         };
-        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1);
         }</script>
     </div>
 
@@ -158,10 +179,6 @@
             
                 <span>打上标签:
                     
-                    
-                        <a href='/tags/%E6%B8%B8%E6%88%8F/'>
-                            游戏
-                        </a>
                     
                         <a href='/tags/%E4%B8%9A%E5%A4%96/'>
                             业外
@@ -283,31 +300,4 @@
                 </div>
             
     </body>
-
-
-    <!--暗黑模式-->
-    <script src="/js/darkmode-js.min.js"></script>
-    <script>
-        function addDarkmodeWidget() {
-        const options = {
-            bottom: '53px', // default: '32px'
-            right: 'unset', // default: '32px'
-            left: '42px', // default: 'unset'
-            time: '0.3s', // default: '0.3s'
-            mixColor: '#fff', // default: '#fff'
-            backgroundColor: ' #e4e4e4 ',  // default: '#fff'
-            buttonColorDark: '#100f2c',  // default: '#100f2c'
-            buttonColorLight: '#fff', // default: '#fff'
-            saveInCookies: true, // default: true,
-            label: '🌓', // default: ''
-            autoMatchOsTheme: true // default: true
-        }
-    
-        const darkmode = new Darkmode(options);
-        darkmode.showWidget();
-        
-        }
-        window.addEventListener('load', addDarkmodeWidget);
-    </script>
-  
 </html>

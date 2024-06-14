@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
     <meta name="description" content="艾玛的四任情人" />
-    <meta name="hexo-theme-A4" content="v1.8.8" />
+    <meta name="hexo-theme-A4" content="v1.9.0" />
     <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
     <title>笼城往事 | Once Upon a Time in SigiL</title>
 
@@ -59,10 +59,31 @@
 <link rel="stylesheet" href="/css/lightgallery.min.css">
 
 
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.2.0"></head>
+    
     
     
     <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '53px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
         
             <div class="left-toc-container">
                 <nav id="toc" class="bs-docs-sidebar"></nav>
@@ -139,11 +160,11 @@
 <h2 id="罗多夫"><a href="#罗多夫" class="headerlink" title="罗多夫"></a>罗多夫</h2><p>赤裸裸的婚外情。经典的“[[农业展览会]]”一章，艾玛经由罗多夫头发上的香味，又想起子爵的胡子，那里曾散发出香草和柠檬的香气。后来第二部第十二章，在她送给罗多夫的礼物中，有一个雪茄烟匣，“和子爵的那个一模一样”。艾玛和他约会，“学男人穿了一件背心”，仿佛是在跟子爵约会。</p>
 <h2 id="公证员莱昂"><a href="#公证员莱昂" class="headerlink" title="公证员莱昂"></a>公证员莱昂</h2><p>艾玛的最后一任情人，仍然是莱昂，公证员阶段的莱昂。婚外情后的艾玛更加放浪，碰见成熟的莱昂，也大胆起来，而莱昂胜券在握，两个人在密不透风的马车里通奸。</p>
 <p>有一次与莱昂偷情后，她经过当年住过的修道院，也曾回忆起子爵。到后来破产，她在教堂的甬道头昏眼花，看见马车上一个穿貂皮大衣的绅士，她认为那是子爵。但马车奔驰过去了，她想象中的子爵，一个教堂前的虚影，也消失不见了。紧接着，第二任女仆全福建议艾玛去找一个公证人借钱。艾玛去求情，被误以为卖身，愤然离去。</p>
-</div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
-        var options = {
+</div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if("undefined"!=typeof lightGallery) {
+        var options1 = {
             selector: '.gallery-item'
         };
-        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1);
         }</script>
     </div>
 
@@ -274,31 +295,4 @@
                 </div>
             
     </body>
-
-
-    <!--暗黑模式-->
-    <script src="/js/darkmode-js.min.js"></script>
-    <script>
-        function addDarkmodeWidget() {
-        const options = {
-            bottom: '53px', // default: '32px'
-            right: 'unset', // default: '32px'
-            left: '42px', // default: 'unset'
-            time: '0.3s', // default: '0.3s'
-            mixColor: '#fff', // default: '#fff'
-            backgroundColor: ' #e4e4e4 ',  // default: '#fff'
-            buttonColorDark: '#100f2c',  // default: '#100f2c'
-            buttonColorLight: '#fff', // default: '#fff'
-            saveInCookies: true, // default: true,
-            label: '🌓', // default: ''
-            autoMatchOsTheme: true // default: true
-        }
-    
-        const darkmode = new Darkmode(options);
-        darkmode.showWidget();
-        
-        }
-        window.addEventListener('load', addDarkmodeWidget);
-    </script>
-  
 </html>

@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
     <meta name="description" content="不推荐游戏书单" />
-    <meta name="hexo-theme-A4" content="v1.8.8" />
+    <meta name="hexo-theme-A4" content="v1.9.0" />
     <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
     <title>笼城往事 | Once Upon a Time in SigiL</title>
 
@@ -59,10 +59,31 @@
 <link rel="stylesheet" href="/css/lightgallery.min.css">
 
 
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.2.0"></head>
+    
     
     
     <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '53px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
         
             <div class="left-toc-container">
                 <nav id="toc" class="bs-docs-sidebar"></nav>
@@ -138,11 +159,12 @@
 <li>“1988 年圣诞节期间，任天堂与<strong>百事可乐</strong>合作，在电视上通过密集的搭配促销活动进行广告宣传，在整个活动中，总共销售了价值 100 万美元的任天堂产品和 20 亿罐<strong>可口可乐</strong>，这个活动还大大加深了任天堂产品在喜爱百事可乐的年轻顾客心中的好感。”</li>
 <li>“任天堂公司表面上看只是强调<strong>电脑</strong>的功能，尽力提高游戏的趣味性，不太重视电脑容量的大小，但任天堂公司创立的高效益的软件生产体系，不断开始推出消费者喜爱的游戏软件，激发了他们对电脑大容量的需求，进而导致电脑生产厂家不断推出更大容量的产品。”</li>
 </ul>
-<h2 id="待列入"><a href="#待列入" class="headerlink" title="待列入"></a>待列入</h2></div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
-        var options = {
+<h2 id="《宝可梦视觉艺术史》"><a href="#《宝可梦视觉艺术史》" class="headerlink" title="《宝可梦视觉艺术史》"></a>《宝可梦视觉艺术史》</h2><p>2023 年人民邮电出版社的《宝可梦视觉艺术史》，原名“The Story of Pokemon”，是一部专栏合集。如果说这本书里都是图鉴，还能同视觉艺术沾点边儿，2024 年同系列的《马力欧视觉艺术史》就有点儿不要脸了，原名“The Book of Mario”，既不视觉，也无艺术。</p>
+</div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if("undefined"!=typeof lightGallery) {
+        var options1 = {
             selector: '.gallery-item'
         };
-        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1);
         }</script>
     </div>
 
@@ -273,31 +295,4 @@
                 </div>
             
     </body>
-
-
-    <!--暗黑模式-->
-    <script src="/js/darkmode-js.min.js"></script>
-    <script>
-        function addDarkmodeWidget() {
-        const options = {
-            bottom: '53px', // default: '32px'
-            right: 'unset', // default: '32px'
-            left: '42px', // default: 'unset'
-            time: '0.3s', // default: '0.3s'
-            mixColor: '#fff', // default: '#fff'
-            backgroundColor: ' #e4e4e4 ',  // default: '#fff'
-            buttonColorDark: '#100f2c',  // default: '#100f2c'
-            buttonColorLight: '#fff', // default: '#fff'
-            saveInCookies: true, // default: true,
-            label: '🌓', // default: ''
-            autoMatchOsTheme: true // default: true
-        }
-    
-        const darkmode = new Darkmode(options);
-        darkmode.showWidget();
-        
-        }
-        window.addEventListener('load', addDarkmodeWidget);
-    </script>
-  
 </html>

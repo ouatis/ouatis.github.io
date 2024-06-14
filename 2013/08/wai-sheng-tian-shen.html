@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
     <meta name="description" content="外省天神" />
-    <meta name="hexo-theme-A4" content="v1.8.8" />
+    <meta name="hexo-theme-A4" content="v1.9.0" />
     <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
     <title>笼城往事 | Once Upon a Time in SigiL</title>
 
@@ -59,10 +59,31 @@
 <link rel="stylesheet" href="/css/lightgallery.min.css">
 
 
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.2.0"></head>
+    
     
     
     <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '53px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
         
             <div class="left-toc-container">
                 <nav id="toc" class="bs-docs-sidebar"></nav>
@@ -146,11 +167,11 @@
 <p>拉里维耶其实就是反例。短短几段文字，福楼拜就写了一个更好的人。</p>
 <p>按照居斯塔夫外甥女的回忆录，也就是那篇知名的 [[《亲密的回忆》]]，博士的原型可能是居斯塔夫的父亲，那个在 1845 年说第一版《情感教育》无用的人，一代名医，在鲁昂当地颇有声望。1818 年即任鲁昂市立医院院长，1846 年后又将位置给了阿希尔。</p>
 <p>[[《洛丽塔》第二部第二十七章]] 有一句“爱玛也决不会恢复体力，因为福氏的父亲及时的泪水里那同情的盐分而起死回生”，这里说的就是拉里维耶。主万译本的注释以为，福氏的父亲是指卢欧老爹，因为福楼拜曾说包法利夫人就是自己，而卢欧老爹是艾玛的父亲。这样附会实在有些滑稽。译注明明也指出来了，卢欧老爹是在艾玛死后才赶到，所以他的眼泪不是很“及时”。但原文“及时的泪水”，指的应是拉里维耶看到艾玛以后，和夏尔两人你望我，我望你，“这个人虽然看惯了痛苦，也忍不住流下一滴眼泪，落在他的胸饰上”。</p>
-</div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
-        var options = {
+</div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if("undefined"!=typeof lightGallery) {
+        var options1 = {
             selector: '.gallery-item'
         };
-        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1);
         }</script>
     </div>
 
@@ -165,12 +186,12 @@
                 <span>打上标签:
                     
                     
-                        <a href='/tags/%E7%A6%8F%E6%A5%BC%E6%8B%9C/'>
-                            福楼拜
-                        </a>
-                    
                         <a href='/tags/%E5%8C%85%E6%B3%95%E5%88%A9%E5%A4%AB%E4%BA%BA/'>
                             包法利夫人
+                        </a>
+                    
+                        <a href='/tags/%E7%A6%8F%E6%A5%BC%E6%8B%9C/'>
+                            福楼拜
                         </a>
                     
                 </span>
@@ -285,31 +306,4 @@
                 </div>
             
     </body>
-
-
-    <!--暗黑模式-->
-    <script src="/js/darkmode-js.min.js"></script>
-    <script>
-        function addDarkmodeWidget() {
-        const options = {
-            bottom: '53px', // default: '32px'
-            right: 'unset', // default: '32px'
-            left: '42px', // default: 'unset'
-            time: '0.3s', // default: '0.3s'
-            mixColor: '#fff', // default: '#fff'
-            backgroundColor: ' #e4e4e4 ',  // default: '#fff'
-            buttonColorDark: '#100f2c',  // default: '#100f2c'
-            buttonColorLight: '#fff', // default: '#fff'
-            saveInCookies: true, // default: true,
-            label: '🌓', // default: ''
-            autoMatchOsTheme: true // default: true
-        }
-    
-        const darkmode = new Darkmode(options);
-        darkmode.showWidget();
-        
-        }
-        window.addEventListener('load', addDarkmodeWidget);
-    </script>
-  
 </html>

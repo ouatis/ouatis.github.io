@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
     <meta name="description" content="我用电子书" />
-    <meta name="hexo-theme-A4" content="v1.8.8" />
+    <meta name="hexo-theme-A4" content="v1.9.0" />
     <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
     <title>笼城往事 | Once Upon a Time in SigiL</title>
 
@@ -59,10 +59,31 @@
 <link rel="stylesheet" href="/css/lightgallery.min.css">
 
 
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.2.0"></head>
+    
     
     
     <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '53px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
         
             <div class="left-toc-container">
                 <nav id="toc" class="bs-docs-sidebar"></nav>
@@ -142,11 +163,11 @@
 <p>翻阅的确是实体书的先天优势。但要这么说，实体书还有无限优势，小小的书页折角、褶皱，都会带来记忆，有记忆就会有时间。但我觉得这是技术和设计问题，电子书也会带来类似的东西，只是性质不同，关键在于如何使用工具。</p>
 <p>我不是很介意实体书或电子书之间的区别，觉得字在哪儿都一样，媒介和形态怎样都无所谓。流行的载体迟早会过去，我们阅读自己喜欢的内容就好。纸质更方便翻，数字怎么方便谁也都清楚。我认为，电子书最大的问题是手指损伤，由于长期使用手机，关节磨损很快，容易得腱鞘炎。</p>
 <p>价格方面，在中国，正版电子书的价格会便宜许多。西方似乎有所不同，可能和知识产权保护有关。低价对纸质书也有冲击。从结果上看，工作之后，我基本不读实体书，对书籍的命运也不关心，对实体书店的破坏我也有份。但个人阅读量反而高了许多，略高于大学和小学，远高于初中、高中，这终归是电子书的好处。</p>
-</div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
-        var options = {
+</div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if("undefined"!=typeof lightGallery) {
+        var options1 = {
             selector: '.gallery-item'
         };
-        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1);
         }</script>
     </div>
 
@@ -171,8 +192,8 @@
                 <span>归为分类:
                     
                     
-                        <a href='/categories/%E6%88%91%E7%94%A8Obsidian/'>
-                            我用Obsidian
+                        <a href='/categories/%E6%88%91%E7%94%A8%E9%BB%91%E6%9B%9C%E7%9F%B3/'>
+                            我用黑曜石
                         </a>
                     
                 </span>
@@ -277,31 +298,4 @@
                 </div>
             
     </body>
-
-
-    <!--暗黑模式-->
-    <script src="/js/darkmode-js.min.js"></script>
-    <script>
-        function addDarkmodeWidget() {
-        const options = {
-            bottom: '53px', // default: '32px'
-            right: 'unset', // default: '32px'
-            left: '42px', // default: 'unset'
-            time: '0.3s', // default: '0.3s'
-            mixColor: '#fff', // default: '#fff'
-            backgroundColor: ' #e4e4e4 ',  // default: '#fff'
-            buttonColorDark: '#100f2c',  // default: '#100f2c'
-            buttonColorLight: '#fff', // default: '#fff'
-            saveInCookies: true, // default: true,
-            label: '🌓', // default: ''
-            autoMatchOsTheme: true // default: true
-        }
-    
-        const darkmode = new Darkmode(options);
-        darkmode.showWidget();
-        
-        }
-        window.addEventListener('load', addDarkmodeWidget);
-    </script>
-  
 </html>

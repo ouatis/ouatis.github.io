@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
     <meta name="description" content="home demo 2" />
-    <meta name="hexo-theme-A4" content="v1.8.8" />
+    <meta name="hexo-theme-A4" content="v1.9.0" />
     <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
     <title>笼城往事 | Once Upon a Time in SigiL</title>
 
@@ -59,10 +59,31 @@
 <link rel="stylesheet" href="/css/lightgallery.min.css">
 
 
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.2.0"></head>
+    
     
     
     <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '53px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
         
             <div class="left-toc-container">
                 <nav id="toc" class="bs-docs-sidebar"></nav>
@@ -150,12 +171,12 @@
 <p>“你听到刚才他们绕了一小段吗？但是效果不好，所以他们回去从头开始。这一版非常粗糙，听起来也就是普通人的水准。你其实可以想象，普通人也可以这样做，做到这个水平。不是在写词或构思方面，而是演奏。但是他们没有就此罢休。他们是那么追求完美，精益求精。在我三十几岁时，他们的这种精神给了我很大的影响。你完全可以看到他们为此付出了多少。他们在每两次录音的中间都会做很多工作。他们不断地倒回、修改，直到接近完美。”</p>
 <p>两个人一直听到第三次录音。乔布斯向传记作者解释曲谱如何变得更加复杂。然后很自然地开始说，苹果也是用这种方法对待他们的产品，一些没有传记记录，读者也可以猜到的内容。</p>
 <p>《乔布斯传》里有很多图腾式的魅力时刻，很多令人动容的瞬间和细节，但或许是因为乔布斯太鲜明了，所有细节好像又都只是补充细节。直到看到这里，我才真正对乔布斯感到钦佩。他和传记作者应该是听了三个“home demo”版本，其中第三版最为复杂，到第四版，四人就改去录音室了。而最打动我的是“home demo 2”版本，属于乔布斯所说的“普通人水准”？我不确定。我不懂音乐。</p>
-<p>除了苹果，乔布斯实在留给了我们太多东西，[[雅达利打砖块考|《打砖块》]] ，还有这张专辑。如果没有他，凡人又该如何听到专辑中的三首“homo demo”呢？如今这张专辑的资源更是被全网下架，在主流音乐网站彻底销声匿迹，再也找不着。换一般人肯定束手无策，但是我找着它了。现在“home demo 2”将成为我的私人收藏。</p>
-</div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
-        var options = {
+<p>除了苹果，乔布斯实在留给了我们太多东西，[[打砖块考|《打砖块》]] ，还有这张专辑。如果没有他，凡人又该如何听到专辑中的三首“homo demo”呢？如今这张专辑的资源更是被全网下架，在主流音乐网站彻底销声匿迹，再也找不着。换一般人肯定束手无策，但是我找着它了。现在“home demo 2”将成为我的私人收藏。</p>
+</div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if("undefined"!=typeof lightGallery) {
+        var options1 = {
             selector: '.gallery-item'
         };
-        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1);
         }</script>
     </div>
 
@@ -290,31 +311,4 @@
                 </div>
             
     </body>
-
-
-    <!--暗黑模式-->
-    <script src="/js/darkmode-js.min.js"></script>
-    <script>
-        function addDarkmodeWidget() {
-        const options = {
-            bottom: '53px', // default: '32px'
-            right: 'unset', // default: '32px'
-            left: '42px', // default: 'unset'
-            time: '0.3s', // default: '0.3s'
-            mixColor: '#fff', // default: '#fff'
-            backgroundColor: ' #e4e4e4 ',  // default: '#fff'
-            buttonColorDark: '#100f2c',  // default: '#100f2c'
-            buttonColorLight: '#fff', // default: '#fff'
-            saveInCookies: true, // default: true,
-            label: '🌓', // default: ''
-            autoMatchOsTheme: true // default: true
-        }
-    
-        const darkmode = new Darkmode(options);
-        darkmode.showWidget();
-        
-        }
-        window.addEventListener('load', addDarkmodeWidget);
-    </script>
-  
 </html>

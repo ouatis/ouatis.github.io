@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
     <meta name="description" content="我用Tasks" />
-    <meta name="hexo-theme-A4" content="v1.8.8" />
+    <meta name="hexo-theme-A4" content="v1.9.0" />
     <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
     <title>笼城往事 | Once Upon a Time in SigiL</title>
 
@@ -59,10 +59,31 @@
 <link rel="stylesheet" href="/css/lightgallery.min.css">
 
 
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.2.0"></head>
+    
     
     
     <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '53px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
         
             <div class="left-toc-container">
                 <nav id="toc" class="bs-docs-sidebar"></nav>
@@ -142,8 +163,8 @@
 <p>多年以后，信息时代人类做时间表，已经有大量软件应用可选。不至于像小盖茨比、泰特斯·霍伊特那样，拿一张可怜的纸条记录，有修改还得涂抹。</p>
 <p>正经开始做时间表，是在安装了 Obsidian 以后了，主要用到 Tasks 插件，好处是可以使用语句，搜寻、过滤、罗列散落在 Vault 文件里的各个任务。语句非常简单，字面意思就很清楚。基于这个功能，我通过模板，为每天的日记加入日常任务和提醒。</p>
 <p>因为试图在其中加入一点点文化人的要素，这部分笔记被我叫做“G.T.K.”，戏仿“Getting Things Done”，其实是“Ganzer Tag Kanzlei”的缩写。其中，第一部分 [[TEMPLATE#Ganzer Tag Kanzlei]] 和第二部分 [[TEMPLATE#Nicht Gearbeitet]] 都放在日记里，第三部分 [[Lage Unverändert]] 作为独立笔记。</p>
-<p>第一部分：今天截止、或今天有什么安排的任务，按优先级排序，一目了然。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">```tasks </span><br><span class="line">not done </span><br><span class="line">(due before today) OR (due on today) OR (scheduled on today) </span><br><span class="line">group by priority</span><br><span class="line">```</span><br></pre></td></tr></table></figure>
+<p>第一部分：近期最重要的任务，以及今天截止、或今天有什么安排的任务，按优先级排序，一目了然。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">```tasks </span><br><span class="line">not done </span><br><span class="line">(due before today) OR (due on today) OR (scheduled on today) OR (priority is highest)</span><br><span class="line">group by priority</span><br><span class="line">sort by due</span><br><span class="line">```</span><br></pre></td></tr></table></figure>
 
 <p>第二部分：过期未完成的任务和明天的任务，按优先级排序，偶尔用到。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">```tasks </span><br><span class="line">not done </span><br><span class="line">(due on tomorrow) OR (scheduled on tomorrow) </span><br><span class="line">group by priority</span><br><span class="line">```</span><br></pre></td></tr></table></figure>
@@ -152,11 +173,11 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">```tasks</span><br><span class="line">not done</span><br><span class="line">NOT (due on tomorrow)</span><br><span class="line">NOT (due before tomorrow)</span><br><span class="line">sort by priority</span><br><span class="line">group by due</span><br><span class="line">```</span><br></pre></td></tr></table></figure>
 
 <p>这个插件的截止时间无法精确到每时每分，最小单位就是天。如像小盖茨比那样，有更细的提醒需求，可以寻找另外的插件。</p>
-</div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
-        var options = {
+</div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if("undefined"!=typeof lightGallery) {
+        var options1 = {
             selector: '.gallery-item'
         };
-        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1);
         }</script>
     </div>
 
@@ -181,8 +202,8 @@
                 <span>归为分类:
                     
                     
-                        <a href='/categories/%E6%88%91%E7%94%A8Obsidian/'>
-                            我用Obsidian
+                        <a href='/categories/%E6%88%91%E7%94%A8%E9%BB%91%E6%9B%9C%E7%9F%B3/'>
+                            我用黑曜石
                         </a>
                     
                 </span>
@@ -287,31 +308,4 @@
                 </div>
             
     </body>
-
-
-    <!--暗黑模式-->
-    <script src="/js/darkmode-js.min.js"></script>
-    <script>
-        function addDarkmodeWidget() {
-        const options = {
-            bottom: '53px', // default: '32px'
-            right: 'unset', // default: '32px'
-            left: '42px', // default: 'unset'
-            time: '0.3s', // default: '0.3s'
-            mixColor: '#fff', // default: '#fff'
-            backgroundColor: ' #e4e4e4 ',  // default: '#fff'
-            buttonColorDark: '#100f2c',  // default: '#100f2c'
-            buttonColorLight: '#fff', // default: '#fff'
-            saveInCookies: true, // default: true,
-            label: '🌓', // default: ''
-            autoMatchOsTheme: true // default: true
-        }
-    
-        const darkmode = new Darkmode(options);
-        darkmode.showWidget();
-        
-        }
-        window.addEventListener('load', addDarkmodeWidget);
-    </script>
-  
 </html>

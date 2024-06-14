@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
     <meta name="description" content="从OneNote到Obsidian" />
-    <meta name="hexo-theme-A4" content="v1.8.8" />
+    <meta name="hexo-theme-A4" content="v1.9.0" />
     <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
     <title>笼城往事 | Once Upon a Time in SigiL</title>
 
@@ -59,10 +59,31 @@
 <link rel="stylesheet" href="/css/lightgallery.min.css">
 
 
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.2.0"></head>
+    
     
     
     <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '53px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
         
             <div class="left-toc-container">
                 <nav id="toc" class="bs-docs-sidebar"></nav>
@@ -142,11 +163,11 @@
 <p>怎么会有那么适合我的笔记本？完全被它的理念折服：本地储存、 . md 格式、开源插件、[[我用双向链接|双向链接]]、网状谱系。单是本地储存就好用到我想迁移整个 OneNote。OneNote 那博尔赫斯一样的气质已经完全被 Obsidian 取代。使用它就像使用一个外脑思考。</p>
 <p>本地数据，要文件，不要软件、应用，使得笔记完全属于我自己，富有安全感；这年头，连笔记、网盘服务也开始审查，回归本地才是正道；而且方便迁移，自己决定是否、如何从一个软件换到另一个软件。反向链接和网状谱系，能让笔记自然生长，参考、关联现有笔记，笔记会越来越多。一本《包法利》，配合评传、讲稿、鹦鹉，就能启发出不少新笔记。</p>
 <p>但众所周知，做笔记的目的不是编词典，不是让它成为一部百科全书、一个用于搜索的内容池。那就变成了布瓦尔和佩库歇。我们是要一种用于思考、促进写作的工具，一颗外置大脑，是记忆的延伸、思考的媒介，而不是记忆和思考的对象。</p>
-</div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
-        var options = {
+</div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if("undefined"!=typeof lightGallery) {
+        var options1 = {
             selector: '.gallery-item'
         };
-        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1);
         }</script>
     </div>
 
@@ -171,8 +192,8 @@
                 <span>归为分类:
                     
                     
-                        <a href='/categories/%E6%88%91%E7%94%A8Obsidian/'>
-                            我用Obsidian
+                        <a href='/categories/%E6%88%91%E7%94%A8%E9%BB%91%E6%9B%9C%E7%9F%B3/'>
+                            我用黑曜石
                         </a>
                     
                 </span>
@@ -277,31 +298,4 @@
                 </div>
             
     </body>
-
-
-    <!--暗黑模式-->
-    <script src="/js/darkmode-js.min.js"></script>
-    <script>
-        function addDarkmodeWidget() {
-        const options = {
-            bottom: '53px', // default: '32px'
-            right: 'unset', // default: '32px'
-            left: '42px', // default: 'unset'
-            time: '0.3s', // default: '0.3s'
-            mixColor: '#fff', // default: '#fff'
-            backgroundColor: ' #e4e4e4 ',  // default: '#fff'
-            buttonColorDark: '#100f2c',  // default: '#100f2c'
-            buttonColorLight: '#fff', // default: '#fff'
-            saveInCookies: true, // default: true,
-            label: '🌓', // default: ''
-            autoMatchOsTheme: true // default: true
-        }
-    
-        const darkmode = new Darkmode(options);
-        darkmode.showWidget();
-        
-        }
-        window.addEventListener('load', addDarkmodeWidget);
-    </script>
-  
 </html>

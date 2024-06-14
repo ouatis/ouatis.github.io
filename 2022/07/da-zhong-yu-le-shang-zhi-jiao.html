@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
     <meta name="description" content="大众娱乐上只角" />
-    <meta name="hexo-theme-A4" content="v1.8.8" />
+    <meta name="hexo-theme-A4" content="v1.9.0" />
     <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
     <title>笼城往事 | Once Upon a Time in SigiL</title>
 
@@ -59,10 +59,31 @@
 <link rel="stylesheet" href="/css/lightgallery.min.css">
 
 
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.2.0"></head>
+    
     
     
     <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '53px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
         
             <div class="left-toc-container">
                 <nav id="toc" class="bs-docs-sidebar"></nav>
@@ -138,11 +159,11 @@
 <p>也翻到一些《飘》的书评，大多是读后感，复述故事情节，剖析人物性格，抒发人生感悟；论文方面，主要是一些外延的批评，谈论不同译本、美国历史、[[1861南北战争]]、种族主义与女性主义，这些我也来者不拒，不介意听一听郝思嘉在性情肝胆上很像王熙凤之类的鬼话，只是我更希望读到写作者的思考。而且，郝思嘉显然更像三十年代好莱坞性感女星。《小说创作大师班》有一单章谈论米切尔的创作方法，但谈得过于粗陋，像市面上常见的知识付费。一时半会儿我也没找着更多有价值的先行研究或文豪八卦，更缺乏向英文世界探索的动力，在个人兴趣上接近停滞。</p>
 <p>电影版，我们称之为《乱世佳人》吧，十分忠实，要场面有场面，要故事有故事，要人物有人物。制片人是 [[大卫·塞尔兹尼克]]，差不多就是那个年代的斯皮尔伯格，曾经跟希区柯克合作过 《<strong>蝴蝶梦</strong>》。他很不喜欢希区在严肃情节剧里注入幽默的做法，坚持要求严格忠于原著，以便读者在电影里看到自己喜欢的场景。塞尔兹尼克还想要一种银幕华丽感，在当时浪漫情节剧中很常见，质感厚重如天鹅绒。明星在他们该在的位置上闪闪发光，摄影光彩夺目，音乐席卷观众，让其屏住呼吸。同时期，《乱世佳人》就是这么做的。</p>
 <p>没准等到再度需要这个故事的时候，抑或是机缘巧合，我会愿意再读它一遍（这回读了陈良廷的译本，下回自然换傅东华版，但听说有许多删节，我想起“盘肠大战”，也是傅删稿引起的事端），就像重读其他最优秀的通俗小说。但这种乐趣略显单一，完全可以借助电影，重温其中的妙处（垂死士兵躺满大街），与构建阅读谱系相比，还是有差距。那是我真正喜欢也想要做的事情。即便不爱听文豪相轻或互吹的八卦，又有什么文学批评，比得上同行写作者的臧否文字呢？但是《飘》和米切尔，很少见别的作家关心。我初步判断这不单是我孤陋寡闻的问题，却又缺乏兴趣继续深究下去了。</p>
-</div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
-        var options = {
+</div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if("undefined"!=typeof lightGallery) {
+        var options1 = {
             selector: '.gallery-item'
         };
-        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1);
         }</script>
     </div>
 
@@ -154,15 +175,6 @@
                 <span>该篇文章被 SigiL</span>
             
             
-                <span>打上标签:
-                    
-                    
-                        <a href='/tags/%E9%97%A8/'>
-                            门
-                        </a>
-                    
-                </span>
-             
              
                 <span>归为分类:
                     
@@ -273,31 +285,4 @@
                 </div>
             
     </body>
-
-
-    <!--暗黑模式-->
-    <script src="/js/darkmode-js.min.js"></script>
-    <script>
-        function addDarkmodeWidget() {
-        const options = {
-            bottom: '53px', // default: '32px'
-            right: 'unset', // default: '32px'
-            left: '42px', // default: 'unset'
-            time: '0.3s', // default: '0.3s'
-            mixColor: '#fff', // default: '#fff'
-            backgroundColor: ' #e4e4e4 ',  // default: '#fff'
-            buttonColorDark: '#100f2c',  // default: '#100f2c'
-            buttonColorLight: '#fff', // default: '#fff'
-            saveInCookies: true, // default: true,
-            label: '🌓', // default: ''
-            autoMatchOsTheme: true // default: true
-        }
-    
-        const darkmode = new Darkmode(options);
-        darkmode.showWidget();
-        
-        }
-        window.addEventListener('load', addDarkmodeWidget);
-    </script>
-  
 </html>

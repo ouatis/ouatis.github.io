@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
     <meta name="description" content="" />
-    <meta name="hexo-theme-A4" content="v1.8.8" />
+    <meta name="hexo-theme-A4" content="v1.9.0" />
     <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
     <title>笼城往事 | Once Upon a Time in SigiL</title>
 
@@ -59,10 +59,31 @@
 <link rel="stylesheet" href="/css/lightgallery.min.css">
 
 
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.2.0"></head>
+    
     
     
     <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '53px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
         
             <div class="left-toc-container">
                 <nav id="toc" class="bs-docs-sidebar"></nav>
@@ -126,7 +147,7 @@
   <ul class="archive">
 
     
-    <span>🔖<i>福楼拜私人词典</i></span>
+    <span><span class="darkmode-ignore">🔖</span><i>福楼拜私人词典</i></span>
           
     
 
@@ -175,18 +196,27 @@
   
     
         <li>
-          <span class="archive-date">2020/11/11</span>
+          <span class="archive-date">2021/10/27</span>
           <div class="archive-main">
-              <a class="archive-title" href="/2020/11/peng-ji-yu-sheng-tao.html">猛烈抨击与愤怒声讨</a>
+              <a class="archive-title" href="/2021/10/jian-jiao-wu.html">尖叫屋</a>
           </div>
         </li>
     
   
     
         <li>
-          <span class="archive-date">2020/07/31</span>
+          <span class="archive-date">2021/04/01</span>
           <div class="archive-main">
-              <a class="archive-title" href="/2020/07/ge-luo-ge-jiu.html">格罗格酒</a>
+              <a class="archive-title" href="/2021/04/peng-ji-yu-sheng-tao.html">猛烈抨击与愤怒声讨</a>
+          </div>
+        </li>
+    
+  
+    
+        <li>
+          <span class="archive-date">2021/03/01</span>
+          <div class="archive-main">
+              <a class="archive-title" href="/2021/03/ge-luo-ge-jiu.html">格罗格酒</a>
           </div>
         </li>
     
@@ -267,14 +297,14 @@
         <li>
           <span class="archive-date">2017/11/01</span>
           <div class="archive-main">
-              <a class="archive-title" href="/2017/11/shang-di-bu-zhi-yi-ci.html">上帝不置一词</a>
+              <a class="archive-title" href="/2017/11/chen-mo-de-shang-di.html">沉默的上帝</a>
           </div>
         </li>
     
   
     
         <li>
-          <span class="archive-date">2017/06/01</span>
+          <span class="archive-date">2017/06/05</span>
           <div class="archive-main">
               <a class="archive-title" href="/2017/06/ai-ma-de-lie-quan.html">艾玛的猎犬</a>
           </div>
@@ -373,9 +403,9 @@
   
     
         <li>
-          <span class="archive-date">2015/05/01</span>
+          <span class="archive-date">2015/05/02</span>
           <div class="archive-main">
-              <a class="archive-title" href="/2015/05/x-jiu-shi-wo.html">X，就是我</a>
+              <a class="archive-title" href="/2015/05/kan-bu-jian-de-you-ling.html">看不见的幽灵</a>
           </div>
         </li>
     
@@ -472,7 +502,7 @@
   
     
         <li>
-          <span class="archive-date">2013/06/01</span>
+          <span class="archive-date">2013/06/04</span>
           <div class="archive-main">
               <a class="archive-title" href="/2013/06/ai-ma-de-shu-dan.html">艾玛的书单</a>
           </div>
@@ -501,7 +531,7 @@
         <li>
           <span class="archive-date">2013/03/01</span>
           <div class="archive-main">
-              <a class="archive-title" href="/2013/03/shang-deng-xian-shi-zhu-yi.html">上等现实主义</a>
+              <a class="archive-title" href="/2013/03/shang-deng-de-xie-shi.html">上等的写实</a>
           </div>
         </li>
     
@@ -611,31 +641,4 @@
                 </div>
             
     </body>
-
-
-    <!--暗黑模式-->
-    <script src="/js/darkmode-js.min.js"></script>
-    <script>
-        function addDarkmodeWidget() {
-        const options = {
-            bottom: '53px', // default: '32px'
-            right: 'unset', // default: '32px'
-            left: '42px', // default: 'unset'
-            time: '0.3s', // default: '0.3s'
-            mixColor: '#fff', // default: '#fff'
-            backgroundColor: ' #e4e4e4 ',  // default: '#fff'
-            buttonColorDark: '#100f2c',  // default: '#100f2c'
-            buttonColorLight: '#fff', // default: '#fff'
-            saveInCookies: true, // default: true,
-            label: '🌓', // default: ''
-            autoMatchOsTheme: true // default: true
-        }
-    
-        const darkmode = new Darkmode(options);
-        darkmode.showWidget();
-        
-        }
-        window.addEventListener('load', addDarkmodeWidget);
-    </script>
-  
 </html>

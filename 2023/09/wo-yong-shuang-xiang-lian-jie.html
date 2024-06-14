@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
     <meta name="description" content="我用双向链接" />
-    <meta name="hexo-theme-A4" content="v1.8.8" />
+    <meta name="hexo-theme-A4" content="v1.9.0" />
     <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
     <title>笼城往事 | Once Upon a Time in SigiL</title>
 
@@ -59,10 +59,31 @@
 <link rel="stylesheet" href="/css/lightgallery.min.css">
 
 
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.2.0"></head>
+    
     
     
     <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '53px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
         
             <div class="left-toc-container">
                 <nav id="toc" class="bs-docs-sidebar"></nav>
@@ -130,7 +151,7 @@
 
     <div class="post-md">
         
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/hint.css/2.7.0/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/lightgallery.min.css" /><div class=".article-gallery"><p>记性是 [[优秀读者的四个条件]] 之一，而双向链接是记忆和思维的辅助。以往没有工具，很多事情只能靠记性蛮干。屠格涅夫不用 Obsidian，他要记一份写作纲要，主要还是靠大脑。即便将思维付诸纸笔，最终还是要求助记忆：</p>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/hint.css/2.7.0/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/lightgallery.min.css" /><div class=".article-gallery"><p>记性是 [[关于优秀读者的四个条件]] 之一，而双向链接是记忆和思维的辅助。以往没有工具，很多事情只能靠记性蛮干。屠格涅夫不用 Obsidian，他要记一份写作纲要，主要还是靠大脑。即便将思维付诸纸笔，最终还是要求助记忆：</p>
 <blockquote>
 <p>“萨宾娜……身材细柔、匀称，双腿的线条像М的一样，而嘴唇则像季佳的一样”；“一个美好的俄罗斯小姐（脸部借用公爵小姐叶·利沃娃的）”；“面貌像那个同我一起进午餐的大夫……借用科拉什”；“描摹谢尔班”。</p>
 </blockquote>
@@ -152,11 +173,11 @@
 <p>双向链接、分类、标签，基础功能都是索引，使用索引是为了解放大脑记忆。就体感而言，我也觉得树状图最好记忆，记住院子里种了几棵树并不困难，只要分类的层级够浅，类似矮树丛。我的矮树丛最多两层。</p>
 <p>相反，双向链接和标签只要数量一多，就会像网、像云，不好记忆。随着笔记日积月累，关系图谱与标签云将不可避免地变得庞杂。此时，局部的系统网络逐渐变得比整体更加重要，整体的关系图谱和标签云将只提供宏观视角。</p>
 <p>卢曼曾说，每条笔记都是引用和反向引用系统网络中的一个元素，笔记的质量就取决于这个网格。这个网格就是局部系统网络，双链、标签与分类，都是切割与链接网格的基本工具，各有各的特点。再搭配搜索功能，以及 Dataview 等插件，即便自然派、散文化如屠格涅夫，也可以轻易打造一套条理分明的外貌描写数据库。</p>
-</div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
-        var options = {
+</div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if("undefined"!=typeof lightGallery) {
+        var options1 = {
             selector: '.gallery-item'
         };
-        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1);
         }</script>
     </div>
 
@@ -181,8 +202,8 @@
                 <span>归为分类:
                     
                     
-                        <a href='/categories/%E6%88%91%E7%94%A8Obsidian/'>
-                            我用Obsidian
+                        <a href='/categories/%E6%88%91%E7%94%A8%E9%BB%91%E6%9B%9C%E7%9F%B3/'>
+                            我用黑曜石
                         </a>
                     
                 </span>
@@ -287,31 +308,4 @@
                 </div>
             
     </body>
-
-
-    <!--暗黑模式-->
-    <script src="/js/darkmode-js.min.js"></script>
-    <script>
-        function addDarkmodeWidget() {
-        const options = {
-            bottom: '53px', // default: '32px'
-            right: 'unset', // default: '32px'
-            left: '42px', // default: 'unset'
-            time: '0.3s', // default: '0.3s'
-            mixColor: '#fff', // default: '#fff'
-            backgroundColor: ' #e4e4e4 ',  // default: '#fff'
-            buttonColorDark: '#100f2c',  // default: '#100f2c'
-            buttonColorLight: '#fff', // default: '#fff'
-            saveInCookies: true, // default: true,
-            label: '🌓', // default: ''
-            autoMatchOsTheme: true // default: true
-        }
-    
-        const darkmode = new Darkmode(options);
-        darkmode.showWidget();
-        
-        }
-        window.addEventListener('load', addDarkmodeWidget);
-    </script>
-  
 </html>

@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
     <meta name="description" content="梅毒之旅" />
-    <meta name="hexo-theme-A4" content="v1.8.8" />
+    <meta name="hexo-theme-A4" content="v1.9.0" />
     <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
     <title>笼城往事 | Once Upon a Time in SigiL</title>
 
@@ -59,10 +59,31 @@
 <link rel="stylesheet" href="/css/lightgallery.min.css">
 
 
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.2.0"></head>
+    
     
     
     <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '53px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
         
             <div class="left-toc-container">
                 <nav id="toc" class="bs-docs-sidebar"></nav>
@@ -144,11 +165,11 @@
 <p>在旅行过程中，福楼拜也在家书里提到几次自己正在构思的小说题材，但并没有《包法利》。1851 年 5 月回到鲁昂后，他把这桩莽行压在心底，也没有写《萨朗波》，但除了梅毒他的内心也被染上紫色。</p>
 <p>他仍然没有想好写什么，直到布耶提到了 [[卫生官员一家]]。于是，他开始写的书才变成“外省风俗”。那又是一本灰色的书。</p>
 <p>福楼拜从《圣安东》初稿到《包法利》之间找到了自己的风格。从前那种文体上的冲动受到了最严厉的清洗，大量抒情和激动的情感受到了无情的镇压，为的是寻找“真实的幻想”。经过五年超乎想象的艰苦劳动之后，果然以无可比拟的方式写出了他第一部传世之作。</p>
-</div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
-        var options = {
+</div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if("undefined"!=typeof lightGallery) {
+        var options1 = {
             selector: '.gallery-item'
         };
-        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1);
         }</script>
     </div>
 
@@ -163,12 +184,8 @@
                 <span>打上标签:
                     
                     
-                        <a href='/tags/%E5%8C%85%E6%B3%95%E5%88%A9%E5%A4%AB%E4%BA%BA/'>
-                            包法利夫人
-                        </a>
-                    
-                        <a href='/tags/%E5%9C%A3%E5%AE%89%E4%B8%9C%E7%9A%84%E8%AF%B1%E6%83%91/'>
-                            圣安东的诱惑
+                        <a href='/tags/%E7%A6%8F%E6%A5%BC%E6%8B%9C/'>
+                            福楼拜
                         </a>
                     
                 </span>
@@ -283,31 +300,4 @@
                 </div>
             
     </body>
-
-
-    <!--暗黑模式-->
-    <script src="/js/darkmode-js.min.js"></script>
-    <script>
-        function addDarkmodeWidget() {
-        const options = {
-            bottom: '53px', // default: '32px'
-            right: 'unset', // default: '32px'
-            left: '42px', // default: 'unset'
-            time: '0.3s', // default: '0.3s'
-            mixColor: '#fff', // default: '#fff'
-            backgroundColor: ' #e4e4e4 ',  // default: '#fff'
-            buttonColorDark: '#100f2c',  // default: '#100f2c'
-            buttonColorLight: '#fff', // default: '#fff'
-            saveInCookies: true, // default: true,
-            label: '🌓', // default: ''
-            autoMatchOsTheme: true // default: true
-        }
-    
-        const darkmode = new Darkmode(options);
-        darkmode.showWidget();
-        
-        }
-        window.addEventListener('load', addDarkmodeWidget);
-    </script>
-  
 </html>

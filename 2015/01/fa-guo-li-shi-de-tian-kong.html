@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
     <meta name="description" content="法国历史的天空" />
-    <meta name="hexo-theme-A4" content="v1.8.8" />
+    <meta name="hexo-theme-A4" content="v1.9.0" />
     <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
     <title>笼城往事 | Once Upon a Time in SigiL</title>
 
@@ -59,10 +59,31 @@
 <link rel="stylesheet" href="/css/lightgallery.min.css">
 
 
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.2.0"></head>
+    
     
     
     <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '53px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
         
             <div class="left-toc-container">
                 <nav id="toc" class="bs-docs-sidebar"></nav>
@@ -144,11 +165,11 @@
 <blockquote>
 <p>修道院里有一个老姑娘，每个月来做一星期针线活。她是一个贵族世家的后代，在大革命期间家破人亡，所以得到大主教的庇护，特准在餐厅里和修女们同桌用膳，餐后还同她们闲谈一会儿，再做针线活。寄宿生往往溜出教室来看她。她会唱前一个世纪的情歌，有时一面飞针走线，一面就低声唱起来。她讲故事，讲新闻，替你上街买东西，私下里把围裙口袋里藏着的小说借给大姑娘看，她自己也是女红一歇手，就一口气读上长长的一章。书里讲的总是恋爱的故事，多情的男女，被逼得走投无路、在孤零零的亭子里晕倒的贵妇人，每到一个驿站都要遭到毒害的马车夫，每一页都疲于奔命的马匹，阴暗的树林，内心的骚动，发不完的誓言，剪不断的呜咽，流不尽的泪，亲不完的吻，月下的小船，林中的夜莺，情郎勇敢得像狮子，温柔得像羔羊，人品好得不能再好，衣着总是无懈可击，哭起来却又热泪盈眶。半年以来，十五岁的艾玛就这样双手沾满了旧书店的灰尘。后来她读司各特，爱上了古代的风物，梦中也看到过苏格兰乡村的衣柜、卫士的厅堂、吟游诗人。她多么希望像腰身细长的女庄主一样，住在一座古老的城堡里，整天在三叶形的屋顶下，胳膊肘支在石桌上，双手托住下巴，引颈企望着一个头盔上有白羽毛的骑士，胯下一匹黑马，从遥远的田野奔驰而来。那时，她内心崇拜的是殉难的玛丽女王；狂热地敬仰的是出名的或不幸的妇女。在她看来，以身殉教的女杰贞德、同老师私奔的爱洛伊丝、查理七世的情妇阿涅丝·索蕾、美丽的费隆夫人、女诗人克莱芒丝·伊索尔，像是灿烂的彗星划破了历史的漫漫长夜，而在栎树下审案的路易九世、宁死不屈的勇士巴亚、毒死索蕾的路易十一、圣·巴特勒米之夜对新教徒的大屠杀、头戴白缨冲锋陷阵的亨利四世，还有艾玛难忘的、晚餐盘子上的彩画所颂扬的路易十四，虽然也在黑暗的天空中发出闪烁的光辉，但和那些受到宗教迫害的妇女，似乎没有什么关系。（许译）</p>
 </blockquote>
-</div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
-        var options = {
+</div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if("undefined"!=typeof lightGallery) {
+        var options1 = {
             selector: '.gallery-item'
         };
-        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1);
         }</script>
     </div>
 
@@ -279,31 +300,4 @@
                 </div>
             
     </body>
-
-
-    <!--暗黑模式-->
-    <script src="/js/darkmode-js.min.js"></script>
-    <script>
-        function addDarkmodeWidget() {
-        const options = {
-            bottom: '53px', // default: '32px'
-            right: 'unset', // default: '32px'
-            left: '42px', // default: 'unset'
-            time: '0.3s', // default: '0.3s'
-            mixColor: '#fff', // default: '#fff'
-            backgroundColor: ' #e4e4e4 ',  // default: '#fff'
-            buttonColorDark: '#100f2c',  // default: '#100f2c'
-            buttonColorLight: '#fff', // default: '#fff'
-            saveInCookies: true, // default: true,
-            label: '🌓', // default: ''
-            autoMatchOsTheme: true // default: true
-        }
-    
-        const darkmode = new Darkmode(options);
-        darkmode.showWidget();
-        
-        }
-        window.addEventListener('load', addDarkmodeWidget);
-    </script>
-  
 </html>

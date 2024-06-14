@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
     <meta name="description" content="东京扫墓记" />
-    <meta name="hexo-theme-A4" content="v1.8.8" />
+    <meta name="hexo-theme-A4" content="v1.9.0" />
     <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
     <title>笼城往事 | Once Upon a Time in SigiL</title>
 
@@ -59,10 +59,31 @@
 <link rel="stylesheet" href="/css/lightgallery.min.css">
 
 
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.2.0"></head>
+    
     
     
     <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '53px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
         
             <div class="left-toc-container">
                 <nav id="toc" class="bs-docs-sidebar"></nav>
@@ -138,12 +159,12 @@
 <h2 id="染井"><a href="#染井" class="headerlink" title="染井"></a>染井</h2><p>从池袋继续往北，到巢鸭附近。途经一片低矮的居民区，走过一条条阴暗的巷道，就到了慈眼寺。寺内有一个染井灵园，芥川与谷崎都葬在这里。</p>
 <p>灵园面积很小，人迹罕至，与杂司谷相比，未免有些逼仄，甚至可以说是冷寂，但这里也更清静。顺着墓碑与墓碑之间的小径，按 [[芥川龙之介]] 之墓的箭头指引，很快能找到他的墓碑。就位于“芥川家之墓”旁边，一块小小的、独立的碑，上面写着“芥川龍之介の墓”七个字，简简单单，朴素至极。芥川家祖上就住江户，龙之介也是生在东京、死在东京，一生都在这里度过。</p>
 <p>我来东京是乘飞机，而他曾坐邮轮远渡中国。1921 年 3 月，龙之介任大阪每日新闻社海外视察员，乘筑后丸，从门司港出发，上海、长江、庐山、武汉、洞庭、长沙、北京、大同、朝鲜，和清末文人接触，七月末回到日本。八月起发表游记，目光冷峻，观察我们。而我现在默默看着他。后来他叫横光去上海看看。横光说自己喜欢北京，不喜欢上海。</p>
-<p>相隔十步就是谷崎，另一个纯粹东京人。课上学到他的短篇，说什么恶魔主义，不知道的人还以为他是纳粹。润一郎的墓同样位于谷崎家总墓旁边，碑上用汉字写着“分骨葬當先塋之側，總骨別瘞洛東法然院寂碑”，其中“先塋”是祖先坟墓的意思，“瘞”就是葬、埋。未来也想去法然院，拜谒一下谷崎手书的寂碑。</p>
-</div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
-        var options = {
+<p>相隔十步就是谷崎，一个“江户之子”。课上学到他的短篇，说什么恶魔主义，不知道的人还以为他是纳粹。润一郎的墓同样位于谷崎家总墓旁边，碑上用汉字写着“分骨葬當先塋之側，總骨別瘞洛東法然院寂碑”，其中“先塋”是祖先坟墓的意思，“瘞”就是葬、埋。未来也想去法然院，拜谒一下谷崎手书的寂碑。</p>
+</div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if("undefined"!=typeof lightGallery) {
+        var options1 = {
             selector: '.gallery-item'
         };
-        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1);
         }</script>
     </div>
 
@@ -278,31 +299,4 @@
                 </div>
             
     </body>
-
-
-    <!--暗黑模式-->
-    <script src="/js/darkmode-js.min.js"></script>
-    <script>
-        function addDarkmodeWidget() {
-        const options = {
-            bottom: '53px', // default: '32px'
-            right: 'unset', // default: '32px'
-            left: '42px', // default: 'unset'
-            time: '0.3s', // default: '0.3s'
-            mixColor: '#fff', // default: '#fff'
-            backgroundColor: ' #e4e4e4 ',  // default: '#fff'
-            buttonColorDark: '#100f2c',  // default: '#100f2c'
-            buttonColorLight: '#fff', // default: '#fff'
-            saveInCookies: true, // default: true,
-            label: '🌓', // default: ''
-            autoMatchOsTheme: true // default: true
-        }
-    
-        const darkmode = new Darkmode(options);
-        darkmode.showWidget();
-        
-        }
-        window.addEventListener('load', addDarkmodeWidget);
-    </script>
-  
 </html>

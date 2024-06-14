@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
     <meta name="description" content="《洛丽塔》" />
-    <meta name="hexo-theme-A4" content="v1.8.8" />
+    <meta name="hexo-theme-A4" content="v1.9.0" />
     <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
     <title>笼城往事 | Once Upon a Time in SigiL</title>
 
@@ -59,10 +59,31 @@
 <link rel="stylesheet" href="/css/lightgallery.min.css">
 
 
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.2.0"></head>
+    
     
     
     <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '53px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
         
             <div class="left-toc-container">
                 <nav id="toc" class="bs-docs-sidebar"></nav>
@@ -149,11 +170,11 @@
 <p>而有了奎尔蒂，我们就不难发现这版电影最奇怪、又最有趣的地方，一种典型的、一山不容二虎的现象：库布里克固执又好斗，有意无意就想与纳博科夫一较高下；纳博科夫明面上没有批评电影，也“不想暗示库布里克的电影是平庸之作”，甚至曾在首映式后肯定过剧组，夸赞说“阵容豪华，堪称一流”，说电影经常将“poshlost”强加给小说，在它扭曲的镜头中对小说进行曲解和粗俗化，但库布里克避免了这种缺陷，“这部电影就其本身而言是一流的”。</p>
 <p>但纳博科夫也着实心有不甘。库布里克没有跟随剧本的方向和梦想，导致电影只是他“想象的非凡画面的模糊而又短促的一瞥”。他还抱怨自己的剧本被改得面目全非，最终只好自己提出出版，希望人们完整读到他的版本。很难说库布里克创造出了更好的作品，但这场罕见的大师交锋，恐怕还得判他胜出。</p>
 <h2 id="1958"><a href="#1958" class="headerlink" title="1958"></a>1958</h2><p>这是他自己承认的最佳美国题材作品，另一本是《微暗的火》。</p>
-</div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
-        var options = {
+</div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if("undefined"!=typeof lightGallery) {
+        var options1 = {
             selector: '.gallery-item'
         };
-        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1);
         }</script>
     </div>
 
@@ -168,16 +189,8 @@
                 <span>打上标签:
                     
                     
-                        <a href='/tags/%E9%97%A8/'>
-                            门
-                        </a>
-                    
-                        <a href='/tags/%E5%BA%93%E5%B8%83%E9%87%8C%E5%85%8B/'>
-                            库布里克
-                        </a>
-                    
-                        <a href='/tags/%E7%BA%B3%E5%8D%9A%E7%A7%91%E5%A4%AB/'>
-                            纳博科夫
+                        <a href='/tags/%E5%85%AB%E9%83%A8%E5%8D%8A/'>
+                            八部半
                         </a>
                     
                 </span>
@@ -292,31 +305,4 @@
                 </div>
             
     </body>
-
-
-    <!--暗黑模式-->
-    <script src="/js/darkmode-js.min.js"></script>
-    <script>
-        function addDarkmodeWidget() {
-        const options = {
-            bottom: '53px', // default: '32px'
-            right: 'unset', // default: '32px'
-            left: '42px', // default: 'unset'
-            time: '0.3s', // default: '0.3s'
-            mixColor: '#fff', // default: '#fff'
-            backgroundColor: ' #e4e4e4 ',  // default: '#fff'
-            buttonColorDark: '#100f2c',  // default: '#100f2c'
-            buttonColorLight: '#fff', // default: '#fff'
-            saveInCookies: true, // default: true,
-            label: '🌓', // default: ''
-            autoMatchOsTheme: true // default: true
-        }
-    
-        const darkmode = new Darkmode(options);
-        darkmode.showWidget();
-        
-        }
-        window.addEventListener('load', addDarkmodeWidget);
-    </script>
-  
 </html>

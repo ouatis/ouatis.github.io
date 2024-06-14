@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
     <meta name="description" content="鲁昂大教堂" />
-    <meta name="hexo-theme-A4" content="v1.8.8" />
+    <meta name="hexo-theme-A4" content="v1.9.0" />
     <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
     <title>笼城往事 | Once Upon a Time in SigiL</title>
 
@@ -59,10 +59,31 @@
 <link rel="stylesheet" href="/css/lightgallery.min.css">
 
 
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.2.0"></head>
+    
     
     
     <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '53px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
         
             <div class="left-toc-container">
                 <nav id="toc" class="bs-docs-sidebar"></nav>
@@ -142,11 +163,11 @@
 <p>临终前，狮心王要求把弩手带到他面前。据说那是一个小孩，他为复仇而来，狮心王杀了他的父亲和两个兄弟。奇怪的是，狮心王突发骑士精神，赦免了他，还给了他一百先令，让他带着赏金活下去。但在狮心王死后，一个雇佣兵队长立即将男孩剥皮绞死。</p>
 <p>受伤后两周不到，1199 年 4 月 6 日，狮心王在母亲的怀抱中死去，年仅四十一岁。一只蚂蚁杀死了狮子。遗体被要求分为三份，分别埋葬。</p>
 <p>他是诺曼底公爵，所以把心脏留在了诺曼底首府鲁昂；内脏埋在他死去的地方；其余身体移去安茹的丰特夫罗修道院，金雀花王朝的墓地，葬在父母亨利·金雀花、阿基坦的埃莉诺脚下，以示忏悔。可惜如今却没有任何狮心王尸骨的遗迹，估计是在法国大革命中被损坏了。大革命后，修道院不再履行宗教职能，建筑主体还改成了监狱。</p>
-</div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
-        var options = {
+</div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if("undefined"!=typeof lightGallery) {
+        var options1 = {
             selector: '.gallery-item'
         };
-        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1);
         }</script>
     </div>
 
@@ -161,12 +182,12 @@
                 <span>打上标签:
                     
                     
-                        <a href='/tags/%E7%A6%8F%E6%A5%BC%E6%8B%9C/'>
-                            福楼拜
-                        </a>
-                    
                         <a href='/tags/%E5%8C%85%E6%B3%95%E5%88%A9%E5%A4%AB%E4%BA%BA/'>
                             包法利夫人
+                        </a>
+                    
+                        <a href='/tags/%E7%A6%8F%E6%A5%BC%E6%8B%9C/'>
+                            福楼拜
                         </a>
                     
                 </span>
@@ -281,31 +302,4 @@
                 </div>
             
     </body>
-
-
-    <!--暗黑模式-->
-    <script src="/js/darkmode-js.min.js"></script>
-    <script>
-        function addDarkmodeWidget() {
-        const options = {
-            bottom: '53px', // default: '32px'
-            right: 'unset', // default: '32px'
-            left: '42px', // default: 'unset'
-            time: '0.3s', // default: '0.3s'
-            mixColor: '#fff', // default: '#fff'
-            backgroundColor: ' #e4e4e4 ',  // default: '#fff'
-            buttonColorDark: '#100f2c',  // default: '#100f2c'
-            buttonColorLight: '#fff', // default: '#fff'
-            saveInCookies: true, // default: true,
-            label: '🌓', // default: ''
-            autoMatchOsTheme: true // default: true
-        }
-    
-        const darkmode = new Darkmode(options);
-        darkmode.showWidget();
-        
-        }
-        window.addEventListener('load', addDarkmodeWidget);
-    </script>
-  
 </html>

@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
     <meta name="description" content="王老菊2019" />
-    <meta name="hexo-theme-A4" content="v1.8.8" />
+    <meta name="hexo-theme-A4" content="v1.9.0" />
     <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
     <title>笼城往事 | Once Upon a Time in SigiL</title>
 
@@ -59,10 +59,31 @@
 <link rel="stylesheet" href="/css/lightgallery.min.css">
 
 
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.2.0"></head>
+    
     
     
     <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '53px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
         
             <div class="left-toc-container">
                 <nav id="toc" class="bs-docs-sidebar"></nav>
@@ -149,11 +170,11 @@
 <p>游戏实况和直播，他会一直做下去，但没有给自己设置什么目标。因为“设了目标，也只会有挫败感。设目标首先需要能力，就像高考填志愿。而我其实比较需要自我鼓励，不想给自己太多挫败感”。他提到自己“自大又谦卑”，一方面淡漠规则，想挑衅一切，却又觉得自己做不成什么大事，“我清楚自己的缺点和平庸，知道它们会阻碍自己”。</p>
 <p>问老菊创作过程中有没有什么困惑，马上接口说“有”。这么多年 UP 主做下来，他一直没有自己在进步的实感。虽然认为自己做视频更加成熟了，有时剪辑的时候，潜意识都能感知哪里节奏不对，于是就会自然剪掉，但却导致“根本找不回以前的感觉了”。“以前做视频，一顿瞎操作，现在回头看许多东西，完全可以剪掉，但其中就有闪光点。我有时候会迷惑，观众到底喜欢哪一种？我只是觉得我现在做的视频，节奏、技术会更好。但以前的感觉很棒，让我反而认为自己没有什么提升，就很苦恼。”他很怀念以前做视频的感觉。</p>
 <p>做了七年游戏视频，王老菊对未来没有做什么规划，因为“自己不擅长，只打算见招拆招，随遇而安”。他说：“有时候东拉西扯想一些事情，会影响状态，想一些有的没的，你就会变味。其实观众啥都懂，他们有时候说话很不讲道理，但往往是对的。他们会说，你变了。这种话其实很让人难受，而且所有人都会说，哪有人不会变？但他们有时就是对的。但我觉得，有可能他其实真的没变。只是他顾虑的东西太多了，可能他的笑容不单纯了。可能他被影响了，但他确实没变，他依然是那样的人。”</p>
-</div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
-        var options = {
+</div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if("undefined"!=typeof lightGallery) {
+        var options1 = {
             selector: '.gallery-item'
         };
-        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1);
         }</script>
     </div>
 
@@ -167,10 +188,6 @@
             
                 <span>打上标签:
                     
-                    
-                        <a href='/tags/%E6%B8%B8%E6%88%8F/'>
-                            游戏
-                        </a>
                     
                         <a href='/tags/%E4%B8%9A%E5%A4%96/'>
                             业外
@@ -292,31 +309,4 @@
                 </div>
             
     </body>
-
-
-    <!--暗黑模式-->
-    <script src="/js/darkmode-js.min.js"></script>
-    <script>
-        function addDarkmodeWidget() {
-        const options = {
-            bottom: '53px', // default: '32px'
-            right: 'unset', // default: '32px'
-            left: '42px', // default: 'unset'
-            time: '0.3s', // default: '0.3s'
-            mixColor: '#fff', // default: '#fff'
-            backgroundColor: ' #e4e4e4 ',  // default: '#fff'
-            buttonColorDark: '#100f2c',  // default: '#100f2c'
-            buttonColorLight: '#fff', // default: '#fff'
-            saveInCookies: true, // default: true,
-            label: '🌓', // default: ''
-            autoMatchOsTheme: true // default: true
-        }
-    
-        const darkmode = new Darkmode(options);
-        darkmode.showWidget();
-        
-        }
-        window.addEventListener('load', addDarkmodeWidget);
-    </script>
-  
 </html>

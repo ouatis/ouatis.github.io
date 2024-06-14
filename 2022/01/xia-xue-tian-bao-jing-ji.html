@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
     <meta name="description" content="下雪天报警记" />
-    <meta name="hexo-theme-A4" content="v1.8.8" />
+    <meta name="hexo-theme-A4" content="v1.9.0" />
     <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
     <title>笼城往事 | Once Upon a Time in SigiL</title>
 
@@ -59,10 +59,31 @@
 <link rel="stylesheet" href="/css/lightgallery.min.css">
 
 
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.2.0"></head>
+    
     
     
     <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '53px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
         
             <div class="left-toc-container">
                 <nav id="toc" class="bs-docs-sidebar"></nav>
@@ -134,11 +155,11 @@
 <p>问她要不要帮忙。她说不需要，然后面朝我慢慢后退。我躲到她看不见的地方，拨了个 110，找民警同志说明情况。民警回拨，告诉我这姑娘的姓名，她有抑郁症，就住附近，家里人也知道，接过好几次报警了。我听着不大对劲，问，那大雪天就让她呆在这儿不管吗？民警马上说，这就出警。</p>
 <p>三位民警驾车过来。其中一位老民警又跟我说明了一下他们了解的情况。他还打电话给那姑娘家里人。我在旁边隐隐约约听见，这姑娘已经在家关了三天三夜，今天关不住了，所以跑出来。老民警建议她的家人，联系居委会、社区民警，把她安排进医院。这几句建议翻来覆去地说，她家里人则不停地解释难处。我在旁边插嘴，要不优先解决一下眼前的问题，下着雪，先让她家里人把她领回家。老民警说，我们一出现，她就跑，她家里人出现，她也跑，同志，事情没有你想象得那么简单。我只好说辛苦你们。</p>
 <p>来北京十年了，去年第一次在路上遇见盲人，今年第一次碰到这类病人。我去一趟暴雪嘉年华、去一趟 E3，看见的残障人士比在国内二十年的总和还多。在我国的首都，凡边缘人士，都很罕见。干我们这行已经算边缘了，只是外表看不出，大家也不常走在大街上。同行似乎也很容易抑郁，至少有好些个同事得过这病。但我与他们都没什么深交。</p>
-</div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
-        var options = {
+</div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if("undefined"!=typeof lightGallery) {
+        var options1 = {
             selector: '.gallery-item'
         };
-        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1);
         }</script>
     </div>
 
@@ -273,31 +294,4 @@
                 </div>
             
     </body>
-
-
-    <!--暗黑模式-->
-    <script src="/js/darkmode-js.min.js"></script>
-    <script>
-        function addDarkmodeWidget() {
-        const options = {
-            bottom: '53px', // default: '32px'
-            right: 'unset', // default: '32px'
-            left: '42px', // default: 'unset'
-            time: '0.3s', // default: '0.3s'
-            mixColor: '#fff', // default: '#fff'
-            backgroundColor: ' #e4e4e4 ',  // default: '#fff'
-            buttonColorDark: '#100f2c',  // default: '#100f2c'
-            buttonColorLight: '#fff', // default: '#fff'
-            saveInCookies: true, // default: true,
-            label: '🌓', // default: ''
-            autoMatchOsTheme: true // default: true
-        }
-    
-        const darkmode = new Darkmode(options);
-        darkmode.showWidget();
-        
-        }
-        window.addEventListener('load', addDarkmodeWidget);
-    </script>
-  
 </html>

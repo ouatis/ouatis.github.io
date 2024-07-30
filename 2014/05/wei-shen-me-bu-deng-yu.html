@@ -159,7 +159,7 @@
 
     <div class="post-md">
         
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/hint.css/2.7.0/hint.min.css"><link rel="stylesheet" type="text/css" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/lightgallery.min.css" /><div class=".article-gallery"><p>在 JavaScript 中只有一种数值类型，Number，不区分整数类型和浮点数类型，因此所有的数字都是浮点型。</p>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/hint.css/2.7.0/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/lightgallery.min.css" /><div class=".article-gallery"><p>在 JavaScript 中只有一种数值类型，Number，不区分整数类型和浮点数类型，因此所有的数字都是浮点型。</p>
 <p>同时，JavaScript 又采用 IEEE 745（IEEE 二进制浮点数算术标准）定义的 64 位浮点格式来表示数字，不是精确的十进制。这意味着，如果一个数字超过了 64 位存储，就会发生精度的损失。</p>
 <p>这就会导致，在 JavaScript 中 <code>0.1+0.2</code> 不等于 0.3 ，而是输出 <code>0.30000000000000004</code> 的浮点运算结果。</p>
 <p>这是因为，一个数字是以二进制的形式存储在计算机当中，是一个只有 0 和 1 的序列。而十进制的部分小数，换算成二进制，会变成无限循环小数。二进制就是这么令人陌生而充满魅力，“bit” 这个词就来自“二进制数”（binary）和“位数”（digit）的组合。数字通过二进制成为语言。</p>

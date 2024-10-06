@@ -15,7 +15,7 @@
     <meta name="description" content="我用Hexo" />
     <meta name="hexo-theme-A4" content="v1.9.6" />
     <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
-    <title>笼城往事 | Once Upon a Time in SigiL</title>
+    <title>Once Upon a Time in SigiL | 笼城往事</title>
 
     
         
@@ -125,7 +125,7 @@
         width: 56px;
         height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/img/favicon.webp" width="10%"></img>
         <div class="header-content">
-            <a class="logo" href="/">笼城往事</a> 
+            <a class="logo" href="/">Once Upon a Time in SigiL</a> 
             <span class="description"></span> 
         </div>
         
@@ -181,8 +181,6 @@
             <div class="post-head-meta-center">
         
                 
-                    <span>最近更新：2023-10-31</span> 
-                
                 
                 
                 
@@ -191,7 +189,7 @@
 
     <div class="post-md">
         
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/hint.css/2.7.0/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><div class=".article-gallery"><h2 id="如何删除-GitHub-上的历史提交记录"><a href="#如何删除-GitHub-上的历史提交记录" class="headerlink" title="如何删除 GitHub 上的历史提交记录"></a>如何删除 GitHub 上的历史提交记录</h2><p>在《黑猫警长》里，一只耳为了逃避追捕，先踏出几步脚印，眼珠子一转，又折返回来，走另一条路，边走边用尾巴扫去自己的新脚印。</p>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/hint.css/2.7.0/hint.min.css"><div class=".article-gallery"><h2 id="如何删除-GitHub-上的历史提交记录"><a href="#如何删除-GitHub-上的历史提交记录" class="headerlink" title="如何删除 GitHub 上的历史提交记录"></a>如何删除 GitHub 上的历史提交记录</h2><p>在《黑猫警长》里，一只耳为了逃避追捕，先踏出几步脚印，眼珠子一转，又折返回来，走另一条路，边走边用尾巴扫去自己的新脚印。</p>
 <p>在 GitHub 上删除所有 commit ，基本思路也是一样。</p>
 <p>首先要新建一条孤儿分支，并设置为默认分支，然后删除充满历史包袱的旧分支，最后将默认分支改成旧分支的名字。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git checkout --orphan latest_branch </span><br><span class="line">git add -A</span><br><span class="line">git commit -am &quot;Site updated&quot;</span><br><span class="line">git branch -D master</span><br><span class="line">git branch -m master</span><br><span class="line">git push -f origin master</span><br><span class="line">git branch --set-upstream-to=origin/master</span><br></pre></td></tr></table></figure>

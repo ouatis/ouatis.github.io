@@ -1,19 +1,11 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
     
-    <style>
-        body
-        {
-            font-family: "Times New Roman", Helvetica, Tahoma, Arial,   "notoserifsc-medium", "Microsoft YaHei", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif !important;
-
-        }
-    </style>
-
     <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
     <meta name="description" content="从OneNote到Obsidian" />
-    <meta name="hexo-theme-A4" content="v1.9.0" />
+    <meta name="hexo-theme-A4" content="v1.9.6" />
     <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
     <title>笼城往事 | Once Upon a Time in SigiL</title>
 
@@ -64,10 +56,28 @@
     
     
    
-<link rel="stylesheet" href="/css/lightgallery.min.css">
+<link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
 
 
 <meta name="generator" content="Hexo 7.3.0"></head>
+    
+    
+        <style>
+            .index-main{
+                max-width:  880px;
+            }
+        </style>
+
+    
+    
+
+
+
+    
+
+    
+    
+
     
     
     
@@ -76,7 +86,7 @@
         
         <script>
             const options = {
-                bottom: '53px', // default: '32px'
+                bottom: '40px', // default: '32px'
                 right: 'unset', // default: '32px'
                 left: '42px', // default: 'unset'
                 time: '0.3s', // default: '0.3s'
@@ -149,17 +159,53 @@
                     <!--说明是文章post页面-->
                     
                         <div class="post-main">
+    
 
     
-        <div class="post-main-title">
-            从OneNote到Obsidian
-        </div>
+        
+            
+                <div class="post-main-title" style="text-align: center;">
+                    从OneNote到Obsidian
+                </div>
+            
+        
       
+    
+
+    
+
+        
+            <div class="post-head-meta-center">
+        
+                
+                    <span>最近更新：2022-10-01</span> 
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                     <span>字数总计：1.1k</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span>阅读估时：3分钟</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span id="busuanzi_container_page_pv">
+                        阅读量：<span id="busuanzi_value_page_pv"></span>次
+                    </span>
+                
+            </div>
     
 
     <div class="post-md">
         
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/hint.css/2.7.0/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/lightgallery.min.css" /><div class=".article-gallery"><p>二零一二至二零二二，用了十年 OneNote，期间笔记市场日新月异，我也试过印象笔记、Notion 等，但都浅尝辄止，从未被征服。那么多笔记流派，都不适合我。根本原因在于，我是本地纯文本流。如果有一个软件，可以本地搜索所有 . txt 内的文字，就能满足我的核心需要。我的 OneNote 使用方法，就是先把所有文本都塞里头，然后写作、搜索、整理、写作。</p>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/hint.css/2.7.0/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><div class=".article-gallery"><p>二零一二至二零二二，用了十年 OneNote，期间笔记市场日新月异，我也试过印象笔记、Notion 等，但都浅尝辄止，从未被征服。那么多笔记流派，都不适合我。根本原因在于，我是本地纯文本流。如果有一个软件，可以本地搜索所有 . txt 内的文字，就能满足我的核心需要。我的 OneNote 使用方法，就是先把所有文本都塞里头，然后写作、搜索、整理、写作。</p>
 <p>这样一个笔记本庞大笨重，原本以为，断无可能进行迁移。因为这样一个混乱巨大的私人图书馆，无边无际，很博尔赫斯。打开一个笔记本，会发现里面还有一个笔记本，再打开、再发现，没有穷尽。这样的笔记本一旦成型，没有人能搬走。</p>
 <p>也见过网上某些精致的 OneNote，那些好看的课堂笔记、思维导图、知识体系，把 OneNote 的强大发挥得淋漓尽致。但我的 OneNote 就是很臃肿、很丑陋、很芜杂。说不上特别喜欢，我已经习惯它这样，翻阅笔记如同穿梭在热带雨林。有时也像掉进一个全是文字的粪坑。好多东西我写过却又忘记了，如同在读另一个人写的文字。这或许也能算是一种启发。笔记里根本不止一个主题，就像我们无法概述大脑的思维。这很让人兴奋。</p>
 <p>后来我搭博客，也是为了更好地整理 OneNote，做自己的编辑，在混乱中寻求秩序，再把其中值得分享到互联网的东西分享出来。这是黄金精神。</p>
@@ -171,12 +217,7 @@
 <p>怎么会有那么适合我的笔记本？完全被它的理念折服：本地储存、 . md 格式、开源插件、[[我用双向链接|双向链接]]、网状谱系。单是本地储存就好用到我想迁移整个 OneNote。OneNote 那博尔赫斯一样的气质已经完全被 Obsidian 取代。使用它就像使用一个外脑思考。</p>
 <p>本地数据，要文件，不要软件、应用，使得笔记完全属于我自己，富有安全感；这年头，连笔记、网盘服务也开始审查，回归本地才是正道；而且方便迁移，自己决定是否、如何从一个软件换到另一个软件。反向链接和网状谱系，能让笔记自然生长，参考、关联现有笔记，笔记会越来越多。一本《包法利》，配合评传、讲稿、鹦鹉，就能启发出不少新笔记。</p>
 <p>但众所周知，做笔记的目的不是编词典，不是让它成为一部百科全书、一个用于搜索的内容池。那就变成了布瓦尔和佩库歇。我们是要一种用于思考、促进写作的工具，一颗外置大脑，是记忆的延伸、思考的媒介，而不是记忆和思考的对象。</p>
-</div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if("undefined"!=typeof lightGallery) {
-        var options1 = {
-            selector: '.gallery-item'
-        };
-        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1);
-        }</script>
+</div>
     </div>
 
     <div class="post-meta">
@@ -211,10 +252,23 @@
     </div>
     <br>
     
-    <!-- <div class="post-footer-pre-next">
-        <span>上一篇：<a href=""></a></span>
-        <span class="post-footer-pre-next-last-span-right">上一篇：<a href=""></a></span>
-    </div> -->
+    
+        
+            
+    
+            <div class="post-footer-pre-next">
+                
+                    <span>上一篇：<a href='/2022/11/xiang-xiang-di-min-kan-wu.html'>《想象地名私人词典》不完全勘误词典</a></span>
+                
+
+                
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2022/07/da-zhong-yu-le-shang-zhi-jiao.html">大众娱乐上只角</a>
+                    </span>
+                
+            </div>
+    
+        
+    
 
     
         
@@ -237,8 +291,12 @@
 
             
         </span>
+       
     
 </div>
+
+
+
 <!--这是指一条线往下的内容-->
 <div class="footer-last">
     
@@ -283,9 +341,54 @@
 
 
 
-<script src="/js/lightgallery.min.js"></script>
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
 
 
+
+<script src="/js/lightgallery/plugins/lg-thumbnail.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-fullscreen.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-autoplay.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-zoom.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-rotate.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-paper.umd.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+     
+    if (typeof lightGallery !== "undefined") {
+        var options1 = {
+            selector: '.gallery-item',
+            plugins: [lgThumbnail, lgFullscreen, lgAutoplay, lgZoom, lgRotate, lgPager], // 启用插件
+            thumbnail: true,          // 显示缩略图
+            zoom: true,               // 启用缩放功
+            rotate: true,             // 启用旋转功能能
+            autoplay: true,        // 启用自动播放功能
+            fullScreen: true,      // 启用全屏功能
+            pager: false, //页码,
+            zoomFromOrigin: true,   // 从原始位置缩放
+            actualSize: true,       // 启用查看实际大小的功能
+            enableZoomAfter: 300,    // 延迟缩放，确保图片加载完成后可缩放
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1); // 修复选择器
+    }
+    
+</script>
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
 
                 </div>
             

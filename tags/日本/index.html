@@ -13,7 +13,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
     <meta name="description" content="" />
-    <meta name="hexo-theme-A4" content="v1.9.6" />
+    <meta name="hexo-theme-A4" content="v1.9.7" />
     <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
     <title>笼城往事 | Once Upon a Time in SigiL</title>
 
@@ -121,14 +121,26 @@
 
 <div class="header">
     <div class="header-container">
-        <img style="
-        width: 56px;
-        height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/img/favicon.webp" width="10%"></img>
+        <style>
+            .header-img {
+                width: 56px;
+                height: auto;
+                object-fit: cover; /* 保持图片比例 */
+                transition: transform 0.3s ease-in-out; 
+                border-radius: 0; 
+            }
+            
+        </style>
+        <img 
+            alt="^-^" 
+            cache-control="max-age=86400" 
+            class="header-img" 
+            src="/img/favicon.webp" 
+        />
         <div class="header-content">
             <a class="logo" href="/">笼城往事</a> 
             <span class="description"></span> 
         </div>
-        
     </div>
     
    
@@ -181,18 +193,9 @@
   
     
         <li>
-        <span class="archive-date">2024-03-25</span>
-        <div class="archive-main">
-            <a class="archive-title" href="/2024/03/san-ying-sao-mu-ji">三鹰扫墓记</a>
-        </div>
-        </li>
-    
-  
-    
-        <li>
         <span class="archive-date">2016-09-18</span>
         <div class="archive-main">
-            <a class="archive-title" href="/2016/09/mu-zhang-ji">幕张观展记</a>
+            <a class="archive-title" href="/2016/09/mu-zhang-guan-zhan-ji">幕张观展记</a>
         </div>
         </li>
     
@@ -210,7 +213,7 @@
         <li>
         <span class="archive-date">2016-07-31</span>
         <div class="archive-main">
-            <a class="archive-title" href="/2016/07/ji-yi-wei-ri-ben-you-ren">记一位日本友人</a>
+            <a class="archive-title" href="/2016/07/ji-yi-wei-ri-ben-you-ren">日本友人访华记</a>
         </div>
         </li>
     

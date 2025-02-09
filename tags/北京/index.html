@@ -13,7 +13,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
     <meta name="description" content="" />
-    <meta name="hexo-theme-A4" content="v1.9.6" />
+    <meta name="hexo-theme-A4" content="v1.9.7" />
     <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
     <title>笼城往事 | Once Upon a Time in SigiL</title>
 
@@ -121,14 +121,26 @@
 
 <div class="header">
     <div class="header-container">
-        <img style="
-        width: 56px;
-        height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/img/favicon.webp" width="10%"></img>
+        <style>
+            .header-img {
+                width: 56px;
+                height: auto;
+                object-fit: cover; /* 保持图片比例 */
+                transition: transform 0.3s ease-in-out; 
+                border-radius: 0; 
+            }
+            
+        </style>
+        <img 
+            alt="^-^" 
+            cache-control="max-age=86400" 
+            class="header-img" 
+            src="/img/favicon.webp" 
+        />
         <div class="header-content">
             <a class="logo" href="/">笼城往事</a> 
             <span class="description"></span> 
         </div>
-        
     </div>
     
    
@@ -181,27 +193,9 @@
   
     
         <li>
-        <span class="archive-date">2023-04-05</span>
-        <div class="archive-main">
-            <a class="archive-title" href="/2023/04/ba-bao-shan-sao-mu-ji">八宝山扫墓记</a>
-        </div>
-        </li>
-    
-  
-    
-        <li>
         <span class="archive-date">2022-06-25</span>
         <div class="archive-main">
             <a class="archive-title" href="/2022/06/bu-luo-fen-dao-jia-ji">布洛芬到家记</a>
-        </div>
-        </li>
-    
-  
-    
-        <li>
-        <span class="archive-date">2022-01-20</span>
-        <div class="archive-main">
-            <a class="archive-title" href="/2022/01/xia-xue-tian-bao-jing-ji">下雪天报警记</a>
         </div>
         </li>
     
@@ -235,24 +229,6 @@
   
     
         <li>
-        <span class="archive-date">2020-07-25</span>
-        <div class="archive-main">
-            <a class="archive-title" href="/2020/07/ji-mai-bao-xian-de-ren">记卖保险的人</a>
-        </div>
-        </li>
-    
-  
-    
-        <li>
-        <span class="archive-date">2019-10-06</span>
-        <div class="archive-main">
-            <a class="archive-title" href="/2019/10/bai-hu-jian-sao-mu-ji">白虎涧扫墓记</a>
-        </div>
-        </li>
-    
-  
-    
-        <li>
         <span class="archive-date">2019-08-24</span>
         <div class="archive-main">
             <a class="archive-title" href="/2019/08/ling-yang-dai-ti-gou-mai-ji">领养代替购买记</a>
@@ -264,7 +240,7 @@
         <li>
         <span class="archive-date">2019-08-07</span>
         <div class="archive-main">
-            <a class="archive-title" href="/2019/08/wei-gong-cun-sao-mu-ji">魏公村扫墓记</a>
+            <a class="archive-title" href="/2019/08/bei-jing-sao-mu-ji">北京扫墓记</a>
         </div>
         </li>
     
@@ -273,16 +249,7 @@
         <li>
         <span class="archive-date">2016-07-31</span>
         <div class="archive-main">
-            <a class="archive-title" href="/2016/07/ji-yi-wei-ri-ben-you-ren">记一位日本友人</a>
-        </div>
-        </li>
-    
-  
-    
-        <li>
-        <span class="archive-date">2015-06-20</span>
-        <div class="archive-main">
-            <a class="archive-title" href="/2015/06/xiao-xi-tian-qu-jing-ji">小西天取经记</a>
+            <a class="archive-title" href="/2016/07/ji-yi-wei-ri-ben-you-ren">日本友人访华记</a>
         </div>
         </li>
     

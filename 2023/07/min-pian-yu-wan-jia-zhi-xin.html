@@ -13,7 +13,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
     <meta name="description" content="名片与玩家之心" />
-    <meta name="hexo-theme-A4" content="v1.9.6" />
+    <meta name="hexo-theme-A4" content="v1.9.7" />
     <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
     <title>笼城往事 | Once Upon a Time in SigiL</title>
 
@@ -121,14 +121,26 @@
 
 <div class="header">
     <div class="header-container">
-        <img style="
-        width: 56px;
-        height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/img/favicon.webp" width="10%"></img>
+        <style>
+            .header-img {
+                width: 56px;
+                height: auto;
+                object-fit: cover; /* 保持图片比例 */
+                transition: transform 0.3s ease-in-out; 
+                border-radius: 0; 
+            }
+            
+        </style>
+        <img 
+            alt="^-^" 
+            cache-control="max-age=86400" 
+            class="header-img" 
+            src="/img/favicon.webp" 
+        />
         <div class="header-content">
             <a class="logo" href="/">笼城往事</a> 
             <span class="description"></span> 
         </div>
-        
     </div>
     
    
@@ -191,7 +203,7 @@
 
     <div class="post-md">
         
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/hint.css/2.7.0/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><div class=".article-gallery"><p>2005 年 3 月 10 日当地时间 10 点 30 分，旧金山莫斯克尼会议中心，游戏开发者大会，“玩家之心”演讲。几乎是岩田先生最著名的一句话，他用英文讲的：“On my business card, I am a corporate president. In my mind, I am a game developer. But in my heart, I am a gamer. ”。</p>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/hint.css/2.7.0/hint.min.css"><div class=".article-gallery"><p>2005 年 3 月 10 日当地时间 10 点 30 分，旧金山莫斯克尼会议中心，游戏开发者大会，“玩家之心”演讲。几乎是岩田先生最著名的一句话，他用英文讲的：“On my business card, I am a corporate president. In my mind, I am a game developer. But in my heart, I am a gamer. ”。</p>
 <p>我手头有一张王俊博的名片，其他老总的名片我应该是拿不到了。由此联想到更多名片上印着公司董事长、总裁、CEO 的中国游戏人，现在他们不会像当年那样愿意对外说话了。</p>
 <p>我们无从考察他们的头脑和内心，但至少可以从过往言行中，了解他们是否玩游戏、是否对玩家身份有自我认同。这并不是一种道德评估。山内也不玩游戏。玩游戏、做游戏的人，更不见得比不玩游戏的人高尚。只是出于好奇，随手记录。</p>
 <h2 id="智明星通唐彬森"><a href="#智明星通唐彬森" class="headerlink" title="智明星通唐彬森"></a>智明星通唐彬森</h2><p>2021 年 11 月 15 日，《对话元气森林唐彬森：富翁、海盗与产品经理》，晚点 Latepost，作者宋玮、黎诗韵、黄俊杰，编辑黄俊杰。</p>
@@ -281,7 +293,7 @@
                 
 
                 
-                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2023/07/zhi-guan-lie-che-da-shan-ji">智冠列车搭讪记</a>
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2023/06/wo-yong-github-pages">我用GitHub Pages</a>
                     </span>
                 
             </div>

@@ -13,7 +13,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
     <meta name="description" content="" />
-    <meta name="hexo-theme-A4" content="v1.9.6" />
+    <meta name="hexo-theme-A4" content="v1.9.7" />
     <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
     <title>笼城往事 | Once Upon a Time in SigiL</title>
 
@@ -121,14 +121,26 @@
 
 <div class="header">
     <div class="header-container">
-        <img style="
-        width: 56px;
-        height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/img/favicon.webp" width="10%"></img>
+        <style>
+            .header-img {
+                width: 56px;
+                height: auto;
+                object-fit: cover; /* 保持图片比例 */
+                transition: transform 0.3s ease-in-out; 
+                border-radius: 0; 
+            }
+            
+        </style>
+        <img 
+            alt="^-^" 
+            cache-control="max-age=86400" 
+            class="header-img" 
+            src="/img/favicon.webp" 
+        />
         <div class="header-content">
             <a class="logo" href="/">笼城往事</a> 
             <span class="description"></span> 
         </div>
-        
     </div>
     
    
@@ -181,6 +193,15 @@
   
     
         <li>
+        <span class="archive-date">2024-07-29</span>
+        <div class="archive-main">
+            <a class="archive-title" href="/2024/07/zhi-guan-lie-che-da-shan-ji">智冠列车搭讪记</a>
+        </div>
+        </li>
+    
+  
+    
+        <li>
         <span class="archive-date">2024-07-08</span>
         <div class="archive-main">
             <a class="archive-title" href="/2024/07/ren-jian-shi-di-si">人间世第四</a>
@@ -190,36 +211,9 @@
   
     
         <li>
-        <span class="archive-date">2024-03-25</span>
-        <div class="archive-main">
-            <a class="archive-title" href="/2024/03/san-ying-sao-mu-ji">三鹰扫墓记</a>
-        </div>
-        </li>
-    
-  
-    
-        <li>
         <span class="archive-date">2024-02-12</span>
         <div class="archive-main">
             <a class="archive-title" href="/2024/02/wu-lai-shan-sao-mu-ji">吴莱山扫墓记</a>
-        </div>
-        </li>
-    
-  
-    
-        <li>
-        <span class="archive-date">2023-07-29</span>
-        <div class="archive-main">
-            <a class="archive-title" href="/2023/07/zhi-guan-lie-che-da-shan-ji">智冠列车搭讪记</a>
-        </div>
-        </li>
-    
-  
-    
-        <li>
-        <span class="archive-date">2023-04-05</span>
-        <div class="archive-main">
-            <a class="archive-title" href="/2023/04/ba-bao-shan-sao-mu-ji">八宝山扫墓记</a>
         </div>
         </li>
     
@@ -238,15 +232,6 @@
         <span class="archive-date">2022-04-20</span>
         <div class="archive-main">
             <a class="archive-title" href="/2022/04/guan-ha-qi-qi-ji-ji">关哈奇弃疾记</a>
-        </div>
-        </li>
-    
-  
-    
-        <li>
-        <span class="archive-date">2022-01-20</span>
-        <div class="archive-main">
-            <a class="archive-title" href="/2022/01/xia-xue-tian-bao-jing-ji">下雪天报警记</a>
         </div>
         </li>
     
@@ -280,27 +265,18 @@
   
     
         <li>
-        <span class="archive-date">2020-12-01</span>
+        <span class="archive-date">2020-11-23</span>
         <div class="archive-main">
-            <a class="archive-title" href="/2020/12/shi-guang-zhi-xue-ji">时光之穴记</a>
+            <a class="archive-title" href="/2020/11/shi-guang-zhi-xue-ji">时光之穴记</a>
         </div>
         </li>
     
   
     
         <li>
-        <span class="archive-date">2020-07-25</span>
+        <span class="archive-date">2020-06-20</span>
         <div class="archive-main">
-            <a class="archive-title" href="/2020/07/ji-mai-bao-xian-de-ren">记卖保险的人</a>
-        </div>
-        </li>
-    
-  
-    
-        <li>
-        <span class="archive-date">2019-10-06</span>
-        <div class="archive-main">
-            <a class="archive-title" href="/2019/10/bai-hu-jian-sao-mu-ji">白虎涧扫墓记</a>
+            <a class="archive-title" href="/2020/06/xiao-xi-tian-qu-jing-ji">小西天取经记</a>
         </div>
         </li>
     
@@ -318,7 +294,7 @@
         <li>
         <span class="archive-date">2019-08-07</span>
         <div class="archive-main">
-            <a class="archive-title" href="/2019/08/wei-gong-cun-sao-mu-ji">魏公村扫墓记</a>
+            <a class="archive-title" href="/2019/08/bei-jing-sao-mu-ji">北京扫墓记</a>
         </div>
         </li>
     
@@ -354,16 +330,7 @@
         <li>
         <span class="archive-date">2018-08-07</span>
         <div class="archive-main">
-            <a class="archive-title" href="/2018/08/zheng-zi-cheng-cai-fang-ji">郑子诚2018</a>
-        </div>
-        </li>
-    
-  
-    
-        <li>
-        <span class="archive-date">2017-06-15</span>
-        <div class="archive-main">
-            <a class="archive-title" href="/2017/06/wu-han-guan-ying-ji">武汉观影记</a>
+            <a class="archive-title" href="/2018/08/zheng-zi-cheng">郑子诚2018</a>
         </div>
         </li>
     
@@ -372,7 +339,7 @@
         <li>
         <span class="archive-date">2017-05-29</span>
         <div class="archive-main">
-            <a class="archive-title" href="/2017/05/mo-li-niu-cai-fang-ji">魔力牛采访记</a>
+            <a class="archive-title" href="/2017/05/mo-li-niu">魔力牛2017</a>
         </div>
         </li>
     
@@ -381,7 +348,7 @@
         <li>
         <span class="archive-date">2016-09-18</span>
         <div class="archive-main">
-            <a class="archive-title" href="/2016/09/mu-zhang-ji">幕张观展记</a>
+            <a class="archive-title" href="/2016/09/mu-zhang-guan-zhan-ji">幕张观展记</a>
         </div>
         </li>
     
@@ -399,16 +366,7 @@
         <li>
         <span class="archive-date">2016-07-31</span>
         <div class="archive-main">
-            <a class="archive-title" href="/2016/07/ji-yi-wei-ri-ben-you-ren">记一位日本友人</a>
-        </div>
-        </li>
-    
-  
-    
-        <li>
-        <span class="archive-date">2016-01-12</span>
-        <div class="archive-main">
-            <a class="archive-title" href="/2016/01/qi-wu-lun-di-er">齐物论第二</a>
+            <a class="archive-title" href="/2016/07/ji-yi-wei-ri-ben-you-ren">日本友人访华记</a>
         </div>
         </li>
     
@@ -424,27 +382,9 @@
   
     
         <li>
-        <span class="archive-date">2015-06-20</span>
-        <div class="archive-main">
-            <a class="archive-title" href="/2015/06/xiao-xi-tian-qu-jing-ji">小西天取经记</a>
-        </div>
-        </li>
-    
-  
-    
-        <li>
         <span class="archive-date">2012-10-01</span>
         <div class="archive-main">
             <a class="archive-title" href="/2012/10/xiao-yao-you-di-yi">逍遥游第一</a>
-        </div>
-        </li>
-    
-  
-    
-        <li>
-        <span class="archive-date">2012-08-31</span>
-        <div class="archive-main">
-            <a class="archive-title" href="/2012/08/chen-shi-de-huan-zhai-ji">陈士德还债记</a>
         </div>
         </li>
     

@@ -13,7 +13,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
     <meta name="description" content="我用电子书" />
-    <meta name="hexo-theme-A4" content="v1.9.6" />
+    <meta name="hexo-theme-A4" content="v1.9.7" />
     <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
     <title>笼城往事 | Once Upon a Time in SigiL</title>
 
@@ -121,14 +121,26 @@
 
 <div class="header">
     <div class="header-container">
-        <img style="
-        width: 56px;
-        height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/img/favicon.webp" width="10%"></img>
+        <style>
+            .header-img {
+                width: 56px;
+                height: auto;
+                object-fit: cover; /* 保持图片比例 */
+                transition: transform 0.3s ease-in-out; 
+                border-radius: 0; 
+            }
+            
+        </style>
+        <img 
+            alt="^-^" 
+            cache-control="max-age=86400" 
+            class="header-img" 
+            src="/img/favicon.webp" 
+        />
         <div class="header-content">
             <a class="logo" href="/">笼城往事</a> 
             <span class="description"></span> 
         </div>
-        
     </div>
     
    
@@ -191,16 +203,17 @@
 
     <div class="post-md">
         
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/hint.css/2.7.0/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><div class=".article-gallery"><p>2000 年，Kindle 尚未诞生的时候，戈达尔就表达了对电子书的不满。他接受记者采访，谈到胶片和数字的区别，说，数字技术让“时间不复存在”。为了解释他的观点，他从椅子上站起来，从书架上拿起一本书，然后回到桌子前，一边来回翻动书页，一边说，“这就是我所说的时间”。</p>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/hint.css/2.7.0/hint.min.css"><div class=".article-gallery"><p>2000 年，Kindle 尚未诞生的时候，戈达尔就表达了对电子书的不满。他接受记者采访，谈到胶片和数字的区别，说，数字技术让“时间不复存在”。为了解释他的观点，他从椅子上站起来，从书架上拿起一本书，然后回到桌子前，一边来回翻动书页，一边说，“这就是我所说的时间”。</p>
 <p>“对于电子书来说，有这个。”他假装按下桌上的按钮。</p>
 <p>“（对于实体书来说）如果你想往回看，你就这样做。”他翻了几页。</p>
 <p>“用电子书的话，如果你向后退，就会这样做。”他敲了敲桌子。</p>
-<p>他认为这是一个问题。戈达尔问记者，如果你在读 [[1869战争与和平]]，看到了安德烈之死，想回头看一眼奥斯特里茨战役，用电子书该怎么做。记者回答，输入“奥斯特里茨”。</p>
+<p>他认为这是一个问题。戈达尔问记者，如果你在读《战争与和平》，看到了安德烈之死，想回头看一眼奥斯特里茨战役，用电子书该怎么做。记者回答，输入“奥斯特里茨”。</p>
 <p>“输入，你会立刻看到它。首先你必须记住‘奥斯特里茨’（这个词），对吗？如果你只记得一种思想或情感，那就有点模糊了，不是么？但如果你这样做——”他翻动手里的书，“那就完全不同了。你在这里，想找奥斯特里茨，它在那里，所以你这样做，”他再次翻阅，“然后你突然停下来。你看到了别的东西，然后你忘记了奥斯特里茨，你开始读那个别的东西。”</p>
 <p>“但是用这个（电子书），”他又敲了敲桌子，“你不会那样做。这样，整个过去就消失了。有些东西消失了。它是好是坏，我不知道。但在实践中，它是不好的。”</p>
 <p>戈达尔这是指电影实践。“思考少了，时间多了，因此电影就少了。电影越来越少，所有的电影都彼此相似，它们都是这样制作的，”他又敲敲桌子，“所以可能有一些非常漂亮的图像，一些非常漂亮的东西，但是比以前更难拍出好电影了。”</p>
-<p>我用过 Kindle，戈达尔是对的。2015 年 7 月 26 日我买了一台 Kindle Paperwhite 3，在阳光底下看比手机好。但在很多年后，电子书——我指的是 Obsidian 加上插件，不是 Kindle——已经可以通过人工智能语言模型找到“奥斯特里茨”。而在输入这个词后，双向链接也会闯进读者的视野，提供一些分心的机会。电子书减少了一部分时间，又产生新的时间，有信息有行动就会有时间。</p>
-<p>翻阅的确是实体书的先天优势。但要这么说，实体书还有无限优势，小小的书页折角、褶皱，都会带来记忆，有记忆就会有时间。但我觉得这是技术和设计问题，电子书也会带来类似的东西，只是性质不同，关键在于如何使用工具。</p>
+<p>我用过 Kindle，戈达尔是对的。2015 年 7 月 26 日我买了一台 Kindle Paperwhite 3，在阳光底下看比手机好，续航时间很长，但初次之外，我没法什么特别的优点。</p>
+<p>很多年后，电子书——我指的是 Obsidian 加上插件，不是 Kindle——已经可以通过人工智能语言模型找到“奥斯特里茨”。而在输入这个词后，双向链接也会闯进读者的视野，提供一些分心的机会。电子书减少了一部分时间，又产生新的时间，有信息有行动就会有时间。</p>
+<p>翻阅的确是实体书的先天优势。但要这么说，实体书还有无限优势，礼物功能、收藏属性，小小的书页折角、褶皱，都会带来记忆，有记忆就会有时间。但我觉得这是技术和设计问题，电子书也会带来类似的东西，只是性质不同，关键在于如何使用工具。</p>
 <p>我不是很介意实体书或电子书之间的区别，觉得字在哪儿都一样，媒介和形态怎样都无所谓。纸质书和轮子、剪刀一样，发明出来后没有必要改变。电子书不是改变纸质书，它是提供了一种新载体、新选择。而流行的载体迟早会过去，我们阅读自己喜欢的内容就好。</p>
 <p>纸质更方便翻，数字怎么方便谁也都清楚。我认为，电子书最大的问题是手指损伤，由于长期使用手机，关节磨损很快，容易得腱鞘炎。</p>
 <p>价格方面，在中国，正版电子书的价格会便宜许多。西方似乎有所不同，可能和知识产权保护有关。低价对纸质书也有冲击。从结果上看，工作之后，我基本不读实体书，对书籍的命运也不关心，对实体书店的破坏我也有份。但个人阅读量反而高了许多，略高于大学和小学，远高于初中、高中，这终归是电子书的好处。</p>
@@ -218,12 +231,12 @@
                 <span>打上标签:
                     
                     
-                        <a href='/tags/%E7%A7%91%E5%B9%BB/'>
-                            科幻
-                        </a>
-                    
                         <a href='/tags/%E9%BB%91%E6%9B%9C%E7%9F%B3/'>
                             黑曜石
+                        </a>
+                    
+                        <a href='/tags/%E7%A7%91%E5%B9%BB/'>
+                            科幻
                         </a>
                     
                 </span>
@@ -249,7 +262,7 @@
     
             <div class="post-footer-pre-next">
                 
-                    <span>上一篇：<a href='/2023/04/ba-bao-shan-sao-mu-ji'>八宝山扫墓记</a></span>
+                    <span>上一篇：<a href='/2023/06/wo-yong-github-pages'>我用GitHub Pages</a></span>
                 
 
                 

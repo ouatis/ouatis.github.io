@@ -13,7 +13,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
     <meta name="description" content="高尔夫与“直接”" />
-    <meta name="hexo-theme-A4" content="v1.9.6" />
+    <meta name="hexo-theme-A4" content="v1.9.7" />
     <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
     <title>笼城往事 | Once Upon a Time in SigiL</title>
 
@@ -121,14 +121,26 @@
 
 <div class="header">
     <div class="header-container">
-        <img style="
-        width: 56px;
-        height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/img/favicon.webp" width="10%"></img>
+        <style>
+            .header-img {
+                width: 56px;
+                height: auto;
+                object-fit: cover; /* 保持图片比例 */
+                transition: transform 0.3s ease-in-out; 
+                border-radius: 0; 
+            }
+            
+        </style>
+        <img 
+            alt="^-^" 
+            cache-control="max-age=86400" 
+            class="header-img" 
+            src="/img/favicon.webp" 
+        />
         <div class="header-content">
             <a class="logo" href="/">笼城往事</a> 
             <span class="description"></span> 
         </div>
-        
     </div>
     
    
@@ -191,9 +203,11 @@
 
     <div class="post-md">
         
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/hint.css/2.7.0/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><div class=".article-gallery"><p>我第一次玩到正版的红白机，已经是这台机器诞生四十年以后了。第一次玩到《高尔夫》也差不多。这张青绿色的卡带，封面是个大叔模样的背影，1984 年的游戏，我 2024 年才玩到。我小时候玩最多的是《棒球》。</p>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/hint.css/2.7.0/hint.min.css"><div class=".article-gallery"><p>我第一次玩到正版的红白机，已经是这台机器诞生四十年以后了。第一次玩到《高尔夫》也差不多。一张青绿色的卡带，封面是个大叔模样的背影，1984 年的游戏，我 2024 年才玩到。</p>
+<p>我小时候玩最多的是《棒球》。岩田聪的第一个游戏其实是棒球，一个压根没有画面的游戏，他用惠普口袋计算器编程做出来的。当时他还在上高中，是班上第一个买这种计算器的人。札幌不算发达，但他的家庭条件应该不错，父亲是道政府官员，后来成为室兰市市长。</p>
 <p>《高尔夫》的销量有四百万。宫本直接负责角色与游戏设计，外包给哈尔研究所协助开发，程序由 [[岩田聪]] 一人负责。他知道作为外包，游戏卖得好也没法多挣钱，但他想让更多人知道自己的作品。游戏做完，宫本、岩田两个人也还没见过面。</p>
-<p>总而言之，大师作品、市场认可，但我玩下来觉得很无聊。它吊打奥德赛 2 和雅达利 2600 上的高尔夫游戏，不过现在玩已经有点儿过时了。</p>
+<p>岩田在 HAL 研究所工作时期，曾参与《弹珠台》《F1 赛车》《气球大战》以及《星之卡比》《地球冒险》系列部分作品的开发，被誉为“天才程序员”。此外，他还主导了《勇者斗恶龙》针对欧美市场的本地化工作。</p>
+<p>总而言之，大师作品、市场认可。但我玩下来觉得很无聊。它吊打奥德赛 2 和雅达利 2600 上的高尔夫游戏，不过现在玩实在有点儿过时。</p>
 <p>上一次这么关心这款游戏还是在 2017 年 7 月。当时有一个海外玩家，发帖说自己碰上一件怪事。玩思维奇的时候，由于临时有事，他暂离了一段时间。回来时，屏幕上就出现了《高尔夫》。他玩了一会儿，没发现什么异常。时间是夜里，他并没有意识到这件事有多重要，没有截图也没有录像。但此事颇为蹊跷。因为《高尔夫》从来没有登陆过思维奇。</p>
 <p>那个七月的早些时候，有黑客在推特上指出，NS 中存在一个名为“flog”的模拟器。也有黑客发现了一些名为“titleID (nes-emu)”的奇怪文件，像是 NES 模拟器，但不知道究竟是什么。</p>
 <p>随着代码解读的深入，“flog”被证明用于专门模拟一款 FC 游戏，那就是玩家在深夜偶遇的“Golf”，一款支持快乐控体感操作的复刻版《高尔夫》。它从思维奇最初的固件版本 1.0 开始，就一直潜伏在系统中，无法被正常启动，只能够通过越狱代码，以某种“非官方”的方式游戏。</p>
@@ -207,7 +221,7 @@
 <p>直到他们发现真正的“官方”启动办法：想要启动《高尔夫》，两个快乐控手柄都必须从机身上拿下来，同时做出“直接”手势，岩田先生最爱的直面会手势。</p>
 <p>不过，如之前几位黑客所说，“直接”手势只有在每年的 7 月 11 日才会生效。这一时间判定基于网络，如果你的机器联过网，那么哪怕断掉网络，也不能通过自己设置系统时间来作弊。事到如今，除非用崭新的思维奇，不给它联网，才可以伪装成 7 月 11 日，来启动《高尔夫》。不然就得等到明年。</p>
 <p>这不是任天堂游戏机上的第一个秘密。思维奇专业手柄上暗藏着一段来自任天堂的寄语，右摇杆内部印有一行文字——“THX2 ALLGAMEFANS”；迷你 NES&#x2F;FC 中，也藏着任天堂的提醒，以“花札船长”的口吻告诫用户不要擅自修改代码。</p>
-<p>我是在 2017 年 12 月买到自己的思维奇。之后不久，这个彩蛋就被系统更新移除了。现在是 2024 年，距离《高尔夫》发售三十周年。彩蛋是谁加的？移除的决策又是因为什么？任天堂未置一词。或许再也不会有人知道。</p>
+<p>我是在 2017 年 12 月买到自己的思维奇。之后不久，这个彩蛋就被系统更新移除了。现在是 2024 年，距离《高尔夫》发售三十周年。彩蛋是谁加的？移除的决策又是因为什么？任天堂未置一词。或许再也不会有人知道。如果有机会，这是我想问 [[宫本茂]] 的一个问题。</p>
 </div>
     </div>
 
@@ -261,7 +275,7 @@
                 
 
                 
-                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2024/04/wan-fu-lou-yu-fang-zhi-lang">丸福楼与房治郎</a>
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2024/04/wan-fu-yu-shan-nei">丸福楼与房治郎</a>
                     </span>
                 
             </div>

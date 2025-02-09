@@ -13,7 +13,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
     <meta name="description" content="" />
-    <meta name="hexo-theme-A4" content="v1.9.6" />
+    <meta name="hexo-theme-A4" content="v1.9.7" />
     <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
     <title>笼城往事 | Once Upon a Time in SigiL</title>
 
@@ -121,14 +121,26 @@
 
 <div class="header">
     <div class="header-container">
-        <img style="
-        width: 56px;
-        height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/img/favicon.webp" width="10%"></img>
+        <style>
+            .header-img {
+                width: 56px;
+                height: auto;
+                object-fit: cover; /* 保持图片比例 */
+                transition: transform 0.3s ease-in-out; 
+                border-radius: 0; 
+            }
+            
+        </style>
+        <img 
+            alt="^-^" 
+            cache-control="max-age=86400" 
+            class="header-img" 
+            src="/img/favicon.webp" 
+        />
         <div class="header-content">
             <a class="logo" href="/">笼城往事</a> 
             <span class="description"></span> 
         </div>
-        
     </div>
     
    
@@ -193,24 +205,6 @@
         <span class="archive-date">2015-09-23</span>
         <div class="archive-main">
             <a class="archive-title" href="/2015/09/wo-yi-qiu-ri-tian-ye-jian">我译《秋日田野间》</a>
-        </div>
-        </li>
-    
-  
-    
-        <li>
-        <span class="archive-date">2013-01-12</span>
-        <div class="archive-main">
-            <a class="archive-title" href="/2013/01/wo-yi-si-wo-fu-mu">我译《斯沃弗姆的行商》</a>
-        </div>
-        </li>
-    
-  
-    
-        <li>
-        <span class="archive-date">2013-01-11</span>
-        <div class="archive-main">
-            <a class="archive-title" href="/2013/01/wo-yi-zai-ba-ge-da">我译《在巴格达》</a>
         </div>
         </li>
     

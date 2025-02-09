@@ -13,7 +13,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
     <meta name="description" content="我译《秋日田野间》" />
-    <meta name="hexo-theme-A4" content="v1.9.6" />
+    <meta name="hexo-theme-A4" content="v1.9.7" />
     <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
     <title>笼城往事 | Once Upon a Time in SigiL</title>
 
@@ -121,14 +121,26 @@
 
 <div class="header">
     <div class="header-container">
-        <img style="
-        width: 56px;
-        height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/img/favicon.webp" width="10%"></img>
+        <style>
+            .header-img {
+                width: 56px;
+                height: auto;
+                object-fit: cover; /* 保持图片比例 */
+                transition: transform 0.3s ease-in-out; 
+                border-radius: 0; 
+            }
+            
+        </style>
+        <img 
+            alt="^-^" 
+            cache-control="max-age=86400" 
+            class="header-img" 
+            src="/img/favicon.webp" 
+        />
         <div class="header-content">
             <a class="logo" href="/">笼城往事</a> 
             <span class="description"></span> 
         </div>
-        
     </div>
     
    
@@ -191,9 +203,10 @@
 
     <div class="post-md">
         
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/hint.css/2.7.0/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><div class=".article-gallery"><p>久保田外教做游戏，拿出“[[小仓百人一首]]”的歌牌，每人抽一张。我抽到了一百首中的第一首，作者是飞鸟白凤时代的天智天皇，曾经的中大兄皇子，乙巳之变、大化改新、白江口之战，都是他的手笔。百人一首第二首作者又是他的女儿持统，父女二重唱，开了百人一首的头。</p>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/hint.css/2.7.0/hint.min.css"><div class=".article-gallery"><p>久保田外教做游戏，拿出“百人一首”的歌牌，每人抽一张。我抽到了一百首中的第一首，作者是飞鸟白凤时代的天智天皇，曾经的中大兄皇子，乙巳之变、大化改新、白江口之战，都是他的手笔，一代人杰。百人一首第二首作者又是他的女儿持统，父女二重唱，开了一百首的头。</p>
+<p>百人一首的编者藤原定家，从属于藤原氏。藤原氏祖先中臣镰足，正是天智的左膀右臂。天智执政多年，和镰足一起忍而不发。镰足在天智天皇继位后一年就去世。死前一日，受赐大织冠最高冠位，改姓藤原，称藤原朝臣镰足。日本最大的神官家族就此产生，最终引发了统治日本两百余年的摄关政治。镰足死后三年，天智也去世，实际在位四年，年仅四十六岁。</p>
 <p>我对这种百里挑一的“占卜游戏”总是印象深刻。到现在也清楚地记得，用 3DS 扫描我的微信二维码，出现的是罗丝雷朵。</p>
-<p>天智一首被编者藤原定家视作“幽玄体”的一例。那么我来进行一个打油体的译法，五七五七七地意译。</p>
+<p>天智一首被定家视作“幽玄体”的一例。那么我来进行一个打油体的译法，五七五七七地意译。</p>
 <h2 id="原诗（音声-用字）"><a href="#原诗（音声-用字）" class="headerlink" title="原诗（音声&#x2F;用字）"></a>原诗（音声&#x2F;用字）</h2><p>秋（あき）の田（た）の<br>かりほ（仮庵）の庵（いほ）の<br>苫（とま）をあらみ（荒み）<br>わが衣手（ころもで）は<br>露（つゆ）にぬれつつ</p>
 <h2 id="直译与注释"><a href="#直译与注释" class="headerlink" title="直译与注释"></a>直译与注释</h2><p>秋天的田里的 <sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="「あきの」为歌牌决定字。
 ">[1]</span></a></sup><br>临时茅屋的临时茅屋的 <sup id="fnref:2"><a href="#fn:2" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="「仮庵の庵」，重复同义词调整音调，同时用四个「の」形成韵律。
@@ -230,8 +243,8 @@
                 <span>归为分类:
                     
                     
-                        <a href='/categories/%E7%8C%9B%E7%83%88%E6%99%BA%E6%85%A7%E6%AC%B2%E6%9C%9B%E5%A6%93%E9%99%A2/'>
-                            猛烈智慧欲望妓院
+                        <a href='/categories/%E7%BC%AE%E5%86%99%E7%9B%92/'>
+                            缮写盒
                         </a>
                     
                 </span>
@@ -247,7 +260,7 @@
     
             <div class="post-footer-pre-next">
                 
-                    <span>上一篇：<a href='/2015/12/fu-lou-bai-de-shi-jiu-shi-ji'>福楼拜的十九世纪</a></span>
+                    <span>上一篇：<a href='/2015/12/ai-ma-de-li-wu'>艾玛的礼物</a></span>
                 
 
                 

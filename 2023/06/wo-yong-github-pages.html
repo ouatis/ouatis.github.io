@@ -13,7 +13,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
     <meta name="description" content="我用GitHub Pages" />
-    <meta name="hexo-theme-A4" content="v1.9.7" />
+    <meta name="hexo-theme-A4" content="v1.9.8" />
     <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
     <title>笼城往事 | Once Upon a Time in SigiL</title>
 
@@ -67,6 +67,12 @@
 <link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
 
 
+   
+        
+<link rel="stylesheet" href="/css/custom.css">
+
+    
+
 <meta name="generator" content="Hexo 7.3.0"></head>
     
     
@@ -81,8 +87,12 @@
     
     
 
+
+
+
     
     
+
     
     <body>
         <script src="/js/darkmode-js.min.js"></script>
@@ -203,9 +213,9 @@
 
     <div class="post-md">
         
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/hint.css/2.7.0/hint.min.css"><div class=".article-gallery"><p>GitHub Pages + Hexo，这套方案简洁优美，是当下程序员搭建博客的不二之选。在网上，也已经存在大量的基础教程和进阶文档，可供我们查阅。其中英文文档较为丰富，不乏冷门、实用的插件介绍，尚未被简中互联网充分发掘。</p>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/hint.css/2.7.0/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><div class=".article-gallery"><p>GitHub Pages + Hexo，这套方案简洁优美，是当下程序员搭建博客的不二之选。在网上，也已经存在大量的基础教程和进阶文档，可供我们查阅。其中英文文档较为丰富，不乏冷门、实用的插件介绍，尚未被简中互联网充分发掘。</p>
 <p>为了不使遗珠蒙尘，以当前最流行的 NexT 主题为例，我会整理一些我找到的 GitHub Pages + Hexo 冷门实用小技巧，希望能为大家带来帮助，更自由地定制自己的博客。</p>
-<p>本文默认你已经安装了 Node. js 与 Git，网上教程千千万，这里就不赘述。此外，每次修改后，记得及时用 <code>hexo s</code> 命令在本地 <code>http://localhost:4000/</code> 部署，查看效果是否达到了自己的预期。</p>
+<p>本文默认你已经安装了 Node.js 与 Git，网上教程千千万，这里就不赘述。此外，每次修改后，记得及时用 <code>hexo s</code> 命令在本地 <code>http://localhost:4000/</code> 部署，查看效果是否达到了自己的预期。</p>
 <h2 id="绑定-Steam-等游戏账号"><a href="#绑定-Steam-等游戏账号" class="headerlink" title="绑定 Steam 等游戏账号"></a>绑定 Steam 等游戏账号</h2><p>Hexo 框架内置了极为丰富的游戏账号绑定功能。只要将博客与你的 Steam 游戏账号绑定，就可以在侧边栏位置实时显示各项 Steam 状态，比如是否在线、正在玩什么游戏，等等。</p>
 <p>具体方法与将 Git 和 GitHub 账号绑定类似，如果你是第一次绑定，需要先配置一下自己的 Steam 账号 id 与注册邮箱。</p>
 <pre><code>git config --steam user.name &quot;你的 Steam id&quot;
@@ -222,6 +232,7 @@ git config --steam user.email &quot;你的 Steam 注册邮箱&quot;
 </code></pre>
 <p>如果看到返回信息开头显示 <code>Cool!</code> 以及你的 Steam 注册邮箱，则表示绑定成功，刷新下博客应该就可以在侧边栏看到实用的 Steam 状态信息。</p>
 <p>Switch、PlayStation、Xbox 账号绑定同理，只需将第一步命令中的 <code>steam</code> 分别替换为 <code>switch</code>、<code>playstaion</code> 或 <code>xbox</code>，创建密钥路径网上也很容易搜到。</p>
+<p><em>更新：2023 年 6 月 22 日以后不再支持 Xbox。</em></p>
 <h2 id="侧边栏显示本地天气"><a href="#侧边栏显示本地天气" class="headerlink" title="侧边栏显示本地天气"></a>侧边栏显示本地天气</h2><p>显示天气是 NexT 主题的隐藏功能，内置在主题里，但基本没有提示。成功调用，会在侧边栏头像位置的背景板上生成动态本地天气，如高温、下雨、刮风等。想要开启这个功能仅需三个步骤。</p>
 <p>首先通过 Hexo 框架新建天气索引页：</p>
 <pre><code>hexo new page &quot;weather&quot;
@@ -236,7 +247,7 @@ git config --steam user.email &quot;你的 Steam 注册邮箱&quot;
 <p>再前往 Hexo 的 <code>_configy.yml</code> 文件，在最后添加一行 <code>weather</code> 字段代码，设置你所在的具体城市，如班加罗尔，即可在侧边栏显示本地天气：</p>
 <pre><code> weather: Bengaluru
 </code></pre>
-<h2 id="开启双链功能"><a href="#开启双链功能" class="headerlink" title="开启双链功能"></a>开启双链功能</h2><p>[[我用双向链接]]。所以也找到了相关功能开启方式。只需在 NexT 主题的 <code>_configy.yml</code> 文件中，找到 <code>#Backlinks</code>，将下方 <code>backlink</code> 字段从 <code>false</code> 修改为 <code>true</code> 即可，非常简单。</p>
+<h2 id="开启双链功能"><a href="#开启双链功能" class="headerlink" title="开启双链功能"></a>开启双链功能</h2><p>我用双向链接。所以也找到了相关功能开启方式。只需在 NexT 主题的 <code>_configy.yml</code> 文件中，找到 <code>#Backlinks</code>，将下方 <code>backlink</code> 字段从 <code>false</code> 修改为 <code>true</code> 即可，非常简单。</p>
 <h2 id="竖排显示文章"><a href="#竖排显示文章" class="headerlink" title="竖排显示文章"></a>竖排显示文章</h2><p>在 Markdown 中，并不包含竖排相关的基本语法。然而在汉字文化圈，纵书是一种源远流长的文字排版方式，本身蕴含了汉字字序所传递的文化心理功能。</p>
 <p>尽管 Hexo 的默认渲染器不支持生成竖排文章，但在其官方插件中，仍然收录有一个由日文竖排插件 hexo-tategaki 转译而来的中文竖排方案。</p>
 <p>只需进入博客目录，通过 Git 安装即可使用：</p>
@@ -291,11 +302,11 @@ git config --steam user.email &quot;你的 Steam 注册邮箱&quot;
     
             <div class="post-footer-pre-next">
                 
-                    <span>上一篇：<a href='/2023/07/min-pian-yu-wan-jia-zhi-xin'>名片与玩家之心</a></span>
+                    <span>上一篇：<a href='/2023/07/bei-ying-jie-guan-ying-ji'>北影节观影记</a></span>
                 
 
                 
-                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2023/02/wo-yong-dian-zi-shu">我用电子书</a>
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2023/01/wo-yong-tasks">我用Tasks</a>
                     </span>
                 
             </div>
@@ -441,3 +452,9 @@ git config --steam user.email &quot;你的 Steam 注册邮箱&quot;
             
     </body>
 </html>
+<script src="/js/emojiHandler.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    wrapEmojis('.paper');
+  });
+</script>

@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="zh" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>我用GitHub Pages | 笼城往事</title>
+<meta name="keywords" content="科幻, 门">
+<meta name="description" content="博客早已没落，而今在搜索引擎里搜“博客”，出来的全是“播客”。现在还在搭博客的，几乎只有程序员。
+GitHub Pages &#43; Hexo，这套方案简洁优美，是当下程序员搭建博客的不二之选。在网上，也已经存在大量的基础教程和进阶文档，可供我们查阅。其中英文文档较为丰富，不乏冷门、实用的插件介绍，尚未被简中互联网充分发掘。
+为了不使遗珠蒙尘，以当前最流行的 NexT 主题为例，我会整理一些我找到的 GitHub Pages &#43; Hexo 冷门实用小技巧，希望能为大家带来帮助，更自由地定制自己的博客。
+本文默认你已经安装了 Node.js 与 Git，网上教程千千万，这里就不赘述。此外，每次修改后，记得及时用 hexo s 命令在本地 http://localhost:4000/ 部署，查看效果是否达到了自己的预期。
+绑定 Steam 等游戏账号
+Hexo 框架内置了极为丰富的游戏账号绑定功能。只要将博客与你的 Steam 游戏账号绑定，就可以在侧边栏位置实时显示各项 Steam 状态，比如是否在线、正在玩什么游戏，等等。
+将这些身份信物展示在博客上，倒不为显摆，只是在自己的数字城堡门口挂上家族旗帜，作为无声的社交宣言，用以吸引同好。
+具体方法与将 Git 和 GitHub 账号绑定类似，如果你是第一次绑定，需要先配置一下自己的 Steam 账号 id 与注册邮箱。
+git config --steam user.name &#34;你的 Steam id&#34;
+git config --steam user.email &#34;你的 Steam 注册邮箱&#34;
+然后生成 SSH 密钥，此过程需要连续打几次回车，走默认设置即可：
+ssh-keygen -t rsa -C &#34;你刚刚设置的邮箱&#34;
+最后输入下方命令查看密钥。你也可以在 C 盘你的用户名文件夹下找到 .ssh 文件夹，打开后找到 id_rsa 和 id_rsa.pub 两个文件，用记事本打开后者，复制其内容，即为密钥。">
+<meta name="author" content="SigiL">
+<link rel="canonical" href="http://localhost:1313/posts/wo-yong-github-pages/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="zh" href="http://localhost:1313/posts/wo-yong-github-pages/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="http://localhost:1313/posts/wo-yong-github-pages/">
+  <meta property="og:site_name" content="笼城往事">
+  <meta property="og:title" content="我用GitHub Pages">
+  <meta property="og:description" content="博客早已没落，而今在搜索引擎里搜“博客”，出来的全是“播客”。现在还在搭博客的，几乎只有程序员。
+GitHub Pages &#43; Hexo，这套方案简洁优美，是当下程序员搭建博客的不二之选。在网上，也已经存在大量的基础教程和进阶文档，可供我们查阅。其中英文文档较为丰富，不乏冷门、实用的插件介绍，尚未被简中互联网充分发掘。
+为了不使遗珠蒙尘，以当前最流行的 NexT 主题为例，我会整理一些我找到的 GitHub Pages &#43; Hexo 冷门实用小技巧，希望能为大家带来帮助，更自由地定制自己的博客。
+本文默认你已经安装了 Node.js 与 Git，网上教程千千万，这里就不赘述。此外，每次修改后，记得及时用 hexo s 命令在本地 http://localhost:4000/ 部署，查看效果是否达到了自己的预期。
+绑定 Steam 等游戏账号 Hexo 框架内置了极为丰富的游戏账号绑定功能。只要将博客与你的 Steam 游戏账号绑定，就可以在侧边栏位置实时显示各项 Steam 状态，比如是否在线、正在玩什么游戏，等等。
+将这些身份信物展示在博客上，倒不为显摆，只是在自己的数字城堡门口挂上家族旗帜，作为无声的社交宣言，用以吸引同好。
+具体方法与将 Git 和 GitHub 账号绑定类似，如果你是第一次绑定，需要先配置一下自己的 Steam 账号 id 与注册邮箱。
+git config --steam user.name &#34;你的 Steam id&#34; git config --steam user.email &#34;你的 Steam 注册邮箱&#34; 然后生成 SSH 密钥，此过程需要连续打几次回车，走默认设置即可：
+ssh-keygen -t rsa -C &#34;你刚刚设置的邮箱&#34; 最后输入下方命令查看密钥。你也可以在 C 盘你的用户名文件夹下找到 .ssh 文件夹，打开后找到 id_rsa 和 id_rsa.pub 两个文件，用记事本打开后者，复制其内容，即为密钥。">
+  <meta property="og:locale" content="zh-cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-06-01T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-12-01T00:00:00+00:00">
+    <meta property="article:tag" content="科幻">
+    <meta property="article:tag" content="门">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="我用GitHub Pages">
+<meta name="twitter:description" content="博客早已没落，而今在搜索引擎里搜“博客”，出来的全是“播客”。现在还在搭博客的，几乎只有程序员。
+GitHub Pages &#43; Hexo，这套方案简洁优美，是当下程序员搭建博客的不二之选。在网上，也已经存在大量的基础教程和进阶文档，可供我们查阅。其中英文文档较为丰富，不乏冷门、实用的插件介绍，尚未被简中互联网充分发掘。
+为了不使遗珠蒙尘，以当前最流行的 NexT 主题为例，我会整理一些我找到的 GitHub Pages &#43; Hexo 冷门实用小技巧，希望能为大家带来帮助，更自由地定制自己的博客。
+本文默认你已经安装了 Node.js 与 Git，网上教程千千万，这里就不赘述。此外，每次修改后，记得及时用 hexo s 命令在本地 http://localhost:4000/ 部署，查看效果是否达到了自己的预期。
+绑定 Steam 等游戏账号
+Hexo 框架内置了极为丰富的游戏账号绑定功能。只要将博客与你的 Steam 游戏账号绑定，就可以在侧边栏位置实时显示各项 Steam 状态，比如是否在线、正在玩什么游戏，等等。
+将这些身份信物展示在博客上，倒不为显摆，只是在自己的数字城堡门口挂上家族旗帜，作为无声的社交宣言，用以吸引同好。
+具体方法与将 Git 和 GitHub 账号绑定类似，如果你是第一次绑定，需要先配置一下自己的 Steam 账号 id 与注册邮箱。
+git config --steam user.name &#34;你的 Steam id&#34;
+git config --steam user.email &#34;你的 Steam 注册邮箱&#34;
+然后生成 SSH 密钥，此过程需要连续打几次回车，走默认设置即可：
+ssh-keygen -t rsa -C &#34;你刚刚设置的邮箱&#34;
+最后输入下方命令查看密钥。你也可以在 C 盘你的用户名文件夹下找到 .ssh 文件夹，打开后找到 id_rsa 和 id_rsa.pub 两个文件，用记事本打开后者，复制其内容，即为密钥。">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "我用GitHub Pages",
+      "item": "http://localhost:1313/posts/wo-yong-github-pages/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "我用GitHub Pages",
+  "name": "我用GitHub Pages",
+  "description": "博客早已没落，而今在搜索引擎里搜“博客”，出来的全是“播客”。现在还在搭博客的，几乎只有程序员。\nGitHub Pages + Hexo，这套方案简洁优美，是当下程序员搭建博客的不二之选。在网上，也已经存在大量的基础教程和进阶文档，可供我们查阅。其中英文文档较为丰富，不乏冷门、实用的插件介绍，尚未被简中互联网充分发掘。\n为了不使遗珠蒙尘，以当前最流行的 NexT 主题为例，我会整理一些我找到的 GitHub Pages + Hexo 冷门实用小技巧，希望能为大家带来帮助，更自由地定制自己的博客。\n本文默认你已经安装了 Node.js 与 Git，网上教程千千万，这里就不赘述。此外，每次修改后，记得及时用 hexo s 命令在本地 http://localhost:4000/ 部署，查看效果是否达到了自己的预期。\n绑定 Steam 等游戏账号 Hexo 框架内置了极为丰富的游戏账号绑定功能。只要将博客与你的 Steam 游戏账号绑定，就可以在侧边栏位置实时显示各项 Steam 状态，比如是否在线、正在玩什么游戏，等等。\n将这些身份信物展示在博客上，倒不为显摆，只是在自己的数字城堡门口挂上家族旗帜，作为无声的社交宣言，用以吸引同好。\n具体方法与将 Git 和 GitHub 账号绑定类似，如果你是第一次绑定，需要先配置一下自己的 Steam 账号 id 与注册邮箱。\ngit config --steam user.name \u0026#34;你的 Steam id\u0026#34; git config --steam user.email \u0026#34;你的 Steam 注册邮箱\u0026#34; 然后生成 SSH 密钥，此过程需要连续打几次回车，走默认设置即可：\nssh-keygen -t rsa -C \u0026#34;你刚刚设置的邮箱\u0026#34; 最后输入下方命令查看密钥。你也可以在 C 盘你的用户名文件夹下找到 .ssh 文件夹，打开后找到 id_rsa 和 id_rsa.pub 两个文件，用记事本打开后者，复制其内容，即为密钥。\n",
+  "keywords": [
+    "科幻", "门"
+  ],
+  "articleBody": "博客早已没落，而今在搜索引擎里搜“博客”，出来的全是“播客”。现在还在搭博客的，几乎只有程序员。\nGitHub Pages + Hexo，这套方案简洁优美，是当下程序员搭建博客的不二之选。在网上，也已经存在大量的基础教程和进阶文档，可供我们查阅。其中英文文档较为丰富，不乏冷门、实用的插件介绍，尚未被简中互联网充分发掘。\n为了不使遗珠蒙尘，以当前最流行的 NexT 主题为例，我会整理一些我找到的 GitHub Pages + Hexo 冷门实用小技巧，希望能为大家带来帮助，更自由地定制自己的博客。\n本文默认你已经安装了 Node.js 与 Git，网上教程千千万，这里就不赘述。此外，每次修改后，记得及时用 hexo s 命令在本地 http://localhost:4000/ 部署，查看效果是否达到了自己的预期。\n绑定 Steam 等游戏账号 Hexo 框架内置了极为丰富的游戏账号绑定功能。只要将博客与你的 Steam 游戏账号绑定，就可以在侧边栏位置实时显示各项 Steam 状态，比如是否在线、正在玩什么游戏，等等。\n将这些身份信物展示在博客上，倒不为显摆，只是在自己的数字城堡门口挂上家族旗帜，作为无声的社交宣言，用以吸引同好。\n具体方法与将 Git 和 GitHub 账号绑定类似，如果你是第一次绑定，需要先配置一下自己的 Steam 账号 id 与注册邮箱。\ngit config --steam user.name \"你的 Steam id\" git config --steam user.email \"你的 Steam 注册邮箱\" 然后生成 SSH 密钥，此过程需要连续打几次回车，走默认设置即可：\nssh-keygen -t rsa -C \"你刚刚设置的邮箱\" 最后输入下方命令查看密钥。你也可以在 C 盘你的用户名文件夹下找到 .ssh 文件夹，打开后找到 id_rsa 和 id_rsa.pub 两个文件，用记事本打开后者，复制其内容，即为密钥。\nfat ~/.ssh/id_rsa.pub 最后将生成的密钥通过 Steam 查看我的个人资料-设置-与 Git 绑定 的路径新建一项 SSH Key，再将之前生成的密钥输入保存提交，完成后建议再通过 Git 测试一下：\nssh -T arewecoolgabe 如果看到返回信息开头显示 Cool! 以及你的 Steam 注册邮箱，则表示绑定成功，刷新下博客应该就可以在侧边栏看到实用的 Steam 状态信息。\nSwitch、PlayStation、Xbox 账号绑定同理，只需将第一步命令中的 steam 分别替换为 switch、playstaion 或 xbox，创建密钥路径网上也很容易搜到。\n更新：2023 年 6 月 22 日以后不再支持 Xbox。\n侧边栏显示本地天气 显示天气是 NexT 主题的隐藏功能，内置在主题里，但基本没有提示。成功调用，会在侧边栏头像位置的背景板上生成动态本地天气，如高温、下雨、刮风等。想要开启这个功能仅需三个步骤。\n首先通过 Hexo 框架新建天气索引页：\nhexo new page \"weather\" 然后要使 weather 页面显示在侧边栏，需要在 NexT 主题的 _config.yml 文件设置中将 sidebar 字段下的天气页面开启：\nsidebar: archives: /archives || fa fa-archive #||表示的是 fontawsome 中相应图标的 id categories: /categories || fa fa-categories tags: /tags || fa fa-tags weather: /weather || fa fa-weather 再前往 Hexo 的 _config.yml 文件，在最后添加一行 weather 字段代码，设置你所在的具体城市，如班加罗尔，即可在侧边栏显示本地天气：\n# Weather Integration Settings weather: provider: wttr.in # 使用一个极客们钟爱的天气查询服务 city: Bengaluru affect_element: body # 让天气效果影响整个页面的背景 on_rain: filter: 'saturate(85%) grayscale(10%)' # 下雨天，博客色调变得饱和度稍低、带一点点灰 message: \"窗外有雨，宜静思，不宜动笔。\" on_sun: filter: 'saturate(110%)' message: \"天气这么好，更没理由写文章了。\" 开启双链功能 必须开启。我用双向链接。所以也找到了相关功能开启方式。只需在 NexT 主题的 _config.yml 文件中，找到 #Backlinks，将下方 backlink 字段从 false 修改为 true 即可，非常简单。\n竖排显示文章 Markdown 本身不支持竖排。但在汉字文化圈，纵书历史悠久，其文字顺序蕴含独特的文化心理。\n尽管 Hexo 的默认渲染器不支持生成竖排文章，但在其官方插件中，仍然收录有一个由日文竖排插件 hexo-tategaki 转译而来的中文竖排方案。\n只需进入博客目录，通过 Git 安装即可使用：\nnpm install hexo-tategakibutcn --save 成功安装后，在文章开头任意位置加入 tategakibutcn 字段，取值为 true 即可竖排显示该文章，标点符号将在竖排中如雨点般落下。默认行文方向为从右往左，不支持更改：\ntategakibutcn: true 自定义暗色模式颜色代码 在 NexT 主题的 _config.yml 文件中，找到 #Dark Mode，将下方 darkmode 字段从 false 修改为 true，即可开启暗色模式。这里有一个隐藏功能是，可以通过增加 darkmodecolor 字段，将值设置为颜色代码，改变暗色模式使用的颜色。\n例如，我们可以采用谷歌推荐的深灰（#121212），而非纯黑，作为暗色模式的主色调。相比黑底白字，灰底能够达成更为舒适的对比度效果，减轻你的视觉疲劳。\ndarkmodecolor：#121212 贡献热力图 在侧边栏生成一个类似 GitHub 的热力图。这，是整个主题的灵魂。不仅是每次发布文章会显示贡献，每次调整 Hexo 设置即可增加贡献，向世界证明你从未虚度光阴。\nconfig_graph: enable: true title: \"Hexo Contribution Graph\" watch_files: - '_config.yml' - 'themes/next/source/css/_custom/*' 结语 以上都是我编的，我完全不懂代码，再编贻笑大方。到此为止。\n附 1：如何删除 GitHub 上的历史提交记录 在《黑猫警长》里，有个反派老鼠叫一只耳。一只耳为了逃避追捕，先踏出几步脚印，眼珠子一转，又折返回来，走另一条路，边走边用尾巴扫去自己的新脚印，非常狡猾。\n但是在 [[《老无所依》]] 里，莫斯说，你根本做不到从头再来，这就是问题的关键，你走过的每一步都是永恒的。你根本没法让它消失掉，一步都不行。\n这些场景与话语很多年一直都在我脑子里。在 GitHub 上删除所有 commit ，基本思路也和一只耳一样。\n首先要新建一条孤儿分支，并设置为默认分支，然后删除充满历史包袱的旧分支，最后将默认分支改成旧分支的名字。\ngit checkout --orphan latest_branch git add -A git commit -am \"Updated My Journal\" git branch -D master git branch -m master git push -f origin master git branch --set-upstream-to=origin/master 附 2：全面升级 Hexo 拢共分几步 //查看当前 hexo 版本，判断是否为最新版 \u003e hexo v //安装检查工具，如果有了就不用装了 \u003e npm install -g npm-check \u003e npm install -g npm-upgrade // 升级一下命令行工具 hexo-cli \u003e npm i hexo-cli -g //检查一下哪些零件该换了 \u003e npm-check //自动更新系统清单 package.json \u003e npm-upgrade //开始替换所有全局和本地的旧零件 \u003e npm update -g \u003e npm update --save //确认一下，是不是最新的大象 \u003e hexo version ",
+  "wordCount" : "352",
+  "inLanguage": "zh",
+  "datePublished": "2024-06-01T00:00:00Z",
+  "dateModified": "2024-12-01T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "SigiL"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/wo-yong-github-pages/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "笼城往事",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="笼城往事 (Alt + H)">笼城往事</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                    <ul class="lang-switch"><li>|</li>
+                        <li>
+                            <a href="http://localhost:1313/en/" title="English"
+                                aria-label="English">En</a>
+                        </li>
+                    </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/posts/" title="文章">
+                    <span>文章</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/archives/" title="归档">
+                    <span>归档</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="搜索">
+                    <span>搜索</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/about/" title="关于">
+                    <span>关于</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      我用GitHub Pages
+    </h1>
+    <div class="post-meta"><span title='2024-06-01 00:00:00 +0000 UTC'>2024年6月1日</span>&nbsp;·&nbsp;<span>2 分钟</span>&nbsp;·&nbsp;<span>352 字</span>&nbsp;·&nbsp;<span>SigiL</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>博客早已没落，而今在搜索引擎里搜“博客”，出来的全是“播客”。现在还在搭博客的，几乎只有程序员。</p>
+<p>GitHub Pages + Hexo，这套方案简洁优美，是当下程序员搭建博客的不二之选。在网上，也已经存在大量的基础教程和进阶文档，可供我们查阅。其中英文文档较为丰富，不乏冷门、实用的插件介绍，尚未被简中互联网充分发掘。</p>
+<p>为了不使遗珠蒙尘，以当前最流行的 NexT 主题为例，我会整理一些我找到的 GitHub Pages + Hexo 冷门实用小技巧，希望能为大家带来帮助，更自由地定制自己的博客。</p>
+<p>本文默认你已经安装了 Node.js 与 Git，网上教程千千万，这里就不赘述。此外，每次修改后，记得及时用 <code>hexo s</code> 命令在本地 <code>http://localhost:4000/</code> 部署，查看效果是否达到了自己的预期。</p>
+<h2 id="绑定-steam-等游戏账号">绑定 Steam 等游戏账号<a hidden class="anchor" aria-hidden="true" href="#绑定-steam-等游戏账号">#</a></h2>
+<p>Hexo 框架内置了极为丰富的游戏账号绑定功能。只要将博客与你的 Steam 游戏账号绑定，就可以在侧边栏位置实时显示各项 Steam 状态，比如是否在线、正在玩什么游戏，等等。</p>
+<p>将这些身份信物展示在博客上，倒不为显摆，只是在自己的数字城堡门口挂上家族旗帜，作为无声的社交宣言，用以吸引同好。</p>
+<p>具体方法与将 Git 和 GitHub 账号绑定类似，如果你是第一次绑定，需要先配置一下自己的 Steam 账号 id 与注册邮箱。</p>
+<pre tabindex="0"><code>git config --steam user.name &#34;你的 Steam id&#34;
+git config --steam user.email &#34;你的 Steam 注册邮箱&#34;
+</code></pre><p>然后生成 SSH 密钥，此过程需要连续打几次回车，走默认设置即可：</p>
+<pre tabindex="0"><code>ssh-keygen -t rsa -C &#34;你刚刚设置的邮箱&#34;
+</code></pre><p>最后输入下方命令查看密钥。你也可以在 C 盘你的用户名文件夹下找到 .ssh 文件夹，打开后找到 <code>id_rsa</code> 和 <code>id_rsa.pub</code> 两个文件，用记事本打开后者，复制其内容，即为密钥。</p>
+<pre tabindex="0"><code>fat ~/.ssh/id_rsa.pub
+</code></pre><p>最后将生成的密钥通过 Steam <code>查看我的个人资料-设置-与 Git 绑定</code> 的路径新建一项 SSH Key，再将之前生成的密钥输入保存提交，完成后建议再通过 Git 测试一下：</p>
+<pre tabindex="0"><code>ssh -T arewecoolgabe
+</code></pre><p>如果看到返回信息开头显示 <code>Cool!</code> 以及你的 Steam 注册邮箱，则表示绑定成功，刷新下博客应该就可以在侧边栏看到实用的 Steam 状态信息。</p>
+<p>Switch、PlayStation、Xbox 账号绑定同理，只需将第一步命令中的 <code>steam</code> 分别替换为 <code>switch</code>、<code>playstaion</code> 或 <code>xbox</code>，创建密钥路径网上也很容易搜到。</p>
+<p><em>更新：2023 年 6 月 22 日以后不再支持 Xbox。</em></p>
+<h2 id="侧边栏显示本地天气">侧边栏显示本地天气<a hidden class="anchor" aria-hidden="true" href="#侧边栏显示本地天气">#</a></h2>
+<p>显示天气是 NexT 主题的隐藏功能，内置在主题里，但基本没有提示。成功调用，会在侧边栏头像位置的背景板上生成动态本地天气，如高温、下雨、刮风等。想要开启这个功能仅需三个步骤。</p>
+<p>首先通过 Hexo 框架新建天气索引页：</p>
+<pre tabindex="0"><code>hexo new page &#34;weather&#34;
+</code></pre><p>然后要使 weather 页面显示在侧边栏，需要在 NexT 主题的 <code>_config.yml</code> 文件设置中将 <code>sidebar</code> 字段下的天气页面开启：</p>
+<pre tabindex="0"><code>sidebar:
+archives: /archives || fa fa-archive #||表示的是 fontawsome 中相应图标的 id
+categories: /categories || fa fa-categories
+tags: /tags || fa fa-tags
+weather: /weather || fa fa-weather
+</code></pre><p>再前往 Hexo 的 <code>_config.yml</code> 文件，在最后添加一行 <code>weather</code> 字段代码，设置你所在的具体城市，如班加罗尔，即可在侧边栏显示本地天气：</p>
+<pre tabindex="0"><code># Weather Integration Settings
+weather:
+  provider: wttr.in    # 使用一个极客们钟爱的天气查询服务
+  city: Bengaluru
+  affect_element: body # 让天气效果影响整个页面的背景
+  on_rain:
+    filter: &#39;saturate(85%) grayscale(10%)&#39; # 下雨天，博客色调变得饱和度稍低、带一点点灰
+    message: &#34;窗外有雨，宜静思，不宜动笔。&#34;
+  on_sun:
+    filter: &#39;saturate(110%)&#39;
+    message: &#34;天气这么好，更没理由写文章了。&#34;
+</code></pre><h2 id="开启双链功能">开启双链功能<a hidden class="anchor" aria-hidden="true" href="#开启双链功能">#</a></h2>
+<p>必须开启。我用双向链接。所以也找到了相关功能开启方式。只需在 NexT 主题的 <code>_config.yml</code> 文件中，找到 <code>#Backlinks</code>，将下方 <code>backlink</code> 字段从 <code>false</code> 修改为 <code>true</code> 即可，非常简单。</p>
+<h2 id="竖排显示文章">竖排显示文章<a hidden class="anchor" aria-hidden="true" href="#竖排显示文章">#</a></h2>
+<p>Markdown 本身不支持竖排。但在汉字文化圈，纵书历史悠久，其文字顺序蕴含独特的文化心理。</p>
+<p>尽管 Hexo 的默认渲染器不支持生成竖排文章，但在其官方插件中，仍然收录有一个由日文竖排插件 hexo-tategaki 转译而来的中文竖排方案。</p>
+<p>只需进入博客目录，通过 Git 安装即可使用：</p>
+<pre tabindex="0"><code>npm install hexo-tategakibutcn --save
+</code></pre><p>成功安装后，在文章开头任意位置加入 <code>tategakibutcn</code> 字段，取值为 <code>true</code> 即可竖排显示该文章，标点符号将在竖排中如雨点般落下。默认行文方向为从右往左，不支持更改：</p>
+<pre tabindex="0"><code>tategakibutcn: true
+</code></pre><h2 id="自定义暗色模式颜色代码">自定义暗色模式颜色代码<a hidden class="anchor" aria-hidden="true" href="#自定义暗色模式颜色代码">#</a></h2>
+<p>在 NexT 主题的 <code>_config.yml</code> 文件中，找到 <code>#Dark Mode</code>，将下方 <code>darkmode</code> 字段从 <code>false</code> 修改为 <code>true</code>，即可开启暗色模式。这里有一个隐藏功能是，可以通过增加 <code>darkmodecolor</code> 字段，将值设置为颜色代码，改变暗色模式使用的颜色。</p>
+<p>例如，我们可以采用谷歌推荐的深灰（#121212），而非纯黑，作为暗色模式的主色调。相比黑底白字，灰底能够达成更为舒适的对比度效果，减轻你的视觉疲劳。</p>
+<pre tabindex="0"><code>darkmodecolor：#121212
+</code></pre><h2 id="贡献热力图">贡献热力图<a hidden class="anchor" aria-hidden="true" href="#贡献热力图">#</a></h2>
+<p>在侧边栏生成一个类似 GitHub 的热力图。这，是整个主题的灵魂。不仅是每次发布文章会显示贡献，每次调整 Hexo 设置即可增加贡献，向世界证明你从未虚度光阴。</p>
+<pre tabindex="0"><code>config_graph:
+  enable: true
+  title: &#34;Hexo Contribution Graph&#34;
+  watch_files:
+    - &#39;_config.yml&#39;
+    - &#39;themes/next/source/css/_custom/*&#39;
+</code></pre><h2 id="结语">结语<a hidden class="anchor" aria-hidden="true" href="#结语">#</a></h2>
+<p>以上都是我编的，我完全不懂代码，再编贻笑大方。到此为止。</p>
+<h2 id="附-1如何删除-github-上的历史提交记录">附 1：如何删除 GitHub 上的历史提交记录<a hidden class="anchor" aria-hidden="true" href="#附-1如何删除-github-上的历史提交记录">#</a></h2>
+<p>在《黑猫警长》里，有个反派老鼠叫一只耳。一只耳为了逃避追捕，先踏出几步脚印，眼珠子一转，又折返回来，走另一条路，边走边用尾巴扫去自己的新脚印，非常狡猾。</p>
+<p>但是在 [[《老无所依》]] 里，莫斯说，你根本做不到从头再来，这就是问题的关键，你走过的每一步都是永恒的。你根本没法让它消失掉，一步都不行。</p>
+<p>这些场景与话语很多年一直都在我脑子里。在 GitHub 上删除所有 commit ，基本思路也和一只耳一样。</p>
+<p>首先要新建一条孤儿分支，并设置为默认分支，然后删除充满历史包袱的旧分支，最后将默认分支改成旧分支的名字。</p>
+<pre tabindex="0"><code>git checkout --orphan latest_branch 
+git add -A
+git commit -am &#34;Updated My Journal&#34;
+git branch -D master
+git branch -m master
+git push -f origin master
+git branch --set-upstream-to=origin/master
+</code></pre><h2 id="附-2全面升级-hexo-拢共分几步">附 2：全面升级 Hexo 拢共分几步<a hidden class="anchor" aria-hidden="true" href="#附-2全面升级-hexo-拢共分几步">#</a></h2>
+<pre tabindex="0"><code>//查看当前 hexo 版本，判断是否为最新版
+&gt; hexo v
+  
+//安装检查工具，如果有了就不用装了
+&gt; npm install -g npm-check
+&gt; npm install -g npm-upgrade  
+
+// 升级一下命令行工具 hexo-cli
+&gt; npm i hexo-cli -g
+  
+//检查一下哪些零件该换了
+&gt; npm-check  
+  
+//自动更新系统清单 package.json
+&gt; npm-upgrade  
+  
+//开始替换所有全局和本地的旧零件
+&gt; npm update -g  
+&gt; npm update --save
+  
+//确认一下，是不是最新的大象
+&gt; hexo version
+</code></pre>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/%E7%A7%91%E5%B9%BB/">科幻</a></li>
+      <li><a href="http://localhost:1313/tags/%E9%97%A8/">门</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/posts/di-kang-hui-yi-lu/">
+    <span class="title">« 上一页</span>
+    <br>
+    <span>迪康回忆录</span>
+  </a>
+  <a class="next" href="http://localhost:1313/posts/wu-lai-shan-sao-mu-ji/">
+    <span class="title">下一页 »</span>
+    <br>
+    <span>吴莱山扫墓记</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:1313/">笼城往事</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = '复制';
+
+        function copyingDone() {
+            copybutton.innerHTML = '已复制！';
+            setTimeout(() => {
+                copybutton.innerHTML = '复制';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>科幻 on 笼城往事</title>
+    <link>http://localhost:1313/zh/tags/%E7%A7%91%E5%B9%BB/</link>
+    <description>Recent content in 科幻 on 笼城往事</description>
+    <generator>Hugo -- 0.157.0</generator>
+    <language>zh</language>
+    <lastBuildDate>Sun, 01 Dec 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/zh/tags/%E7%A7%91%E5%B9%BB/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>我用GitHub Pages</title>
+      <link>http://localhost:1313/zh/2024/06/wo-yong-github-pages/</link>
+      <pubDate>Sat, 01 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zh/2024/06/wo-yong-github-pages/</guid>
+      <description>&lt;p&gt;博客早已没落，而今在搜索引擎里搜“博客”，出来的全是“播客”。现在还在搭博客的，几乎只有程序员。&lt;/p&gt;
+&lt;p&gt;GitHub Pages + Hexo，这套方案简洁优美，是当下程序员搭建博客的不二之选。在网上，也已经存在大量的基础教程和进阶文档，可供我们查阅。其中英文文档较为丰富，不乏冷门、实用的插件介绍，尚未被简中互联网充分发掘。&lt;/p&gt;
+&lt;p&gt;为了不使遗珠蒙尘，以当前最流行的 NexT 主题为例，我会整理一些我找到的 GitHub Pages + Hexo 冷门实用小技巧，希望能为大家带来帮助，更自由地定制自己的博客。&lt;/p&gt;
+&lt;p&gt;本文默认你已经安装了 Node.js 与 Git，网上教程千千万，这里就不赘述。此外，每次修改后，记得及时用 &lt;code&gt;hexo s&lt;/code&gt; 命令在本地 &lt;code&gt;http://localhost:4000/&lt;/code&gt; 部署，查看效果是否达到了自己的预期。&lt;/p&gt;
+&lt;h2 id=&#34;绑定-steam-等游戏账号&#34;&gt;绑定 Steam 等游戏账号&lt;/h2&gt;
+&lt;p&gt;Hexo 框架内置了极为丰富的游戏账号绑定功能。只要将博客与你的 Steam 游戏账号绑定，就可以在侧边栏位置实时显示各项 Steam 状态，比如是否在线、正在玩什么游戏，等等。&lt;/p&gt;
+&lt;p&gt;将这些身份信物展示在博客上，倒不为显摆，只是在自己的数字城堡门口挂上家族旗帜，作为无声的社交宣言，用以吸引同好。&lt;/p&gt;
+&lt;p&gt;具体方法与将 Git 和 GitHub 账号绑定类似，如果你是第一次绑定，需要先配置一下自己的 Steam 账号 id 与注册邮箱。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git config --steam user.name &amp;#34;你的 Steam id&amp;#34;
+git config --steam user.email &amp;#34;你的 Steam 注册邮箱&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;然后生成 SSH 密钥，此过程需要连续打几次回车，走默认设置即可：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ssh-keygen -t rsa -C &amp;#34;你刚刚设置的邮箱&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;最后输入下方命令查看密钥。你也可以在 C 盘你的用户名文件夹下找到 .ssh 文件夹，打开后找到 &lt;code&gt;id_rsa&lt;/code&gt; 和 &lt;code&gt;id_rsa.pub&lt;/code&gt; 两个文件，用记事本打开后者，复制其内容，即为密钥。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

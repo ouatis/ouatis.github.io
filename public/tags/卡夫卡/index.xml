@@ -1,2 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>卡夫卡 on 笼城往事</title><link>https://ouatis.github.io/tags/%E5%8D%A1%E5%A4%AB%E5%8D%A1/</link><description>Recent content in 卡夫卡 on 笼城往事</description><generator>Hugo -- 0.157.0</generator><language>zh-cn</language><lastBuildDate>Fri, 18 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://ouatis.github.io/tags/%E5%8D%A1%E5%A4%AB%E5%8D%A1/index.xml" rel="self" type="application/rss+xml"/><item><title>城堡风物考</title><link>https://ouatis.github.io/2022/02/cheng-bao-feng-wu-kao/</link><pubDate>Fri, 18 Feb 2022 00:00:00 +0000</pubDate><guid>https://ouatis.github.io/2022/02/cheng-bao-feng-wu-kao/</guid><description>&lt;h2 id="城堡与村子"&gt;城堡与村子&lt;/h2&gt;
-&lt;p&gt;城堡没有名字，属于西西伯爵（这又算什么名字？），坐落在波希米亚，一个寒酸的小村镇，冰冷的世界。城堡管辖整个地区，相当威严。没有伯爵的许可，外人不能在村子过夜。村民头盖骨都很扁平，像被殴打过，面容痛苦。&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>卡夫卡 on 笼城往事 | Once Upon a Time in SigiL</title>
+    <link>https://ouatis.github.io/tags/%E5%8D%A1%E5%A4%AB%E5%8D%A1/</link>
+    <description>Recent content in 卡夫卡 on 笼城往事 | Once Upon a Time in SigiL</description>
+    <image>
+      <title>笼城往事 | Once Upon a Time in SigiL</title>
+      <url>https://ouatis.github.io/avatar.png</url>
+      <link>https://ouatis.github.io/avatar.png</link>
+    </image>
+    <generator>Hugo -- 0.157.0</generator>
+    <language>zh-cn</language>
+    <copyright>2012–2026 © SigiL</copyright>
+    <lastBuildDate>Fri, 18 Feb 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://ouatis.github.io/tags/%E5%8D%A1%E5%A4%AB%E5%8D%A1/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>城堡风物考</title>
+      <link>https://ouatis.github.io/2022/02/cheng-bao-feng-wu-kao/</link>
+      <pubDate>Fri, 18 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://ouatis.github.io/2022/02/cheng-bao-feng-wu-kao/</guid>
+      <description>&lt;h2 id=&#34;城堡与村子&#34;&gt;城堡与村子&lt;/h2&gt;
+&lt;p&gt;城堡没有名字，属于西西伯爵（这又算什么名字？），坐落在波希米亚，一个寒酸的小村镇，冰冷的世界。城堡管辖整个地区，相当威严。没有伯爵的许可，外人不能在村子过夜。村民头盖骨都很扁平，像被殴打过，面容痛苦。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

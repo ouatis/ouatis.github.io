@@ -1,0 +1,94 @@
+baseURL = 'https://ouatis.github.io/'
+languageCode = 'zh-cn'
+hasCJKLanguage = true
+title = '笼城往事 | Once Upon a Time in SigiL'
+theme = 'PaperMod'
+copyright = "2012–2026 © **[SigiL](https://github.com/ouatis)**"
+
+[params.footer]
+    text = "IMAGINE UNPOETIC LION"
+
+# 核心设置
+defaultContentLanguage = "zh"
+uglyURLs = false
+
+[permalinks]
+    posts = '/:year/:month/:slug/'
+
+# 菜单设置
+[[menu.main]]
+    identifier = "about"
+    name = "关于"
+    url = "/about/"
+    weight = 10
+
+[[menu.main]]
+    identifier = "archives"
+    name = "归档"
+    url = "/archives/"
+    weight = 20
+
+[[menu.main]]
+    identifier = "categories"
+    name = "分类"
+    url = "/categories/"
+    weight = 30
+
+[[menu.main]]
+    identifier = "tags"
+    name = "标签"
+    url = "/tags/"
+    weight = 40
+
+[[menu.main]]
+    identifier = "search"
+    name = "搜索"
+    url = "/search/"
+    weight = 50
+
+[params]
+    env = 'production'
+    title = '笼城往事'
+    description = 'ONCE UPON A TIME IN SIGIL'
+    author = 'SigiL'
+    images = ["/avatar.png"]
+    keywords = ["笼城往事", "Blog", "SigiL", "异域镇魂曲"]
+    
+    # 界面设置
+    defaultTheme = 'auto'
+    ShowToc = true
+    TocOpen = false
+    showReadingTime = true
+    showShareButtons = false
+    showPostNavLinks = true
+    showLanguageSelector = false # 关闭语言切换按钮
+    ShowCodeCopyButtons = true
+    showWordCount = true
+    hideSummary = true
+
+    [params.analytics.google]
+        SiteVerificationTag = "digJaGp7JYW7c_R1BNuHNHaaLHYzaCHwcPsEFrcuFvw"
+
+    [params.assets]
+        favicon = "/avatar.png"
+        apple_touch_icon = "/avatar.png"
+
+    [params.label]
+        text = "笼城往事"
+        icon = "/avatar.png"  # 替换成您的图片文件名
+        iconHeight = 35       # 可以调整图片显示高度
+
+    [params.homeInfoParams]
+        Title = "欢迎来到笼城往事。"
+        Content = "这里是 SigiL 的个人网站。SigiL 就是我。"
+
+[[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/ouatis"
+
+[[params.socialIcons]]
+    name = "steam"
+    url = "https://steamcommunity.com/id/ouatis/"
+
+[outputs]
+    home = ["HTML", "RSS", "JSON"]

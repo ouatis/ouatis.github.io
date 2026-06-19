@@ -16,7 +16,7 @@ layout: "page"
 3. [艾玛的书单](/2015/12/ai-ma-de-shu-dan/)
 4. [艾玛的偶像](/2016/12/ai-ma-de-ou-xiang/)
 
-### 第二卷 · 东西与结构
+### 第二卷 · 夏尔的帽子
 
 5. [夏尔的帽子](/2013/12/xia-er-de-mao-zi/)
 6. [外省角色任期制](/2018/12/wai-sheng-jiao-se-ren-qi-zhi/)
@@ -24,7 +24,7 @@ layout: "page"
 8. [从托特到永镇](/2020/12/cong-tuo-te-dao-yong-zhen/)
 9. [永镇的七任医生](/2019/12/yong-zhen-de-qi-ren-yi-sheng/)
 
-### 第三卷 · 文学立场
+### 第三卷 · 福楼拜的新散文
 
 10. [福楼拜的新散文](/2021/12/fu-lou-bai-de-xin-san-wen/)
 11. [在座的都是主义](/2022/12/zai-zuo-de-dou-shi-zhu-yi/)
@@ -37,7 +37,7 @@ layout: "page"
 15. [塞纳尔的辩护词](/2026/01/sai-na-er-de-bian-hu-ci/)
 16. [《包法利夫人》判决书](/2026/02/bao-fa-li-fu-ren-pan-jue-shu/)
 
-### 第五卷 · 福楼拜其人及其时代
+### 第五卷 · 福楼拜的十九世纪
 
 17. [福楼拜的十九世纪](/2025/12/fu-lou-bai-de-shi-jiu-shi-ji/)
 18. [迪康回忆录](/2024/12/di-kang-hui-yi-lu/)

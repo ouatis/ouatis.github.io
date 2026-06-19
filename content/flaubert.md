@@ -28,16 +28,17 @@ layout: "page"
 
 10. [福楼拜的新散文](/2021/12/fu-lou-bai-de-xin-san-wen/)
 11. [在座的都是主义](/2022/12/zai-zuo-de-dou-shi-zhu-yi/)
+12. [福楼拜读拉马丁](/2022/11/fu-lou-bai-du-la-ma-ding/)
 
 ### 第四卷 · 包法利夫人受诉讼
 
-12. [包法利夫人受诉讼](/2023/12/bao-fa-li-fu-ren-shou-su-song/)
-13. [皮纳尔的公诉词](/2026/01/pi-na-er-de-gong-su-ci/)
-14. [塞纳尔的辩护词](/2026/01/sai-na-er-de-bian-hu-ci/)
-15. [《包法利夫人》判决书](/2026/02/bao-fa-li-fu-ren-pan-jue-shu/)
+13. [包法利夫人受诉讼](/2023/12/bao-fa-li-fu-ren-shou-su-song/)
+14. [皮纳尔的公诉词](/2026/01/pi-na-er-de-gong-su-ci/)
+15. [塞纳尔的辩护词](/2026/01/sai-na-er-de-bian-hu-ci/)
+16. [《包法利夫人》判决书](/2026/02/bao-fa-li-fu-ren-pan-jue-shu/)
 
 ### 第五卷 · 福楼拜其人及其时代
 
-16. [福楼拜的十九世纪](/2025/12/fu-lou-bai-de-shi-jiu-shi-ji/)
-17. [迪康回忆录](/2024/12/di-kang-hui-yi-lu/)
-18. [福楼拜之死](/2020/05/fu-lou-bai-zhi-si/)
+17. [福楼拜的十九世纪](/2025/12/fu-lou-bai-de-shi-jiu-shi-ji/)
+18. [迪康回忆录](/2024/12/di-kang-hui-yi-lu/)
+19. [福楼拜之死](/2020/05/fu-lou-bai-zhi-si/)

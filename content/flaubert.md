@@ -10,7 +10,7 @@ layout: "page"
 
 1. [我的《包法利夫人》译名表](/2012/12/wo-de-bao-fa-li-fu-ren-yi-ming-biao/)
 
-### 第一卷 · 艾玛如何被造出来
+### 第一卷 · 如何制造艾玛
 
 2. [艾玛的四任情人](/2017/12/ai-ma-de-si-ren-qing-ren/)
 3. [艾玛的书单](/2015/12/ai-ma-de-shu-dan/)

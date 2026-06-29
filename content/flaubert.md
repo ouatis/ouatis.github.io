@@ -19,26 +19,34 @@ layout: "page"
 ### 第二卷 · 夏尔的帽子
 
 5. [夏尔的帽子](/2013/12/xia-er-de-mao-zi/)
-6. [外省角色任期制](/2018/12/wai-sheng-jiao-se-ren-qi-zhi/)
+6. [外省角色任期制](/2018/12/wai-sheng-jue-se-ren-qi-zhi/)
 7. [艾玛的礼物](/2014/12/ai-ma-de-li-wu/)
 8. [从托特到永镇](/2020/12/cong-tuo-te-dao-yong-zhen/)
 9. [永镇的七任医生](/2019/12/yong-zhen-de-qi-ren-yi-sheng/)
+10. 农业交响展览音乐会
 
 ### 第三卷 · 福楼拜的新散文
 
-10. [福楼拜的新散文](/2021/12/fu-lou-bai-de-xin-san-wen/)
-11. [在座的都是主义](/2022/12/zai-zuo-de-dou-shi-zhu-yi/)
-12. [福楼拜读拉马丁](/2022/11/fu-lou-bai-du-la-ma-ding/)
+11. [福楼拜的新散文](/2021/12/fu-lou-bai-de-xin-san-wen/)
+12. [在座的都是主义](/2022/12/zai-zuo-de-dou-shi-zhu-yi/)
+13. [包法利夫人就是我](/2021/12/bao-fa-li-fu-ren-jiu-shi-wo/)
+14. [福楼拜读卢夏拉](/2022/11/fu-lou-bai-du-lu-xia-la/)
+15. 福楼拜读西拉诺
+16. 福楼拜读伏尔泰
+17. 紫色隐者福楼拜
 
 ### 第四卷 · 包法利夫人受诉讼
 
-13. [包法利夫人受诉讼](/2023/12/bao-fa-li-fu-ren-shou-su-song/)
-14. [皮纳尔的公诉词](/2026/01/pi-na-er-de-gong-su-ci/)
-15. [塞纳尔的辩护词](/2026/01/sai-na-er-de-bian-hu-ci/)
-16. [《包法利夫人》判决书](/2026/02/bao-fa-li-fu-ren-pan-jue-shu/)
+18. [包法利夫人受诉讼](/2023/12/bao-fa-li-fu-ren-shou-su-song/)
+19. [皮纳尔的公诉词](/2026/01/pi-na-er-de-gong-su-ci/)
+20. [塞纳尔的辩护词](/2026/01/sai-na-er-de-bian-hu-ci/)
+21. [《包法利夫人》判决书](/2026/02/bao-fa-li-fu-ren-pan-jue-shu/)
+22. 包法利夫人受审查
 
 ### 第五卷 · 福楼拜的十九世纪
 
-17. [福楼拜的十九世纪](/2025/12/fu-lou-bai-de-shi-jiu-shi-ji/)
-18. [迪康回忆录](/2024/12/di-kang-hui-yi-lu/)
-19. [福楼拜之死](/2020/05/fu-lou-bai-zhi-si/)
+23. [福楼拜的十九世纪](/2025/12/fu-lou-bai-de-shi-jiu-shi-ji/)
+24. [迪康回忆录](/2024/12/di-kang-hui-yi-lu/)
+25. [福楼拜之死](/2020/05/fu-lou-bai-zhi-si/)
+26. 福楼拜家的星期天
+27. 鲁昂扫墓记

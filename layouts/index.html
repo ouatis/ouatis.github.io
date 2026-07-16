@@ -1,0 +1,78 @@
+{{- define "main" }}
+{{- $pages := where site.RegularPages "Section" "posts" }}
+{{- $pages = where $pages "Params.hiddenInHomeList" "!=" "true" }}
+{{- $paginator := .Paginate $pages }}
+{{- $offset := mul (sub $paginator.PageNumber 1) $paginator.PagerSize }}
+
+<div class="ouatis-home">
+  {{- if eq $paginator.PageNumber 1 }}
+  <section class="ouatis-hero" aria-labelledby="ouatis-title">
+    <div class="ouatis-hero__copy">
+      <p class="ouatis-kicker">OUATIS <span aria-hidden="true">/</span> SINCE 2012</p>
+      <h1 id="ouatis-title">笼城往事</h1>
+      <p class="ouatis-hero__lede">写作、福楼拜，以及其他。</p>
+      <p class="ouatis-hero__intro">这里是 SigiL 的个人网站。SigiL 就是我。</p>
+      <nav class="ouatis-hero__links" aria-label="首页入口">
+        <a href="{{ "flaubert/" | relLangURL }}">福楼拜讲稿 <span aria-hidden="true">→</span></a>
+        <a href="{{ "about/" | relLangURL }}">关于作者 <span aria-hidden="true">→</span></a>
+      </nav>
+    </div>
+
+    <figure class="ouatis-seal">
+      <div class="ouatis-seal__frame">
+        <img src="{{ site.Params.label.icon | relURL }}" alt="笼城往事徽记" width="320" height="320">
+      </div>
+      <figcaption>IMAGINE UNPOETIC LION</figcaption>
+    </figure>
+  </section>
+  {{- end }}
+
+  <section class="ouatis-writing" aria-labelledby="recent-writing">
+    <header class="ouatis-section-head">
+      <div>
+        <p>RECENT WRITING</p>
+        <h2 id="recent-writing">近作</h2>
+      </div>
+      <p class="ouatis-section-head__count">{{ len $pages }} 篇文章</p>
+    </header>
+
+    <div class="ouatis-feed">
+      {{- range $index, $page := $paginator.Pages }}
+      {{- $number := add (add $offset $index) 1 }}
+      <article class="ouatis-entry">
+        <p class="ouatis-entry__number" aria-hidden="true">{{ printf "%02d" $number }}</p>
+        <time class="ouatis-entry__date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time>
+        <div class="ouatis-entry__main">
+          <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+          <div class="ouatis-entry__meta">
+            {{- with .GetTerms "categories" }}
+            {{- range . }}
+            <a class="ouatis-entry__category" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+            {{- end }}
+            {{- end }}
+            <span>{{ .ReadingTime }} 分钟</span>
+          </div>
+        </div>
+        <span class="ouatis-entry__arrow" aria-hidden="true">→</span>
+      </article>
+      {{- end }}
+    </div>
+  </section>
+
+  {{- if gt $paginator.TotalPages 1 }}
+  <nav class="ouatis-pagination" aria-label="文章分页">
+    <div>
+      {{- if $paginator.HasPrev }}
+      <a href="{{ $paginator.Prev.URL }}"><span aria-hidden="true">←</span> 上一页</a>
+      {{- end }}
+    </div>
+    <p>{{ $paginator.PageNumber }} / {{ $paginator.TotalPages }}</p>
+    <div>
+      {{- if $paginator.HasNext }}
+      <a href="{{ $paginator.Next.URL }}">下一页 <span aria-hidden="true">→</span></a>
+      {{- end }}
+    </div>
+  </nav>
+  {{- end }}
+</div>
+{{- end }}

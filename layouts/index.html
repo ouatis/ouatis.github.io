@@ -12,6 +12,11 @@
       <h1 id="ouatis-title">笼城往事</h1>
       <p class="ouatis-hero__lede">写作、福楼拜，以及其他。</p>
       <p class="ouatis-hero__intro">这里是 SigiL 的个人网站。SigiL 就是我。</p>
+      {{- with site.Params.socialIcons }}
+      <nav class="ouatis-hero__social" aria-label="社交链接">
+        {{ partial "social_icons.html" }}
+      </nav>
+      {{- end }}
       <nav class="ouatis-hero__links" aria-label="首页入口">
         <a href="{{ "flaubert/" | relLangURL }}">福楼拜讲稿 <span aria-hidden="true">→</span></a>
         <a href="{{ "about/" | relLangURL }}">关于作者 <span aria-hidden="true">→</span></a>

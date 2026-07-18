@@ -181,11 +181,30 @@ button#theme-toggle {
     line-height: 1.8;
 }
 
+.ouatis-hero__social {
+    margin-top: 14px;
+}
+
+.ouatis-hero__social .social-icons {
+    display: flex;
+    gap: 4px;
+    margin-left: -10px;
+}
+
+.ouatis-hero__social a {
+    color: var(--secondary);
+    transition: color 180ms ease;
+}
+
+.ouatis-hero__social a:hover {
+    color: var(--primary);
+}
+
 .ouatis-hero__links {
     display: flex;
     flex-wrap: wrap;
     gap: 12px 30px;
-    margin-top: 34px;
+    margin-top: 20px;
 }
 
 .ouatis-hero__links a {

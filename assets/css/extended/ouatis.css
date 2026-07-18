@@ -200,33 +200,6 @@ button#theme-toggle {
     color: var(--primary);
 }
 
-.ouatis-hero__links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px 30px;
-    margin-top: 20px;
-}
-
-.ouatis-hero__links a {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    color: var(--primary);
-    font-size: 14px;
-    font-weight: 600;
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 7px;
-}
-
-.ouatis-hero__links a span {
-    color: var(--ouatis-red);
-    transition: transform 180ms ease;
-}
-
-.ouatis-hero__links a:hover span {
-    transform: translateX(4px);
-}
-
 .ouatis-seal {
     margin: 0;
     text-align: center;
@@ -689,7 +662,6 @@ button#theme-toggle {
         scroll-behavior: auto;
     }
 
-    .ouatis-hero__links a span,
     .ouatis-entry h3 a,
     .ouatis-entry__arrow {
         transition: none;

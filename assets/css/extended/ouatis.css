@@ -166,14 +166,6 @@ button#theme-toggle {
     line-height: 1.06;
 }
 
-.ouatis-hero__lede {
-    max-width: 15em;
-    color: var(--primary);
-    font-family: var(--ouatis-serif);
-    font-size: 28px;
-    line-height: 1.5;
-}
-
 .ouatis-hero__intro {
     margin-top: 16px;
     color: var(--secondary);
@@ -561,10 +553,6 @@ button#theme-toggle {
     .ouatis-hero h1 {
         margin: 18px 0 14px;
         font-size: 52px;
-    }
-
-    .ouatis-hero__lede {
-        font-size: 23px;
     }
 
     .ouatis-hero__intro {

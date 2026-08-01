@@ -108,3 +108,18 @@ copyright = "2012–2026 © **[SigiL](https://github.com/ouatis)**"
 
 [outputs]
     home = ["HTML", "RSS", "JSON"]
+
+# 相关文章（内链优化：按标签匹配，给孤立文章提供索引信号）
+[related]
+    threshold = 20
+    includeNewer = true
+    toLower = true
+    [[related.indices]]
+        name = "tags"
+        weight = 100
+    [[related.indices]]
+        name = "categories"
+        weight = 30
+    [[related.indices]]
+        name = "date"
+        weight = 10

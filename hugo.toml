@@ -111,7 +111,7 @@ copyright = "2012–2026 © **[SigiL](https://github.com/ouatis)**"
 
 # 相关文章（内链优化：按标签匹配，给孤立文章提供索引信号）
 [related]
-    threshold = 20
+    threshold = 10
     includeNewer = true
     toLower = true
     [[related.indices]]

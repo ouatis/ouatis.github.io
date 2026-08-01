@@ -3,6 +3,7 @@ title: "About"
 layout: "about"
 summary: "about"
 aliases: ["/"]
+showRelated: false
 ---
 
 This is SigiL's personal site.

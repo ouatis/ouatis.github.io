@@ -40,20 +40,22 @@
       {{- range $index, $page := $paginator.Pages }}
       {{- $number := add (add $offset $index) 1 }}
       <article class="ouatis-entry">
-        <p class="ouatis-entry__number" aria-hidden="true">{{ printf "%02d" $number }}</p>
-        <time class="ouatis-entry__date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time>
-        <div class="ouatis-entry__main">
-          <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-          <div class="ouatis-entry__meta">
-            {{- with .GetTerms "categories" }}
-            {{- range . }}
-            <a class="ouatis-entry__category" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
-            {{- end }}
-            {{- end }}
-            <span>{{ .ReadingTime }} 分钟</span>
+        <a class="ouatis-entry__link" href="{{ .RelPermalink }}">
+          <p class="ouatis-entry__number" aria-hidden="true">{{ printf "%02d" $number }}</p>
+          <time class="ouatis-entry__date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time>
+          <div class="ouatis-entry__main">
+            <h3>{{ .Title }}</h3>
+            <div class="ouatis-entry__meta">
+              {{- with .GetTerms "categories" }}
+              {{- range . }}
+              <span class="ouatis-entry__category">{{ .LinkTitle }}</span>
+              {{- end }}
+              {{- end }}
+              <span>{{ .ReadingTime }} 分钟</span>
+            </div>
           </div>
-        </div>
-        <span class="ouatis-entry__arrow" aria-hidden="true">→</span>
+          <span class="ouatis-entry__arrow" aria-hidden="true">→</span>
+        </a>
       </article>
       {{- end }}
     </div>

@@ -11,14 +11,20 @@
 </header>
 {{- end }}
 
-<ul class="terms-tags">
-    {{- $type := .Type }}
-    {{- range .Data.Terms.ByCount }}
+{{- $type := .Type }}
+{{- $terms := .Data.Terms.ByCount }}
+{{- $max := 0 }}
+{{- range $terms }}
+  {{- if gt .Count $max }}{{ $max = .Count }}{{ end }}
+{{- end }}
+
+<ul class="terms-tags terms-tags--weighted">
+    {{- range $terms }}
     {{- $name := .Name }}
     {{- $count := .Count }}
     {{- with site.GetPage (printf "/%s/%s" $type $name) }}
     <li>
-        <a href="{{ .Permalink }}">{{ .Name }} <sup><strong><sup>{{ $count }}</sup></strong></sup> </a>
+        <a href="{{ .Permalink }}" style="--weight: {{ $count }}">{{ .Name }} <sup><strong><sup>{{ $count }}</sup></strong></sup> </a>
     </li>
     {{- end }}
     {{- end }}

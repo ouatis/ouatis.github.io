@@ -615,11 +615,68 @@ button#theme-toggle {
 }
 
 .related-posts {
+    margin-top: 48px;
+    padding-top: 26px;
+    border-top: 2px solid var(--primary);
     font-family: var(--ouatis-serif);
 }
 
 .related-posts-title {
+    margin: 0 0 6px;
     font-family: var(--ouatis-serif);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--ouatis-green);
+}
+
+.related-posts ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.related-posts li {
+    margin: 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.related-posts li:last-child {
+    border-bottom: 0;
+}
+
+.related-posts li a {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 13px 2px;
+    color: var(--primary);
+    font-family: var(--ouatis-serif);
+    font-size: 17px;
+    line-height: 1.5;
+    text-decoration: none;
+    transition: color 180ms ease, padding-inline-start 180ms ease;
+}
+
+.related-posts li a::after {
+    content: "→";
+    flex-shrink: 0;
+    color: var(--secondary);
+    font-size: 14px;
+    transition: color 180ms ease, transform 180ms ease;
+}
+
+.related-posts li a:hover,
+.related-posts li a:focus-visible {
+    color: var(--ouatis-red);
+    padding-inline-start: 4px;
+}
+
+.related-posts li a:hover::after,
+.related-posts li a:focus-visible::after {
+    color: var(--ouatis-red);
+    transform: translateX(3px);
 }
 
 /* Task list (about page) */
@@ -910,7 +967,9 @@ button#theme-toggle {
     }
 
     .ouatis-entry h3 a,
-    .ouatis-entry__arrow {
+    .ouatis-entry__arrow,
+    .related-posts li a,
+    .related-posts li a::after {
         transition: none;
     }
 }

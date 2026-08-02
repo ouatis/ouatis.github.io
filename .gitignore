@@ -1,0 +1,27 @@
+# Hugo build output
+public/
+resources/_gen/
+
+# Hugo lock file
+.hugo_build.lock
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.temp
+
+# Deploy script
+deploy.ps1
+deploy.bat
+cleanup-deployments.ps1
+cleanup-deployments.bat

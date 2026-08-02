@@ -1,0 +1,50 @@
+{{- /* 阅读进度条：仅在文章页显示，细线样式，颜色跟随主题变量 */}}
+{{- if (and .IsPage (not .Params.disableReadingProgress)) }}
+<style>
+    #ouatis-progress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        width: 0%;
+        height: 2px;
+        background: var(--ouatis-red);
+        opacity: 0;
+        transition: opacity 200ms ease;
+        pointer-events: none;
+    }
+
+    #ouatis-progress.visible {
+        opacity: 1;
+    }
+</style>
+<script>
+    (function () {
+        var bar = document.createElement("div");
+        bar.id = "ouatis-progress";
+        document.body.appendChild(bar);
+
+        var ticking = false;
+        var last = -1;
+
+        function update() {
+            ticking = false;
+            var doc = document.documentElement;
+            var total = doc.scrollHeight - doc.clientHeight;
+            var pct = total > 0 ? (window.scrollY / total) * 100 : 0;
+            if (Math.abs(pct - last) < 0.15) return;
+            last = pct;
+            bar.style.width = pct.toFixed(2) + "%";
+            bar.classList.toggle("visible", window.scrollY > 120);
+        }
+
+        window.addEventListener("scroll", function () {
+            if (!ticking) {
+                ticking = true;
+                window.requestAnimationFrame(update);
+            }
+        }, { passive: true });
+        update();
+    })();
+</script>
+{{- end }}

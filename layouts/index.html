@@ -1,0 +1,91 @@
+{{- define "main" }}
+{{- $pages := site.RegularPages }}
+{{- if eq site.Language.Lang "en" }}
+{{- $pages = where site.AllPages "Section" "posts" }}
+{{- $pages = where $pages "Kind" "page" }}
+{{- else }}
+{{- $pages = where site.RegularPages "Section" "posts" }}
+{{- end }}
+{{- $pages = where $pages "Params.hiddenInHomeList" "!=" "true" }}
+{{- $paginator := .Paginate $pages }}
+{{- $offset := mul (sub $paginator.PageNumber 1) $paginator.PagerSize }}
+
+<div class="ouatis-home">
+  {{- if eq $paginator.PageNumber 1 }}
+  <section class="ouatis-hero" aria-labelledby="ouatis-title">
+    <div class="ouatis-hero__copy">
+      {{- if eq site.Language.Lang "en" }}
+      <p class="ouatis-kicker">OUATIS <span aria-hidden="true">/</span> SINCE 2012</p>
+      <h1 id="ouatis-title">Once Upon a Time in SigiL</h1>
+      <p class="ouatis-hero__intro">SigiL's personal site. Writing, Flaubert, and other things.</p>
+      {{- else }}
+      <p class="ouatis-kicker">OUATIS <span aria-hidden="true">/</span> SINCE 2012</p>
+      <h1 id="ouatis-title">笼城往事</h1>
+      <p class="ouatis-hero__intro">这里是 SigiL 的个人网站。SigiL 就是我。</p>
+      {{- end }}
+      {{- with site.Params.socialIcons }}
+      <nav class="ouatis-hero__social" aria-label="社交链接">
+        {{ partial "social_icons.html" }}
+      </nav>
+      {{- end }}
+    </div>
+
+    <figure class="ouatis-seal">
+      <div class="ouatis-seal__frame">
+        <img src="{{ site.Params.label.icon | relURL }}" alt="笼城往事徽记" width="320" height="320">
+      </div>
+      <figcaption>IMAGINE UNPOETIC LION</figcaption>
+    </figure>
+  </section>
+  {{- end }}
+
+  <section class="ouatis-writing" aria-labelledby="recent-writing">
+    <header class="ouatis-section-head">
+      <div>
+        <p>RECENT WRITING</p>
+        <h2 id="recent-writing">{{ if eq site.Language.Lang "en" }}Recent Writing{{ else }}近作{{ end }}</h2>
+      </div>
+      <p class="ouatis-section-head__count">{{ len $pages }}{{ if eq site.Language.Lang "en" }} posts{{ else }} 篇文章{{ end }}</p>
+    </header>
+
+    <div class="ouatis-feed">
+      {{- range $index, $page := $paginator.Pages }}
+      {{- $number := add (add $offset $index) 1 }}
+      <article class="ouatis-entry">
+        <a class="ouatis-entry__link" href="{{ .RelPermalink }}" aria-label="阅读《{{ .Title }}》"></a>
+        <p class="ouatis-entry__number" aria-hidden="true">{{ printf "%02d" $number }}</p>
+        <time class="ouatis-entry__date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time>
+        <div class="ouatis-entry__main">
+          <h3>{{ .Title }}</h3>
+            <div class="ouatis-entry__meta">
+              {{- with .GetTerms "categories" }}
+              {{- range . }}
+              <span class="ouatis-entry__category">{{ .LinkTitle }}</span>
+              {{- end }}
+              {{- end }}
+              <span>{{ .ReadingTime }}{{ if eq site.Language.Lang "en" }} min{{ else }} 分钟{{ end }}</span>
+            </div>
+          </div>
+          <span class="ouatis-entry__arrow" aria-hidden="true">→</span>
+      </article>
+      {{- end }}
+    </div>
+  </section>
+
+  {{- if gt $paginator.TotalPages 1 }}
+  <nav class="ouatis-pagination" aria-label="文章分页">
+    <div>
+      {{- if $paginator.HasPrev }}
+      <a href="{{ $paginator.Prev.URL }}"><span aria-hidden="true">←</span> {{ if eq site.Language.Lang "en" }}Prev{{ else }}上一页{{ end }}</a>
+      {{- end }}
+    </div>
+    <p>{{ $paginator.PageNumber }} / {{ $paginator.TotalPages }}</p>
+    <div>
+      {{- if $paginator.HasNext }}
+      <a href="{{ $paginator.Next.URL }}">{{ if eq site.Language.Lang "en" }}Next{{ else }}下一页{{ end }} <span aria-hidden="true">→</span></a>
+      {{- end }}
+    </div>
+  </nav>
+  {{- end }}
+</div>
+{{- end }}

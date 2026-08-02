@@ -1,0 +1,33 @@
+{{- define "main" }}
+
+{{- if .Title }}
+<header class="page-header">
+    <h1>{{ if eq .Title "Categories" }}分类{{ else }}{{ .Title }}{{ end }}</h1>
+    {{- if .Description }}
+    <div class="post-description">
+        {{ .Description }}
+    </div>
+    {{- end }}
+</header>
+{{- end }}
+
+{{- $type := .Type }}
+{{- $terms := .Data.Terms.ByCount }}
+{{- $max := 0 }}
+{{- range $terms }}
+  {{- if gt .Count $max }}{{ $max = .Count }}{{ end }}
+{{- end }}
+
+<ul class="terms-tags terms-tags--weighted">
+    {{- range $terms }}
+    {{- $name := .Name }}
+    {{- $count := .Count }}
+    {{- with site.GetPage (printf "/%s/%s" $type $name) }}
+    <li>
+        <a href="{{ .Permalink }}" style="--weight: {{ $count }}">{{ .Name }} <sup><strong><sup>{{ $count }}</sup></strong></sup> </a>
+    </li>
+    {{- end }}
+    {{- end }}
+</ul>
+
+{{- end }}{{/* end main */ -}}

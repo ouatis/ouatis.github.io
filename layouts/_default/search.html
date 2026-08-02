@@ -1,0 +1,53 @@
+{{- define "main" }}
+
+<header class="page-header">
+    <h1>{{- (printf "%s&nbsp;" .Title ) | htmlUnescape -}}
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+    </h1>
+    {{- if .Description }}
+    <div class="post-description">
+        {{ .Description }}
+    </div>
+    {{- end }}
+</header>
+
+<div id="searchbox">
+    <input id="searchInput" autofocus placeholder="{{ .Params.placeholder | default (printf "%s ↵" .Title) }}"
+        aria-label="search" type="search" autocomplete="off" maxlength="64">
+    <ul id="searchResults" aria-label="search results"></ul>
+</div>
+
+{{- with site.Taxonomies.tags }}
+<div class="search-suggestions">
+    <span>试试：</span>
+    {{- range first 8 .ByCount }}
+    <a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a>
+    {{- end }}
+</div>
+{{- end }}
+
+<script>
+    // 支持从 URL 的 ?q= 参数自动填充并触发搜索（404 页搜索表单提交到这里）
+    (function () {
+        var params = new URLSearchParams(window.location.search);
+        var q = params.get("q");
+        var input = document.getElementById("searchInput");
+        if (!q || !input) return;
+        input.value = q;
+        // 等待 fuse 索引加载完成（search.js 是 defer 的，fetch index.json 异步）
+        var tries = 0;
+        var timer = setInterval(function () {
+            tries++;
+            input.dispatchEvent(new KeyboardEvent("keyup", { key: "Enter" }));
+            if (document.getElementById("searchResults").children.length > 0 || tries > 20) {
+                clearInterval(timer);
+            }
+        }, 250);
+    })();
+</script>
+
+{{- end }}{{/* end main */}}

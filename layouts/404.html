@@ -1,0 +1,12 @@
+{{- define "main" }}
+<section class="site-404" aria-labelledby="lost-lane-title">
+    <div class="site-404__mark" aria-hidden="true">404</div>
+    <div class="site-404__body">
+        <h1 id="lost-lane-title">{{ if eq site.Language.Lang "en" }}You've walked into a lane that doesn't exist.{{ else }}你走到了一条不存在的巷子。{{ end }}</h1>
+        <form class="site-404__search" action="{{ "search/" | absLangURL }}" method="get" role="search">
+            <input type="search" name="q" placeholder="{{ if eq site.Language.Lang "en" }}Search the site…{{ else }}搜索全站……{{ end }}" aria-label="search" autocomplete="off" maxlength="64">
+        </form>
+        <a class="site-404__link" href="{{ "" | absLangURL }}">{{ if eq site.Language.Lang "en" }}Back home{{ else }}回到笼城往事{{ end }}</a>
+    </div>
+</section>
+{{- end }}

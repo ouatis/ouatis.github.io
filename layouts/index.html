@@ -1,7 +1,7 @@
 {{- define "main" }}
 {{- $pages := site.RegularPages }}
 {{- if eq site.Language.Lang "en" }}
-{{- $pages = where site.AllPages "Section" "posts" }}
+{{- $pages = where site.Pages "Section" "posts" }}
 {{- $pages = where $pages "Kind" "page" }}
 {{- else }}
 {{- $pages = where site.RegularPages "Section" "posts" }}

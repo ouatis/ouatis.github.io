@@ -233,6 +233,10 @@ button#theme-toggle {
     line-height: 1.06;
 }
 
+.ouatis-hero__subtitle {
+    margin-top: -8px;
+}
+
 .ouatis-hero__intro {
     margin-top: 16px;
     color: var(--secondary);

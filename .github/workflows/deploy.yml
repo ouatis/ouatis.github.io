@@ -32,6 +32,22 @@ jobs:
           hugo-version: '0.165.0'
           extended: true
 
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Cache Noto Serif source
+        uses: actions/cache@v4
+        with:
+          path: .cache/noto-cjk
+          key: noto-serif-sc-var-2e61f435
+
+      - name: Regenerate font subsets
+        run: |
+          pip install "fonttools[woff]"
+          scripts/build-fonts.sh
+
       - name: Build
         run: hugo --minify
 

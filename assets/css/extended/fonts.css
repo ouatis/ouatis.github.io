@@ -1,17 +1,9 @@
-/* 思源宋体（Noto Serif CJK SC）站内用字子集，OFL 开源许可
-   生成自系统 NotoSerifCJK TTC，仅含站内实际使用的字符 */
+/* 思源宋体（Noto Serif SC）站内用字子集·可变字体，OFL 开源许可
+   由 scripts/build-fonts.sh 依据站内内容生成，Deploy 工作流构建时刷新 */
 @font-face {
     font-family: "Noto Serif SC Subset";
-    src: url("/fonts/noto-serif-sc-regular.woff2") format("woff2");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "Noto Serif SC Subset";
-    src: url("/fonts/noto-serif-sc-bold.woff2") format("woff2");
-    font-weight: 700;
+    src: url("/fonts/noto-serif-sc-var.woff2") format("woff2");
+    font-weight: 200 900;
     font-style: normal;
     font-display: swap;
 }

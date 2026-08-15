@@ -73,18 +73,31 @@
   </section>
 
   {{- if gt $paginator.TotalPages 1 }}
-  <nav class="ouatis-pagination" aria-label="文章分页">
-    <div>
+  <nav class="ouatis-pagination" aria-label="{{ if eq site.Language.Lang "en" }}Pagination{{ else }}文章分页{{ end }}">
+    <span class="ouatis-pagination__side">
       {{- if $paginator.HasPrev }}
-      <a href="{{ $paginator.Prev.URL }}"><span aria-hidden="true">←</span> {{ if eq site.Language.Lang "en" }}Prev{{ else }}上一页{{ end }}</a>
+      <a href="{{ $paginator.Prev.URL }}"><span aria-hidden="true">←</span> <span class="ouatis-pagination__word">{{ if eq site.Language.Lang "en" }}Prev{{ else }}上一页{{ end }}</span></a>
       {{- end }}
-    </div>
-    <p>{{ $paginator.PageNumber }} / {{ $paginator.TotalPages }}</p>
-    <div>
+    </span>
+    <ol class="ouatis-pagination__pages">
+      {{- $scratch := newScratch }}
+      {{- $scratch.Set "prev" 0 }}
+      {{- range $paginator.Pagers }}
+      {{- $near := and (ge .PageNumber (sub $paginator.PageNumber 2)) (le .PageNumber (add $paginator.PageNumber 2)) }}
+      {{- if or (eq .PageNumber 1) (eq .PageNumber $paginator.TotalPages) $near }}
+      {{- if gt (sub .PageNumber ($scratch.Get "prev")) 1 }}
+      <li class="ouatis-pagination__gap" aria-hidden="true">…</li>
+      {{- end }}
+      {{- $scratch.Set "prev" .PageNumber }}
+      <li><a href="{{ .URL }}"{{ if eq .PageNumber $paginator.PageNumber }} class="is-current" aria-current="page"{{ end }}>{{ .PageNumber }}</a></li>
+      {{- end }}
+      {{- end }}
+    </ol>
+    <span class="ouatis-pagination__side ouatis-pagination__side--right">
       {{- if $paginator.HasNext }}
-      <a href="{{ $paginator.Next.URL }}">{{ if eq site.Language.Lang "en" }}Next{{ else }}下一页{{ end }} <span aria-hidden="true">→</span></a>
+      <a href="{{ $paginator.Next.URL }}"><span class="ouatis-pagination__word">{{ if eq site.Language.Lang "en" }}Next{{ else }}下一页{{ end }}</span> <span aria-hidden="true">→</span></a>
       {{- end }}
-    </div>
+    </span>
   </nav>
   {{- end }}
 </div>

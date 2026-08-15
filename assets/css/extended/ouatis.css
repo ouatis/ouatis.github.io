@@ -435,20 +435,65 @@ button#theme-toggle {
 
 .ouatis-pagination {
     display: grid;
-    grid-template-columns: 1fr auto 1fr;
+    grid-template-columns: minmax(88px, 1fr) auto minmax(88px, 1fr);
     align-items: center;
+    gap: 24px;
     padding: 28px 0 64px;
     color: var(--secondary);
     font-size: 13px;
 }
 
-.ouatis-pagination div:last-child {
+.ouatis-pagination__side--right {
     text-align: right;
 }
 
-.ouatis-pagination a {
+.ouatis-pagination__side a {
     color: var(--primary);
     font-weight: 600;
+    white-space: nowrap;
+}
+
+.ouatis-pagination__side a:hover,
+.ouatis-pagination__side a:focus-visible {
+    color: var(--ouatis-red);
+}
+
+.ouatis-pagination__pages {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.ouatis-pagination__pages a {
+    display: grid;
+    place-items: center;
+    min-width: 34px;
+    height: 34px;
+    padding: 0 6px;
+    border: 1px solid transparent;
+    color: var(--secondary);
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    transition: color 0.18s ease, border-color 0.18s ease;
+}
+
+.ouatis-pagination__pages a:hover,
+.ouatis-pagination__pages a:focus-visible {
+    color: var(--ouatis-red);
+    border-color: var(--border);
+}
+
+.ouatis-pagination__pages a.is-current {
+    color: var(--ouatis-red);
+    border-color: var(--ouatis-red);
+}
+
+.ouatis-pagination__gap {
+    color: var(--tertiary);
+    letter-spacing: 2px;
 }
 
 /* Reading pages */
@@ -908,6 +953,26 @@ button#theme-toggle {
 
     #menu a {
         font-size: 13px;
+    }
+
+    .ouatis-pagination {
+        grid-template-columns: auto auto auto;
+        justify-content: center;
+        gap: 14px;
+        padding-bottom: 48px;
+    }
+
+    .ouatis-pagination__word {
+        display: none;
+    }
+
+    .ouatis-pagination__pages {
+        gap: 4px;
+    }
+
+    .ouatis-pagination__pages a {
+        min-width: 32px;
+        height: 32px;
     }
 
     .ouatis-hero,

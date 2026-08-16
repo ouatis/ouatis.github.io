@@ -1,11 +1,8 @@
 {{- define "main" }}
-{{- $pages := site.RegularPages }}
-{{- if eq site.Language.Lang "en" }}
-{{- $pages = where site.Pages "Section" "posts" }}
-{{- $pages = where $pages "Kind" "page" }}
-{{- else }}
-{{- $pages = where site.RegularPages "Section" "posts" }}
-{{- end }}
+{{- /* 英语首页直接列中文文章:英文界面 + 中文正文,与 en/flaubert 目录页的既有约定一致 */ -}}
+{{- $contentSite := site }}
+{{- if eq site.Language.Lang "en" }}{{- $contentSite = index site.Sites 0 }}{{- end }}
+{{- $pages := where $contentSite.RegularPages "Section" "posts" }}
 {{- $pages = where $pages "Params.hiddenInHomeList" "!=" "true" }}
 {{- $paginator := .Paginate $pages }}
 {{- $offset := mul (sub $paginator.PageNumber 1) $paginator.PagerSize }}

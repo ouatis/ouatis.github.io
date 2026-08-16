@@ -729,7 +729,7 @@ h6:hover .anchor {
         display: block;
         position: fixed;
         top: calc(var(--header-height) + 48px);
-        left: calc((100vw - var(--main-width)) / 2 - 290px);
+        left: calc((100vw - var(--main-width)) / 2 - 294px);
         font-family: var(--ouatis-serif);
     }
 
@@ -759,8 +759,18 @@ h6:hover .anchor {
         transition: color 0.18s ease, border-color 0.18s ease;
     }
 
-    .ouatis-toc__toggle:hover,
+    .ouatis-toc__toggle:hover {
+        color: var(--ouatis-red);
+        border-color: var(--ouatis-red);
+    }
+
+    /* 展开态:页签退为安静的收起把手 */
     .ouatis-toc.is-open .ouatis-toc__toggle {
+        color: var(--secondary);
+        border-color: var(--border);
+    }
+
+    .ouatis-toc.is-open .ouatis-toc__toggle:hover {
         color: var(--ouatis-red);
         border-color: var(--ouatis-red);
     }
@@ -769,11 +779,7 @@ h6:hover .anchor {
         position: absolute;
         top: 0;
         left: 34px;
-        width: 232px;
-        padding: 18px 16px 14px;
-        border: 1px solid var(--border);
-        border-radius: 2px;
-        background: var(--ouatis-surface);
+        width: 240px;
         visibility: hidden;
         opacity: 0;
         transform: translateX(-6px);

@@ -39,6 +39,7 @@
   </section>
   {{- end }}
 
+  {{- if gt (len $pages) 0 }}
   <section class="ouatis-writing" aria-labelledby="recent-writing">
     <header class="ouatis-section-head">
       <div>
@@ -71,6 +72,7 @@
       {{- end }}
     </div>
   </section>
+  {{- end }}
 
   {{- if gt $paginator.TotalPages 1 }}
   <nav class="ouatis-pagination" aria-label="{{ if eq site.Language.Lang "en" }}Pagination{{ else }}文章分页{{ end }}">

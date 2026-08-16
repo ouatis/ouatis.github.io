@@ -50,7 +50,6 @@ copyright = "© **[SigiL](https://github.com/ouatis)**"
 
 [languages.en]
     title = "Once Upon a Time in SigiL"
-    description = "Writing, Flaubert, and other things."
     contentDir = "content/en"
     disableKinds = ['section', 'taxonomy', 'term']
     locale = 'en-US'
@@ -83,6 +82,7 @@ copyright = "© **[SigiL](https://github.com/ouatis)**"
 
     [languages.en.params]
         DateFormat = "January 2, 2006"
+        description = "Writing, Flaubert, and other things."
 
 [params.footer]
     text = "IMAGINE UNPOETIC LION"

@@ -545,6 +545,7 @@ button#theme-toggle {
 .post-content h6 {
     font-family: var(--ouatis-serif);
     text-align: left;
+    scroll-margin-top: calc(var(--header-height) + 16px);
 }
 
 .post-content h2 {
@@ -706,6 +707,83 @@ h6:hover .anchor {
     color: var(--ouatis-green);
     font-size: 13px;
     letter-spacing: 2px;
+}
+
+.toc .inner ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.toc .inner ul ul {
+    padding-inline-start: 14px;
+}
+
+/* 宽屏左侧悬浮目录:利用正文栏(760px)左侧留白 */
+.ouatis-toc {
+    display: none;
+}
+
+@media (min-width: 1360px) {
+    .ouatis-toc {
+        display: block;
+        position: fixed;
+        top: calc(var(--header-height) + 48px);
+        left: calc((100vw - var(--main-width)) / 2 - 280px);
+        width: 240px;
+        font-family: var(--ouatis-serif);
+    }
+
+    .toc {
+        display: none;
+    }
+}
+
+.ouatis-toc__title {
+    margin-bottom: 14px;
+    color: var(--ouatis-green);
+    font-family: var(--ouatis-sans);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.ouatis-toc__scroll {
+    max-height: calc(100vh - var(--header-height) - 160px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    scrollbar-color: var(--tertiary) transparent;
+}
+
+.ouatis-toc #TableOfContents ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.ouatis-toc #TableOfContents ul ul {
+    padding-inline-start: 14px;
+}
+
+.ouatis-toc #TableOfContents a {
+    display: block;
+    padding: 5px 0 5px 12px;
+    border-inline-start: 2px solid transparent;
+    color: var(--secondary);
+    font-size: 13px;
+    line-height: 1.6;
+    text-decoration: none;
+    transition: color 0.18s ease, border-color 0.18s ease;
+}
+
+.ouatis-toc #TableOfContents a:hover {
+    color: var(--ouatis-red);
+}
+
+.ouatis-toc #TableOfContents a.is-active {
+    color: var(--ouatis-red);
+    border-inline-start-color: var(--ouatis-red);
 }
 
 .post-tags a {
@@ -1337,6 +1415,7 @@ body {
     .top-link,
     #ouatis-progress,
     .toc,
+    .ouatis-toc,
     .post-nav,
     .related-posts,
     .copy-code,

@@ -1,0 +1,76 @@
+{{- $headers := findRE "<h[1-6].*?>(.|\n])+?</h[1-6]>" .Content -}}
+{{- if ge (len $headers) 1 -}}
+{{- $tocTitle := "目录" -}}
+{{- if eq site.Language.Lang "en" }}{{- $tocTitle = "Contents" -}}{{- end }}
+
+{{- /* 宽屏左侧悬浮目录,窄屏回退到下方折叠框 */ -}}
+<aside class="ouatis-toc" aria-label="{{ $tocTitle }}">
+    <p class="ouatis-toc__title">{{ $tocTitle }}</p>
+    <div class="ouatis-toc__scroll">
+        {{- .TableOfContents -}}
+    </div>
+</aside>
+
+<div class="toc">
+    <details {{ if (.Param "TocOpen") }} open{{ end }}>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">{{ $tocTitle }}</span>
+        </summary>
+        <div class="inner">
+            {{- .TableOfContents -}}
+        </div>
+    </details>
+</div>
+
+<script>
+(function () {
+    function ready(fn) {
+        if (document.readyState !== "loading") fn();
+        else document.addEventListener("DOMContentLoaded", fn);
+    }
+    ready(function () {
+        var toc = document.querySelector(".ouatis-toc");
+        if (!toc) return;
+        var links = {};
+        toc.querySelectorAll('a[href^="#"]').forEach(function (a) {
+            links[a.getAttribute('href').slice(1)] = a;
+        });
+        var heads = [];
+        Object.keys(links).forEach(function (id) {
+            var h = document.getElementById(id);
+            if (h) heads.push(h);
+        });
+        if (!heads.length) return;
+
+        function measure() {
+            heads.forEach(function (h) { h._y = h.getBoundingClientRect().top + window.scrollY; });
+        }
+
+        var scroller = toc.querySelector('.ouatis-toc__scroll');
+        function update() {
+            var pos = window.scrollY + 140;
+            var currentId = heads[0].id;
+            for (var i = 0; i < heads.length; i++) {
+                if (heads[i]._y <= pos) currentId = heads[i].id;
+            }
+            toc.querySelectorAll('a.is-active').forEach(function (a) { a.classList.remove('is-active'); });
+            var active = links[currentId];
+            if (!active) return;
+            active.classList.add('is-active');
+            var top = active.offsetTop;
+            if (top < scroller.scrollTop || top > scroller.scrollTop + scroller.clientHeight - 40) {
+                scroller.scrollTop = top - scroller.clientHeight / 2;
+            }
+        }
+
+        var raf = null;
+        window.addEventListener('scroll', function () {
+            if (!raf) raf = requestAnimationFrame(function () { raf = null; update(); });
+        }, { passive: true });
+        window.addEventListener('resize', function () { measure(); update(); });
+        measure();
+        update();
+    });
+})();
+</script>
+{{- end -}}

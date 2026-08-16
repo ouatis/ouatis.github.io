@@ -746,8 +746,9 @@ h6:hover .anchor {
     .ouatis-toc__toggle {
         display: block;
         writing-mode: vertical-rl;
-        padding: 6px 8px;
+        padding: 22px 8px 6px 2px;
         border: 0;
+        border-right: 1px solid var(--ouatis-green);
         background: none;
         color: var(--ouatis-green);
         font-family: var(--ouatis-sans);
@@ -755,11 +756,12 @@ h6:hover .anchor {
         font-weight: 700;
         letter-spacing: 6px;
         cursor: pointer;
-        transition: color 0.18s ease;
+        transition: color 0.18s ease, border-color 0.18s ease;
     }
 
     .ouatis-toc__toggle:hover {
         color: var(--ouatis-red);
+        border-right-color: var(--ouatis-red);
     }
 
     .ouatis-toc__panel {

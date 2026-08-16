@@ -3,11 +3,16 @@
 {{- $tocTitle := "目录" -}}
 {{- if eq site.Language.Lang "en" }}{{- $tocTitle = "Contents" -}}{{- end }}
 
-{{- /* 宽屏左侧悬浮目录,窄屏回退到下方折叠框 */ -}}
+{{- /* 宽屏左侧悬浮目录,默认收起,点击页签展开;窄屏回退到下方折叠框 */ -}}
 <aside class="ouatis-toc" aria-label="{{ $tocTitle }}">
-    <p class="ouatis-toc__title">{{ $tocTitle }}</p>
-    <div class="ouatis-toc__scroll">
-        {{- .TableOfContents -}}
+    <button class="ouatis-toc__toggle" type="button" aria-expanded="false" aria-controls="ouatis-toc-panel" title="{{ $tocTitle }}">
+        <span class="ouatis-toc__toggle-label">{{ $tocTitle }}</span>
+    </button>
+    <div class="ouatis-toc__panel" id="ouatis-toc-panel">
+        <p class="ouatis-toc__title">{{ $tocTitle }}</p>
+        <div class="ouatis-toc__scroll">
+            {{- .TableOfContents -}}
+        </div>
     </div>
 </aside>
 
@@ -29,8 +34,23 @@
         else document.addEventListener("DOMContentLoaded", fn);
     }
     ready(function () {
-        var toc = document.querySelector(".ouatis-toc");
+        var toc = document.querySelector('.ouatis-toc');
         if (!toc) return;
+
+        var KEY = 'ouatis-toc-open';
+        var btn = toc.querySelector('.ouatis-toc__toggle');
+        try {
+            if (localStorage.getItem(KEY) === '1') {
+                toc.classList.add('is-open');
+                btn.setAttribute('aria-expanded', 'true');
+            }
+        } catch (e) {}
+        btn.addEventListener('click', function () {
+            var open = toc.classList.toggle('is-open');
+            btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+            try { localStorage.setItem(KEY, open ? '1' : '0'); } catch (e) {}
+        });
+
         var links = {};
         toc.querySelectorAll('a[href^="#"]').forEach(function (a) {
             links[a.getAttribute('href').slice(1)] = a;

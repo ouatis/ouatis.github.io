@@ -719,7 +719,7 @@ h6:hover .anchor {
     padding-inline-start: 14px;
 }
 
-/* 宽屏左侧悬浮目录:利用正文栏(760px)左侧留白 */
+/* 宽屏左侧悬浮目录:利用正文栏(760px)左侧留白,默认收起为竖排页签 */
 .ouatis-toc {
     display: none;
 }
@@ -729,13 +729,68 @@ h6:hover .anchor {
         display: block;
         position: fixed;
         top: calc(var(--header-height) + 48px);
-        left: calc((100vw - var(--main-width)) / 2 - 280px);
-        width: 240px;
+        left: calc((100vw - var(--main-width)) / 2 - 290px);
         font-family: var(--ouatis-serif);
     }
 
     .toc {
         display: none;
+    }
+}
+
+.ouatis-toc__toggle {
+    display: none;
+}
+
+@media (min-width: 1360px) {
+    .ouatis-toc__toggle {
+        display: block;
+        writing-mode: vertical-rl;
+        padding: 16px 6px;
+        border: 1px solid var(--border);
+        border-radius: 2px;
+        background: var(--ouatis-surface);
+        color: var(--ouatis-green);
+        font-family: var(--ouatis-sans);
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 4px;
+        cursor: pointer;
+        transition: color 0.18s ease, border-color 0.18s ease;
+    }
+
+    .ouatis-toc__toggle:hover,
+    .ouatis-toc.is-open .ouatis-toc__toggle {
+        color: var(--ouatis-red);
+        border-color: var(--ouatis-red);
+    }
+
+    .ouatis-toc__panel {
+        position: absolute;
+        top: 0;
+        left: 34px;
+        width: 232px;
+        padding: 18px 16px 14px;
+        border: 1px solid var(--border);
+        border-radius: 2px;
+        background: var(--ouatis-surface);
+        visibility: hidden;
+        opacity: 0;
+        transform: translateX(-6px);
+        transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+    }
+
+    .ouatis-toc.is-open .ouatis-toc__panel {
+        visibility: visible;
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ouatis-toc__toggle,
+    .ouatis-toc__panel {
+        transition: none;
     }
 }
 

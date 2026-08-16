@@ -890,9 +890,19 @@ h6:hover .anchor {
     color: var(--secondary);
 }
 
-/* Back to top */
+/* Back to top:纸感细线圆环 */
 .top-link {
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    color: var(--secondary);
     font-family: var(--ouatis-serif);
+    transition: color 0.18s ease, border-color 0.18s ease;
+}
+
+.top-link:hover {
+    color: var(--ouatis-red);
+    border-color: var(--ouatis-red);
 }
 
 /* Terms (categories/tags) */

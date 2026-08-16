@@ -27,13 +27,10 @@
   {{- end }}
 </header>
 
-{{- $pages := site.RegularPages }}
-{{- if eq site.Language.Lang "en" }}
-{{- $pages = where site.Pages "Section" "posts" }}
-{{- $pages = where $pages "Kind" "page" }}
-{{- else }}
-{{- $pages = where site.RegularPages "Type" "in" site.Params.mainSections }}
-{{- end }}
+{{- /* 英语站归档列中文文章,与首页约定一致 */ -}}
+{{- $contentSite := site }}
+{{- if eq site.Language.Lang "en" }}{{- $contentSite = index site.Sites 0 }}{{- end }}
+{{- $pages := where $contentSite.RegularPages "Section" "posts" }}
 
 {{- if site.Params.ShowAllPagesInArchive }}
 {{- $pages = site.RegularPages }}

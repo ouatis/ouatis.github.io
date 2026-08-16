@@ -114,6 +114,7 @@ copyright = "© **[SigiL](https://github.com/ouatis)**"
         SiteVerificationTag = "digJaGp7JYW7c_R1BNuHNHaaLHYzaCHwcPsEFrcuFvw"
 
     [params.assets]
+        theme_color = "#f4f6f3"
         favicon = "/avatar.webp"
         apple_touch_icon = "/apple-touch-icon.png"
 

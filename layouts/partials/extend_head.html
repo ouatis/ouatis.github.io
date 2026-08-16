@@ -48,3 +48,25 @@
     })();
 </script>
 {{- end }}
+
+{{- /* 字体预加载:与 CSS 并行下载,首屏标题不闪换 */}}
+<link rel="preload" href="{{ "fonts/noto-serif-sc-var.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
+
+{{- /* theme-color 跟随站点明暗主题(移动端浏览器栏色调) */}}
+<script>
+(function () {
+    var light = "#f4f6f3", dark = "#151917";
+    function apply() {
+        var mode = document.documentElement.getAttribute("data-theme") || "auto";
+        var isDark = mode === "dark" || (mode !== "light" && matchMedia("(prefers-color-scheme: dark)").matches);
+        document.querySelectorAll('meta[name="theme-color"]').forEach(function (m) {
+            m.setAttribute("content", isDark ? dark : light);
+        });
+    }
+    document.addEventListener("click", function (e) {
+        if (e.target && e.target.closest && e.target.closest("#theme-toggle")) setTimeout(apply, 60);
+    });
+    matchMedia("(prefers-color-scheme: dark)").addEventListener("change", apply);
+    apply();
+})();
+</script>

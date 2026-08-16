@@ -113,6 +113,10 @@ copyright = "© **[SigiL](https://github.com/ouatis)**"
     [params.analytics.google]
         SiteVerificationTag = "digJaGp7JYW7c_R1BNuHNHaaLHYzaCHwcPsEFrcuFvw"
 
+    # schema.org sameAs 要求绝对 URL,覆盖社交图标里的相对 RSS 路径
+    [params.schema]
+        sameAs = ["https://github.com/ouatis", "https://steamcommunity.com/id/ouatis/"]
+
     [params.assets]
         theme_color = "#f4f6f3"
         favicon = "/avatar.webp"

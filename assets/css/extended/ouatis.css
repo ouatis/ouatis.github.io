@@ -576,13 +576,110 @@ button#theme-toggle {
     text-decoration-color: var(--ouatis-red);
 }
 
+/* 引文:系统楷体书引,无楷体设备回退宋体子集 */
 .post-content blockquote {
+    margin: 28px 0;
+    padding: 0 18px;
+    border-inline-start: 2px solid var(--ouatis-red);
     color: var(--secondary);
-    border-inline-start-color: var(--ouatis-red);
+    font-family: "Kaiti SC", STKaiti, KaiTi, var(--ouatis-serif);
+    font-size: 0.94em;
+    line-height: 1.9;
+}
+
+.post-content blockquote p {
+    margin: 0.7em 0;
+}
+
+.post-content blockquote p:first-child {
+    margin-top: 0;
+}
+
+.post-content blockquote p:last-child {
+    margin-bottom: 0;
 }
 
 .post-content img {
     border-radius: 2px;
+}
+
+/* 分隔线:考据文的章节大分隔,居中短线 */
+.post-content hr {
+    height: 1px;
+    width: 120px;
+    margin: 44px auto;
+    background: var(--border);
+    border: 0;
+}
+
+/* 脚注:长译注区 */
+.footnotes {
+    margin-top: 48px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+    font-size: 0.85em;
+    line-height: 1.75;
+    color: var(--secondary);
+}
+
+.footnotes hr {
+    display: none;
+}
+
+.footnotes ol {
+    margin: 0;
+    padding-inline-start: 1.4em;
+}
+
+.footnotes li {
+    margin: 8px 0;
+    scroll-margin-top: calc(var(--header-height) + 16px);
+}
+
+.footnotes p {
+    margin: 0.5em 0;
+}
+
+.post-content a.footnote-ref {
+    color: var(--ouatis-green);
+    text-decoration: none;
+}
+
+.post-content a.footnote-ref:hover {
+    color: var(--ouatis-red);
+}
+
+a.footnote-backref {
+    color: var(--ouatis-green);
+    text-decoration: none;
+}
+
+a.footnote-backref:hover {
+    color: var(--ouatis-red);
+}
+
+/* 正文链接只用一条下划线(清掉主题 box-shadow 双线) */
+.post-content a {
+    box-shadow: none;
+}
+
+/* 标题锚点 */
+.post-content .anchor {
+    text-decoration: none;
+}
+
+.post-content .anchor:hover {
+    color: var(--ouatis-red);
+}
+
+h1:hover .anchor,
+h2:hover .anchor,
+h3:hover .anchor,
+h4:hover .anchor,
+h5:hover .anchor,
+h6:hover .anchor {
+    color: var(--ouatis-green);
+    font-weight: 400;
 }
 
 .toc {
@@ -591,6 +688,24 @@ button#theme-toggle {
     border-radius: 4px;
     background: transparent;
     font-family: var(--ouatis-serif);
+}
+
+.toc a {
+    color: var(--secondary);
+    text-decoration: none;
+}
+
+.toc a:hover {
+    box-shadow: none;
+    color: var(--ouatis-red);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.toc .details {
+    color: var(--ouatis-green);
+    font-size: 13px;
+    letter-spacing: 2px;
 }
 
 .post-tags a {
@@ -668,7 +783,24 @@ button#theme-toggle {
 
 .terms-tags a {
     font-family: var(--ouatis-serif);
-    transition: transform 180ms ease, background-color 180ms ease;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    transition: color 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+
+.terms-tags a:hover {
+    border-color: var(--ouatis-red);
+    color: var(--ouatis-red);
+}
+
+.terms-tags a:active {
+    background: transparent;
+}
+
+.terms-tags a sup {
+    color: var(--secondary);
+    font-weight: 400;
 }
 
 .terms-tags--weighted a {
@@ -677,7 +809,17 @@ button#theme-toggle {
 
 /* Search */
 #searchbox input {
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    border-radius: 2px;
     font-family: var(--ouatis-serif);
+    font-weight: 500;
+}
+
+#searchbox input:focus,
+#searchbox input:focus-visible {
+    border-color: var(--ouatis-green);
+    outline: none;
 }
 
 #searchResults {
@@ -705,13 +847,53 @@ button#theme-toggle {
     text-decoration-color: var(--ouatis-red);
 }
 
-/* Post nav links */
+/* Post nav links:纸感细线分栏 */
 .paginav {
+    background: transparent;
+    border: 0;
+    border-top: 1px solid var(--border);
+    border-radius: 0;
+    line-height: 24px;
     font-family: var(--ouatis-serif);
 }
 
 .paginav a {
+    border-radius: 0;
+    padding: 18px 4px 0;
     font-family: var(--ouatis-serif);
+}
+
+.paginav a:hover {
+    background: transparent;
+}
+
+.paginav span:hover:not(.title) {
+    box-shadow: none;
+}
+
+.paginav .title {
+    color: var(--ouatis-green);
+    font-family: var(--ouatis-sans);
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.paginav a span:not(.title) {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.paginav a:hover span:not(.title) {
+    color: var(--ouatis-red);
+}
+
+.paginav .prev {
+    border-inline-end: 1px solid var(--border);
+    padding-inline-end: 20px;
+}
+
+.paginav .next {
+    padding-inline-start: 20px;
 }
 
 .related-posts {
@@ -870,6 +1052,11 @@ button#theme-toggle {
 .post-content code,
 .post-content pre {
     font-family: var(--ouatis-sans);
+}
+
+.post-content code {
+    font-size: 0.85em;
+    padding: 2px 6px;
 }
 
 /* i18n language list */

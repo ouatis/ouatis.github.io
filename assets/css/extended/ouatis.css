@@ -64,6 +64,28 @@
     color: rgba(var(--ouatis-amber-rgb), 0.95);
 }
 
+/* 跳到正文:键盘用户 Tab 一下直达内容,平时隐藏 */
+.skip-link {
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    z-index: 200;
+    padding: 8px 14px;
+    background: var(--entry);
+    border: 1px solid var(--border);
+    color: var(--primary);
+    font-family: var(--ouatis-serif);
+    font-size: 13px;
+    text-decoration: none;
+    transform: translateY(-300%);
+}
+
+.skip-link:focus-visible {
+    transform: none;
+    outline: 2px solid var(--ouatis-red);
+    outline-offset: 2px;
+}
+
 /* 表格：纸感细线，表头墨绿底线 */
 .post-content table {
     font-size: 0.95em;

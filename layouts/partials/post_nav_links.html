@@ -19,7 +19,7 @@
 {{- end }}
 
 {{- /* Related posts: real HTML internal links, boosts indexing of orphan posts */}}
-{{- $related := site.RegularPages.Related . | first 8 }}
+{{- $related := site.RegularPages.Related . | first 3 }}
 {{- if and (ne (.Param "showRelated") false) $related }}
 <nav class="related-posts">
   <h3 class="related-posts-title">相关文章</h3>

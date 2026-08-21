@@ -197,7 +197,7 @@ button#theme-toggle {
 
 #menu a {
     color: var(--secondary);
-    font-family: var(--ouatis-serif);
+    font-family: var(--ouatis-sans);
     font-size: 14px;
 }
 
@@ -230,16 +230,17 @@ button#theme-toggle {
 
 .ouatis-hero {
     display: grid;
-    min-height: 510px;
+    min-height: 438px;
     grid-template-columns: minmax(0, 1.45fr) minmax(260px, 0.55fr);
     align-items: center;
-    gap: 80px;
-    padding: 64px 0 56px;
+    gap: 64px;
+    padding: 52px 0 44px;
     border-bottom: 1px solid var(--border);
 }
 
 .ouatis-kicker {
     color: var(--ouatis-green);
+    font-family: var(--ouatis-sans);
     font-size: 12px;
     font-weight: 700;
     line-height: 1.5;
@@ -263,6 +264,7 @@ button#theme-toggle {
 .ouatis-hero__intro {
     margin-top: 16px;
     color: var(--secondary);
+    font-family: var(--ouatis-sans);
     font-size: 15px;
     line-height: 1.8;
 }
@@ -331,6 +333,7 @@ button#theme-toggle {
 .ouatis-seal figcaption {
     margin-top: 28px;
     color: var(--secondary);
+    font-family: var(--ouatis-sans);
     font-size: 10px;
     line-height: 1.5;
 }
@@ -358,6 +361,7 @@ button#theme-toggle {
 
 .ouatis-section-head__count {
     color: var(--secondary);
+    font-family: var(--ouatis-sans);
     font-size: 13px;
 }
 
@@ -374,6 +378,15 @@ button#theme-toggle {
     gap: 24px;
     padding: 22px 0;
     border-bottom: 1px solid var(--border);
+}
+
+.ouatis-entry.is-latest {
+    padding-inline-start: 12px;
+    border-inline-start: 2px solid var(--ouatis-red);
+}
+
+.ouatis-entry.is-latest .ouatis-entry__number {
+    color: var(--ouatis-red);
 }
 
 .ouatis-entry__link {
@@ -445,8 +458,12 @@ button#theme-toggle {
     gap: 6px 14px;
     margin-top: 9px;
     color: var(--secondary);
-    font-family: var(--ouatis-serif);
+    font-family: var(--ouatis-sans);
     font-size: 12px;
+}
+
+.ouatis-entry.is-latest h3 {
+    font-size: 30px;
 }
 
 .ouatis-entry__category {
@@ -478,6 +495,7 @@ button#theme-toggle {
     gap: 24px;
     padding: 28px 0 64px;
     color: var(--secondary);
+    font-family: var(--ouatis-sans);
     font-size: 13px;
 }
 
@@ -1276,13 +1294,13 @@ h6:hover .anchor {
     }
 
     .ouatis-hero {
-        min-height: 460px;
+        min-height: 410px;
         grid-template-columns: minmax(0, 1fr) 190px;
-        gap: 42px;
+        gap: 32px;
     }
 
     .ouatis-hero h1 {
-        font-size: 66px;
+        font-size: 58px;
     }
 
     .ouatis-seal__frame {
@@ -1448,6 +1466,10 @@ h6:hover .anchor {
 
     .ouatis-entry h3 {
         font-size: 20px;
+    }
+
+    .ouatis-entry.is-latest h3 {
+        font-size: 23px;
     }
 
     .ouatis-entry__meta {

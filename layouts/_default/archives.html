@@ -38,9 +38,9 @@
 </nav>
 {{- end }}
 
-{{- /* 英语站归档列中文文章,与首页约定一致 */ -}}
+{{- /* 英日站归档列中文文章,与首页约定一致 */ -}}
 {{- $contentSite := site }}
-{{- if eq site.Language.Lang "en" }}{{- $contentSite = index site.Sites 0 }}{{- end }}
+{{- if ne site.Language.Lang "zh-cn" }}{{- $contentSite = index site.Sites 0 }}{{- end }}
 {{- $pages := where $contentSite.RegularPages "Section" "posts" }}
 
 {{- if site.Params.ShowAllPagesInArchive }}
@@ -64,6 +64,8 @@
       <a class="archive-header-link" href="#{{ $year }}-{{ .Key }}">
         {{- if eq site.Language.Lang "en" }}
         {{- index $month_names (sub (int .Key) 1) }}
+        {{- else if eq site.Language.Lang "ja" }}
+        {{- .Key }}月
         {{- else }}
         {{- .Key }} 月
         {{- end }}

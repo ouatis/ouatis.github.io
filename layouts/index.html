@@ -1,7 +1,7 @@
 {{- define "main" }}
-{{- /* 英语首页直接列中文文章:英文界面 + 中文正文,与 en/flaubert 目录页的既有约定一致 */ -}}
+{{- /* 英日首页直接列中文文章:外语界面 + 中文正文,与 en/flaubert 目录页的既有约定一致 */ -}}
 {{- $contentSite := site }}
-{{- if eq site.Language.Lang "en" }}{{- $contentSite = index site.Sites 0 }}{{- end }}
+{{- if ne site.Language.Lang "zh-cn" }}{{- $contentSite = index site.Sites 0 }}{{- end }}
 {{- $pages := where $contentSite.RegularPages "Section" "posts" }}
 {{- $pages = where $pages "Params.hiddenInHomeList" "!=" "true" }}
 {{- $paginator := .Paginate $pages }}
@@ -15,6 +15,10 @@
       <p class="ouatis-kicker">OUATIS <span aria-hidden="true">∴</span> SINCE 2012</p>
       <h1 id="ouatis-title">Once Upon a Time in SigiL</h1>
       <p class="ouatis-hero__intro">SigiL's personal site. Writing, Flaubert, and other things.</p>
+      {{- else if eq site.Language.Lang "ja" }}
+      <p class="ouatis-kicker">Once Upon a Time in SigiL <span aria-hidden="true">∴</span> SINCE 2012</p>
+      <h1 id="ouatis-title">籠城往事</h1>
+      <p class="ouatis-hero__intro">ここは SigiL の個人サイト。SigiL は私です。</p>
       {{- else }}
       <p class="ouatis-kicker">Once Upon a Time in SigiL <span aria-hidden="true">∴</span> SINCE 2012</p>
       <h1 id="ouatis-title">笼城往事</h1>
@@ -43,7 +47,7 @@
         <p>RECENT WRITING</p>
         <h2 id="recent-writing">{{ if eq site.Language.Lang "en" }}Recent Writing{{ else }}近作{{ end }}</h2>
       </div>
-      <p class="ouatis-section-head__count">{{ len $pages }}{{ if eq site.Language.Lang "en" }} posts{{ else }} 篇文章{{ end }}</p>
+      <p class="ouatis-section-head__count">{{ len $pages }}{{ if eq site.Language.Lang "en" }} posts{{ else if eq site.Language.Lang "ja" }} 編{{ else }} 篇文章{{ end }}</p>
     </header>
 
     <div class="ouatis-feed">
@@ -61,7 +65,7 @@
               <span class="ouatis-entry__category">{{ .LinkTitle }}</span>
               {{- end }}
               {{- end }}
-              <span>{{ .ReadingTime }}{{ if eq site.Language.Lang "en" }} min{{ else }} 分钟{{ end }}</span>
+              <span>{{ .ReadingTime }}{{ if eq site.Language.Lang "en" }} min{{ else if eq site.Language.Lang "ja" }} 分{{ else }} 分钟{{ end }}</span>
             </div>
           </div>
           <span class="ouatis-entry__arrow" aria-hidden="true">→</span>
@@ -72,10 +76,10 @@
   {{- end }}
 
   {{- if gt $paginator.TotalPages 1 }}
-  <nav class="ouatis-pagination" aria-label="{{ if eq site.Language.Lang "en" }}Pagination{{ else }}文章分页{{ end }}">
+  <nav class="ouatis-pagination" aria-label="{{ if eq site.Language.Lang "en" }}Pagination{{ else if eq site.Language.Lang "ja" }}ページ送り{{ else }}文章分页{{ end }}">
     <span class="ouatis-pagination__side">
       {{- if $paginator.HasPrev }}
-      <a href="{{ $paginator.Prev.URL }}"><span aria-hidden="true">←</span> <span class="ouatis-pagination__word">{{ if eq site.Language.Lang "en" }}Prev{{ else }}上一页{{ end }}</span></a>
+      <a href="{{ $paginator.Prev.URL }}"><span aria-hidden="true">←</span> <span class="ouatis-pagination__word">{{ if eq site.Language.Lang "en" }}Prev{{ else if eq site.Language.Lang "ja" }}前へ{{ else }}上一页{{ end }}</span></a>
       {{- end }}
     </span>
     <ol class="ouatis-pagination__pages">
@@ -94,7 +98,7 @@
     </ol>
     <span class="ouatis-pagination__side ouatis-pagination__side--right">
       {{- if $paginator.HasNext }}
-      <a href="{{ $paginator.Next.URL }}"><span class="ouatis-pagination__word">{{ if eq site.Language.Lang "en" }}Next{{ else }}下一页{{ end }}</span> <span aria-hidden="true">→</span></a>
+      <a href="{{ $paginator.Next.URL }}"><span class="ouatis-pagination__word">{{ if eq site.Language.Lang "en" }}Next{{ else if eq site.Language.Lang "ja" }}次へ{{ else }}下一页{{ end }}</span> <span aria-hidden="true">→</span></a>
       {{- end }}
     </span>
   </nav>

@@ -68,6 +68,36 @@ copyright = "© **[SigiL](https://github.com/ouatis)**"
         DateFormat = "January 2, 2006"
         description = "Writing, Flaubert, and other things."
 
+[languages.ja]
+    title = "籠城往事 | Once Upon a Time in SigiL"
+    contentDir = "content/ja"
+    disableKinds = ['section', 'taxonomy', 'term']
+    locale = 'ja-JP'
+    label = '日本語'
+    weight = 3
+
+    [[languages.ja.menus.main]]
+        identifier = "about"
+        name = "私について"
+        url = "/ja/about/"
+        weight = 10
+
+    [[languages.ja.menus.main]]
+        identifier = "flaubert"
+        name = "フローベール講義"
+        url = "/ja/flaubert/"
+        weight = 15
+
+    [[languages.ja.menus.main]]
+        identifier = "archives"
+        name = "アーカイブ"
+        url = "/ja/archives/"
+        weight = 20
+
+    [languages.ja.params]
+        DateFormat = "2006年1月2日"
+        description = "執筆とフローベール、そしてその他。"
+
 [params.footer]
     text = "IMAGINE UNPOETIC LION"
 

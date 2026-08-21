@@ -211,6 +211,67 @@ button#theme-toggle {
     border-bottom-color: var(--ouatis-red);
 }
 
+.logo-switches {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-switches button#theme-toggle {
+    margin-inline-start: 0;
+}
+
+.lang-switch {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: var(--ouatis-sans);
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+.lang-switch li {
+    display: flex;
+    align-items: center;
+}
+
+.lang-switch li + li::before {
+    margin-inline-end: 10px;
+    color: var(--tertiary);
+    content: "/";
+}
+
+.lang-switch a,
+.lang-switch .is-current {
+    color: var(--secondary);
+    text-decoration: none;
+    transition: color 180ms ease;
+}
+
+.lang-switch .is-current {
+    position: relative;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.lang-switch .is-current::after {
+    position: absolute;
+    right: 0;
+    bottom: -6px;
+    left: 0;
+    height: 2px;
+    background: var(--ouatis-red);
+    content: "";
+}
+
+.lang-switch a:hover,
+.lang-switch a:focus-visible {
+    color: var(--ouatis-red);
+}
+
 /* Home */
 .main:has(.ouatis-home) {
     max-width: none;

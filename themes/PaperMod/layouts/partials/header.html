@@ -56,24 +56,26 @@
                 {{- end }}
                 
                 {{- if (not site.Params.disableLangToggle) }}
-                    {{- $lang := .Lang}}
-                    {{- $separator := or $label_text (not site.Params.disableThemeToggle)}}
                     {{- with site.Home.Translations }}
-                    <ul class="lang-switch">
-                        {{- if $separator }}<li>|</li>{{ end }}
-                        {{- range . -}}
-                        {{- if ne $lang .Lang }}
+                    <ul class="lang-switch" aria-label="Language switcher">
                         <li>
-                            <a href="{{- .Permalink -}}" title="{{ .Language.Params.languageAltTitle | default (.Language.Label | emojify) | default (.Lang | title) }}"
+                            <span class="is-current" aria-current="true">
+                                {{- if eq site.Language.Lang "en" -}}EN
+                                {{- else if eq site.Language.Lang "ja" -}}日本語
+                                {{- else -}}中文
+                                {{- end -}}
+                            </span>
+                        </li>
+                        {{- range . -}}
+                        <li>
+                            <a href="{{- .Permalink -}}" title="{{ .Language.Label | default (.Lang | title) }}"
                                 aria-label="{{ .Language.Label | default (.Lang | title) }}">
-                                {{- if (and site.Params.displayFullLangName (.Language.Label)) }}
-                                {{- .Language.Label | emojify -}}
-                                {{- else }}
-                                {{- .Lang | title -}}
+                                {{- if eq .Lang "en" -}}EN
+                                {{- else if eq .Lang "ja" -}}日本語
+                                {{- else -}}中文
                                 {{- end -}}
                             </a>
                         </li>
-                        {{- end -}}
                         {{- end}}
                     </ul>
                     {{- end }}

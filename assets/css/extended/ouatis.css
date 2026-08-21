@@ -238,8 +238,7 @@ button#theme-toggle {
     border-bottom: 1px solid var(--border);
 }
 
-.ouatis-kicker,
-.ouatis-section-head > div > p {
+.ouatis-kicker {
     color: var(--ouatis-green);
     font-size: 12px;
     font-weight: 700;
@@ -350,7 +349,7 @@ button#theme-toggle {
 }
 
 .ouatis-section-head h2 {
-    margin-top: 8px;
+    margin-top: 0;
     color: var(--primary);
     font-family: var(--ouatis-serif);
     font-size: 38px;

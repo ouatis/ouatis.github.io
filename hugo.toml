@@ -30,23 +30,7 @@ copyright = "© **[SigiL](https://github.com/ouatis)**"
         url = "/archives/"
         weight = 20
 
-    [[languages."zh-CN".menus.main]]
-        identifier = "categories"
-        name = "分类"
-        url = "/categories/"
-        weight = 30
-
-    [[languages."zh-CN".menus.main]]
-        identifier = "tags"
-        name = "标签"
-        url = "/tags/"
-        weight = 40
-
-    [[languages."zh-CN".menus.main]]
-        identifier = "search"
-        name = "搜索"
-        url = "/search/"
-        weight = 50
+    # 万事皆三:主导航只留三项;分类/标签/搜索改由归档页"三条小径"进入
 
 [languages.en]
     title = "Once Upon a Time in SigiL"
@@ -107,7 +91,7 @@ copyright = "© **[SigiL](https://github.com/ouatis)**"
     showShareButtons = false
     showPostNavLinks = true
     ShowCodeCopyButtons = true
-    showWordCount = true
+    showWordCount = false   # 万事皆三:文章信息只留 日期·时长·作者 三条
     hideSummary = true
 
     [params.analytics.google]

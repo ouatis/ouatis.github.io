@@ -27,6 +27,17 @@
   {{- end }}
 </header>
 
+{{- /* 万事皆三:三条小径,分类/标签/搜索由此进入 */}}
+{{- if eq site.Language.Lang "zh-cn" }}
+<nav class="ouatis-trivium" aria-label="三条小径">
+  <a href="{{ "/categories/" | absLangURL }}">分类</a>
+  <span class="tri-sep" aria-hidden="true">∴</span>
+  <a href="{{ "/tags/" | absLangURL }}">标签</a>
+  <span class="tri-sep" aria-hidden="true">∴</span>
+  <a href="{{ "/search/" | absLangURL }}">搜索</a>
+</nav>
+{{- end }}
+
 {{- /* 英语站归档列中文文章,与首页约定一致 */ -}}
 {{- $contentSite := site }}
 {{- if eq site.Language.Lang "en" }}{{- $contentSite = index site.Sites 0 }}{{- end }}

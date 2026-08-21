@@ -125,6 +125,19 @@
     border-color: var(--ouatis-green);
 }
 
+/* 万事皆三:连同搜索框,一共三条出路 */
+.site-404__ways {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px 16px;
+    margin-top: clamp(28px, 5vw, 44px);
+}
+
+.site-404__ways .site-404__link {
+    margin-top: 0;
+}
+
 @keyframes lane-draw {
     from {
         opacity: 0;

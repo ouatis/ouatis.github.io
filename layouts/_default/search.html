@@ -24,7 +24,7 @@
 {{- with site.Taxonomies.tags }}
 <div class="search-suggestions">
     <span>试试：</span>
-    {{- range first 8 .ByCount }}
+    {{- range first 3 .ByCount }}
     <a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a>
     {{- end }}
 </div>

@@ -6,7 +6,12 @@
         <form class="site-404__search" action="{{ "search/" | absLangURL }}" method="get" role="search">
             <input type="search" name="q" placeholder="{{ if eq site.Language.Lang "en" }}Search the site…{{ else }}搜索全站……{{ end }}" aria-label="search" autocomplete="off" maxlength="64">
         </form>
-        <a class="site-404__link" href="{{ "" | absLangURL }}">{{ if eq site.Language.Lang "en" }}Back home{{ else }}回到笼城往事{{ end }}</a>
+        {{- /* 万事皆三:连同上面的搜索框,一共三条出路 */}}
+        <div class="site-404__ways">
+            <a class="site-404__link" href="{{ "" | absLangURL }}">{{ if eq site.Language.Lang "en" }}Back home{{ else }}回到笼城往事{{ end }}</a>
+            <span class="tri-sep" aria-hidden="true">∴</span>
+            <a class="site-404__link" href="{{ "archives/" | absLangURL }}">{{ if eq site.Language.Lang "en" }}Browse archives{{ else }}去归档翻翻{{ end }}</a>
+        </div>
     </div>
 </section>
 {{- end }}

@@ -14,6 +14,7 @@
     --border: #d7ddd8;
     --ouatis-red: #ad3e32;
     --ouatis-green: #2f6754;
+    --ouatis-amber-rgb: 208, 168, 92; /* 万事皆三:朱砂·墨绿·琥珀,三色足矣 */
     --ouatis-surface: #ffffff;
     --ouatis-serif: "Noto Serif SC Subset", "Songti SC", "Noto Serif CJK SC", STSong, SimSun, serif;
     --ouatis-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
@@ -47,15 +48,20 @@
     background: rgba(224, 112, 97, 0.28);
 }
 
-/* 高亮标记：琥珀 */
+/* 高亮标记:琥珀,三色之三 */
 .post-content mark {
-    background: rgba(208, 168, 92, 0.35);
+    background: rgba(var(--ouatis-amber-rgb), 0.35);
     color: inherit;
     padding: 0 2px;
     border-radius: 2px;
 }
 [data-theme="dark"] .post-content mark {
-    background: rgba(208, 168, 92, 0.28);
+    background: rgba(var(--ouatis-amber-rgb), 0.28);
+}
+
+/* 三点所以符 ∴ :全站「万事皆三」的印记 */
+.tri-sep {
+    color: rgba(var(--ouatis-amber-rgb), 0.95);
 }
 
 /* 表格：纸感细线，表头墨绿底线 */
@@ -279,6 +285,16 @@ button#theme-toggle {
     inset: -9px;
     border: 1px solid var(--tertiary);
     border-radius: 50%;
+    content: "";
+}
+
+/* 万事皆三:徽记外再加第三重环 */
+.ouatis-seal__frame::before {
+    position: absolute;
+    inset: -18px;
+    border: 1px solid var(--tertiary);
+    border-radius: 50%;
+    opacity: 0.55;
     content: "";
 }
 
@@ -604,12 +620,12 @@ button#theme-toggle {
     border-radius: 2px;
 }
 
-/* 分隔线:考据文的章节大分隔,居中短线 */
+/* 分隔线:考据文的章节大分隔,居中三段短线——万事皆三 */
 .post-content hr {
     height: 1px;
-    width: 120px;
+    width: 104px;
     margin: 44px auto;
-    background: var(--border);
+    background: repeating-linear-gradient(90deg, var(--border) 0 24px, transparent 24px 40px);
     border: 0;
 }
 
@@ -836,6 +852,31 @@ h6:hover .anchor {
     border-top: 1px solid var(--border);
     color: var(--secondary);
     font-family: var(--ouatis-serif);
+}
+
+.footer .tri-sep {
+    margin: 0 10px;
+}
+
+/* 三条小径:归档页顶部的 分类 ∴ 标签 ∴ 搜索 */
+.ouatis-trivium {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 30px;
+    font-family: var(--ouatis-serif);
+    font-size: 13px;
+}
+
+.ouatis-trivium a {
+    color: var(--secondary);
+    text-decoration: none;
+    transition: color 180ms ease;
+}
+
+.ouatis-trivium a:hover,
+.ouatis-trivium a:focus-visible {
+    color: var(--ouatis-red);
 }
 
 /* Archive page */
@@ -1446,6 +1487,7 @@ body {
         --border: #bbbbbb !important;
         --ouatis-red: #111111 !important;
         --ouatis-green: #111111 !important;
+        --ouatis-amber-rgb: 80, 80, 80 !important;
         --ouatis-surface: #ffffff !important;
         --code-bg: #f5f5f5 !important;
         --code-block-bg: #f5f5f5 !important;

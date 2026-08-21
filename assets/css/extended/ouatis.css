@@ -397,6 +397,7 @@ button#theme-toggle {
     font-size: 24px;
     font-weight: 700;
     line-height: 1.35;
+    text-wrap: balance;
     text-decoration: underline;
     text-decoration-color: transparent;
     text-decoration-thickness: 1px;
@@ -532,6 +533,7 @@ button#theme-toggle {
     font-family: var(--ouatis-serif);
     font-size: 46px;
     line-height: 1.28;
+    text-wrap: balance;
 }
 
 .post-description {
@@ -561,6 +563,7 @@ button#theme-toggle {
 .post-content h6 {
     font-family: var(--ouatis-serif);
     text-align: left;
+    text-wrap: balance;
     scroll-margin-top: calc(var(--header-height) + 16px);
 }
 
@@ -618,6 +621,11 @@ button#theme-toggle {
 
 .post-content img {
     border-radius: 2px;
+}
+
+/* 暗色模式:图片压光,避免夜里刺眼 */
+[data-theme="dark"] .post-content img {
+    filter: brightness(0.88);
 }
 
 /* 分隔线:考据文的章节大分隔,居中三段短线——万事皆三 */

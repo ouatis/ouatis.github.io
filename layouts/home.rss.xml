@@ -1,6 +1,6 @@
-{{- /* 全文 RSS;英语站输出中文文章,与首页约定一致 */ -}}
+{{- /* 全文 RSS;外语站输出中文文章,与首页约定一致 */ -}}
 {{- $contentSite := site -}}
-{{- if eq site.Language.Lang "en" }}{{- $contentSite = index site.Sites 0 -}}{{- end -}}
+{{- if ne site.Language.Lang "zh-cn" }}{{- $contentSite = index site.Sites 0 -}}{{- end -}}
 {{- $pages := $contentSite.RegularPages -}}
 {{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">

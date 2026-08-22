@@ -15,9 +15,12 @@
 {{- end -}}
 
 <nav class="ouatis-trivium" aria-label="{{ $aria }}">
+  {{- $showTaxonomies := eq site.Language.Lang "zh-cn" -}}
+  {{- if $showTaxonomies }}
   <a href="{{ "/categories/" | absLangURL }}">{{ $categories }}</a>
   <span class="tri-sep" aria-hidden="true">∴</span>
   <a href="{{ "/tags/" | absLangURL }}">{{ $tags }}</a>
   <span class="tri-sep" aria-hidden="true">∴</span>
+  {{- end }}
   <a href="{{ "/search/" | absLangURL }}">{{ $search }}</a>
 </nav>

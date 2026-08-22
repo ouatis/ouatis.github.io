@@ -21,8 +21,10 @@
 {{- /* Related posts: real HTML internal links, boosts indexing of orphan posts */}}
 {{- $related := site.RegularPages.Related . | first 3 }}
 {{- if and (ne (.Param "showRelated") false) $related }}
+{{- $relatedTitle := "相关文章" }}
+{{- if eq site.Language.Lang "en" }}{{- $relatedTitle = "Related writing" }}{{- else if eq site.Language.Lang "ja" }}{{- $relatedTitle = "関連記事" }}{{- end }}
 <nav class="related-posts">
-  <h3 class="related-posts-title">相关文章</h3>
+  <h3 class="related-posts-title">{{ $relatedTitle }}</h3>
   <ul>
     {{- range $related }}
     <li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>

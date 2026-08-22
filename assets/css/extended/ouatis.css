@@ -622,10 +622,21 @@ button#theme-toggle {
 }
 
 .post-header {
-    margin-top: 54px;
-    margin-bottom: 34px;
-    padding-bottom: 28px;
+    position: relative;
+    margin-top: 48px;
+    margin-bottom: 42px;
+    padding-bottom: 32px;
     border-bottom: 1px solid var(--border);
+}
+
+.post-header::after {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 72px;
+    height: 2px;
+    background: var(--ouatis-red);
+    content: "";
 }
 
 .post-title,
@@ -638,21 +649,36 @@ button#theme-toggle {
 
 .post-description {
     color: var(--secondary);
-    font-family: var(--ouatis-serif);
+    font-family: var(--ouatis-sans);
     font-size: 18px;
     line-height: 1.7;
 }
 
 .post-meta,
 .breadcrumbs {
-    font-family: var(--ouatis-serif);
+    font-family: var(--ouatis-sans);
     font-size: 12px;
 }
 
+.post-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 14px;
+    margin-top: 20px;
+    color: var(--secondary);
+    line-height: 1.6;
+}
+
+.breadcrumbs {
+    color: var(--secondary);
+}
+
 .post-content {
+    width: min(100%, 720px);
+    margin-inline: auto;
     font-family: var(--ouatis-serif);
     font-size: 18px;
-    line-height: 1.85;
+    line-height: 1.92;
     text-align: left;
 }
 .post-content h1,
@@ -668,17 +694,24 @@ button#theme-toggle {
 }
 
 .post-content h2 {
+    margin: 2.4em 0 1em;
     padding-bottom: 10px;
     border-bottom: 1px solid var(--border);
     font-size: 28px;
 }
 
 .post-content h3 {
+    margin: 1.8em 0 0.8em;
+    color: var(--ouatis-green);
     font-size: 22px;
 }
 
 .post-content p {
-    margin-bottom: 24px;
+    margin-bottom: 1.45em;
+}
+
+.post-content > :first-child {
+    margin-top: 0;
 }
 
 .post-content a {
@@ -698,8 +731,8 @@ button#theme-toggle {
 
 /* 引文:系统楷体书引,无楷体设备回退宋体子集 */
 .post-content blockquote {
-    margin: 28px 0;
-    padding: 0 18px;
+    margin: 2.2em 0;
+    padding: 0 20px;
     border-inline-start: 2px solid var(--ouatis-red);
     color: var(--secondary);
     font-family: "Kaiti SC", STKaiti, KaiTi, var(--ouatis-serif);
@@ -953,7 +986,35 @@ h6:hover .anchor {
 
 .post-tags a {
     border-radius: 2px;
-    font-family: var(--ouatis-serif);
+    font-family: var(--ouatis-sans);
+    font-size: 12px;
+}
+
+.post-footer {
+    width: min(100%, 720px);
+    margin: 54px auto 0;
+}
+
+.post-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0 0 34px;
+}
+
+.post-tags a {
+    padding: 4px 9px;
+    border: 1px solid var(--border);
+    color: var(--ouatis-green);
+    background: transparent;
+    text-decoration: none;
+    transition: color 180ms ease, border-color 180ms ease;
+}
+
+.post-tags a:hover,
+.post-tags a:focus-visible {
+    border-color: var(--ouatis-red);
+    color: var(--ouatis-red);
 }
 
 .footer {
@@ -1127,6 +1188,7 @@ h6:hover .anchor {
 
 /* Post nav links:纸感细线分栏 */
 .paginav {
+    margin-top: 0;
     background: transparent;
     border: 0;
     border-top: 1px solid var(--border);
@@ -1175,7 +1237,7 @@ h6:hover .anchor {
 }
 
 .related-posts {
-    margin-top: 48px;
+    margin-top: 44px;
     padding-top: 26px;
     border-top: 2px solid var(--primary);
     font-family: var(--ouatis-serif);
@@ -1538,7 +1600,9 @@ h6:hover .anchor {
     }
 
     .post-header {
-        margin-top: 30px;
+        margin-top: 36px;
+        margin-bottom: 30px;
+        padding-bottom: 24px;
     }
 
     .post-title,
@@ -1546,13 +1610,48 @@ h6:hover .anchor {
         font-size: 34px;
     }
 
+    .post-description {
+        font-size: 16px;
+    }
+
     .post-content {
+        width: 100%;
         font-size: 17px;
-        line-height: 1.85;
+        line-height: 1.9;
     }
 
     .post-content h2 {
+        margin-top: 2em;
         font-size: 25px;
+    }
+
+    .post-content h3 {
+        font-size: 21px;
+    }
+
+    .post-footer {
+        width: 100%;
+        margin-top: 42px;
+    }
+
+    .post-tags {
+        margin-bottom: 28px;
+    }
+
+    .paginav {
+        grid-template-columns: 1fr;
+    }
+
+    .paginav .prev {
+        border-inline-end: 0;
+        border-bottom: 1px solid var(--border);
+        padding-inline-end: 4px;
+        padding-bottom: 16px;
+    }
+
+    .paginav .next {
+        padding-inline-start: 4px;
+        padding-top: 16px;
     }
 }
 

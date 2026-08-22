@@ -2,7 +2,11 @@
 
 {{- if .Title }}
 <header class="page-header">
-    <h1>{{ if eq .Title "Categories" }}分类{{ else }}{{ .Title }}{{ end }}</h1>
+    <h1>
+        {{- if eq .Title "Categories" -}}
+            {{- if eq site.Language.Lang "en" -}}Categories{{ else if eq site.Language.Lang "ja" -}}カテゴリー{{ else }}分类{{ end -}}
+        {{- else -}}{{ .Title }}{{- end -}}
+    </h1>
     {{- if .Description }}
     <div class="post-description">
         {{ .Description }}
@@ -10,6 +14,8 @@
     {{- end }}
 </header>
 {{- end }}
+
+{{- partial "discovery_nav.html" . }}
 
 {{- $type := .Type }}
 {{- $terms := .Data.Terms.ByCount }}

@@ -15,15 +15,30 @@
     {{- end }}
 </header>
 
+{{- partial "discovery_nav.html" . }}
+
+{{- $searchLabel := "搜索" -}}
+{{- $resultsLabel := "搜索结果" -}}
+{{- $tryLabel := "试试：" -}}
+{{- if eq site.Language.Lang "en" -}}
+  {{- $searchLabel = "Search" -}}
+  {{- $resultsLabel = "Search results" -}}
+  {{- $tryLabel = "Try: " -}}
+{{- else if eq site.Language.Lang "ja" -}}
+  {{- $searchLabel = "検索" -}}
+  {{- $resultsLabel = "検索結果" -}}
+  {{- $tryLabel = "試す: " -}}
+{{- end -}}
+
 <div id="searchbox">
     <input id="searchInput" autofocus placeholder="{{ .Params.placeholder | default (printf "%s ↵" .Title) }}"
-        aria-label="search" type="search" autocomplete="off" maxlength="64">
-    <ul id="searchResults" aria-label="search results"></ul>
+        aria-label="{{ $searchLabel }}" type="search" autocomplete="off" maxlength="64">
+    <ul id="searchResults" aria-label="{{ $resultsLabel }}"></ul>
 </div>
 
 {{- with site.Taxonomies.tags }}
 <div class="search-suggestions">
-    <span>试试：</span>
+    <span>{{ $tryLabel }}</span>
     {{- range first 3 .ByCount }}
     <a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a>
     {{- end }}

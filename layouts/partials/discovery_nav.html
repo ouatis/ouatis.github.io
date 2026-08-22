@@ -1,0 +1,23 @@
+{{- $categories := "分类" -}}
+{{- $tags := "标签" -}}
+{{- $search := "搜索" -}}
+{{- $aria := "内容导航" -}}
+{{- if eq site.Language.Lang "en" -}}
+  {{- $categories = "Categories" -}}
+  {{- $tags = "Tags" -}}
+  {{- $search = "Search" -}}
+  {{- $aria = "Content navigation" -}}
+{{- else if eq site.Language.Lang "ja" -}}
+  {{- $categories = "カテゴリー" -}}
+  {{- $tags = "タグ" -}}
+  {{- $search = "検索" -}}
+  {{- $aria = "コンテンツナビゲーション" -}}
+{{- end -}}
+
+<nav class="ouatis-trivium" aria-label="{{ $aria }}">
+  <a href="{{ "/categories/" | absLangURL }}">{{ $categories }}</a>
+  <span class="tri-sep" aria-hidden="true">∴</span>
+  <a href="{{ "/tags/" | absLangURL }}">{{ $tags }}</a>
+  <span class="tri-sep" aria-hidden="true">∴</span>
+  <a href="{{ "/search/" | absLangURL }}">{{ $search }}</a>
+</nav>

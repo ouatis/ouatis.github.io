@@ -1027,13 +1027,55 @@ h6:hover .anchor {
     margin: 0 10px;
 }
 
-/* 三条小径:归档页顶部的 分类 ∴ 标签 ∴ 搜索 */
+/* Discovery pages */
+.page-header {
+    position: relative;
+    margin-top: 48px;
+    margin-bottom: 30px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--border);
+}
+
+.page-header::after {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 72px;
+    height: 2px;
+    background: var(--ouatis-red);
+    content: "";
+}
+
+.page-header h1 {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin: 0;
+    font-family: var(--ouatis-serif);
+    font-size: 42px;
+    line-height: 1.2;
+    text-wrap: balance;
+}
+
+.page-header h1 svg {
+    flex: 0 0 auto;
+    width: 22px;
+    height: 22px;
+    color: var(--ouatis-green);
+}
+
+.page-header .post-description {
+    margin-top: 14px;
+    font-size: 16px;
+}
+
 .ouatis-trivium {
     display: flex;
     align-items: center;
     gap: 14px;
-    margin-bottom: 30px;
-    font-family: var(--ouatis-serif);
+    width: min(100%, 760px);
+    margin: 0 auto 34px;
+    font-family: var(--ouatis-sans);
     font-size: 13px;
 }
 
@@ -1051,6 +1093,7 @@ h6:hover .anchor {
 /* Archive page */
 .archive-posts {
     font-family: var(--ouatis-serif);
+    border-top: 1px solid var(--border);
 }
 
 .archive-year {
@@ -1058,9 +1101,13 @@ h6:hover .anchor {
     font-size: 32px;
     font-weight: 700;
     color: var(--primary);
-    margin-top: 48px;
-    padding-bottom: 8px;
+    margin-top: 52px;
+    padding-bottom: 10px;
     border-bottom: 2px solid var(--primary);
+}
+
+.archive-year-header {
+    margin: 0;
 }
 
 .archive-year:first-of-type {
@@ -1068,15 +1115,48 @@ h6:hover .anchor {
 }
 
 .archive-month-header {
-    font-family: var(--ouatis-serif);
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin: 0;
+    padding: 18px 4px 8px;
+    color: var(--ouatis-green);
+    font-family: var(--ouatis-sans);
     font-size: 15px;
-    color: var(--secondary);
     font-weight: 400;
 }
 
+.archive-entry {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: baseline;
+    gap: 16px;
+    margin: 0;
+    padding: 14px 4px;
+    border-bottom: 1px solid var(--border);
+}
+
+.archive-entry::before {
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 2px;
+    background: var(--ouatis-red);
+    content: "";
+    opacity: 0;
+    transition: opacity 180ms ease;
+}
+
+.archive-entry:hover::before,
+.archive-entry:has(.entry-link:focus-visible)::before {
+    opacity: 1;
+}
+
 .archive-entry-title {
+    margin: 0;
     font-family: var(--ouatis-serif);
     font-size: 18px;
+    line-height: 1.5;
     font-weight: 700;
     color: var(--primary);
 }
@@ -1095,9 +1175,24 @@ h6:hover .anchor {
 
 .archive-meta,
 .archive-count {
-    font-family: var(--ouatis-serif);
+    font-family: var(--ouatis-sans);
     font-size: 12px;
     color: var(--secondary);
+}
+
+.archive-meta {
+    margin-top: 4px;
+}
+
+.archive-entry .entry-link {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.archive-entry:hover .archive-entry-title,
+.archive-entry:has(.entry-link:focus-visible) .archive-entry-title {
+    color: var(--ouatis-red);
 }
 
 /* Back to top:纸感细线圆环 */
@@ -1117,41 +1212,91 @@ h6:hover .anchor {
 
 /* Terms (categories/tags) */
 .terms-tags {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 32px;
+    max-width: 760px;
+    margin: 0 auto 40px;
+    padding: 0;
+    border-top: 1px solid var(--border);
     font-family: var(--ouatis-serif);
+    list-style: none;
+}
+
+.terms-tags li {
+    display: block;
+    margin: 0;
+    border-bottom: 1px solid var(--border);
 }
 
 .terms-tags a {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 14px 4px;
+    color: var(--primary);
     font-family: var(--ouatis-serif);
     background: transparent;
-    border: 1px solid var(--border);
-    border-radius: 2px;
-    transition: color 180ms ease, border-color 180ms ease, transform 180ms ease;
+    border: 0;
+    border-radius: 0;
+    text-decoration: none;
+    transition: color 180ms ease, padding-inline-start 180ms ease;
+}
+
+.terms-tags a::after {
+    flex: 0 0 auto;
+    color: var(--secondary);
+    content: "→";
+    font-family: var(--ouatis-sans);
+    font-size: 14px;
+    transition: color 180ms ease, transform 180ms ease;
 }
 
 .terms-tags a:hover {
-    border-color: var(--ouatis-red);
     color: var(--ouatis-red);
+    padding-inline-start: 10px;
 }
 
-.terms-tags a:active {
-    background: transparent;
+.terms-tags a:hover::after,
+.terms-tags a:focus-visible::after {
+    color: var(--ouatis-red);
+    transform: translateX(3px);
 }
 
 .terms-tags a sup {
+    margin-inline-start: 8px;
     color: var(--secondary);
+    font-family: var(--ouatis-sans);
     font-weight: 400;
 }
 
 .terms-tags--weighted a {
-    font-size: calc(14px + (var(--weight, 1) * 0.5px));
+    font-size: clamp(14px, calc(13px + (var(--weight, 1) * 0.35px)), 18px);
 }
 
 /* Search */
+.main:has(#searchbox) {
+    max-width: none;
+}
+
+#searchbox {
+    width: min(100% - 48px, 760px);
+    margin: 0 auto 30px;
+}
+
 #searchbox input {
-    padding: 8px 12px;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 14px;
     border: 1px solid var(--border);
     border-radius: 2px;
-    font-family: var(--ouatis-serif);
+    background: transparent;
+    color: var(--primary);
+    font-family: var(--ouatis-sans);
+    font-size: 16px;
     font-weight: 500;
 }
 
@@ -1162,13 +1307,44 @@ h6:hover .anchor {
 }
 
 #searchResults {
+    margin: 24px 0 0;
+    padding: 0;
     font-family: var(--ouatis-serif);
+}
+
+#searchResults li {
+    min-height: 0;
+    margin: 0;
+    padding: 15px 4px;
+    border-bottom: 1px solid var(--border);
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    transition: color 180ms ease, padding-inline-start 180ms ease;
+}
+
+#searchResults li .entry-header {
+    color: var(--primary);
+    font-family: var(--ouatis-serif);
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+#searchResults li:hover,
+#searchResults li.focus {
+    padding-inline-start: 10px;
+}
+
+#searchResults li:hover .entry-header,
+#searchResults li.focus .entry-header {
+    color: var(--ouatis-red);
 }
 
 /* Search page enhancements */
 .search-suggestions {
-    margin-top: 24px;
-    font-family: var(--ouatis-serif);
+    width: min(100% - 48px, 760px);
+    margin: 0 auto 40px;
+    font-family: var(--ouatis-sans);
     color: var(--secondary);
     font-size: 14px;
     line-height: 1.8;
@@ -1608,6 +1784,66 @@ h6:hover .anchor {
     .post-title,
     .page-header h1 {
         font-size: 34px;
+    }
+
+    .page-header {
+        margin-top: 36px;
+        margin-bottom: 24px;
+        padding-bottom: 22px;
+    }
+
+    .page-header h1 {
+        gap: 8px;
+    }
+
+    .page-header h1 svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .ouatis-trivium,
+    .search-suggestions,
+    #searchbox {
+        width: calc(100% - 32px);
+    }
+
+    .ouatis-trivium {
+        gap: 10px;
+        margin-bottom: 28px;
+    }
+
+    .archive-year {
+        margin-top: 40px;
+        font-size: 28px;
+    }
+
+    .archive-month-header {
+        padding-top: 16px;
+    }
+
+    .archive-entry {
+        grid-template-columns: 1fr;
+        gap: 4px;
+        padding: 13px 4px;
+    }
+
+    .archive-meta {
+        margin-top: 0;
+    }
+
+    .terms-tags {
+        grid-template-columns: 1fr;
+        gap: 0;
+        width: calc(100% - 32px);
+    }
+
+    #searchbox input {
+        min-height: 46px;
+        font-size: 15px;
+    }
+
+    #searchResults li .entry-header {
+        font-size: 17px;
     }
 
     .post-description {

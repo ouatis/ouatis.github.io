@@ -19,18 +19,21 @@
 
 {{- $type := .Type }}
 {{- $terms := .Data.Terms.ByCount }}
-{{- $max := 0 }}
-{{- range $terms }}
-  {{- if gt .Count $max }}{{ $max = .Count }}{{ end }}
-{{- end }}
+{{- $countLabel := "篇" -}}
+{{- if eq site.Language.Lang "en" -}}{{- $countLabel = "posts" -}}{{- else if eq site.Language.Lang "ja" -}}{{- $countLabel = "記事" -}}{{- end -}}
 
-<ul class="terms-tags terms-tags--weighted">
-    {{- range $terms }}
-    {{- $name := .Name }}
-    {{- $count := .Count }}
+<ul class="terms-tags terms-tags--categories">
+    {{- range $index, $term := $terms }}
+    {{- $name := $term.Name }}
+    {{- $count := $term.Count }}
     {{- with site.GetPage (printf "/%s/%s" $type $name) }}
     <li>
-        <a href="{{ .Permalink }}" style="--weight: {{ $count }}">{{ .Name }} <sup><strong><sup>{{ $count }}</sup></strong></sup> </a>
+        <a href="{{ .Permalink }}">
+            <span class="terms-tags__index" aria-hidden="true">{{ printf "%02d" (add $index 1) }}</span>
+            <span class="terms-tags__name">{{ .Name }}</span>
+            <span class="terms-tags__count">{{ $count }} <span>{{ $countLabel }}</span></span>
+            <span class="terms-tags__arrow" aria-hidden="true">↗</span>
+        </a>
     </li>
     {{- end }}
     {{- end }}

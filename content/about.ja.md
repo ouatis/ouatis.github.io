@@ -2,7 +2,6 @@
 title: "私について"
 layout: "about"
 summary: "about"
-aliases: ["/"]
 showRelated: false
 ---
 

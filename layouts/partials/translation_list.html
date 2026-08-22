@@ -11,7 +11,7 @@
             {{- else if or (eq .Lang "zh-CN") (eq .Lang "zh-cn") -}}
             中文
             {{- else -}}
-            {{- .Language.Label | default (.Lang | title) -}}
+            {{- .Lang | title -}}
             {{- end -}}
         </a>
     </li>

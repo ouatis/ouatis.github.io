@@ -68,8 +68,8 @@
                         </li>
                         {{- range . -}}
                         <li>
-                            <a href="{{- .Permalink -}}" title="{{ .Language.Label | default (.Lang | title) }}"
-                                aria-label="{{ .Language.Label | default (.Lang | title) }}">
+                            <a href="{{- .Permalink -}}" title="{{ .Lang | title }}"
+                                aria-label="{{ .Lang | title }}">
                                 {{- if eq .Lang "en" -}}EN
                                 {{- else if eq .Lang "ja" -}}日本語
                                 {{- else -}}中文

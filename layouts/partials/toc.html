@@ -2,6 +2,7 @@
 {{- if ge (len $headers) 1 -}}
 {{- $tocTitle := "目录" -}}
 {{- if eq site.Language.Lang "en" }}{{- $tocTitle = "Contents" -}}{{- end }}
+{{- if eq site.Language.Lang "ja" }}{{- $tocTitle = "目次" -}}{{- end }}
 
 {{- /* 宽屏左侧悬浮目录,默认收起,点击页签展开;窄屏回退到下方折叠框 */ -}}
 <aside class="ouatis-toc" aria-label="{{ $tocTitle }}">

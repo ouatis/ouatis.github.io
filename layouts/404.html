@@ -1,16 +1,35 @@
 {{- define "main" }}
+{{- $notFoundTitle := "你走到了一条不存在的巷子。" -}}
+{{- $searchLabel := "搜索" -}}
+{{- $searchPlaceholder := "搜索全站……" -}}
+{{- $homeLabel := "回到笼城往事" -}}
+{{- $archivesLabel := "去归档翻翻" -}}
+{{- if eq site.Language.Lang "en" -}}
+  {{- $notFoundTitle = "You've walked into a lane that doesn't exist." -}}
+  {{- $searchLabel = "Search" -}}
+  {{- $searchPlaceholder = "Search the site…" -}}
+  {{- $homeLabel = "Back home" -}}
+  {{- $archivesLabel = "Browse archives" -}}
+{{- else if eq site.Language.Lang "ja" -}}
+  {{- $notFoundTitle = "存在しない路地に迷い込みました。" -}}
+  {{- $searchLabel = "検索" -}}
+  {{- $searchPlaceholder = "サイトを検索…" -}}
+  {{- $homeLabel = "ホームに戻る" -}}
+  {{- $archivesLabel = "アーカイブを見る" -}}
+{{- end -}}
+
 <section class="site-404" aria-labelledby="lost-lane-title">
     <div class="site-404__mark" aria-hidden="true">404</div>
     <div class="site-404__body">
-        <h1 id="lost-lane-title">{{ if eq site.Language.Lang "en" }}You've walked into a lane that doesn't exist.{{ else }}你走到了一条不存在的巷子。{{ end }}</h1>
+        <h1 id="lost-lane-title">{{ $notFoundTitle }}</h1>
         <form class="site-404__search" action="{{ "search/" | absLangURL }}" method="get" role="search">
-            <input type="search" name="q" placeholder="{{ if eq site.Language.Lang "en" }}Search the site…{{ else }}搜索全站……{{ end }}" aria-label="search" autocomplete="off" maxlength="64">
+            <input type="search" name="q" placeholder="{{ $searchPlaceholder }}" aria-label="{{ $searchLabel }}" autocomplete="off" maxlength="64">
         </form>
         {{- /* 万事皆三:连同上面的搜索框,一共三条出路 */}}
         <div class="site-404__ways">
-            <a class="site-404__link" href="{{ "" | absLangURL }}">{{ if eq site.Language.Lang "en" }}Back home{{ else }}回到笼城往事{{ end }}</a>
+            <a class="site-404__link" href="{{ "" | absLangURL }}">{{ $homeLabel }}</a>
             <span class="tri-sep" aria-hidden="true">∴</span>
-            <a class="site-404__link" href="{{ "archives/" | absLangURL }}">{{ if eq site.Language.Lang "en" }}Browse archives{{ else }}去归档翻翻{{ end }}</a>
+            <a class="site-404__link" href="{{ "archives/" | absLangURL }}">{{ $archivesLabel }}</a>
         </div>
     </div>
 </section>

@@ -6,6 +6,15 @@
 {{- $pages = where $pages "Params.hiddenInHomeList" "!=" "true" }}
 {{- $paginator := .Paginate $pages }}
 {{- $offset := mul (sub $paginator.PageNumber 1) $paginator.PagerSize }}
+{{- $socialLabel := "社交链接" -}}
+{{- $readPrefix := "阅读：" -}}
+{{- if eq site.Language.Lang "en" -}}
+  {{- $socialLabel = "Social links" -}}
+  {{- $readPrefix = "Read: " -}}
+{{- else if eq site.Language.Lang "ja" -}}
+  {{- $socialLabel = "ソーシャルリンク" -}}
+  {{- $readPrefix = "読む: " -}}
+{{- end -}}
 
 <div class="ouatis-home">
   {{- if eq $paginator.PageNumber 1 }}
@@ -25,7 +34,7 @@
       <p class="ouatis-hero__intro">这里是 SigiL 的个人网站。SigiL 就是我。</p>
       {{- end }}
       {{- with site.Params.socialIcons }}
-      <nav class="ouatis-hero__social" aria-label="社交链接">
+      <nav class="ouatis-hero__social" aria-label="{{ $socialLabel }}">
         {{ partial "social_icons.html" }}
       </nav>
       {{- end }}
@@ -53,7 +62,7 @@
       {{- range $index, $page := $paginator.Pages }}
       {{- $number := add (add $offset $index) 1 }}
       <article class="ouatis-entry{{ if and (eq $paginator.PageNumber 1) (eq $index 0) }} is-latest{{ end }}">
-        <a class="ouatis-entry__link" href="{{ .RelPermalink }}" aria-label="阅读《{{ .Title }}》"></a>
+        <a class="ouatis-entry__link" href="{{ .RelPermalink }}" aria-label="{{ $readPrefix }}{{ .Title }}"></a>
         <p class="ouatis-entry__number" aria-hidden="true">{{ printf "%02d" $number }}</p>
         <time class="ouatis-entry__date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time>
         <div class="ouatis-entry__main">

@@ -50,7 +50,7 @@
 {{- end }}
 
 {{- /* 字体预加载:与 CSS 并行下载,首屏标题不闪换 */}}
-<link rel="preload" href="{{ "fonts/noto-serif-sc-var.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ "fonts/split/result.css" | relURL }}" as="style">
 
 {{- /* theme-color 跟随站点明暗主题(移动端浏览器栏色调) */}}
 <script>

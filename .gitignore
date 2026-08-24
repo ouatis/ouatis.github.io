@@ -28,3 +28,4 @@ cleanup-deployments.bat
 
 # Font subset build cache
 .cache/
+node_modules/

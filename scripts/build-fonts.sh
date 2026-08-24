@@ -69,10 +69,24 @@ old.write_text(out, encoding="utf-8")
 print(f"charset: {len(out)} 个字符")
 PY
 
+# 先 pyftsubset 按站内用字裁剪（大幅减少切片总量），再 cn-font-split 按 unicode-range 切片
+WORK_TTF="${CACHE_DIR}/NotoSerifSC-subset.ttf"
 pyftsubset "$src" \
     --text-file="${FONT_DIR}/charset.txt" \
-    --output-file="${FONT_DIR}/noto-serif-sc-var.woff2" \
-    --flavor=woff2 \
-    --desubroutinize
+    --output-file="$WORK_TTF"
 
-ls -lh "$FONT_DIR"
+if [ ! -d node_modules/cn-font-split ]; then
+    echo "安装 cn-font-split…"
+    npm install cn-font-split --no-fund --no-audit --silent
+fi
+
+rm -rf "${FONT_DIR}/split"
+node - "$WORK_TTF" "${FONT_DIR}/split" <<'JS'
+const { fontSplit } = require('cn-font-split');
+const [input, outDir] = process.argv.slice(2);
+fontSplit({ input, outDir, css: { fontFamily: 'Noto Serif SC Subset' }, preview_image: { enable: false } })
+  .then(() => console.log('font split done'))
+  .catch((e) => { console.error(e); process.exit(1); });
+JS
+
+ls -lh "${FONT_DIR}/split/result.css"

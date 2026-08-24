@@ -443,6 +443,17 @@ a[hreflang="ja"] {
     line-height: 1.2;
 }
 
+.ouatis-section-head__en {
+    margin-left: 14px;
+    color: var(--secondary);
+    font-family: var(--ouatis-serif);
+    font-style: italic;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+}
+
 .ouatis-section-head__count {
     color: var(--secondary);
     font-family: var(--ouatis-sans);

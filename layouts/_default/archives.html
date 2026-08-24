@@ -27,8 +27,6 @@
   {{- end }}
 </header>
 
-{{- partial "discovery_nav.html" . }}
-
 {{- /* 英日站归档列中文文章,与首页约定一致 */ -}}
 {{- $contentSite := site }}
 {{- if ne site.Language.Lang "zh-cn" }}{{- $contentSite = index site.Sites 0 }}{{- end }}

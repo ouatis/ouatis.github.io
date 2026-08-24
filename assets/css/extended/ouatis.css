@@ -1212,67 +1212,33 @@ h6:hover .anchor {
 
 /* Terms (categories/tags) */
 .terms-tags {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0 32px;
-    max-width: 760px;
-    margin: 0 auto 40px;
-    padding: 0;
-    border-top: 1px solid var(--border);
     font-family: var(--ouatis-serif);
-    list-style: none;
-}
-
-.terms-tags li {
-    display: block;
-    margin: 0;
-    border-bottom: 1px solid var(--border);
 }
 
 .terms-tags a {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 14px;
-    padding: 14px 4px;
-    color: var(--primary);
     font-family: var(--ouatis-serif);
     background: transparent;
-    border: 0;
-    border-radius: 0;
-    text-decoration: none;
-    transition: color 180ms ease, padding-inline-start 180ms ease;
-}
-
-.terms-tags a::after {
-    flex: 0 0 auto;
-    color: var(--secondary);
-    content: "→";
-    font-family: var(--ouatis-sans);
-    font-size: 14px;
-    transition: color 180ms ease, transform 180ms ease;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    transition: color 180ms ease, border-color 180ms ease, transform 180ms ease;
 }
 
 .terms-tags a:hover {
+    border-color: var(--ouatis-red);
     color: var(--ouatis-red);
-    padding-inline-start: 10px;
 }
 
-.terms-tags a:hover::after,
-.terms-tags a:focus-visible::after {
-    color: var(--ouatis-red);
-    transform: translateX(3px);
+.terms-tags a:active {
+    background: transparent;
 }
 
 .terms-tags a sup {
-    margin-inline-start: 8px;
     color: var(--secondary);
-    font-family: var(--ouatis-sans);
     font-weight: 400;
 }
 
 .terms-tags--weighted a {
-    font-size: clamp(14px, calc(13px + (var(--weight, 1) * 0.35px)), 18px);
+    font-size: calc(14px + (var(--weight, 1) * 0.5px));
 }
 
 /* Search */
@@ -1829,12 +1795,6 @@ h6:hover .anchor {
 
     .archive-meta {
         margin-top: 0;
-    }
-
-    .terms-tags {
-        grid-template-columns: 1fr;
-        gap: 0;
-        width: calc(100% - 32px);
     }
 
     #searchbox input {

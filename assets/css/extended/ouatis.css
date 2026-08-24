@@ -223,19 +223,36 @@ button#theme-toggle {
 
 .lang-switch {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     gap: 10px;
     margin: 0;
     padding: 0;
     list-style: none;
     font-family: var(--ouatis-sans);
-    font-size: 11px;
-    line-height: 1.4;
+    font-size: 12px;
+    line-height: 1;
+}
+
+/* CJK 与拉丁项基线差:日文/中文项微调,保证三语同行视觉居中 */
+.lang-switch li {
+    line-height: 1;
+}
+
+/* "日本語"三字全角字形偏重,压小半号保持三项等宽感 */
+.lang-switch a[lang="ja"],
+.lang-switch a[href*="/ja/"],
+.lang-switch .is-current:has(+ li a[href*="/ja/"]) ~ * ,
+a[hreflang="ja"] {
+    font-size: 11px !important;
 }
 
 .lang-switch li {
     display: flex;
     align-items: center;
+}
+
+.lang-switch li[lang] {
+    font-size: inherit;
 }
 
 .lang-switch li + li::before {
@@ -382,13 +399,19 @@ button#theme-toggle {
     content: "";
 }
 
+/* 徽记:hero 用版画化资产(avatar-print.webp,已融入纸面);
+   暗色模式切回原版照片并反相提亮,避免黑底黑章消失。 */
 .ouatis-seal img {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
-    filter: saturate(0.82) contrast(1.04);
+}
+
+[data-theme="dark"] .ouatis-seal img {
+    content: url("/avatar.webp");
+    filter: invert(0.88) hue-rotate(180deg) brightness(1.05) contrast(0.95);
 }
 
 .ouatis-seal figcaption {
@@ -469,7 +492,8 @@ button#theme-toggle {
 .ouatis-entry__number {
     align-self: start;
     margin-top: 4px;
-    color: var(--tertiary);
+    color: var(--secondary);
+    opacity: 0.85;
     font-family: var(--ouatis-serif);
     font-size: 13px;
     font-variant-numeric: tabular-nums;
@@ -533,9 +557,11 @@ button#theme-toggle {
 }
 
 .ouatis-entry__arrow {
-    color: var(--secondary);
+    color: var(--ouatis-red);
     font-size: 20px;
-    transition: color 180ms ease, transform 180ms ease;
+    opacity: 0;
+    transform: translateX(-6px);
+    transition: color 180ms ease, transform 180ms ease, opacity 180ms ease;
 }
 
 .ouatis-entry:has(.ouatis-entry__link:hover) h3,
@@ -546,7 +572,8 @@ button#theme-toggle {
 .ouatis-entry:has(.ouatis-entry__link:hover) .ouatis-entry__arrow,
 .ouatis-entry:has(.ouatis-entry__link:focus-visible) .ouatis-entry__arrow {
     color: var(--ouatis-red);
-    transform: translateX(4px);
+    opacity: 1;
+    transform: none;
 }
 
 .ouatis-pagination {
@@ -678,8 +705,13 @@ button#theme-toggle {
     margin-inline: auto;
     font-family: var(--ouatis-serif);
     font-size: 18px;
-    line-height: 1.92;
+    line-height: 2.05;
+    letter-spacing: 0.01em;
     text-align: left;
+}
+
+.post-content p {
+    text-wrap: pretty;
 }
 .post-content h1,
 .post-content h2,
@@ -707,7 +739,7 @@ button#theme-toggle {
 }
 
 .post-content p {
-    margin-bottom: 1.45em;
+    margin-bottom: 1.7em;
 }
 
 .post-content > :first-child {
@@ -881,7 +913,7 @@ h6:hover .anchor {
     display: none;
 }
 
-@media (min-width: 1400px) {
+@media (min-width: 1360px) {
     .ouatis-toc {
         display: block;
         position: fixed;
@@ -890,6 +922,7 @@ h6:hover .anchor {
         font-family: var(--ouatis-serif);
     }
 
+    /* 断点统一 1360:任何宽度下两个目录只出现一个 */
     .toc {
         display: none;
     }

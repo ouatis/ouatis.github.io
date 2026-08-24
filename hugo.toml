@@ -99,7 +99,6 @@ copyright = "© **[SigiL](https://github.com/ouatis)**"
         description = "執筆とフローベール、そしてその他。"
 
 [params.footer]
-    text = "IMAGINE UNPOETIC LION"
 
 [permalinks]
     posts = '/:year/:month/:slug/'

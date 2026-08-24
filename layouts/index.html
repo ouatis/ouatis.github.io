@@ -42,7 +42,7 @@
 
     <figure class="ouatis-seal">
       <div class="ouatis-seal__frame">
-        <img src="{{ site.Params.label.icon | relURL }}" alt="笼城往事徽记" width="320" height="320">
+        <img src="/avatar-print.webp" alt="笼城往事徽记" width="320" height="320">
       </div>
       <figcaption>IMAGINE UNPOETIC LION</figcaption>
     </figure>
@@ -53,7 +53,7 @@
   <section class="ouatis-writing" aria-labelledby="recent-writing">
     <header class="ouatis-section-head">
       <div>
-        <h2 id="recent-writing">Updated My Journal</h2>
+        <h2 id="recent-writing">{{ if eq site.Language.Lang "en" }}Updated My Journal{{ else if eq site.Language.Lang "ja" }}最近の更新{{ else }}最近更新{{ end }}</h2>
       </div>
       <p class="ouatis-section-head__count">{{ len $pages }}{{ if eq site.Language.Lang "en" }} posts{{ else if eq site.Language.Lang "ja" }} 編{{ else }} 篇文章{{ end }}</p>
     </header>

@@ -265,6 +265,9 @@ a[hreflang="ja"] {
 .lang-switch .is-current {
     color: var(--secondary);
     text-decoration: none;
+    /* 覆盖主题 header.css 的 16px,与 .lang-switch 的 12px 统一 */
+    font-size: inherit;
+    font-weight: inherit;
     transition: color 180ms ease;
 }
 

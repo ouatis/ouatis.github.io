@@ -89,4 +89,6 @@ fontSplit({ input, outDir, css: { fontFamily: 'Noto Serif SC Subset' }, preview_
   .catch((e) => { console.error(e); process.exit(1); });
 JS
 
+rm -f "${FONT_DIR}/split/reporter.bin" "${FONT_DIR}/split/index.html" "${FONT_DIR}/split/index.proto"
+
 ls -lh "${FONT_DIR}/split/result.css"

@@ -1,5 +1,6 @@
 ---
 title: "フローベール講義"
+robotsNoIndex: true
 date: 2026-05-04
 layout: "page"
 ---

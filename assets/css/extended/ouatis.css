@@ -683,7 +683,7 @@ a[hreflang="ja"] {
 .post-header {
     position: relative;
     margin-top: 48px;
-    margin-bottom: 42px;
+    margin-bottom: 36px;
     padding-bottom: 32px;
     border-bottom: 1px solid var(--border);
 }
@@ -804,6 +804,16 @@ a[hreflang="ja"] {
     line-height: 1.9;
 }
 
+/* 开篇题记略收紧、略提亮；正文段落节奏保持不变。 */
+.post-content > blockquote:first-child {
+    margin-bottom: 1.6em;
+    color: color-mix(in srgb, var(--secondary) 82%, var(--content));
+}
+
+.post-content > blockquote:first-child + h2 {
+    margin-top: 1.6em;
+}
+
 .post-content blockquote p {
     margin: 0.7em 0;
 }
@@ -905,7 +915,7 @@ h6:hover .anchor {
 }
 
 .toc {
-    margin: 28px 0;
+    margin: 24px 0;
     border: 1px solid var(--border);
     border-radius: 4px;
     background: transparent;
@@ -1808,7 +1818,7 @@ h6:hover .anchor {
 
     .post-header {
         margin-top: 36px;
-        margin-bottom: 30px;
+        margin-bottom: 26px;
         padding-bottom: 24px;
     }
 

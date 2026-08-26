@@ -4,6 +4,7 @@ layout: "about"
 url: "/about/"
 summary: "about"
 showRelated: false
+hideArticleMeta: true
 ---
 
 欢迎来到**笼城往事**。这里是 SigiL 的个人网站。SigiL 就是我。

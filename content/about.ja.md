@@ -4,6 +4,7 @@ layout: "about"
 summary: "about"
 aliases: ["/"]
 showRelated: false
+hideArticleMeta: true
 ---
 
 ここは SigiL の個人サイトです。SigiL は私です。

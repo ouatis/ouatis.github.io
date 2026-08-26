@@ -159,7 +159,7 @@ copyright = "© **[SigiL](https://github.com/ouatis)**"
 
     [params.label]
         text = "笼城往事"
-        icon = "/avatar.webp"
+        icon = "/avatar-print.webp"
         iconHeight = 35       # 可以调整图片显示高度
 
     [params.homeInfoParams]

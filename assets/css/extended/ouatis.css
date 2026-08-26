@@ -181,6 +181,16 @@ button:focus-visible {
     transform: none;
 }
 
+/* 首页只留 hero 主徽记；内页顶栏徽记随明暗模式切换。 */
+body:has(.ouatis-home) .logo a img {
+    display: none;
+}
+
+[data-theme="dark"] .logo a img {
+    content: url("/avatar.webp");
+    filter: invert(0.88) hue-rotate(180deg) brightness(1.05) contrast(0.95);
+}
+
 button#theme-toggle {
     display: inline-grid;
     width: 36px;
@@ -479,8 +489,16 @@ a[hreflang="ja"] {
 }
 
 .ouatis-entry.is-latest {
-    padding-inline-start: 12px;
-    border-inline-start: 2px solid var(--ouatis-red);
+    padding-inline-start: 0;
+}
+
+.ouatis-entry.is-latest::before {
+    position: absolute;
+    inset-block: 22px;
+    inset-inline-start: -8px;
+    width: 2px;
+    background: var(--ouatis-red);
+    content: "";
 }
 
 .ouatis-entry.is-latest .ouatis-entry__number {
@@ -927,7 +945,7 @@ h6:hover .anchor {
     display: none;
 }
 
-@media (min-width: 1360px) {
+@media (min-width: 1440px) {
     .ouatis-toc {
         display: block;
         position: fixed;
@@ -946,7 +964,7 @@ h6:hover .anchor {
     display: none;
 }
 
-@media (min-width: 1360px) {
+@media (min-width: 1440px) {
     .ouatis-toc__toggle {
         display: block;
         writing-mode: vertical-rl;
@@ -1895,6 +1913,22 @@ h6:hover .anchor {
     .paginav .next {
         padding-inline-start: 4px;
         padding-top: 16px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .ouatis-section-head__en {
+        display: none;
+    }
+
+    .ouatis-section-head__count {
+        white-space: nowrap;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .logo-switches {
+        gap: 6px;
     }
 }
 

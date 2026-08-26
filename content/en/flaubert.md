@@ -3,6 +3,7 @@ title: "Flaubert"
 robotsNoIndex: true
 date: 2026-05-04
 layout: "page"
+hideArticleMeta: true
 ---
 
 A series of writings on Gustave Flaubert and *Madame Bovary*. The essays below are in Chinese; the order below is the recommended reading path — start at the Chinese entrance, then read through the work, the craft, the reading list, the trial, and the writer's century.

@@ -64,7 +64,7 @@ copyright = "© **[SigiL](https://github.com/ouatis)**"
 
     [[languages.en.menus.main]]
         identifier = "flaubert"
-        name = "Flaubert"
+        name = "Flaubert Lectures"
         url = "/en/flaubert/"
         weight = 15
 

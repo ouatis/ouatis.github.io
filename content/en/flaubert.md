@@ -1,5 +1,5 @@
 ---
-title: "Flaubert"
+title: "Flaubert Lectures"
 robotsNoIndex: true
 date: 2026-05-04
 layout: "page"

@@ -758,10 +758,15 @@ a[hreflang="ja"] {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-bottom: 18px;
+    margin-bottom: 12px;
     font-family: var(--ouatis-sans);
     font-size: 12px;
     letter-spacing: 1px;
+}
+
+/* 悬尾∴:引出下方标题 */
+.ouatis-breadcrumbs__lead {
+    color: rgba(var(--ouatis-amber-rgb), 0.8);
 }
 
 .ouatis-breadcrumbs a {

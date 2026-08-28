@@ -55,6 +55,16 @@
 <link rel="preload" href="{{ "fonts/split/result.css" | relURL }}" as="style">
 <link rel="stylesheet" href="{{ "fonts/split/result.css" | relURL }}">
 
+{{- /* hreflang x-default:非三种声明语言的用户兜底到中文版;仅中文的页面兜底为自身 */}}
+{{- $xd := . -}}
+{{- with index (where .AllTranslations "Language.Lang" "zh-cn") 0 -}}{{- $xd = . -}}{{- end -}}
+<link rel="alternate" hreflang="x-default" href="{{ $xd.Permalink }}">
+
+{{- /* og:image 尺寸与替代文本:与 static/og-image.png 实际规格一致,加快平台卡片渲染 */}}
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{{ site.Title }} — {{ site.Params.description }}">
+
 {{- /* theme-color 跟随站点明暗主题(移动端浏览器栏色调) */}}
 <script>
 (function () {

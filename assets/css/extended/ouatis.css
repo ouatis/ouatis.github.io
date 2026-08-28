@@ -407,6 +407,22 @@ a[hreflang="ja"] {
     content: "";
 }
 
+/* 徽记悬停涟漪:仅悬停瞬间外环扩散增亮,像石子入水;图片本身不动 */
+.ouatis-seal__frame::after,
+.ouatis-seal__frame::before {
+    transition: transform 600ms ease, opacity 600ms ease;
+}
+
+.ouatis-seal:hover .ouatis-seal__frame::after {
+    transform: scale(1.05);
+    opacity: 1;
+}
+
+.ouatis-seal:hover .ouatis-seal__frame::before {
+    transform: scale(1.08);
+    opacity: 0.85;
+}
+
 /* 徽记:hero 直接用原版照片(avatar.webp),不做反相处理。 */
 .ouatis-seal img {
     display: block;
@@ -2242,6 +2258,11 @@ body {
 
     .ouatis-js .post-header::after {
         transform: none;
+        transition: none;
+    }
+
+    .ouatis-seal__frame::after,
+    .ouatis-seal__frame::before {
         transition: none;
     }
 }

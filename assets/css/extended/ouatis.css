@@ -1121,6 +1121,16 @@ h6:hover .anchor {
     font-family: var(--ouatis-serif);
 }
 
+/* 页脚落款:整页以徽记开篇、以所以符收束,呼应"万事皆三" */
+.footer::before {
+    content: "∴";
+    display: block;
+    margin-bottom: 10px;
+    color: rgba(var(--ouatis-amber-rgb), 0.95);
+    font-size: 18px;
+    line-height: 1;
+}
+
 .footer .tri-sep {
     margin: 0 10px;
 }

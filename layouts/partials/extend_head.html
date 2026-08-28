@@ -49,8 +49,11 @@
 </script>
 {{- end }}
 
-{{- /* 字体预加载:与 CSS 并行下载,首屏标题不闪换 */}}
+{{- /* 字体样式表:preload 并行下载后立即应用。
+     此前只有 preload 没有 stylesheet,result.css 从未被应用,
+     @import 又因被打包进合并 CSS 的中间位置而失效,全站一直用系统回退字体。 */}}
 <link rel="preload" href="{{ "fonts/split/result.css" | relURL }}" as="style">
+<link rel="stylesheet" href="{{ "fonts/split/result.css" | relURL }}">
 
 {{- /* theme-color 跟随站点明暗主题(移动端浏览器栏色调) */}}
 <script>

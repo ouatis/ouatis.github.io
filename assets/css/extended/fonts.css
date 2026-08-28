@@ -1,4 +1,5 @@
 /* 思源宋体（Noto Serif SC）站内用字子集·可变字体，OFL 开源许可
    由 scripts/build-fonts.sh 依据站内内容生成，Deploy 工作流构建时刷新。
-   2026-08: 改为 cn-font-split 按 unicode-range 切片，浏览器只下载当页用到的分片 */
-@import url("/fonts/split/result.css");
+   2026-08: 改为 cn-font-split 按 unicode-range 切片，浏览器只下载当页用到的分片。
+   引入方式: layouts/partials/extend_head.html 中以 <link rel="stylesheet"> 加载 result.css。
+   (@import 会被打包进合并 CSS 的中间位置而失效，勿再使用) */

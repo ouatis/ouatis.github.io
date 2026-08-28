@@ -1725,12 +1725,8 @@ h6:hover .anchor {
     .ouatis-hero {
         min-height: 0;
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 32px;
         padding: 40px 0 36px;
-    }
-
-    .ouatis-hero__copy {
-        order: 1;
     }
 
     .ouatis-hero h1 {
@@ -1742,21 +1738,24 @@ h6:hover .anchor {
         font-size: 14px;
     }
 
+    /* 徽记:窄屏下作为标题下方的居中印记,竖排 */
     .ouatis-seal {
         display: flex;
+        flex-direction: column;
         align-items: center;
-        gap: 22px;
-        text-align: left;
+        justify-content: center;
+        gap: 16px;
+        text-align: center;
     }
 
     .ouatis-seal__frame {
-        width: 112px;
+        width: 128px;
         margin: 0;
-        padding: 7px;
+        padding: 8px;
     }
 
     .ouatis-seal figcaption {
-        max-width: 9em;
+        max-width: none;
         margin: 0;
         line-height: 1.7;
     }
@@ -1773,31 +1772,39 @@ h6:hover .anchor {
         font-size: 32px;
     }
 
+    /* 列表行:窄屏下序号与日期合并为标题上方的一行 */
     .ouatis-entry {
         min-height: 0;
-        grid-template-columns: 34px minmax(0, 1fr) 20px;
-        gap: 10px;
+        grid-template-columns: minmax(0, 1fr) 20px;
+        grid-template-rows: auto auto;
+        gap: 6px 10px;
         padding: 21px 0;
     }
 
     .ouatis-entry__number {
         grid-column: 1;
-        grid-row: 1 / span 2;
+        grid-row: 1;
+        align-self: center;
+        justify-self: start;
+        font-size: 12px;
     }
 
     .ouatis-entry__date {
-        grid-column: 2;
+        grid-column: 1;
         grid-row: 1;
-        font-size: 11px;
+        align-self: center;
+        justify-self: end;
+        font-size: 12px;
     }
 
     .ouatis-entry__main {
-        grid-column: 2;
+        grid-column: 1;
         grid-row: 2;
+        margin-top: 4px;
     }
 
     .ouatis-entry__arrow {
-        grid-column: 3;
+        grid-column: 2;
         grid-row: 1 / span 2;
     }
 

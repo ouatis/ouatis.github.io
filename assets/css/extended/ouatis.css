@@ -412,19 +412,13 @@ a[hreflang="ja"] {
     content: "";
 }
 
-/* 徽记:hero 用版画化资产(avatar-print.webp,已融入纸面);
-   暗色模式切回原版照片并反相提亮,避免黑底黑章消失。 */
+/* 徽记:hero 直接用原版照片(avatar.webp),不做反相处理。 */
 .ouatis-seal img {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
-}
-
-[data-theme="dark"] .ouatis-seal img {
-    content: url("/avatar.webp");
-    filter: invert(0.88) hue-rotate(180deg) brightness(1.05) contrast(0.95);
 }
 
 .ouatis-seal figcaption {

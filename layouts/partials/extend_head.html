@@ -73,3 +73,43 @@
     apply();
 })();
 </script>
+
+{{- /* 入场与滚动渐显动画:html.ouatis-js 是全部渐显效果的总开关,
+     无 JS 或 IntersectionObserver 不可用时保持全静态;prefers-reduced-motion 在 CSS 侧豁免。
+     同时监听主题切换,给 400ms 的颜色柔和过渡窗口。 */}}
+<script>
+(function () {
+    var root = document.documentElement;
+    root.classList.add("ouatis-js");
+    function setup() {
+        if (!("IntersectionObserver" in window)) return;
+        var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (en) {
+                if (!en.isIntersecting) return;
+                en.target.classList.add("is-inview");
+                io.unobserve(en.target);
+            });
+        }, { threshold: 0.2 });
+        document.querySelectorAll(".ouatis-section-head, .post-header").forEach(function (el) {
+            io.observe(el);
+        });
+        /* 兜底:IO 被节流的环境(后台标签页等)里 1.2s 后强制显示栏线,结构性元素不可缺席 */
+        setTimeout(function () {
+            document.querySelectorAll(".ouatis-section-head, .post-header").forEach(function (el) {
+                el.classList.add("is-inview");
+            });
+        }, 1200);
+    }
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", setup);
+    } else {
+        setup();
+    }
+    document.addEventListener("click", function (e) {
+        if (e.target && e.target.closest && e.target.closest("#theme-toggle")) {
+            root.classList.add("ouatis-theme-anim");
+            setTimeout(function () { root.classList.remove("ouatis-theme-anim"); }, 420);
+        }
+    });
+})();
+</script>

@@ -2120,3 +2120,128 @@ body {
         color: #333333 !important;
     }
 }
+
+/* ===== 入场与滚动渐显动画:少、慢、只播一次,像纸张翻动而非网站特效 =====
+   html.ouatis-js(extend_head.html 注入)是渐显效果总开关:无 JS 时全静态。
+   prefers-reduced-motion 下一律静态呈现。 */
+
+@keyframes ouatis-rise {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* hero 首屏渐次入场:扉页翻开,总时长 ~0.8s */
+.ouatis-hero .ouatis-kicker {
+    animation: ouatis-rise 460ms ease-out both;
+}
+
+.ouatis-hero h1 {
+    animation: ouatis-rise 460ms ease-out 90ms both;
+}
+
+.ouatis-hero__intro {
+    animation: ouatis-rise 460ms ease-out 180ms both;
+}
+
+.ouatis-hero__social {
+    animation: ouatis-rise 460ms ease-out 270ms both;
+}
+
+.ouatis-hero .ouatis-seal {
+    animation: ouatis-rise 460ms ease-out 360ms both;
+}
+
+/* 标题下的栏线:JS 存在时改由伪元素从左绘出;无 JS 保持原 border */
+.ouatis-section-head {
+    position: relative;
+}
+
+.ouatis-js .ouatis-section-head {
+    border-bottom: 0;
+}
+
+.ouatis-js .ouatis-section-head::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 2px;
+    background: var(--primary);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 500ms ease-out;
+}
+
+.ouatis-js .ouatis-section-head.is-inview::after {
+    transform: scaleX(1);
+}
+
+/* 文章页标题下的朱砂短线:从左绘出;无 JS 保持静态 */
+.ouatis-js .post-header::after {
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 500ms ease-out 120ms;
+}
+
+.ouatis-js .post-header.is-inview::after {
+    transform: scaleX(1);
+}
+
+/* 首页列表行入场:纯 CSS,前 8 行逐行错开;不依赖 IO,永不因环境失灵而隐藏内容 */
+.ouatis-entry {
+    animation: ouatis-rise 420ms ease-out both;
+}
+
+.ouatis-entry:nth-child(2) { animation-delay: 70ms; }
+.ouatis-entry:nth-child(3) { animation-delay: 140ms; }
+.ouatis-entry:nth-child(4) { animation-delay: 210ms; }
+.ouatis-entry:nth-child(5) { animation-delay: 280ms; }
+.ouatis-entry:nth-child(6) { animation-delay: 350ms; }
+.ouatis-entry:nth-child(7) { animation-delay: 420ms; }
+.ouatis-entry:nth-child(8) { animation-delay: 490ms; }
+
+/* 主题切换柔和过渡:仅点击切换后 ~0.4s 内启用,避免全局常驻 transition 的副作用 */
+.ouatis-theme-anim,
+.ouatis-theme-anim body,
+.ouatis-theme-anim .post-content,
+.ouatis-theme-anim .header,
+.ouatis-theme-anim .footer,
+.ouatis-theme-anim .ouatis-entry,
+.ouatis-theme-anim .paginav,
+.ouatis-theme-anim .related-posts,
+.ouatis-theme-anim .site-404 {
+    transition: background-color 260ms ease, color 260ms ease, border-color 260ms ease !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ouatis-hero .ouatis-kicker,
+    .ouatis-hero h1,
+    .ouatis-hero__intro,
+    .ouatis-hero__social,
+    .ouatis-hero .ouatis-seal {
+        animation: none;
+    }
+
+    .ouatis-js .ouatis-entry {
+        animation: none;
+    }
+
+    .ouatis-js .ouatis-section-head {
+        border-bottom: 2px solid var(--primary);
+    }
+
+    .ouatis-js .ouatis-section-head::after {
+        display: none;
+    }
+
+    .ouatis-js .post-header::after {
+        transform: none;
+        transition: none;
+    }
+}

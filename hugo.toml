@@ -131,6 +131,7 @@ copyright = "© **[SigiL](https://github.com/ouatis)**"
     description = '写作、福楼拜，以及其他。'
     dateFormat = '2006 年 1 月 2 日'
     author = 'SigiL'
+    ShowBreadCrumbs = true
     images = ["/og-image.png"]
     keywords = ["笼城往事", "Blog", "SigiL", "异域镇魂曲"]
     

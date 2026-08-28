@@ -753,6 +753,33 @@ a[hreflang="ja"] {
     color: var(--secondary);
 }
 
+/* 面包屑:首页∷分类∷文章,绿色链接红色悬停,与分类链接约定一致 */
+.ouatis-breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+    font-family: var(--ouatis-sans);
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.ouatis-breadcrumbs a {
+    color: var(--ouatis-green);
+    text-decoration: none;
+}
+
+.ouatis-breadcrumbs a:hover,
+.ouatis-breadcrumbs a:focus-visible {
+    color: var(--ouatis-red);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.ouatis-breadcrumbs [aria-current="page"] {
+    color: var(--secondary);
+}
+
 .post-content {
     width: min(100%, 720px);
     margin-inline: auto;

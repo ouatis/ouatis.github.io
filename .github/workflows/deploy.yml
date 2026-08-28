@@ -75,4 +75,4 @@ jobs:
         uses: actions/deploy-pages@v4
 
       - name: Ping IndexNow
-        run: python scripts/indexnow.py
+        run: python scripts/indexnow.py public/sitemap.xml

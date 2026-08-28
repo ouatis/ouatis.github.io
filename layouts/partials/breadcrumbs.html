@@ -6,9 +6,9 @@
 {{- if $cat -}}
 <nav class="ouatis-breadcrumbs" aria-label="{{ i18n "breadcrumbs" | default "Breadcrumb" }}">
     <a href="{{ site.Home.Permalink }}">{{ i18n "home" | default "Home" }}</a>
-    <span class="tri-sep" aria-hidden="true">∷</span>
+    <span class="tri-sep" aria-hidden="true">∴</span>
     <a href="{{ $cat.Permalink }}">{{ $cat.LinkTitle }}</a>
-    <span class="tri-sep" aria-hidden="true">∷</span>
+    <span class="tri-sep" aria-hidden="true">∴</span>
     <span aria-current="page">{{ .Title }}</span>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":{{ i18n "home" | default "Home" | jsonify }},"item":{{ site.Home.Permalink | jsonify }}},{"@type":"ListItem","position":2,"name":{{ $cat.LinkTitle | jsonify }},"item":{{ $cat.Permalink | jsonify }}},{"@type":"ListItem","position":3,"name":{{ .Title | jsonify }},"item":{{ .Permalink | jsonify }}}]}</script>
 </nav>

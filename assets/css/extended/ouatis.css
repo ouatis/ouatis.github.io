@@ -181,14 +181,9 @@ button:focus-visible {
     transform: none;
 }
 
-/* 首页只留 hero 主徽记；内页顶栏徽记随明暗模式切换。 */
+/* 首页只留 hero 主徽记；内页顶栏徽记直接用原版照片,不做反相处理。 */
 body:has(.ouatis-home) .logo a img {
     display: none;
-}
-
-[data-theme="dark"] .logo a img {
-    content: url("/avatar.webp");
-    filter: invert(0.88) hue-rotate(180deg) brightness(1.05) contrast(0.95);
 }
 
 button#theme-toggle {

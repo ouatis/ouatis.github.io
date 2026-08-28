@@ -32,7 +32,7 @@
     --code-bg: #232a26;
     --border: #343d38;
     --ouatis-red: #e07061;
-    --ouatis-green: #70a88f;
+    --ouatis-green: #648f77;
     --ouatis-surface: #1b201d;
     color-scheme: dark;
 }
@@ -511,20 +511,20 @@ a[hreflang="ja"] {
 }
 
 .ouatis-entry__number {
-    align-self: start;
-    margin-top: 4px;
     color: var(--secondary);
-    opacity: 0.85;
     font-family: var(--ouatis-serif);
-    font-size: 13px;
+    font-size: 14px;
+    letter-spacing: 0.5px;
     font-variant-numeric: tabular-nums;
+    transition: color 180ms ease;
 }
 
 .ouatis-entry__date {
     color: var(--secondary);
     font-family: var(--ouatis-serif);
-    font-size: 13px;
+    font-size: 14px;
     font-variant-numeric: tabular-nums;
+    transition: color 180ms ease;
 }
 
 .ouatis-entry__main {
@@ -588,6 +588,14 @@ a[hreflang="ja"] {
 .ouatis-entry:has(.ouatis-entry__link:hover) h3,
 .ouatis-entry:has(.ouatis-entry__link:focus-visible) h3 {
     text-decoration-color: var(--ouatis-red);
+    text-decoration-thickness: 1.5px;
+}
+
+.ouatis-entry:has(.ouatis-entry__link:hover) .ouatis-entry__number,
+.ouatis-entry:has(.ouatis-entry__link:hover) .ouatis-entry__date,
+.ouatis-entry:has(.ouatis-entry__link:focus-visible) .ouatis-entry__number,
+.ouatis-entry:has(.ouatis-entry__link:focus-visible) .ouatis-entry__date {
+    color: var(--primary);
 }
 
 .ouatis-entry:has(.ouatis-entry__link:hover) .ouatis-entry__arrow,
@@ -728,7 +736,7 @@ a[hreflang="ja"] {
     font-size: 18px;
     line-height: 2.05;
     letter-spacing: 0.01em;
-    text-align: left;
+    text-align: justify;
 }
 
 .post-content p {
@@ -754,8 +762,8 @@ a[hreflang="ja"] {
 }
 
 .post-content h3 {
-    margin: 1.8em 0 0.8em;
-    color: var(--ouatis-green);
+    margin: 2.2em 0 1em;
+    color: var(--primary);
     font-size: 22px;
 }
 
@@ -768,9 +776,9 @@ a[hreflang="ja"] {
 }
 
 .post-content a {
-    color: var(--ouatis-green);
+    color: var(--ouatis-red);
     text-decoration: underline;
-    text-decoration-color: var(--ouatis-green);
+    text-decoration-color: var(--ouatis-red);
     text-decoration-thickness: 1px;
     text-underline-offset: 4px;
     transition: color 180ms ease, text-decoration-color 180ms ease;
@@ -782,11 +790,11 @@ a[hreflang="ja"] {
     text-decoration-color: var(--ouatis-red);
 }
 
-/* 引文:系统楷体书引,无楷体设备回退宋体子集 */
+/* 引文:系统楷体书引,无楷体设备回退宋体子集;绿色标线=元信息,红色留给交互 */
 .post-content blockquote {
     margin: 2.2em 0;
     padding: 0 20px;
-    border-inline-start: 2px solid var(--ouatis-red);
+    border-inline-start: 2px solid var(--ouatis-green);
     color: var(--secondary);
     font-family: "Kaiti SC", STKaiti, KaiTi, var(--ouatis-serif);
     font-size: 0.94em;
@@ -862,7 +870,7 @@ a[hreflang="ja"] {
 }
 
 .post-content a.footnote-ref {
-    color: var(--ouatis-green);
+    color: var(--ouatis-red);
     text-decoration: none;
 }
 
@@ -899,7 +907,7 @@ h3:hover .anchor,
 h4:hover .anchor,
 h5:hover .anchor,
 h6:hover .anchor {
-    color: var(--ouatis-green);
+    color: var(--ouatis-red);
     font-weight: 400;
 }
 
@@ -1332,7 +1340,7 @@ h6:hover .anchor {
 
 #searchbox input:focus,
 #searchbox input:focus-visible {
-    border-color: var(--ouatis-green);
+    border-color: var(--ouatis-red);
     outline: none;
 }
 
@@ -1381,9 +1389,9 @@ h6:hover .anchor {
 }
 
 .search-suggestions a {
-    color: var(--ouatis-green);
+    color: var(--ouatis-red);
     text-decoration: underline;
-    text-decoration-color: var(--ouatis-green);
+    text-decoration-color: var(--ouatis-red);
     text-underline-offset: 3px;
 }
 

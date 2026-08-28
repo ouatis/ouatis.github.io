@@ -462,9 +462,9 @@ a[hreflang="ja"] {
     font-size: 13px;
 }
 
-/* 非中文首页的文章语言提示:元信息,用绿色 */
+/* 非中文首页的文章语言提示:作为标题副题,元信息用绿色 */
 .ouatis-lang-note {
-    margin: -6px 0 18px;
+    margin: 6px 0 0;
     color: var(--ouatis-green);
     font-family: var(--ouatis-sans);
     font-size: 13px;

@@ -58,6 +58,10 @@
       <p class="ouatis-section-head__count">{{ len $pages }}{{ if eq site.Language.Lang "en" }} posts{{ else if eq site.Language.Lang "ja" }} 編{{ else }} 篇文章{{ end }}</p>
     </header>
 
+    {{- if ne site.Language.Lang "zh-cn" }}
+    <p class="ouatis-lang-note">{{ if eq site.Language.Lang "en" }}Posts are currently available in Chinese only.{{ else if eq site.Language.Lang "ja" }}記事は現在、中国語のみの掲載です。{{ end }}</p>
+    {{- end }}
+
     <div class="ouatis-feed">
       {{- range $index, $page := $paginator.Pages }}
       {{- $number := add (add $offset $index) 1 }}

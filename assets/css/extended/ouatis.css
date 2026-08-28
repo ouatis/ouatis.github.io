@@ -1083,9 +1083,11 @@ h6:hover .anchor {
 }
 
 .post-tags a {
-    padding: 4px 9px;
+    display: inline-block;
+    padding: 4px 12px;
     border: 1px solid var(--border);
     color: var(--ouatis-green);
+    line-height: 1.8;
     background: transparent;
     text-decoration: none;
     transition: color 180ms ease, border-color 180ms ease;
@@ -1214,6 +1216,10 @@ h6:hover .anchor {
     gap: 16px;
     margin: 0;
     padding: 14px 4px;
+}
+
+/* 只在同月条目之间画线;组间分隔交给下个月的 archive-posts 顶线,避免双线 */
+.archive-entry:not(:last-child) {
     border-bottom: 1px solid var(--border);
 }
 
@@ -1421,7 +1427,7 @@ h6:hover .anchor {
 
 .paginav a {
     border-radius: 0;
-    padding: 18px 4px 0;
+    padding: 18px 4px;
     font-family: var(--ouatis-serif);
 }
 

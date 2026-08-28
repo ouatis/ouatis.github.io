@@ -18,8 +18,17 @@
 </nav>
 {{- end }}
 
-{{- /* Related posts: real HTML internal links, boosts indexing of orphan posts */}}
-{{- $related := site.RegularPages.Related . | first 3 }}
+{{- /* Related posts: real HTML internal links, boosts indexing of orphan posts.
+     排除直接相邻的两篇(已出现在上方翻页导航),避免同屏重复。 */}}
+{{- $navPrev := $pages.Next . }}
+{{- $navNext := $pages.Prev . }}
+{{- $related := slice }}
+{{- range site.RegularPages.Related . }}
+  {{- if and (not (and $navPrev (eq .Permalink $navPrev.Permalink))) (not (and $navNext (eq .Permalink $navNext.Permalink))) }}
+    {{- $related = $related | append . }}
+  {{- end }}
+{{- end }}
+{{- $related = first 3 $related }}
 {{- if and (ne (.Param "showRelated") false) $related }}
 {{- $relatedTitle := "相关文章" }}
 {{- if eq site.Language.Lang "en" }}{{- $relatedTitle = "Related writing" }}{{- else if eq site.Language.Lang "ja" }}{{- $relatedTitle = "関連記事" }}{{- end }}

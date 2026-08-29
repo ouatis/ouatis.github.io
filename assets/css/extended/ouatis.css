@@ -2324,3 +2324,34 @@ html .header {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.028'/%3E%3C/svg%3E") !important;
     background-repeat: repeat !important;
 }
+
+/* ===== Tufte 式边注:≥1440px 时脚注出现在引注右侧的空白边距里 =====
+   窄屏自动回退为文末脚注;旧浏览器(无 :has)不创建边注,一切保持原样。 */
+@media (max-width: 1439.98px) {
+    .sidenote {
+        display: none;
+    }
+}
+
+@media (min-width: 1440px) {
+    .sidenote {
+        float: right;
+        clear: right;
+        width: 264px;
+        margin: 4px -300px 18px 20px;
+        color: var(--secondary);
+        font-family: var(--ouatis-sans);
+        font-size: 13px;
+        line-height: 1.75;
+    }
+
+    .sidenote .sidenote-number {
+        color: var(--ouatis-red);
+        font-family: var(--ouatis-serif);
+        font-weight: 700;
+    }
+
+    .post-content:has(.sidenote) .footnotes {
+        display: none;
+    }
+}

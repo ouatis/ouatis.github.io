@@ -123,3 +123,37 @@
     });
 })();
 </script>
+
+{{- /* Tufte 式边注:把文末脚注克隆到引注右侧的边距(≥1440px,CSS 控制);
+     不支持 :has 的旧浏览器直接跳过,保持文末脚注原样。
+     幂等多重触发(DCL/load/1.5s 兜底),data-for 去重,任何环境都能落位。
+     data-ouatis 属性防止压缩器把本块与相邻内联脚本合并(合并会产生残缺标签)。 */}}
+<script data-ouatis="sidenote">
+(function () {
+    function ready(fn) {
+        if (document.readyState !== "loading") fn();
+        else document.addEventListener("DOMContentLoaded", fn);
+    }
+    function build() {
+        if (!document.querySelector(".post-content") || !document.querySelector(".footnotes")) return;
+        if (!(window.CSS && CSS.supports && CSS.supports("selector(:has(a))"))) return;
+        document.querySelectorAll('.footnotes ol > li[id^="fn:"]').forEach(function (li) {
+            var num = li.id.slice(3);
+            var ref = document.querySelectorAll('a[href="#fn:' + num + '"]')[0];
+            if (!ref) return;
+            var block = ref.closest("p, li");
+            if (!block || block.querySelector('.sidenote[data-for="fn:' + num + '"]')) return;
+            var side = document.createElement("span");
+            side.className = "sidenote";
+            side.setAttribute("data-for", "fn:" + num);
+            side.innerHTML = '<span class="sidenote-number">' + num + "</span> " + li.innerHTML;
+            var back = side.querySelector(".footnote-backlink");
+            if (back) back.remove();
+            block.appendChild(side);
+        });
+    }
+    ready(build);
+    window.addEventListener("load", build);
+    setTimeout(build, 1500);
+})();
+</script>

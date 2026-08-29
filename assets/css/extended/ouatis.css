@@ -432,12 +432,13 @@ a[hreflang="ja"] {
     border-radius: 50%;
 }
 
-.ouatis-seal figcaption {
-    margin-top: 28px;
+.footer-colophon {
+    display: block;
+    margin-top: 12px;
     color: var(--secondary);
     font-family: var(--ouatis-sans);
     font-size: 10px;
-    line-height: 1.5;
+    letter-spacing: 0.35em;
 }
 
 .ouatis-writing {
@@ -1839,12 +1840,6 @@ h6:hover .anchor {
         width: 128px;
         margin: 0;
         padding: 8px;
-    }
-
-    .ouatis-seal figcaption {
-        max-width: none;
-        margin: 0;
-        line-height: 1.7;
     }
 
     .ouatis-writing {

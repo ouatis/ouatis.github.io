@@ -433,12 +433,10 @@ a[hreflang="ja"] {
 }
 
 .footer-colophon {
-    display: block;
-    margin-top: 12px;
     color: var(--secondary);
     font-family: var(--ouatis-sans);
-    font-size: 10px;
-    letter-spacing: 0.35em;
+    font-size: 13px;
+    letter-spacing: 0.2em;
 }
 
 .ouatis-writing {

@@ -1,4 +1,4 @@
-{{- /* 万事皆三:页脚只分三段,以三点所以符 ∴ 相隔 */}}
+{{- /* 万事皆三:页脚只分三段(版权∴题词∴引擎),以三点所以符 ∴ 相隔 */}}
 {{- if not (.Param "hideFooter") }}
 <footer class="footer">
     {{- if not site.Params.footer.hideCopyright }}
@@ -11,14 +11,15 @@
 
     <span class="tri-sep" aria-hidden="true">∴</span>
 
+    <span class="footer-colophon">IMAGINE UNPOETIC LION</span>
+
+    <span class="tri-sep" aria-hidden="true">∴</span>
+
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
         <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
     </span>
-
-    {{- /* 题词:全站唯一一处,收束于页面最底部 */}}
-    <span class="footer-colophon">IMAGINE UNPOETIC LION</span>
 </footer>
 {{- end }}
 

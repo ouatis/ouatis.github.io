@@ -150,6 +150,15 @@
             var back = side.querySelector(".footnote-backlink");
             if (back) back.remove();
             block.appendChild(side);
+            var refSup = ref.closest("sup") || ref.parentElement;
+            function point(on) {
+                side.classList.toggle("is-pointed", on);
+                refSup.classList.toggle("is-pointed", on);
+            }
+            side.addEventListener("mouseenter", function () { point(true); });
+            side.addEventListener("mouseleave", function () { point(false); });
+            ref.addEventListener("mouseenter", function () { point(true); });
+            ref.addEventListener("mouseleave", function () { point(false); });
         });
     }
     ready(build);

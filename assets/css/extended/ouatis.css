@@ -2176,6 +2176,15 @@ body {
         text-decoration: none;
     }
 
+    /* 打印回退:隐藏边注,恢复文末脚注列表 */
+    .sidenote {
+        display: none !important;
+    }
+
+    .post-content:has(.sidenote) .footnotes {
+        display: block !important;
+    }
+
     .ouatis-hero__copy h1 {
         font-size: 24pt !important;
         margin: 0 0 8pt !important;
@@ -2349,6 +2358,20 @@ html .header {
         color: var(--ouatis-red);
         font-family: var(--ouatis-serif);
         font-weight: 700;
+    }
+
+    /* 悬停联动:悬停引注提亮对应边注,悬停边注标亮引注 */
+    .sidenote.is-pointed {
+        color: var(--content);
+    }
+
+    .sidenote.is-pointed .sidenote-number {
+        color: var(--ouatis-red);
+    }
+
+    sup.is-pointed a {
+        text-decoration: underline;
+        text-underline-offset: 3px;
     }
 
     .post-content:has(.sidenote) .footnotes {

@@ -73,6 +73,10 @@
             for (var i = 0; i < heads.length; i++) {
                 if (heads[i]._y <= pos) currentId = heads[i].id;
             }
+            /* 页尾兜底:末节后置内容不足一屏时,滚动到底强制点亮最后一个小节 */
+            if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 2) {
+                currentId = heads[heads.length - 1].id;
+            }
             toc.querySelectorAll('a.is-active').forEach(function (a) { a.classList.remove('is-active'); });
             var active = links[currentId];
             if (!active) return;

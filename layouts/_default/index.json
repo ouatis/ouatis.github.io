@@ -1,6 +1,6 @@
 {{- /* 外语站搜索索引指向中文内容,与首页约定一致 */ -}}
 {{- $contentSite := site -}}
-{{- if ne site.Language.Lang "zh-cn" }}{{- $contentSite = index site.Sites 0 -}}{{- end -}}
+{{- if ne site.Language.Lang "zh-cn" }}{{- $contentSite = index hugo.Sites 0 -}}{{- end -}}
 {{- $.Scratch.Add "index" slice -}}
 {{- range $contentSite.RegularPages -}}
     {{- if and (not .Params.searchHidden) (ne .Layout `archives`) (ne .Layout `search`) }}

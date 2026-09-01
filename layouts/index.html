@@ -1,7 +1,7 @@
 {{- define "main" }}
 {{- /* 英日首页直接列中文文章:外语界面 + 中文正文,与 en/flaubert 目录页的既有约定一致 */ -}}
 {{- $contentSite := site }}
-{{- if ne site.Language.Lang "zh-cn" }}{{- $contentSite = index site.Sites 0 }}{{- end }}
+{{- if ne site.Language.Lang "zh-cn" }}{{- $contentSite = index hugo.Sites 0 }}{{- end }}
 {{- $pages := where $contentSite.RegularPages "Section" "posts" }}
 {{- $pages = where $pages "Params.hiddenInHomeList" "!=" "true" }}
 {{- $paginator := .Paginate $pages }}
@@ -42,7 +42,7 @@
 
     <figure class="ouatis-seal">
       <div class="ouatis-seal__frame">
-        <img src="/avatar.webp?v=2" alt="笼城往事徽记" width="320" height="320">
+        <img src="/avatar.webp" alt="笼城往事徽记" width="320" height="320">
       </div>
     </figure>
   </section>

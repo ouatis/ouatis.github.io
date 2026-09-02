@@ -10,7 +10,6 @@
     <a href="{{ $cat.Permalink }}">{{ $cat.LinkTitle }}</a>
     {{- /* 悬尾∴:语义上引出下方标题 */ -}}
     <span class="ouatis-breadcrumbs__lead" aria-hidden="true">∴</span>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":{{ i18n "home" | default "Home" | jsonify }},"item":{{ site.Home.Permalink | jsonify }}},{"@type":"ListItem","position":2,"name":{{ $cat.LinkTitle | jsonify }},"item":{{ $cat.Permalink | jsonify }}}]}</script>
 </nav>
 {{- end -}}
 {{- end -}}

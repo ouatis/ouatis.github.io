@@ -2,7 +2,14 @@
     {{- range site.Params.socialIcons }}
     <a href="{{ trim .url " " | safeURL }}" target="_blank" rel="noopener noreferrer me"
         title="{{ (.title | default .name) | title }}" aria-label="{{ (.title | default .name) | title }}">
-        {{ partial "svg.html" . }}
+        {{- $sgName := lower (.title | default .name) -}}
+        {{- $sgIcon := $sgName -}}
+        {{- if eq $sgName "github" -}}{{- $sgIcon = "github-logo" -}}{{- end -}}
+        {{- if in (slice "github-logo" "rss") $sgIcon -}}
+        {{- partial "sg-icon.html" (dict "name" $sgIcon "size" 22) -}}
+        {{- else -}}
+        {{- partial "svg.html" . -}}
+        {{- end }}
     </a>
     {{- end }}
 </div>

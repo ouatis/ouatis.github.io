@@ -13,4 +13,4 @@
 {{- $name := default "" .name }}
 {{- $size := default 24 .size }}
 {{- $path := index $icons $name }}
-{{- if $path }}<svg xmlns="http://www.w3.org/2000/svg"{{ with .id }} id="{{ . }}"{{ end }} width="{{ $size }}" height="{{ $size }}" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true">{{ $path }}</svg>{{- end -}}
+{{- if $path }}<svg xmlns="http://www.w3.org/2000/svg"{{ with .id }} id="{{ . }}"{{ end }} width="{{ $size }}" height="{{ $size }}" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true">{{ $path | safeHTML }}</svg>{{- end -}}

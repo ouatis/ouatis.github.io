@@ -29,3 +29,6 @@ cleanup-deployments.bat
 # Font subset build cache
 .cache/
 node_modules/
+
+# Generated IBM Plex split assets
+static/fonts/ibm-plex/

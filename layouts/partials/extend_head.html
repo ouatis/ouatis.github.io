@@ -49,11 +49,9 @@
 </script>
 {{- end }}
 
-{{- /* 字体样式表:preload 并行下载后立即应用。
-     此前只有 preload 没有 stylesheet,result.css 从未被应用,
-     @import 又因被打包进合并 CSS 的中间位置而失效,全站一直用系统回退字体。 */}}
-<link rel="preload" href="{{ "fonts/split/result.css" | relURL }}" as="style">
-<link rel="stylesheet" href="{{ "fonts/split/result.css" | relURL }}">
+{{- /* IBM Plex Sans 字体样式表:拉丁、Chinese SC、Japanese 三套官方分片按 unicode-range 按需加载。 */}}
+<link rel="preload" href="{{ "fonts/ibm-plex/result.css" | relURL }}" as="style">
+<link rel="stylesheet" href="{{ "fonts/ibm-plex/result.css" | relURL }}">
 
 {{- /* hreflang x-default:非三种声明语言的用户兜底到中文版;仅中文的页面兜底为自身 */}}
 {{- $xd := . -}}

@@ -16,9 +16,20 @@
     --ouatis-green: #2f6754;
     --ouatis-amber-rgb: 208, 168, 92; /* 万事皆三:朱砂·墨绿·琥珀,三色足矣 */
     --ouatis-surface: #ffffff;
-    --ouatis-serif: "Noto Serif SC Subset", "Songti SC", "Noto Serif CJK SC", STSong, SimSun, serif;
-    --ouatis-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    --ouatis-serif: "IBM Plex Sans", "IBM Plex Sans SC", "IBM Plex Sans JP", sans-serif;
+    --ouatis-sans: "IBM Plex Sans", "IBM Plex Sans SC", "IBM Plex Sans JP", sans-serif;
     color-scheme: light;
+}
+
+/* IBM Plex CJK:语言页面优先对应区域字形,避免日文汉字采用简体字形 */
+html:lang(zh) {
+    --ouatis-serif: "IBM Plex Sans SC", "IBM Plex Sans", sans-serif;
+    --ouatis-sans: "IBM Plex Sans SC", "IBM Plex Sans", sans-serif;
+}
+
+html:lang(ja) {
+    --ouatis-serif: "IBM Plex Sans JP", "IBM Plex Sans", sans-serif;
+    --ouatis-sans: "IBM Plex Sans JP", "IBM Plex Sans", sans-serif;
 }
 
 :root[data-theme="dark"] {
@@ -851,7 +862,7 @@ a[hreflang="ja"] {
     padding: 0 20px;
     border-inline-start: 2px solid var(--ouatis-green);
     color: var(--secondary);
-    font-family: "Kaiti SC", STKaiti, KaiTi, var(--ouatis-serif);
+    font-family: var(--ouatis-serif);
     font-size: 0.94em;
     line-height: 1.9;
 }
@@ -2076,7 +2087,7 @@ body {
     }
 
     body {
-        font-family: "Songti SC", "Noto Serif CJK SC", STSong, SimSun, Georgia, serif !important;
+        font-family: var(--ouatis-sans) !important;
         font-size: 12pt;
         line-height: 1.7;
         background: #ffffff !important;

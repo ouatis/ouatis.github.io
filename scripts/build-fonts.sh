@@ -1,94 +1,73 @@
 #!/usr/bin/env bash
-# 重新生成思源宋体（Noto Serif CJK SC）站内用字子集。
+# Prepare the IBM Plex Sans family for the site.
 #
-# 依赖：python3 + fonttools（pip install "fonttools[woff]"）、curl
-# 用法：scripts/build-fonts.sh
-#
-# 字符集 = 现有 charset.txt ∪ 从 content/ layouts/ i18n/ archetypes/ hugo.toml
-# 提取的全部字符（剔除控制符、组合符、emoji——emoji 由系统字体渲染）。
-# 本地或 CI 构建前运行；生成的 charset.txt 可随仓库提交，便于人工核对。
+# The official split woff2 files are extracted from pinned IBM Plex npm
+# packages. SC and JP keep their own unicode-range CSS so Japanese kanji do
+# not accidentally use simplified-Chinese glyphs.
 set -euo pipefail
 
 cd "$(dirname "$0")/.."
 
-# 字体源：google/fonts 仓库的 Noto Serif SC 可变字体，按 commit 固定保证可复现
-NOTO_VAR_SHA="2e61f4355afd22b801791b0df176065082423b87"
-NOTO_VAR_URL="https://github.com/google/fonts/raw/${NOTO_VAR_SHA}/ofl/notoserifsc/NotoSerifSC%5Bwght%5D.ttf"
-CACHE_DIR="${NOTO_CACHE_DIR:-.cache/noto-cjk}"
-FONT_DIR="static/fonts"
-
-python3 -c 'import fontTools, brotli' 2>/dev/null || {
-    echo "缺少依赖：pip install \"fonttools[woff]\"" >&2
-    exit 1
-}
-command -v pyftsubset >/dev/null || {
-    echo "找不到 pyftsubset，请确认 fonttools 已安装" >&2
-    exit 1
-}
-
+IBM_PLEX_VERSION="1.1.0"
+FONT_DIR="static/fonts/ibm-plex"
+CACHE_DIR="${IBM_PLEX_CACHE_DIR:-.cache/ibm-plex}"
 mkdir -p "$CACHE_DIR" "$FONT_DIR"
 
-src="${CACHE_DIR}/NotoSerifSC-var.ttf"
-if [ ! -s "$src" ]; then
-    echo "下载 NotoSerifSC 可变字体（${NOTO_VAR_SHA:0:8}）…"
-    curl -fL --retry 3 -o "$src" "$NOTO_VAR_URL"
-fi
+command -v curl >/dev/null || { echo "curl is required" >&2; exit 1; }
+command -v tar >/dev/null || { echo "tar is required" >&2; exit 1; }
 
-python3 - <<'PY'
-import pathlib
-import unicodedata
+fetch_package() {
+    local pkg="$1"
+    local archive="${CACHE_DIR}/${pkg}-${IBM_PLEX_VERSION}.tgz"
+    local url="https://registry.npmjs.org/@ibm/${pkg}/-/${pkg}-${IBM_PLEX_VERSION}.tgz"
+    local tmp="${archive}.tmp.$$"
 
-roots = ["content", "layouts", "i18n", "archetypes"]
-exts = {".md", ".html", ".toml", ".yaml", ".yml", ".json", ".txt"}
-chars = set(pathlib.Path("hugo.toml").read_text(encoding="utf-8", errors="ignore"))
+    if [ -s "$archive" ] && tar -tzf "$archive" >/dev/null 2>&1; then
+        return
+    fi
 
-for root in roots:
-    p = pathlib.Path(root)
-    if not p.exists():
-        continue
-    for f in p.rglob("*"):
-        if f.is_file() and f.suffix.lower() in exts:
-            chars |= set(f.read_text(encoding="utf-8", errors="ignore"))
+    rm -f "$archive" "$tmp"
+    echo "Downloading @ibm/${pkg}@${IBM_PLEX_VERSION}..."
+    curl -fL --retry 3 --retry-all-errors --connect-timeout 20 -o "$tmp" "$url"
+    tar -tzf "$tmp" >/dev/null
+    mv "$tmp" "$archive"
+}
 
-old = pathlib.Path("static/fonts/charset.txt")
-if old.exists():
-    chars |= set(old.read_text(encoding="utf-8", errors="ignore"))
+for pkg in plex-sans plex-sans-sc plex-sans-jp; do
+    fetch_package "$pkg"
+done
 
-def wanted(ch):
-    cp = ord(ch)
-    if cp < 0x20 or cp == 0x7F:
-        return False
-    if unicodedata.category(ch) in {"Cc", "Cf", "Mn", "Zl", "Zp"}:
-        return False
-    if 0x1F000 <= cp <= 0x1FAFF:
-        return False
-    return True
+rm -rf "static/fonts/split" "static/fonts/charset.txt" "${FONT_DIR}"
+mkdir -p "${FONT_DIR}/latin" "${FONT_DIR}/sc" "${FONT_DIR}/jp"
 
-out = "".join(sorted(c for c in chars if wanted(c)))
-old.write_text(out, encoding="utf-8")
-print(f"charset: {len(out)} 个字符")
-PY
+for weight in Regular SemiBold Bold; do
+    tar -xzf "${CACHE_DIR}/plex-sans-${IBM_PLEX_VERSION}.tgz" \
+        -C "${FONT_DIR}/latin" --strip-components=4 --wildcards \
+        "package/fonts/split/woff2/IBMPlexSans-${weight}*.css" \
+        "package/fonts/split/woff2/IBMPlexSans-${weight}*.woff2"
+    tar -xzf "${CACHE_DIR}/plex-sans-sc-${IBM_PLEX_VERSION}.tgz" \
+        -C "${FONT_DIR}/sc" --strip-components=5 --wildcards \
+        "package/fonts/split/woff2/hinted/IBMPlexSansSC-${weight}*.css" \
+        "package/fonts/split/woff2/hinted/IBMPlexSansSC-${weight}*.woff2"
+    tar -xzf "${CACHE_DIR}/plex-sans-jp-${IBM_PLEX_VERSION}.tgz" \
+        -C "${FONT_DIR}/jp" --strip-components=5 --wildcards \
+        "package/fonts/split/woff2/hinted/IBMPlexSansJP-${weight}*.css" \
+        "package/fonts/split/woff2/hinted/IBMPlexSansJP-${weight}*.woff2"
+done
 
-# 先 pyftsubset 按站内用字裁剪（大幅减少切片总量），再 cn-font-split 按 unicode-range 切片
-WORK_TTF="${CACHE_DIR}/NotoSerifSC-subset.ttf"
-pyftsubset "$src" \
-    --text-file="${FONT_DIR}/charset.txt" \
-    --output-file="$WORK_TTF"
+cat > "${FONT_DIR}/result.css" <<'CSS'
+/* IBM Plex Sans family, generated from @ibm/plex-sans 1.1.0 packages. */
+@import url("./latin/IBMPlexSans-Regular.css");
+@import url("./latin/IBMPlexSans-SemiBold.css");
+@import url("./latin/IBMPlexSans-Bold.css");
+@import url("./sc/IBMPlexSansSC-Regular.css");
+@import url("./sc/IBMPlexSansSC-SemiBold.css");
+@import url("./sc/IBMPlexSansSC-Bold.css");
+@import url("./jp/IBMPlexSansJP-Regular.css");
+@import url("./jp/IBMPlexSansJP-SemiBold.css");
+@import url("./jp/IBMPlexSansJP-Bold.css");
+CSS
 
-if [ ! -d node_modules/cn-font-split ]; then
-    echo "安装 cn-font-split…"
-    npm install cn-font-split --no-fund --no-audit --silent
-fi
-
-rm -rf "${FONT_DIR}/split"
-node - "$WORK_TTF" "${FONT_DIR}/split" <<'JS'
-const { fontSplit } = require('cn-font-split');
-const [input, outDir] = process.argv.slice(2);
-fontSplit({ input, outDir, css: { fontFamily: 'Noto Serif SC Subset' }, preview_image: { enable: false } })
-  .then(() => console.log('font split done'))
-  .catch((e) => { console.error(e); process.exit(1); });
-JS
-
-rm -f "${FONT_DIR}/split/reporter.bin" "${FONT_DIR}/split/index.html" "${FONT_DIR}/split/index.proto"
-
-ls -lh "${FONT_DIR}/split/result.css"
+find "${FONT_DIR}" -type f -name '*.bin' -delete
+printf 'IBM Plex assets: '
+find "${FONT_DIR}" -type f | wc -l

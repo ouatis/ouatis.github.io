@@ -20,6 +20,12 @@
   {{- if eq $paginator.PageNumber 1 }}
   <section class="ouatis-hero" aria-labelledby="ouatis-title">
     <div class="ouatis-hero__copy">
+      {{- with site.Params.sgReading }}
+      <p class="ouatis-now ouatis-now--reading">{{ partial "sg-icon.html" (dict "name" "book-open" "size" 14) }}<span class="ouatis-now__label">{{ if eq site.Language.Lang "en" }}Reading{{ else if eq site.Language.Lang "ja" }}Reading{{ else }}正在读{{ end }}</span><span class="ouatis-now__value">{{ . }}</span></p>
+      {{- end }}
+      {{- with site.Params.sgPlaying }}
+      <p class="ouatis-now ouatis-now--playing">{{ partial "sg-icon.html" (dict "name" "game-controller" "size" 14) }}<span class="ouatis-now__label">{{ if eq site.Language.Lang "en" }}Playing{{ else if eq site.Language.Lang "ja" }}Playing{{ else }}正在玩{{ end }}</span><span class="ouatis-now__value">{{ . }}</span></p>
+      {{- end }}
       {{- if eq site.Language.Lang "en" }}
       <p class="ouatis-kicker">OUATIS</p>
       <h1 id="ouatis-title">Once Upon a Time in SigiL</h1>

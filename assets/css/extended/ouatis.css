@@ -335,6 +335,42 @@ a[hreflang="ja"] {
     border-bottom: 1px solid var(--border);
 }
 
+/* 首页近况：参考轻量状态行，只陈述当前阅读与游玩，不做卡片。 */
+.ouatis-now {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin: 0 0 5px;
+    font-family: var(--ouatis-sans);
+    font-size: 12px;
+    line-height: 1.45;
+}
+
+.ouatis-now__label {
+    flex: 0 0 auto;
+    color: var(--ouatis-green);
+    font-weight: 600;
+}
+
+.ouatis-now__label::after {
+    color: var(--tertiary);
+    content: " ·";
+}
+
+.ouatis-now__value {
+    min-width: 0;
+    color: var(--secondary);
+}
+
+.ouatis-now--playing .ouatis-now__label {
+    color: var(--ouatis-red);
+}
+
+.ouatis-now + .ouatis-kicker,
+.ouatis-now + h1 {
+    margin-top: 18px;
+}
+
 .ouatis-kicker {
     color: var(--ouatis-green);
     font-family: var(--ouatis-sans);

@@ -4,7 +4,7 @@
 {{- if ne site.Language.Lang "zh-cn" }}{{- $contentSite = index hugo.Sites 0 }}{{- end }}
 {{- $pages := where $contentSite.RegularPages "Section" "posts" }}
 {{- $pages = where $pages "Params.hiddenInHomeList" "!=" "true" }}
-{{- $paginator := .Paginate $pages }}
+{{- $paginator := .Paginate $pages 9 }}
 {{- $offset := mul (sub $paginator.PageNumber 1) $paginator.PagerSize }}
 {{- $socialLabel := "社交链接" -}}
 {{- $readPrefix := "阅读：" -}}
@@ -44,8 +44,39 @@
       <div class="ouatis-seal__frame">
         <img src="/avatar.webp" alt="笼城往事徽记" width="320" height="320">
       </div>
+      {{- if or site.Params.sgReading site.Params.sgPlaying site.Params.sgMotto }}
+      <figcaption class="ouatis-now" data-rotate="true" aria-label="Current reading and playing" aria-live="polite">
+        {{- with site.Params.sgReading }}
+        <span class="ouatis-now__item ouatis-now__item--reading">{{ partial "sg-icon.html" (dict "name" "book-open" "size" 14) }}<span>Reading: {{ . }}</span></span>
+        {{- end }}
+        {{- with site.Params.sgPlaying }}
+        <span class="ouatis-now__item ouatis-now__item--playing">{{ partial "sg-icon.html" (dict "name" "game-controller" "size" 14) }}<span>Playing: {{ . }}</span></span>
+        {{- end }}
+        {{- with site.Params.sgMotto }}
+        <span class="ouatis-now__item ouatis-now__item--motto"><span class="ouatis-now__glyph" aria-hidden="true">∴</span><span>{{ . }}</span></span>
+        {{- end }}
+      </figcaption>
+      {{- end }}
     </figure>
   </section>
+  {{- if or site.Params.sgReading site.Params.sgPlaying site.Params.sgMotto }}
+  <script>
+  (function () {
+      var strip = document.querySelector(".ouatis-now");
+      if (!strip) return;
+      var items = Array.from(strip.querySelectorAll(".ouatis-now__item"));
+      if (items.length < 2 || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      strip.classList.add("ouatis-now--rotating");
+      var index = 0;
+      items.forEach(function (item, i) { item.classList.toggle("is-active", i === 0); });
+      window.setInterval(function () {
+          items[index].classList.remove("is-active");
+          index = (index + 1) % items.length;
+          items[index].classList.add("is-active");
+      }, 8000);
+  })();
+  </script>
+  {{- end }}
   {{- end }}
 
   {{- if gt (len $pages) 0 }}

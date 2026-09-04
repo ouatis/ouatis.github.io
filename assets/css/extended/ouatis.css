@@ -28,8 +28,8 @@ html:lang(zh) {
 }
 
 html:lang(ja) {
-    --ouatis-serif: "IBM Plex Sans JP", "IBM Plex Sans", sans-serif;
-    --ouatis-sans: "IBM Plex Sans JP", "IBM Plex Sans", sans-serif;
+    --ouatis-serif: "IBM Plex Sans SC", "IBM Plex Sans", sans-serif;
+    --ouatis-sans: "IBM Plex Sans SC", "IBM Plex Sans", sans-serif;
 }
 
 :root[data-theme="dark"] {
@@ -443,22 +443,13 @@ a[hreflang="ja"] {
     border-radius: 50%;
 }
 
-.footer-colophon {
-    color: var(--secondary);
-    font-family: var(--ouatis-sans);
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-}
 
-/* 页脚近况：轻量的轮换状态，作为页面结束前的一行元信息。 */
-.footer-now {
+.ouatis-now {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 18px;
     min-height: 20px;
-    margin: 0 0 12px;
+    margin: 20px 0 0;
     color: var(--secondary);
     font-family: var(--ouatis-sans);
     font-size: 12px;
@@ -466,40 +457,57 @@ a[hreflang="ja"] {
     letter-spacing: 0.08em;
 }
 
-.footer-now__item {
+.ouatis-now__item {
     display: inline-flex;
     align-items: center;
     gap: 7px;
 }
 
-.footer-now__item svg {
+.ouatis-now__item svg {
     flex: 0 0 auto;
 }
 
-.footer-now__item--reading svg {
+.ouatis-now__item--reading svg {
     color: var(--ouatis-green);
 }
 
-.footer-now__item--playing svg {
+.ouatis-now__item--playing svg {
     color: var(--ouatis-red);
 }
 
-.footer-now--rotating .footer-now__item {
+.ouatis-now__item--motto,
+.ouatis-now__glyph {
+    color: rgba(var(--ouatis-amber-rgb), 0.9);
+}
+
+.ouatis-now__glyph {
+    font-size: 16px;
+    line-height: 1;
+}
+
+.ouatis-now--rotating .ouatis-now__item {
     position: absolute;
     opacity: 0;
     transform: translateY(2px);
     transition: opacity 240ms ease, transform 240ms ease;
 }
 
-.footer-now--rotating .footer-now__item.is-active {
+.ouatis-now--rotating .ouatis-now__item.is-active {
     position: relative;
     opacity: 1;
     transform: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .footer-now--rotating .footer-now__item {
-        display: inline-flex;
+    .ouatis-now {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .ouatis-now--rotating .ouatis-now__item {
+        position: relative;
+        opacity: 1;
+        transform: none;
     }
 }
 
@@ -1211,19 +1219,14 @@ h6:hover .anchor {
 }
 
 .footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0;
     border-top: 1px solid var(--border);
     color: var(--secondary);
-    font-family: var(--ouatis-serif);
-}
-
-/* 页脚落款:整页以徽记开篇、以所以符收束,呼应"万事皆三" */
-.footer::before {
-    content: "∴";
-    display: block;
-    margin-bottom: 10px;
-    color: rgba(var(--ouatis-amber-rgb), 0.95);
-    font-size: 18px;
-    line-height: 1;
+    font-family: var(--ouatis-sans);
 }
 
 .footer .tri-sep {
@@ -1272,26 +1275,6 @@ h6:hover .anchor {
     font-size: 16px;
 }
 
-.ouatis-trivium {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    width: min(100%, 760px);
-    margin: 0 auto 34px;
-    font-family: var(--ouatis-sans);
-    font-size: 13px;
-}
-
-.ouatis-trivium a {
-    color: var(--secondary);
-    text-decoration: none;
-    transition: color 180ms ease;
-}
-
-.ouatis-trivium a:hover,
-.ouatis-trivium a:focus-visible {
-    color: var(--ouatis-red);
-}
 
 /* Archive page */
 .archive-posts {
@@ -1990,15 +1973,18 @@ h6:hover .anchor {
         height: 20px;
     }
 
-    .ouatis-trivium,
     .search-suggestions,
     #searchbox {
         width: calc(100% - 32px);
     }
 
-    .ouatis-trivium {
-        gap: 10px;
-        margin-bottom: 28px;
+    .footer {
+        padding-inline: 16px;
+        line-height: 1.7;
+    }
+
+    .footer span:last-child {
+        white-space: normal;
     }
 
     .archive-year {

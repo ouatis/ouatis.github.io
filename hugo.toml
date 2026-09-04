@@ -147,6 +147,7 @@ copyright = "© **[SigiL](https://github.com/ouatis)**"
     hideSummary = true
     sgReading = 'William Faulkner'
     sgPlaying = 'Crusader Kings III'
+    sgMotto = 'IMAGINE UNPOETIC LION'
 
     [params.analytics.google]
         SiteVerificationTag = "digJaGp7JYW7c_R1BNuHNHaaLHYzaCHwcPsEFrcuFvw"

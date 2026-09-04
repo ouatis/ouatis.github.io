@@ -1,16 +1,6 @@
-{{- /* 万事皆三:页脚只分三段(版权∴题词∴引擎),以三点所以符 ∴ 相隔 */}}
+{{- /* 万事皆三:页脚以版权、所以符和引擎致谢保持精简 */}}
 {{- if not (.Param "hideFooter") }}
 <footer class="footer">
-    {{- if or site.Params.sgReading site.Params.sgPlaying }}
-    <div class="footer-now" data-rotate="true" aria-label="Current reading and playing" aria-live="polite">
-        {{- with site.Params.sgReading }}
-        <span class="footer-now__item footer-now__item--reading">{{ partial "sg-icon.html" (dict "name" "book-open" "size" 14) }}<span>Reading: {{ . }}</span></span>
-        {{- end }}
-        {{- with site.Params.sgPlaying }}
-        <span class="footer-now__item footer-now__item--playing">{{ partial "sg-icon.html" (dict "name" "game-controller" "size" 14) }}<span>Playing: {{ . }}</span></span>
-        {{- end }}
-    </div>
-    {{- end }}
     {{- if not site.Params.footer.hideCopyright }}
         {{- if site.Copyright }}
         <span>2012–{{ now.Year }} {{ site.Copyright | markdownify }}</span>
@@ -18,10 +8,6 @@
         <span>&copy; {{ now.Year }} <a href="{{ "" | absLangURL }}">{{ site.Title }}</a></span>
         {{- end }}
     {{- end }}
-
-    <span class="tri-sep" aria-hidden="true">∴</span>
-
-    <span class="footer-colophon">IMAGINE UNPOETIC LION</span>
 
     <span class="tri-sep" aria-hidden="true">∴</span>
 
@@ -41,24 +27,6 @@
 
 {{- partial "extend_footer.html" . }}
 
-{{- if or site.Params.sgReading site.Params.sgPlaying }}
-<script>
-(function () {
-    var strip = document.querySelector(".footer-now");
-    if (!strip) return;
-    var items = Array.from(strip.querySelectorAll(".footer-now__item"));
-    if (items.length < 2 || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    strip.classList.add("footer-now--rotating");
-    var index = 0;
-    items.forEach(function (item, i) { item.classList.toggle("is-active", i === 0); });
-    window.setInterval(function () {
-        items[index].classList.remove("is-active");
-        index = (index + 1) % items.length;
-        items[index].classList.add("is-active");
-    }, 8000);
-})();
-</script>
-{{- end }}
 
 <script>
     let menu = document.getElementById('menu');

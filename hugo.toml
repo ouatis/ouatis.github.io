@@ -145,8 +145,8 @@ copyright = "© **[SigiL](https://github.com/ouatis)**"
     ShowCodeCopyButtons = true
     showWordCount = false   # 万事皆三:文章信息只留 日期·时长·作者 三条
     hideSummary = true
-    sgReading = '威廉·福克纳'
-    sgPlaying = '《十字军之王 3》'
+    sgReading = 'William Faulkner'
+    sgPlaying = 'Crusader Kings III'
 
     [params.analytics.google]
         SiteVerificationTag = "digJaGp7JYW7c_R1BNuHNHaaLHYzaCHwcPsEFrcuFvw"

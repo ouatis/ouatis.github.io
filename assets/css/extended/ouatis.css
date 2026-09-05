@@ -1283,21 +1283,46 @@ h6:hover .anchor {
 }
 
 .archive-year {
-    font-family: var(--ouatis-serif);
-    font-size: 32px;
-    font-weight: 700;
-    color: var(--primary);
-    margin-top: 52px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid var(--primary);
+    position: relative;
+    --year-size: clamp(88px, 15vw, 132px);
+    margin-top: 76px;
 }
 
+/* antfu.me 式年份幽灵数字:垫底装饰,首月列表从其下半部叠过 */
 .archive-year-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
     margin: 0;
+    font-family: var(--ouatis-sans);
+    font-size: var(--year-size);
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--primary);
+    opacity: 0.08;
+    pointer-events: none;
+    user-select: none;
+    scroll-margin-top: 16px;
 }
 
 .archive-year:first-of-type {
     margin-top: 0;
+}
+
+/* 分组间隔交给巨大年份本身,压掉 PaperMod 的年份分隔线 */
+.archive-year:not(:last-of-type) {
+    border-bottom: 0;
+}
+
+.archive-year .archive-month:first-of-type {
+    padding-top: calc(var(--year-size) * 0.5);
+}
+
+.archive-month {
+    position: relative;
+    z-index: 1;
 }
 
 .archive-month-header {
@@ -1363,8 +1388,7 @@ h6:hover .anchor {
     text-decoration-color: var(--ouatis-red);
 }
 
-.archive-meta,
-.archive-count {
+.archive-meta {
     font-family: var(--ouatis-sans);
     font-size: 12px;
     color: var(--secondary);
@@ -1988,8 +2012,8 @@ h6:hover .anchor {
     }
 
     .archive-year {
-        margin-top: 40px;
-        font-size: 28px;
+        --year-size: 72px;
+        margin-top: 48px;
     }
 
     .archive-month-header {

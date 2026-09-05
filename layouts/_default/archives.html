@@ -40,12 +40,7 @@
 {{- if ne .Key "0001" }}
 <div class="archive-year">
   {{- $year := replace .Key "0001" "" }}
-  <h2 class="archive-year-header" id="{{ $year }}">
-    <a class="archive-header-link" href="#{{ $year }}">
-      {{- $year -}}
-    </a>
-    <sup class="archive-count">&nbsp;{{ len .Pages }}</sup>
-  </h2>
+  <h2 class="archive-year-header" id="{{ $year }}">{{ $year }}</h2>
   {{- $month_names := slice "January" "February" "March" "April" "May" "June" "July" "August" "September" "October" "November" "December" }}
   {{- range .Pages.GroupByDate "1" }}
   <div class="archive-month">
@@ -59,7 +54,6 @@
         {{- .Key }} 月
         {{- end }}
       </a>
-      <sup class="archive-count">&nbsp;{{ len .Pages }}</sup>
     </h3>
     <div class="archive-posts">
       {{- range .Pages }}

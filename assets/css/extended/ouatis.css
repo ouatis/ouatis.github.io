@@ -2368,6 +2368,13 @@ body {
     transition: background-color 260ms ease, color 260ms ease, border-color 260ms ease !important;
 }
 
+/* antfu.me 式圆形揭示:关掉 View Transition 默认的整页交叉淡入,由 JS 画圆 */
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
+}
+
 @media (prefers-reduced-motion: reduce) {
     .ouatis-hero .ouatis-kicker,
     .ouatis-hero h1,

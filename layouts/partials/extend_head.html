@@ -115,6 +115,8 @@
     }
     document.addEventListener("click", function (e) {
         if (e.target && e.target.closest && e.target.closest("#theme-toggle")) {
+            /* View Transitions 圆形揭示接管切换动画时,颜色过渡交给它 */
+            if (document.startViewTransition && !matchMedia("(prefers-reduced-motion: reduce)").matches) return;
             root.classList.add("ouatis-theme-anim");
             setTimeout(function () { root.classList.remove("ouatis-theme-anim"); }, 420);
         }

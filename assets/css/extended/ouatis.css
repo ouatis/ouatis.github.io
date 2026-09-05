@@ -1233,6 +1233,19 @@ h6:hover .anchor {
     margin: 0 10px;
 }
 
+.footer .footer-views {
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+}
+
+/* 窄屏下页脚三段必然换行,第二行会是孤立的 ∴ + views——把该分隔符藏起,
+   换行后第二行只留数字本身 */
+@media (max-width: 500px) {
+    .footer .tri-sep-views {
+        display: none;
+    }
+}
+
 /* Discovery pages */
 .page-header {
     position: relative;

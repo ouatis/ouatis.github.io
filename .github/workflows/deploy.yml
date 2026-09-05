@@ -42,6 +42,15 @@ jobs:
         run: |
           scripts/build-fonts.sh
 
+      # 可选:若仓库 secret 里配置了 CF_ANALYTICS_TOKEN,则每次构建时把
+      # 页脚累计浏览量刷新到最新(仅写进本次构建,不回commit,避免部署循环);
+      # 未配置时脚本优雅跳过,使用仓库里上次提交的 data/analytics.json。
+      - name: Refresh page-view data
+        continue-on-error: true
+        env:
+          CF_API_TOKEN: ${{ secrets.CF_ANALYTICS_TOKEN }}
+        run: python3 scripts/fetch-analytics.py
+
       - name: Build
         run: hugo --minify
 

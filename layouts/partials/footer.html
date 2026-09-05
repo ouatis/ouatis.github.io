@@ -1,4 +1,4 @@
-{{- /* 万事皆三:页脚以版权、所以符和引擎致谢保持精简 */}}
+{{- /* 万事皆三:页脚以版权、所以符和引擎致谢保持精简;末段为构建时的累计浏览量(data/analytics.json) */}}
 {{- if not (.Param "hideFooter") }}
 <footer class="footer">
     {{- if not site.Params.footer.hideCopyright }}
@@ -16,6 +16,16 @@
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
         <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
     </span>
+
+    {{- with site.Data.analytics }}
+    {{- if .total }}
+    <span class="tri-sep tri-sep-views" aria-hidden="true">∴</span>
+
+    <span class="footer-views" title="累计页面浏览量 · 统计自 {{ .since }}">
+        {{ lang.FormatNumber 0 .total }} views
+    </span>
+    {{- end }}
+    {{- end }}
 </footer>
 {{- end }}
 

@@ -2408,20 +2408,23 @@ html .header {
     background-repeat: repeat !important;
 }
 
-/* ===== Tufte 式边注:≥1440px 时脚注出现在引注右侧的空白边距里 =====
-   窄屏自动回退为文末脚注;旧浏览器(无 :has)不创建边注,一切保持原样。 */
-@media (max-width: 1439.98px) {
+/* ===== Tufte 式边注:≥1280px 时脚注出现在引注右侧的空白边距里 =====
+   窄屏自动回退为文末脚注;旧浏览器(无 :has)不创建边注,一切保持原样。
+   ≥1280px 行宽两侧尚有 280px 余量,先以 200px 窄边注入场;
+   ≥1440px 起恢复 264px 完整边注。 */
+@media (max-width: 1279.98px) {
     .sidenote {
         display: none;
     }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1280px) {
     .sidenote {
+        --note-w: 200px;
         float: right;
         clear: right;
-        width: 264px;
-        margin: 4px -300px 18px 20px;
+        width: var(--note-w);
+        margin: 4px calc(-1 * var(--note-w) - 36px) 18px 20px;
         color: var(--secondary);
         font-family: var(--ouatis-sans);
         font-size: 13px;
@@ -2450,5 +2453,11 @@ html .header {
 
     .post-content:has(.sidenote) .footnotes {
         display: none;
+    }
+}
+
+@media (min-width: 1440px) {
+    .sidenote {
+        --note-w: 264px;
     }
 }

@@ -5,7 +5,8 @@
         {{- $sgName := lower (.title | default .name) -}}
         {{- $sgIcon := $sgName -}}
         {{- if eq $sgName "github" -}}{{- $sgIcon = "github-logo" -}}{{- end -}}
-        {{- if in (slice "github-logo" "rss") $sgIcon -}}
+        {{- if eq $sgName "steam" -}}{{- $sgIcon = "steam-logo" -}}{{- end -}}
+        {{- if in (slice "github-logo" "rss" "steam-logo") $sgIcon -}}
         {{- partial "sg-icon.html" (dict "name" $sgIcon "size" 22) -}}
         {{- else -}}
         {{- partial "svg.html" . -}}

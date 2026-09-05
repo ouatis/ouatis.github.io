@@ -4,6 +4,10 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  schedule:
+    # 每天 UTC 22:00(北京时间 06:00)重建一次,刷新页脚累计浏览量;
+    # 数字本身只写进当次构建产物,不回 commit,不会产生部署循环
+    - cron: '0 22 * * *'
 
 permissions:
   contents: read

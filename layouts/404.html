@@ -1,0 +1,38 @@
+{{- define "main" }}
+{{- $notFoundTitle := "你被丢进了迷宫。" -}}
+{{- $searchLabel := "搜索" -}}
+{{- $searchPlaceholder := "搜索全站……" -}}
+{{- $homeLabel := "回到笼城往事" -}}
+{{- $archivesLabel := "去归档翻翻" -}}
+{{- if eq site.Language.Lang "en" -}}
+  {{- $notFoundTitle = "You've been mazed." -}}
+  {{- $searchLabel = "Search" -}}
+  {{- $searchPlaceholder = "Search the site…" -}}
+  {{- $homeLabel = "Back home" -}}
+  {{- $archivesLabel = "Browse archives" -}}
+{{- else if eq site.Language.Lang "ja" -}}
+  {{- $notFoundTitle = "迷宮に落とされました。" -}}
+  {{- $searchLabel = "検索" -}}
+  {{- $searchPlaceholder = "サイトを検索…" -}}
+  {{- $homeLabel = "ホームに戻る" -}}
+  {{- $archivesLabel = "アーカイブを見る" -}}
+{{- end -}}
+
+<section class="site-404" aria-labelledby="lost-lane-title">
+    <div class="site-404__mark" aria-hidden="true">404</div>
+    <div class="site-404__body">
+        <h1 id="lost-lane-title">{{ $notFoundTitle }}</h1>
+        {{- /* 异域镇魂曲:痛苦女士的迷宫,以及那个永远的问题 */}}
+        <p class="site-404__quote">What can change the nature of a page?</p>
+        <form class="site-404__search" action="{{ "search/" | absLangURL }}" method="get" role="search">
+            <input type="search" name="q" placeholder="{{ $searchPlaceholder }}" aria-label="{{ $searchLabel }}" autocomplete="off" maxlength="64">
+        </form>
+        {{- /* 万事皆三:连同上面的搜索框,一共三条出路 */}}
+        <div class="site-404__ways">
+            <a class="site-404__link" href="{{ "" | absLangURL }}">{{ $homeLabel }}</a>
+            <span class="tri-sep" aria-hidden="true">∴</span>
+            <a class="site-404__link" href="{{ "archives/" | absLangURL }}">{{ $archivesLabel }}</a>
+        </div>
+    </div>
+</section>
+{{- end }}

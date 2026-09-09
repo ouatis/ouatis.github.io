@@ -1,0 +1,75 @@
+name: Deploy Hugo Site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    # 每天 UTC 22:00(北京时间 06:00)重建一次,刷新页脚累计浏览量;
+    # 数字本身只写进当次构建产物,不回 commit,不会产生部署循环
+    - cron: '0 22 * * *'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          submodules: recursive
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.166.0'
+          extended: true
+
+
+      - name: Cache IBM Plex source
+        uses: actions/cache@v4
+        with:
+          path: .cache/ibm-plex
+          key: ibm-plex-1.1.0
+
+      - name: Regenerate font subsets
+        run: |
+          scripts/build-fonts.sh
+
+      # 可选:若仓库 secret 里配置了 CF_ANALYTICS_TOKEN,则每次构建时把
+      # 页脚累计浏览量刷新到最新(仅写进本次构建,不回commit,避免部署循环);
+      # 未配置时脚本优雅跳过,使用仓库里上次提交的 data/analytics.json。
+      - name: Refresh page-view data
+        continue-on-error: true
+        env:
+          CF_API_TOKEN: ${{ secrets.CF_ANALYTICS_TOKEN }}
+        run: python3 scripts/fetch-analytics.py
+
+      - name: Build
+        run: hugo --minify
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Ping IndexNow
+        run: python scripts/indexnow.py public/sitemap.xml

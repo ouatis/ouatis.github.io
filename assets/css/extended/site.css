@@ -1,0 +1,36 @@
+/* ouatis 站点字体策略:简中字形优先(含日文页)。
+   sigil 主题默认 JP 优先(为通用日文站设计),此处按本站决定覆盖。 */
+:root {
+    --sg-serif: "IBM Plex Sans SC", "IBM Plex Sans", sans-serif;
+    --sg-sans: "IBM Plex Sans SC", "IBM Plex Sans", sans-serif;
+}
+
+html:lang(ja) {
+    --sg-serif: "IBM Plex Sans SC", "IBM Plex Sans", sans-serif;
+    --sg-sans: "IBM Plex Sans SC", "IBM Plex Sans", sans-serif;
+}
+
+/* 不断之环(Zerthimon):外环断口=「Know that the Circle is broken」,
+   内环八点=石上八训,中心三点=∴。形状来自 {{< zerthimon >}} 输出的内联
+   SVG,currentColor 跟随元信息色,亮暗两态自适应。 */
+.sg-zerthimon {
+    display: block;
+    width: 44px;
+    margin: 2.8em auto;
+    color: var(--secondary);
+}
+
+.sg-zerthimon svg {
+    display: block;
+}
+
+/* 纪念日低语(12 月 12 日):脚本注入 footer 内,独占一行元信息绿 */
+.sg-anniv {
+    flex: 0 0 100%;
+    margin: 2px 0 10px;
+    color: var(--sg-green);
+    font-family: var(--sg-sans);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-align: center;
+}

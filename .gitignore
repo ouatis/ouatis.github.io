@@ -1,0 +1,40 @@
+# Hugo build output
+public/
+resources/_gen/
+
+# Hugo lock file
+.hugo_build.lock
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.temp
+
+# Deploy script
+deploy.ps1
+deploy.bat
+cleanup-deployments.ps1
+cleanup-deployments.bat
+
+# Font subset build cache
+.cache/
+node_modules/
+
+# Generated IBM Plex split assets
+static/fonts/ibm-plex/
+
+# 迁移基线构建产物
+public-baseline/
+
+# 迁移回归对比产物
+.regress/

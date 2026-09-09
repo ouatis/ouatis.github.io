@@ -1,0 +1,21 @@
+{{- /* llms.txt:构建时生成的机器可读站点索引(llmstxt.org 约定)。
+   独立模板,不走 baseof;仅 zh-CN 首页的 LLMSTXT 输出会渲染本文件。 */ -}}
+{{- $posts := where site.RegularPages "Type" "in" site.Params.mainSections -}}
+{{- $totalWords := 0 }}{{ range $posts }}{{ $totalWords = add $totalWords .WordCount }}{{ end }}# {{ site.Title }}
+
+> {{ site.Params.description }}
+
+SigiL 的个人网站。主要使用简体中文写作，另有英语与日语界面；自 2012 年开始写作，现有 {{ len $posts }} 篇文章、约 {{ div (add $totalWords 5000) 10000 }} 万字。文章正文均为中文。
+
+## 主要页面
+
+- [关于](https://ouatis.com/about/)：SigiL 是谁，以及「笼城」这个名字的由来
+- [归档](https://ouatis.com/archives/)：全部文章按时间排列
+- [分类](https://ouatis.com/categories/)、[标签](https://ouatis.com/tags/)
+- [RSS 订阅](https://ouatis.com/index.xml)：全文输出
+
+## 全部文章
+
+{{- range $posts }}
+- [{{ .Title }}]({{ .Permalink }}) — {{ .Date.Format "2006-01-02" }}
+{{- end }}

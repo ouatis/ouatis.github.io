@@ -34,3 +34,24 @@ html:lang(ja) {
     letter-spacing: 0.08em;
     text-align: center;
 }
+
+/* ===== 版式微调(2026-09-20)===== */
+
+/* 引文与正文同字号:元信息色 + 绿色标线已足够建立层级,
+   无衬线字体下再缩 0.94em 显得局促 */
+.post-content blockquote {
+    font-size: 1em;
+}
+
+/* 西文/法文段落取消两端对齐:拉丁文本 justify 会拉伸出空河,
+   左对齐更接近原书版式;中文正文维持主题的 justify */
+.post-content p[lang="en"],
+.post-content p[lang="fr"] {
+    text-align: left;
+}
+
+/* 暗色墨绿提亮一档:小字号绿色文本(脚注引用、面包屑、目录页签)
+   在 #151917 上约 4.4:1,略低于 AA;#6b9580 约 5.3:1,色相不变 */
+:root[data-theme="dark"] {
+    --sg-green: #6b9580;
+}

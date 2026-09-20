@@ -18,5 +18,3 @@ I write mostly in Chinese. The subjects tend to return to fiction, reading, Flau
 I use Obsidian, keep plain files, and distrust software that wants to become a house.
 
 I was born in Zhejiang, lived in Beijing for twelve years, and now live in Shanghai.
-
-{{< zerthimon >}}

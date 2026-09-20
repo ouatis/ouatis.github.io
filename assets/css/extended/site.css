@@ -10,18 +10,21 @@ html:lang(ja) {
     --sg-sans: "IBM Plex Sans SC", "IBM Plex Sans", sans-serif;
 }
 
-/* 不断之环(Zerthimon):外环断口=「Know that the Circle is broken」,
-   内环八点=石上八训,中心三点=∴。形状来自 {{< zerthimon >}} 输出的内联
-   SVG,currentColor 跟随元信息色,亮暗两态自适应。 */
+/* 不断之环(Zerthimon):细线断环=「Know that the Circle is broken」,
+   断口朝正上;中心三点=∴,琥珀色跟随 tri-sep,亮暗两态自适应。 */
 .sg-zerthimon {
     display: block;
-    width: 44px;
+    width: 54px;
     margin: 2.8em auto;
     color: var(--secondary);
 }
 
 .sg-zerthimon svg {
     display: block;
+}
+
+.sg-zerthimon .sg-zerthimon__dot {
+    fill: rgba(var(--sg-amber-rgb), 0.95);
 }
 
 /* 纪念日低语(12 月 12 日):脚本注入 footer 内,独占一行元信息绿 */
@@ -54,4 +57,74 @@ html:lang(ja) {
    在 #151917 上约 4.4:1,略低于 AA;#6b9580 约 5.3:1,色相不变 */
 :root[data-theme="dark"] {
     --sg-green: #6b9580;
+}
+
+/* ===== 版式微调 · 二(2026-09-20)===== */
+
+/* 中西混排自动加空:CJK 与拉丁/数字之间插入约 1/8 字空隙。
+   Chromium 140+ / Safari 18.4+ 原生支持,旧浏览器静默忽略 */
+body {
+    text-autospace: normal;
+}
+
+/* 元信息数字用旧式数字(旧式数字有降部,更接近纸书;
+   依赖字型 onum 特性,不支持时静默回退为等通数字) */
+.post-meta,
+.breadcrumbs,
+.sg-entry__date,
+.sg-entry__number,
+.sg-section-head__count,
+.sg-pagination__pages,
+.archive-meta,
+.archive-month-header,
+.archive-count,
+.footer {
+    font-variant-numeric: oldstyle-nums;
+}
+
+/* 分页省略号 → ∴ :主题把「…」写在模板文本里,这里用零字号藏起
+   原字符,伪元素补 ∴,避免为半个字形复刻整份首页模板 */
+.sg-pagination__gap {
+    color: transparent;
+    font-size: 0;
+}
+
+.sg-pagination__gap::after {
+    color: var(--tertiary);
+    content: "∴";
+    font-size: 13px;
+}
+
+/* 文章 meta 分隔符 ∴(琥珀),与面包屑、页脚一致 */
+.post-meta .sg-meta-sep {
+    color: rgba(var(--sg-amber-rgb), 0.9);
+    font-size: 10px;
+}
+
+/* 红色小标线统一为文章页规格:48px × 1px */
+.page-header::after {
+    width: 48px;
+    height: 1px;
+}
+
+/* EN 标题降部空间:拉丁下伸字母在 1.06 行高下发闷 */
+html:lang(en) .sg-hero h1 {
+    line-height: 1.12;
+}
+
+/* 全站最后一颗「·」:文章数与字数之间也用 ∴ */
+.sg-section-head__words::before {
+    content: "∴";
+    margin: 0 0.35em;
+    color: rgba(var(--sg-amber-rgb), 0.9);
+}
+
+/* 状态行从 0.5 提到 0.65:保住克制的声音,不再接近隐形 */
+.sg-now {
+    opacity: 0.65;
+}
+
+/* 亮色:素描沉入纸面(白底圆盘消失),与暗色 invert 的思路对称 */
+:root[data-theme="light"] .sg-seal img {
+    mix-blend-mode: multiply;
 }

@@ -1,0 +1,172 @@
+{{- /* 阅读进度条：仅在文章页显示，细线样式，颜色跟随主题变量 */}}
+{{- if (and .IsPage (not .Params.disableReadingProgress)) }}
+<style>
+    #sg-progress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        width: 0%;
+        height: 2px;
+        background: var(--sg-red);
+        opacity: 0;
+        transition: opacity 200ms ease;
+        pointer-events: none;
+    }
+
+    #sg-progress.visible {
+        opacity: 1;
+    }
+</style>
+<script>
+    (function () {
+        var bar = document.createElement("div");
+        bar.id = "sg-progress";
+        document.body.appendChild(bar);
+
+        var ticking = false;
+        var last = -1;
+
+        function update() {
+            ticking = false;
+            var doc = document.documentElement;
+            var total = doc.scrollHeight - doc.clientHeight;
+            var pct = total > 0 ? (window.scrollY / total) * 100 : 0;
+            if (Math.abs(pct - last) < 0.15) return;
+            last = pct;
+            bar.style.width = pct.toFixed(2) + "%";
+            bar.classList.toggle("visible", window.scrollY > 120);
+        }
+
+        window.addEventListener("scroll", function () {
+            if (!ticking) {
+                ticking = true;
+                window.requestAnimationFrame(update);
+            }
+        }, { passive: true });
+        update();
+    })();
+</script>
+{{- end }}
+
+{{- /* IBM Plex Sans 字体样式表:拉丁、Chinese SC、Japanese 三套官方分片按 unicode-range 按需加载。 */}}
+<link rel="preload" href="{{ "fonts/ibm-plex/result.css" | relURL }}" as="style">
+<link rel="stylesheet" href="{{ "fonts/ibm-plex/result.css" | relURL }}">
+
+{{- /* hreflang x-default:非三种声明语言的用户兜底到中文版;仅中文的页面兜底为自身 */}}
+{{- $xd := . -}}
+{{- with index (where .AllTranslations "Language.Lang" "zh-cn") 0 -}}{{- $xd = . -}}{{- end -}}
+<link rel="alternate" hreflang="x-default" href="{{ $xd.Permalink }}">
+
+{{- /* og:image 尺寸与替代文本:与 static/og-image.png 实际规格一致,加快平台卡片渲染 */}}
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{{ site.Title }} — {{ site.Params.description }}">
+
+{{- /* theme-color 跟随站点明暗主题(移动端浏览器栏色调) */}}
+<script>
+(function () {
+    var light = "#f4f6f3", dark = "#151917";
+    function apply() {
+        var mode = document.documentElement.getAttribute("data-theme") || "auto";
+        var isDark = mode === "dark" || (mode !== "light" && matchMedia("(prefers-color-scheme: dark)").matches);
+        document.querySelectorAll('meta[name="theme-color"]').forEach(function (m) {
+            m.setAttribute("content", isDark ? dark : light);
+        });
+    }
+    document.addEventListener("click", function (e) {
+        if (e.target && e.target.closest && e.target.closest("#theme-toggle")) setTimeout(apply, 60);
+    });
+    matchMedia("(prefers-color-scheme: dark)").addEventListener("change", apply);
+    apply();
+})();
+</script>
+
+{{- /* 入场与滚动渐显动画:html.sg-js 是全部渐显效果的总开关,
+     无 JS 或 IntersectionObserver 不可用时保持全静态;prefers-reduced-motion 在 CSS 侧豁免。
+     同时监听主题切换,给 400ms 的颜色柔和过渡窗口。 */}}
+<script>
+(function () {
+    var root = document.documentElement;
+    root.classList.add("sg-js");
+    function setup() {
+        if (!("IntersectionObserver" in window)) return;
+        var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (en) {
+                if (!en.isIntersecting) return;
+                en.target.classList.add("is-inview");
+                io.unobserve(en.target);
+            });
+        }, { threshold: 0.2 });
+        document.querySelectorAll(".sg-section-head, .post-header").forEach(function (el) {
+            io.observe(el);
+        });
+        /* 兜底:IO 被节流的环境(后台标签页等)里 1.2s 后强制显示栏线,结构性元素不可缺席 */
+        setTimeout(function () {
+            document.querySelectorAll(".sg-section-head, .post-header").forEach(function (el) {
+                el.classList.add("is-inview");
+            });
+        }, 1200);
+    }
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", setup);
+    } else {
+        setup();
+    }
+    document.addEventListener("click", function (e) {
+        if (e.target && e.target.closest && e.target.closest("#theme-toggle")) {
+            /* View Transitions 圆形揭示接管切换动画时,颜色过渡交给它 */
+            if (document.startViewTransition && !matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+            root.classList.add("sg-theme-anim");
+            setTimeout(function () { root.classList.remove("sg-theme-anim"); }, 420);
+        }
+    });
+})();
+</script>
+
+{{- /* Tufte 式边注:把文末脚注克隆到引注右侧的边距(≥1280px,CSS 控制);
+     不支持 :has 的旧浏览器直接跳过,保持文末脚注原样。
+     幂等多重触发(DCL/load/1.5s 兜底),data-for 去重,任何环境都能落位。
+     data-sg 属性防止压缩器把本块与相邻内联脚本合并(合并会产生残缺标签)。 */}}
+<script data-sg="sidenote">
+(function () {
+    function ready(fn) {
+        if (document.readyState !== "loading") fn();
+        else document.addEventListener("DOMContentLoaded", fn);
+    }
+    function build() {
+        if (!document.querySelector(".post-content") || !document.querySelector(".footnotes")) return;
+        if (!(window.CSS && CSS.supports && CSS.supports("selector(:has(a))"))) return;
+        document.querySelectorAll('.footnotes ol > li[id^="fn:"]').forEach(function (li) {
+            var num = li.id.slice(3);
+            var ref = document.querySelectorAll('a[href="#fn:' + num + '"]')[0];
+            if (!ref) return;
+            var block = ref.closest("p, li");
+            if (!block || block.querySelector('.sidenote[data-for="fn:' + num + '"]')) return;
+            var side = document.createElement("span");
+            side.className = "sidenote";
+            side.setAttribute("data-for", "fn:" + num);
+            side.innerHTML = '<span class="sidenote-number">' + num + "</span> " + li.innerHTML;
+            var back = side.querySelector(".footnote-backlink");
+            if (back) back.remove();
+            block.appendChild(side);
+            var refSup = ref.closest("sup") || ref.parentElement;
+            function point(on) {
+                side.classList.toggle("is-pointed", on);
+                refSup.classList.toggle("is-pointed", on);
+            }
+            side.addEventListener("mouseenter", function () { point(true); });
+            side.addEventListener("mouseleave", function () { point(false); });
+            ref.addEventListener("mouseenter", function () { point(true); });
+            ref.addEventListener("mouseleave", function () { point(false); });
+        });
+    }
+    ready(build);
+    window.addEventListener("load", build);
+    setTimeout(build, 1500);
+})();
+</script>
+
+{{- /* 站点级 favicon:朱底白∴圆印。素描头像缩到 16px 是一团噪点,
+     几何圆印在任何尺寸都可辨;声明在默认 icon 之后,现代浏览器优先生效 */}}
+<link rel="icon" type="image/svg+xml" href="{{ "favicon.svg" | relURL }}">

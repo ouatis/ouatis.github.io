@@ -8,6 +8,8 @@ hideArticleMeta: true
 
 A series of writings on Gustave Flaubert and *Madame Bovary*. The essays below are in Chinese; the order below is the recommended reading path — start at the Chinese entrance, then read through the work, the craft, the reading list, the trial, and the writer's century.
 
+My main references include Flaubert's novels in various translations, his private letters (commonly known in Chinese as *Literary Letters*), the chapter on *Madame Bovary* in *Literary Lectures*, critical biographies, *Flaubert's Parrot*, and other works.
+
 ### Prologue · The Chinese Entrance
 
 0. [My Translation of the Names in *Madame Bovary*](/2012/12/wo-de-yi-min-biao/)

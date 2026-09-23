@@ -20,3 +20,22 @@
 console.log("%c∴ 你凑近笼城的栏杆,看见上面刻着一行小字:", "color:#648f77;font-family:Georgia,serif;font-size:12px;");
 console.log("%c「What can change the nature of a man?」", "color:#e07061;font-style:italic;font-size:13px;");
 </script>
+
+{{- /* 万事皆三:脚注达到三条时,文末自动落一枚不断之环。
+   已手动放置的文章不重复添加;没有脚注的页面静默跳过。 */ -}}
+<script data-sg="zerthimon-auto">
+(function () {
+    var SVG = '<div class="sg-zerthimon" aria-hidden="true"><svg viewBox="0 0 48 48" width="54" height="54" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="21.5" stroke="currentColor" stroke-width="1.1" pathLength="100" stroke-dasharray="88 12" stroke-dashoffset="19"/><circle class="sg-zerthimon__dot" cx="24" cy="17.5" r="2.2" fill="currentColor"/><circle class="sg-zerthimon__dot" cx="18.4" cy="27.2" r="2.2" fill="currentColor"/><circle class="sg-zerthimon__dot" cx="29.6" cy="27.2" r="2.2" fill="currentColor"/></svg></div>';
+
+    function build() {
+        var list = document.querySelector('.footnotes ol');
+        var host = document.querySelector('.footnotes');
+        if (!list || !host || list.children.length < 3) return;
+        if (document.querySelector('.sg-zerthimon')) return;
+        host.insertAdjacentHTML('afterend', SVG);
+    }
+
+    if (document.readyState !== 'loading') build();
+    else document.addEventListener('DOMContentLoaded', build);
+})();
+</script>

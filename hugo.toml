@@ -171,6 +171,8 @@ copyright = "© **[SigiL](https://github.com/ouatis)**"
     ShowFullTextinRSS = true
     ShowContentLanguageNote = true
     ShowTotalWords = true   # 首页计数旁标注总字数:中文计到万,英日计到 K
+    # 搜索无结果低语:与 404 的「nature of a page」成对
+    sgSearchEmpty = 'What can change the nature of a search?'
 
     [params.analytics.google]
         SiteVerificationTag = "digJaGp7JYW7c_R1BNuHNHaaLHYzaCHwcPsEFrcuFvw"

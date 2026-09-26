@@ -20,6 +20,11 @@ GRAPHQL = "https://api.cloudflare.com/client/v4/graphql"
 DATA_FILE = Path(__file__).resolve().parent.parent / "data" / "analytics.json"
 WINDOW_START = date.today() - timedelta(days=364)
 
+# 香火线:页脚逐日浏览量细墨线。取最近 120 天,压成 viewBox 0 0 120 14 的
+# SVG path(基线在下,纵向线性映射到当日峰值);主题 footer.html 只负责描线。
+SPARK_DAYS = 120
+SPARK_W, SPARK_H, SPARK_PAD = 120.0, 14.0, 1.0
+
 QUERY = """
 query($z:String!,$f:Date!,$t:Date!){
   viewer{ zones(filter:{zoneTag:$z}){
@@ -57,6 +62,20 @@ def fetch_daily(tok, start, end):
     return {g["dimensions"]["date"]: (g["sum"].get("pageViews") or 0) for g in rows}
 
 
+def sparkline(days):
+    """逐日浏览量 -> SVG path 字符串("Mx,y Lx,y …"),days 须已按日期升序。"""
+    vals = list(days.values())[-SPARK_DAYS:]
+    if not vals:
+        return ""
+    vmax = max(vals) or 1
+    step = (SPARK_W - 2 * SPARK_PAD) / (len(vals) - 1) if len(vals) > 1 else 0
+    pts = [
+        f"{SPARK_PAD + i * step:.1f},{SPARK_H - SPARK_PAD - (v / vmax) * (SPARK_H - 2 * SPARK_PAD):.1f}"
+        for i, v in enumerate(vals)
+    ]
+    return "M" + " L".join(pts)
+
+
 def main():
     tok = read_token()
     old = {}
@@ -68,7 +87,7 @@ def main():
     days = {k: merged[k] for k in sorted(merged)}
     total = sum(days.values())
     out = {"updated": str(date.today()), "since": min(days) if days else None,
-           "total": total, "days": days}
+           "total": total, "days": days, "sparkline": sparkline(days)}
     DATA_FILE.parent.mkdir(parents=True, exist_ok=True)
     DATA_FILE.write_text(
         json.dumps(out, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")

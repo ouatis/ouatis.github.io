@@ -103,7 +103,9 @@ for pat in scan_globs:
             corpus |= set(open(path, encoding="utf-8").read())
         except UnicodeDecodeError:
             pass
-# 只子集 U+2000 起(CJK、kana、全角与中文标点);ASCII 与西文标点交给拉丁分片
+# 只子集 U+2000 起(CJK、kana、全角与中文标点);ASCII 与西文标点交给拉丁分片。
+# Hugo 核心还会生成源文件里没有的字符——脚注回链 ↩(goldmark 默认)——显式补进语料
+corpus |= set("↩")
 subset_chars = sorted({c for c in corpus if ord(c) >= 0x2000})
 charset_path = os.path.join(cache, "ouatis-charset.txt")
 with open(charset_path, "w", encoding="utf-8") as f:

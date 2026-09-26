@@ -20,10 +20,7 @@
 </style>
 <script>
     (function () {
-        var bar = document.createElement("div");
-        bar.id = "sg-progress";
-        document.body.appendChild(bar);
-
+        var bar;
         var ticking = false;
         var last = -1;
 
@@ -38,13 +35,27 @@
             bar.classList.toggle("visible", window.scrollY > 120);
         }
 
-        window.addEventListener("scroll", function () {
-            if (!ticking) {
-                ticking = true;
-                window.requestAnimationFrame(update);
-            }
-        }, { passive: true });
-        update();
+        function init() {
+            bar = document.createElement("div");
+            bar.id = "sg-progress";
+            document.body.appendChild(bar);
+            window.addEventListener("scroll", function () {
+                if (!ticking) {
+                    ticking = true;
+                    window.requestAnimationFrame(update);
+                }
+            }, { passive: true });
+            update();
+        }
+
+        /* 脚本位于 <head>,执行时 document.body 尚不存在——
+            直接 appendChild 会抛 TypeError 且进度条从未被创建(实测存续已久),
+            必须等 DOM 就绪再挂 */
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", init);
+        } else {
+            init();
+        }
     })();
 </script>
 {{- end }}

@@ -165,7 +165,7 @@ copyright = "© **[SigiL](https://github.com/ouatis)**"
     sgPlaying = 'Crusader Kings III'
     sgMotto = 'IMAGINE UNPOETIC LION'
     sgDaysInCage = true    # 状态条 Day N in the Cage,从最早一篇(2012-12-12)起算
-    sgSealImage = '/avatar-640.jpg'
+    sgSealImage = '/avatar-640.webp'
     mainSections = ['posts']
     homePageSize = 9
     ShowDefaultLanguageContent = true
@@ -190,7 +190,7 @@ copyright = "© **[SigiL](https://github.com/ouatis)**"
 
     [params.label]
         text = "笼城往事"
-        icon = "/avatar-640.jpg"
+        icon = "/avatar-640.webp"
         iconHeight = 35       # 可以调整图片显示高度
 
     [params.homeInfoParams]

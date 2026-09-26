@@ -170,3 +170,9 @@
 {{- /* 站点级 favicon:朱底白∴圆印。素描头像缩到 16px 是一团噪点,
      几何圆印在任何尺寸都可辨;声明在默认 icon 之后,现代浏览器优先生效 */}}
 <link rel="icon" type="image/svg+xml" href="{{ "favicon.svg" | relURL }}">
+
+{{- /* 12.12 纪念日:圆印反白(白底朱∴,阴刻⇄阳刻),仅当天构建产出;
+     次日 06:00 定时重建自动换回,浏览器侧是新 URL,无缓存残留 */}}
+{{- if eq (now.Format "01-02") "12-12" }}
+<link rel="icon" type="image/svg+xml" href="{{ "favicon-1212.svg" | relURL }}">
+{{- end }}

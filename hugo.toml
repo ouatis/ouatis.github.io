@@ -164,6 +164,7 @@ copyright = "© **[SigiL](https://github.com/ouatis)**"
     sgReading = 'William Faulkner'
     sgPlaying = 'Crusader Kings III'
     sgMotto = 'IMAGINE UNPOETIC LION'
+    sgDaysInCage = true    # 状态条 Day N in the Cage,从最早一篇(2012-12-12)起算
     sgSealImage = '/avatar-640.jpg'
     mainSections = ['posts']
     homePageSize = 9

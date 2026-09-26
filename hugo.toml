@@ -164,7 +164,7 @@ copyright = "© **[SigiL](https://github.com/ouatis)**"
     sgReading = 'William Faulkner'
     sgPlaying = 'Crusader Kings III'
     sgMotto = 'IMAGINE UNPOETIC LION'
-    sgSealImage = '/avatar.png'
+    sgSealImage = '/avatar-640.jpg'
     mainSections = ['posts']
     homePageSize = 9
     ShowDefaultLanguageContent = true
@@ -183,12 +183,13 @@ copyright = "© **[SigiL](https://github.com/ouatis)**"
 
     [params.assets]
         theme_color = "#f4f6f3"
-        favicon = "/avatar.png"
+        # 浏览器已优先用 extend_head 里的 favicon.svg 圆印;此项只是旧浏览器的回退
+        favicon = "/favicon-32x32.png"
         apple_touch_icon = "/apple-touch-icon.png"
 
     [params.label]
         text = "笼城往事"
-        icon = "/avatar.png"
+        icon = "/avatar-640.jpg"
         iconHeight = 35       # 可以调整图片显示高度
 
     [params.homeInfoParams]

@@ -38,3 +38,6 @@ public-baseline/
 
 # 迁移回归对比产物
 .regress/
+
+# 构建期生成的字体哈希清单(build-fonts.sh)
+data/fonts.json

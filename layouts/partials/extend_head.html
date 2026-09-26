@@ -49,9 +49,14 @@
 </script>
 {{- end }}
 
-{{- /* IBM Plex Sans 字体样式表:拉丁、Chinese SC、Japanese 三套官方分片按 unicode-range 按需加载。 */}}
-<link rel="preload" href="{{ "fonts/ibm-plex/result.css" | relURL }}" as="style">
-<link rel="stylesheet" href="{{ "fonts/ibm-plex/result.css" | relURL }}">
+{{- /* IBM Plex Sans 字体样式表:latin+sc 全部 @font-face 合一,每条 font-display: swap,
+     文件名带内容哈希(data/fonts.json 由 build-fonts.sh 生成,内容变则 URL 变,
+     避开 CDN/浏览器旧缓存)。非阻塞加载:预取后 onload 切换生效,noscript 直挂
+     stylesheet;文字先以回退字体渲染,字体到位后 swap,不再有隐身期 */}}
+{{- $fontCss := "fonts/ibm-plex/result.css" }}
+{{- with hugo.Data.fonts }}{{ with .file }}{{ $fontCss = . }}{{ end }}{{ end }}
+<link rel="preload" href="{{ $fontCss | relURL }}" as="style" onload="this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="{{ $fontCss | relURL }}"></noscript>
 
 {{- /* hreflang x-default:非三种声明语言的用户兜底到中文版;仅中文的页面兜底为自身 */}}
 {{- $xd := . -}}

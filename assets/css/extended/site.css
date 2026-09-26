@@ -1,11 +1,13 @@
 /* ouatis 站点字体策略:简中字形优先(含日文页)。
-   sigil 主题默认 JP 优先(为通用日文站设计),此处按本站决定覆盖。 */
-:root {
+   sigil 主题默认 JP 优先(为通用日文站设计),此处按本站决定覆盖。
+   注意:extended 拼接时主题文件排在站点文件之后,同优先级规则会被主题
+   盖掉——这里一律 html:root 提一档特异性,保证站点决定生效。 */
+html:root {
     --sg-serif: "IBM Plex Sans SC", "IBM Plex Sans", sans-serif;
     --sg-sans: "IBM Plex Sans SC", "IBM Plex Sans", sans-serif;
 }
 
-html:lang(ja) {
+html:root:lang(ja) {
     --sg-serif: "IBM Plex Sans SC", "IBM Plex Sans", sans-serif;
     --sg-sans: "IBM Plex Sans SC", "IBM Plex Sans", sans-serif;
 }
@@ -56,8 +58,10 @@ html:lang(ja) {
 }
 
 /* 暗色墨绿提亮一档:小字号绿色文本(脚注引用、面包屑、目录页签)
-   在 #151917 上约 4.4:1,略低于 AA;#6b9580 约 5.3:1,色相不变 */
-:root[data-theme="dark"] {
+   在深底上约 4.07:1,略低于 AA;#6b9580 约 5.3:1,色相不变。
+   html:root 提一档特异性——曾因主题 sigil.css 排后而整条失效,
+   Lighthouse color-contrast 实测抓到过 4.07 */
+html:root[data-theme="dark"] {
     --sg-green: #6b9580;
 }
 

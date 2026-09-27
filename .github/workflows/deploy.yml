@@ -13,6 +13,7 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  actions: write
 
 concurrency:
   group: "pages"
@@ -76,3 +77,15 @@ jobs:
 
       - name: Ping IndexNow
         run: python scripts/indexnow.py public/sitemap.xml
+
+      # 清扫历史运行,只留当前——Actions 页面单条滚动
+      - name: Prune old workflow runs
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          KEEP=${{ github.run_id }}
+          gh api "repos/${{ github.repository }}/actions/runs?per_page=100" --paginate \
+            --jq '.workflow_runs[] | select(.id != '"$KEEP"') | select(.status == "completed") | .id' \
+          | while read -r id; do
+              gh api -X DELETE "repos/${{ github.repository }}/actions/runs/$id" > /dev/null 2>&1 || true
+            done

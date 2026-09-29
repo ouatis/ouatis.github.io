@@ -40,7 +40,7 @@ hideArticleMeta: true
 14. [福楼拜读卢夏拉](/2022/11/fu-lou-bai-du-lu-xia-la/)
 15. [福楼拜读伏尔泰](/2022/09/fu-lou-bai-du-fu-er-tai/)
 16. [福楼拜读西拉诺](/2022/10/fu-lou-bai-du-xi-la-nuo/)
-17. {{< tbd >}}福楼拜读屠格涅夫{{< /tbd >}}
+17. [福楼拜读屠格涅夫](/2022/07/fu-lou-bai-du-tu-ge-nie-fu/)
 18. [福楼拜读左莫](/2022/08/fu-lou-bai-du-zuo-mo/)
 
 ### 第五卷 · 包法利夫人受诉讼

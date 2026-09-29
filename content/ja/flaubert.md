@@ -41,7 +41,7 @@ hideArticleMeta: true
 14. [フローベール、ルソーを読む](/2022/11/fu-lou-bai-du-lu-xia-la/)
 15. [フローベール、ヴォルテールを読む](/2022/09/fu-lou-bai-du-fu-er-tai/)
 16. [フローベール、シラノを読む](/2022/10/fu-lou-bai-du-xi-la-nuo/)
-17. {{< tbd >}}フローベール、ツルゲーネフを読む{{< /tbd >}}
+17. [フローベール、ツルゲーネフを読む](/2022/07/fu-lou-bai-du-tu-ge-nie-fu/)
 18. [フローベール、ゾラを読む](/2022/08/fu-lou-bai-du-zuo-mo/)
 
 ### 第五巻 · ボヴァリー夫人の裁判

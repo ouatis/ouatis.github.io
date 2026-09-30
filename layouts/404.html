@@ -25,7 +25,7 @@
         {{- /* 异域镇魂曲:痛苦女士的迷宫,以及那个永远的问题 */}}
         <p class="site-404__quote">What can change the nature of a page?</p>
         <form class="site-404__search" action="{{ "search/" | absLangURL }}" method="get" role="search">
-            <input type="search" name="q" placeholder="{{ $searchPlaceholder }}" aria-label="{{ $searchLabel }}" autocomplete="off" maxlength="64">
+            <input type="search" name="q" placeholder="{{ $searchPlaceholder }}" aria-label="{{ $searchLabel }}" autocomplete="off" maxlength="64" autofocus>
         </form>
         {{- /* 万事皆三:连同上面的搜索框,一共三条出路 */}}
         <div class="site-404__ways">
@@ -35,4 +35,11 @@
         </div>
     </div>
 </section>
+{{- /* autofocus 属性在部分环境会被焦点抑制忽略,DOMContentLoaded 兜底补一枪 */}}
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    var q = document.querySelector(".site-404__search input");
+    if (q && document.activeElement !== q) q.focus();
+});
+</script>
 {{- end }}

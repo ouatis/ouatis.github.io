@@ -9,17 +9,17 @@ hideArticleMeta: true
 
 我的主要参考文献包括各个译本的福楼拜小说、福楼拜的私人书信（俗称《文学书简》）、《文学讲稿》的《包法利夫人》一章、《评传》、《鹦鹉》等。
 
-### 序卷 · 中文入口
+## 序卷 · 中文入口
 
 0. [我的《包法利夫人》译名表](/2012/12/wo-de-yi-min-biao/)
 
-### 第一卷 · 如何制造艾玛
+## 第一卷 · 如何制造艾玛
 
 1. [艾玛的四任情人](/2017/12/ai-ma-de-si-ren-qing-ren/)
 2. [艾玛的书单](/2015/12/ai-ma-de-shu-dan/)
 3. [艾玛的偶像](/2016/12/ai-ma-de-ou-xiang/)
 
-### 第二卷 · 夏尔的帽子
+## 第二卷 · 夏尔的帽子
 
 4. [夏尔的帽子](/2013/12/xia-er-de-mao-zi/)
 5. [外省角色任期制](/2018/12/wai-sheng-jue-se-ren-qi-zhi/)
@@ -28,14 +28,14 @@ hideArticleMeta: true
 8. [永镇的七任医生](/2019/12/yong-zhen-de-qi-ren-yi-sheng/)
 9. {{< tbd >}}农业交响展览音乐会{{< /tbd >}}
 
-### 第三卷 · 福楼拜的新散文
+## 第三卷 · 福楼拜的新散文
 
 10. [福楼拜的新散文](/2021/12/fu-lou-bai-de-xin-san-wen/)
 11. [在座的都是主义](/2022/12/zai-zuo-de-dou-shi-zhu-yi/)
 12. [包法利夫人就是我](/2021/12/bao-fa-li-fu-ren-jiu-shi-wo/)
 13. {{< tbd >}}紫色隐者福楼拜{{< /tbd >}}
 
-### 第四卷 · 福楼拜的书单
+## 第四卷 · 福楼拜的书单
 
 14. [福楼拜读卢夏拉](/2022/11/fu-lou-bai-du-lu-xia-la/)
 15. [福楼拜读伏尔泰](/2022/09/fu-lou-bai-du-fu-er-tai/)
@@ -43,7 +43,7 @@ hideArticleMeta: true
 17. [福楼拜读屠格涅夫](/2022/07/fu-lou-bai-du-tu-ge-nie-fu/)
 18. [福楼拜读左莫](/2022/08/fu-lou-bai-du-zuo-mo/)
 
-### 第五卷 · 包法利夫人受诉讼
+## 第五卷 · 包法利夫人受诉讼
 
 19. [包法利夫人受诉讼](/2023/12/bao-fa-li-fu-ren-shou-su-song/)
 20. [皮纳尔的公诉词](/2026/01/pi-na-er-de-gong-su-ci/)
@@ -51,7 +51,7 @@ hideArticleMeta: true
 22. [《包法利夫人》判决书](/2026/02/bao-fa-li-fu-ren-pan-jue-shu/)
 23. {{< tbd >}}包法利夫人受审查{{< /tbd >}}
 
-### 第六卷 · 福楼拜的十九世纪
+## 第六卷 · 福楼拜的十九世纪
 
 24. [福楼拜的十九世纪](/2025/12/fu-lou-bai-de-shi-jiu-shi-ji/)
 25. [迪康回忆录](/2024/12/di-kang-hui-yi-lu/)

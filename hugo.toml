@@ -199,6 +199,24 @@ copyright = "© **[SigiL](https://github.com/ouatis)**"
         Title = "欢迎来到笼城往事。"
         Content = "这里是 SigiL 的个人网站。SigiL 就是我。"
 
+    # 搜索键与权重:标题 > 分类 > 摘要 > 正文 > 链接(拼音 slug 也能搜到)。
+    # 分类入键:搜「历险记」应命中该分类全部文章,而非仅正文提及者。
+    # threshold 维持 0.4:中文以字为单位,收紧到 0.2 会失去「福楼摆→福楼拜」式错字容错
+    [params.fuseOpts]
+        shouldsort = true
+        minmatchcharlength = 1
+        threshold = 0.4
+        distance = 100
+        ignorelocation = true
+        limit = 100
+        keys = [
+            { name = "title", weight = 3 },
+            { name = "category", weight = 2.5 },
+            { name = "summary", weight = 1.5 },
+            { name = "content", weight = 1 },
+            { name = "permalink", weight = 0.5 },
+        ]
+
 [[params.socialIcons]]
     name = "github"
     url = "https://github.com/ouatis"

@@ -46,7 +46,7 @@ html:root:lang(ja) {
    无衬线字体下再缩 0.94em 显得局促 */
 .post-content blockquote {
     /* 不打包新字体:有中文衬线字体的系统优先,其余回退到平台 serif。 */
-    font-family: "Noto Serif CJK SC", "Source Han Serif SC", "Noto Serif SC", "Songti SC", "STSong", "SimSun", serif;
+    font-family: "IBM Plex Serif", "Noto Serif CJK SC", "Source Han Serif SC", "Noto Serif SC", "Songti SC", "STSong", "SimSun", serif;
     font-size: 1em;
 }
 

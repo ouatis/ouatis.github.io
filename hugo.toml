@@ -182,6 +182,9 @@ copyright = "© **[SigiL](https://github.com/ouatis)**"
     ogAutoCard = true
     ogCardFont = 'fonts/og/og-card.ttf'
 
+    # llms.txt 的导语段(主题 v0.8.1 起,格式与模板都在主题里)
+    llmsTxtIntro = "SigiL 的个人网站。主要使用简体中文写作，另有英语与日语界面；自 2012 年开始写作。文章正文均为中文。"
+
     [params.analytics.google]
         SiteVerificationTag = "digJaGp7JYW7c_R1BNuHNHaaLHYzaCHwcPsEFrcuFvw"
 
@@ -237,13 +240,9 @@ copyright = "© **[SigiL](https://github.com/ouatis)**"
 [outputs]
     home = ["HTML", "RSS", "JSON", "JSONFeed"]
 
-# llms.txt:机器可读站点索引。仅默认语言输出(内容以中文为主),
-# 英日语首页不生成重复副本;text/plain 的文件后缀天然是 .txt。
-[outputFormats.LLMSTXT]
-    mediaType = 'text/plain'
-    baseName = 'llms'
-    isPlainText = true
-    notAlternative = true
+# llms.txt:机器可读站点索引。格式定义与模板已下沉到主题 v0.8.1
+# (layouts/home.llmstxt.txt);仅默认语言输出(内容以中文为主),
+# 英日语首页不生成重复副本。导语段落见 params.llmsTxtIntro
 
 [languages."zh-CN".outputs]
     home = ["HTML", "RSS", "JSON", "LLMSTXT", "JSONFeed"]

@@ -3,6 +3,7 @@ title: "关于"
 layout: "about"
 url: "/about/"
 summary: "about"
+description: "SigiL 是谁，以及「笼城」这个名字的由来"
 showRelated: false
 hideArticleMeta: true
 ---

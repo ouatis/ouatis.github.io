@@ -148,7 +148,7 @@ copyright = "© **[SigiL](https://github.com/ouatis)**"
     dateFormat = '2006 年 1 月 2 日'
     author = 'SigiL'
     ShowBreadCrumbs = true
-    images = ["/og-image.png"]
+    # images = ["/og-image.png"]  # ogAutoCard 起用后由逐页生成的卡片取代通用图
     keywords = ["笼城往事", "Blog", "SigiL", "异域镇魂曲"]
     
     # 界面设置
@@ -176,6 +176,11 @@ copyright = "© **[SigiL](https://github.com/ouatis)**"
     ShowTotalWords = true   # 首页计数旁标注总字数:中文计到万,英日计到 K
     # 搜索无结果低语:与 404 的「nature of a page」成对
     sgSearchEmpty = 'What can change the nature of a search?'
+
+    # OG 自动卡片:无封面的文章构建期排 1200×630 卡片(标题+站名,纸底∴);
+    # 字体用标题用字的 SC 子集 TTF(build-fonts.sh 3b 段生成),拉丁默认字体画不了汉字
+    ogAutoCard = true
+    ogCardFont = 'fonts/og/og-card.ttf'
 
     [params.analytics.google]
         SiteVerificationTag = "digJaGp7JYW7c_R1BNuHNHaaLHYzaCHwcPsEFrcuFvw"

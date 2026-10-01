@@ -113,6 +113,38 @@ with open(charset_path, "w", encoding="utf-8") as f:
     f.write("".join(subset_chars))
 print(f"语料字符: 全站去重 {len(corpus)},其中 U+2000 起 {len(subset_chars)}")
 
+# --- 3b. OG 卡片字体:全站标题(文章 title + 各语言站名)子集 TTF。
+#     主题 ogAutoCard 的 images.Text 只认 TTF,读不了 woff2;
+#     标题子集远小于正文语料,只在仓库与构建期存在,不随站点发布
+title_corpus = set()
+for path in glob.glob("content/**/*.md", recursive=True):
+    try:
+        text = open(path, encoding="utf-8").read()
+    except UnicodeDecodeError:
+        continue
+    m = re.search(r"(?m)^title:\s*(.+?)\s*$", text)
+    if m:
+        title_corpus |= set(m.group(1).strip().strip("\"'"))
+    for m2 in re.finditer(r'(?m)^title\s*=\s*"([^"]+)"', text):
+        title_corpus |= set(m2.group(1))
+hugo_config = open("hugo.toml", encoding="utf-8").read()
+for m in re.finditer(r'(?m)^\s*title\s*=\s*"([^"]+)"', hugo_config):
+    title_corpus |= set(m.group(1))
+title_corpus |= set("…·")  # 截断省略号与间隔号
+title_subset = "".join(sorted(c for c in title_corpus if ord(c) >= 0x2000))
+og_dir = os.path.join("assets", "fonts", "og")
+os.makedirs(og_dir, exist_ok=True)
+og_out = os.path.join(og_dir, "og-card.ttf")
+subprocess.run(
+    [sys.executable, "-m", "fontTools.subset",
+     os.path.join(work, "IBMPlexSansSC-Regular.woff2"),
+     f"--text={title_subset}",
+     # Go 的 sfnt 解析器(Hugo images.Text)拒绝 post 3.0,保留字形名维持 post 2.0
+     "--glyph-names",
+     f"--output-file={og_out}"],
+    check=True)
+print(f"og 卡片字体: {og_out} ({os.path.getsize(og_out) // 1024}KB, {len(title_subset)} 字)")
+
 # unicode-range 压缩成区间列表
 def ranges(chars):
     ords = sorted(ord(c) for c in chars)

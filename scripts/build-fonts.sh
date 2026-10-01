@@ -59,14 +59,15 @@ import fnmatch, glob, hashlib, json, os, re, subprocess, sys, tarfile
 version, font_dir = sys.argv[1], sys.argv[2]
 cache = os.environ.get("IBM_PLEX_CACHE_DIR", ".cache/ibm-plex")
 work = os.path.join(cache, "work")
-weights = [("Regular", 400), ("SemiBold", 600), ("Bold", 700)]
+# 字重映射 600→700 后,SemiBold 已无任何元素引用,不再生成其子集
+weights = [("Regular", 400), ("Bold", 700)]
 
 # --- 1. 拉丁官方分片(css + woff2),路径与 IBM 包一致 ---
 latin_dest = os.path.join(font_dir, "latin")
 os.makedirs(latin_dest, exist_ok=True)
 latin_tgz = f"{cache}/plex-sans-{version}.tgz"
 patterns = [f"package/fonts/split/woff2/IBMPlexSans-{w}*"
-            for w in ("Regular", "SemiBold", "Bold")]
+            for w in ("Regular", "Bold")]
 with tarfile.open(latin_tgz, "r:gz") as tar:
     for member in tar.getmembers():
         if not member.isfile():

@@ -143,7 +143,9 @@ subprocess.run(
      "--glyph-names",
      f"--output-file={og_out}"],
     check=True)
-print(f"og 卡片字体: {og_out} ({os.path.getsize(og_out) // 1024}KB, {len(title_subset)} 字)")
+import fontTools
+print(f"og 卡片字体: {og_out} ({os.path.getsize(og_out)} 字节, {len(title_subset)} 字, "
+      f"md5={hashlib.md5(open(og_out, 'rb').read()).hexdigest()}, fontTools={fontTools.version})")
 
 # unicode-range 压缩成区间列表
 def ranges(chars):

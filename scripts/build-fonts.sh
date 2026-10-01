@@ -139,21 +139,12 @@ subprocess.run(
     [sys.executable, "-m", "fontTools.subset",
      os.path.join(work, "IBMPlexSansSC-Regular.woff2"),
      f"--text={title_subset}",
-     # Go 的 sfnt 解析器(Hugo images.Text)拒绝 post 3.0,保留字形名维持 post 2.0
-     "--glyph-names",
+     # 输出必须是裸 sfnt:pyftsubset 默认沿用输入的 woff2 flavor,
+     # 写进 .ttf 文件名的仍是 wOF2 魔数,Hugo 的 Go sfnt 解析器只认 0x00010000
+     "--flavor=none",
      f"--output-file={og_out}"],
     check=True)
-# 消毒:只留 sfnt 十张核心表。子集器保留的 GPOS/GSUB/垂直表/hinting
-# 在 Linux 的 Hugo(x/image sfnt)上曾报 sfnt: invalid font,本地 Windows 却通过
-from fontTools.ttLib import TTFont
-_font = TTFont(og_out)
-for _t in list(_font.keys()):
-    if _t != "GlyphOrder" and _t not in {"head", "hhea", "hmtx", "maxp", "cmap", "glyf", "loca", "OS/2", "post", "name"}:
-        del _font[_t]
-_font.save(og_out)
-import fontTools
-print(f"og 卡片字体: {og_out} ({os.path.getsize(og_out)} 字节, {len(title_subset)} 字, "
-      f"md5={hashlib.md5(open(og_out, 'rb').read()).hexdigest()}, fontTools={fontTools.version})")
+print(f"og 卡片字体: {og_out} ({os.path.getsize(og_out)} 字节, {len(title_subset)} 字)")
 
 # unicode-range 压缩成区间列表
 def ranges(chars):

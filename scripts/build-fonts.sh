@@ -143,6 +143,14 @@ subprocess.run(
      "--glyph-names",
      f"--output-file={og_out}"],
     check=True)
+# 消毒:只留 sfnt 十张核心表。子集器保留的 GPOS/GSUB/垂直表/hinting
+# 在 Linux 的 Hugo(x/image sfnt)上曾报 sfnt: invalid font,本地 Windows 却通过
+from fontTools.ttLib import TTFont
+_font = TTFont(og_out)
+for _t in list(_font.keys()):
+    if _t != "GlyphOrder" and _t not in {"head", "hhea", "hmtx", "maxp", "cmap", "glyf", "loca", "OS/2", "post", "name"}:
+        del _font[_t]
+_font.save(og_out)
 import fontTools
 print(f"og 卡片字体: {og_out} ({os.path.getsize(og_out)} 字节, {len(title_subset)} 字, "
       f"md5={hashlib.md5(open(og_out, 'rb').read()).hexdigest()}, fontTools={fontTools.version})")

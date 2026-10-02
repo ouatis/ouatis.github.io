@@ -127,11 +127,29 @@ for path in glob.glob("content/**/*.md", recursive=True):
         title_corpus |= set(m.group(1).strip().strip("\"'"))
     for m2 in re.finditer(r'(?m)^title\s*=\s*"([^"]+)"', text):
         title_corpus |= set(m2.group(1))
+    # 分类/标签/系列词条也是卡片标题(term 页):列表项、行内数组、裸标量三种形态都收
+    fm = re.match(r"(?s)^---\n(.*?)\n---", text)
+    if fm:
+        block = fm.group(1)
+        for m3 in re.finditer(r'(?m)^\s*-\s*["\']?([^"\'\n]+?)["\']?\s*$', block):
+            title_corpus |= set(m3.group(1).strip())
+        for m4 in re.finditer(r'\[([^\]]+)\]', block):
+            for item in m4.group(1).split(","):
+                title_corpus |= set(item.strip().strip("\"'"))
+        for m5 in re.finditer(r'(?m)^(title|categories|tags|series)\s*:\s*(.+?)\s*$', block):
+            title_corpus |= set(m5.group(2).strip().strip("\"'").strip("[]"))
 hugo_config = open("hugo.toml", encoding="utf-8").read()
 for m in re.finditer(r'(?m)^\s*title\s*=\s*"([^"]+)"', hugo_config):
     title_corpus |= set(m.group(1))
+# TOML 单引号字面串(本仓站名即此形态);上一版漏抓,「笼」字在卡片上消失过
+for m in re.finditer(r"(?m)^\s*title\s*=\s*'([^']+)'", hugo_config):
+    title_corpus |= set(m.group(1))
 title_corpus |= set("…·")  # 截断省略号与间隔号
-title_subset = "".join(sorted(c for c in title_corpus if ord(c) >= 0x2000))
+# 拉丁字母/数字/标点是闭集,整表收录——MMORPG 这类全拉丁标题曾整块空白(实拍验证过)
+import string as _string
+title_corpus |= set(_string.ascii_letters + _string.digits + _string.punctuation)
+# CJK 仍按标题语料收(全表太大);空格不进子集
+title_subset = "".join(sorted(c for c in title_corpus if not c.isspace()))
 og_dir = os.path.join("assets", "fonts", "og")
 os.makedirs(og_dir, exist_ok=True)
 og_out = os.path.join(og_dir, "og-card.ttf")

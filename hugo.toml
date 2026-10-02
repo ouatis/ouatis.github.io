@@ -240,12 +240,12 @@ copyright = "© **[SigiL](https://github.com/ouatis)**"
 [outputs]
     home = ["HTML", "RSS", "JSON", "JSONFeed"]
 
-# llms.txt:机器可读站点索引。格式定义与模板已下沉到主题 v0.8.1
-# (layouts/home.llmstxt.txt);仅默认语言输出(内容以中文为主),
-# 英日语首页不生成重复副本。导语段落见 params.llmsTxtIntro
+# llms.txt / llms-full.txt:机器可读站点索引,格式定义与模板在主题
+# (v0.8.4 起 llms.txt 会自动提示 llms-full.txt);仅默认语言输出
+# (内容以中文为主),英日语首页不生成重复副本。导语段落见 params.llmsTxtIntro
 
 [languages."zh-CN".outputs]
-    home = ["HTML", "RSS", "JSON", "LLMSTXT", "JSONFeed"]
+    home = ["HTML", "RSS", "JSON", "LLMSTXT", "LLMSFULL", "JSONFeed"]
 
 # 相关文章（内链优化：按标签匹配，给孤立文章提供索引信号）
 [related]

@@ -38,11 +38,11 @@ My main references include Flaubert's novels in various translations, his privat
 
 ## Volume IV · Flaubert's Reading List
 
-14. [Flaubert Reads Rousseau](/2022/11/fu-lou-bai-du-lu-xia-la/)
+14. [Flaubert Reads Rousseau, Chateaubriand, and Lamartine](/2022/11/fu-lou-bai-du-lu-xia-la/)
 15. [Flaubert Reads Voltaire](/2022/09/fu-lou-bai-du-fu-er-tai/)
 16. [Flaubert Reads Cyrano](/2022/10/fu-lou-bai-du-xi-la-nuo/)
 17. [Flaubert Reads Turgenev](/2022/07/fu-lou-bai-du-tu-ge-nie-fu/)
-18. [Flaubert Reads Zola](/2022/08/fu-lou-bai-du-zuo-mo/)
+18. [Flaubert Reads Zola and Maupassant](/2022/08/fu-lou-bai-du-zuo-mo/)
 19. [Flaubert Reads Cervantes](/2022/04/fu-lou-bai-du-sai-wan-ti-si/)
 
 ## Volume V · The Trial of Madame Bovary

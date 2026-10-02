@@ -43,19 +43,20 @@ hideArticleMeta: true
 16. [フローベール、シラノを読む](/2022/10/fu-lou-bai-du-xi-la-nuo/)
 17. [フローベール、ツルゲーネフを読む](/2022/07/fu-lou-bai-du-tu-ge-nie-fu/)
 18. [フローベール、ゾラを読む](/2022/08/fu-lou-bai-du-zuo-mo/)
+19. [フローベール、セルバンテスを読む](/2022/04/fu-lou-bai-du-sai-wan-ti-si/)
 
 ## 第五巻 · ボヴァリー夫人の裁判
 
-19. [ボヴァリー夫人の訴訟](/2023/12/bao-fa-li-fu-ren-shou-su-song/)
-20. [ピナールの論告](/2026/01/pi-na-er-de-gong-su-ci/)
-21. [セナールの弁護](/2026/01/sai-na-er-de-bian-hu-ci/)
-22. [『ボヴァリー夫人』判決文](/2026/02/bao-fa-li-fu-ren-pan-jue-shu/)
-23. {{< tbd >}}ボヴァリー夫人、検閲される{{< /tbd >}}
+20. [ボヴァリー夫人の訴訟](/2023/12/bao-fa-li-fu-ren-shou-su-song/)
+21. [ピナールの論告](/2026/01/pi-na-er-de-gong-su-ci/)
+22. [セナールの弁護](/2026/01/sai-na-er-de-bian-hu-ci/)
+23. [『ボヴァリー夫人』判決文](/2026/02/bao-fa-li-fu-ren-pan-jue-shu/)
+24. {{< tbd >}}ボヴァリー夫人、検閲される{{< /tbd >}}
 
 ## 第六巻 · フローベールの十九世紀
 
-24. [フローベールの十九世紀](/2025/12/fu-lou-bai-de-shi-jiu-shi-ji/)
-25. [デュカンの回想録](/2024/12/di-kang-hui-yi-lu/)
-26. [フローベールの死](/2020/05/fu-lou-bai-zhi-si/)
-27. {{< tbd >}}フローベール家の日曜日{{< /tbd >}}
-28. {{< tbd >}}ルーアン墓参りの記{{< /tbd >}}
+25. [フローベールの十九世紀](/2025/12/fu-lou-bai-de-shi-jiu-shi-ji/)
+26. [デュカンの回想録](/2024/12/di-kang-hui-yi-lu/)
+27. [フローベールの死](/2020/05/fu-lou-bai-zhi-si/)
+28. {{< tbd >}}フローベール家の日曜日{{< /tbd >}}
+29. {{< tbd >}}ルーアン墓参りの記{{< /tbd >}}

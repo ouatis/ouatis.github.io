@@ -42,19 +42,21 @@ hideArticleMeta: true
 16. [福楼拜读西拉诺](/2022/10/fu-lou-bai-du-xi-la-nuo/)
 17. [福楼拜读屠格涅夫](/2022/07/fu-lou-bai-du-tu-ge-nie-fu/)
 18. [福楼拜读左莫](/2022/08/fu-lou-bai-du-zuo-mo/)
+19. [福楼拜读塞万提斯](/2022/04/fu-lou-bai-du-sai-wan-ti-si/)
 
 ## 第五卷 · 包法利夫人受诉讼
 
-19. [包法利夫人受诉讼](/2023/12/bao-fa-li-fu-ren-shou-su-song/)
-20. [皮纳尔的公诉词](/2026/01/pi-na-er-de-gong-su-ci/)
-21. [塞纳尔的辩护词](/2026/01/sai-na-er-de-bian-hu-ci/)
-22. [《包法利夫人》判决书](/2026/02/bao-fa-li-fu-ren-pan-jue-shu/)
-23. {{< tbd >}}包法利夫人受审查{{< /tbd >}}
+20. [包法利夫人受诉讼](/2023/12/bao-fa-li-fu-ren-shou-su-song/)
+21. [皮纳尔的公诉词](/2026/01/pi-na-er-de-gong-su-ci/)
+22. [塞纳尔的辩护词](/2026/01/sai-na-er-de-bian-hu-ci/)
+23. [《包法利夫人》判决书](/2026/02/bao-fa-li-fu-ren-pan-jue-shu/)
+24. {{< tbd >}}包法利夫人受审查{{< /tbd >}}
 
 ## 第六卷 · 福楼拜的十九世纪
 
-24. [福楼拜的十九世纪](/2025/12/fu-lou-bai-de-shi-jiu-shi-ji/)
-25. [迪康回忆录](/2024/12/di-kang-hui-yi-lu/)
-26. [福楼拜之死](/2020/05/fu-lou-bai-zhi-si/)
-27. {{< tbd >}}福楼拜家的星期天{{< /tbd >}}
-28. {{< tbd >}}鲁昂扫墓记{{< /tbd >}}
+25. [福楼拜的十九世纪](/2025/12/fu-lou-bai-de-shi-jiu-shi-ji/)
+26. [迪康回忆录](/2024/12/di-kang-hui-yi-lu/)
+27. [福楼拜之死](/2020/05/fu-lou-bai-zhi-si/)
+28. {{< tbd >}}福楼拜家的星期天{{< /tbd >}}
+29. {{< tbd >}}鲁昂扫墓记{{< /tbd >}}
+

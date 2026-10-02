@@ -43,19 +43,20 @@ My main references include Flaubert's novels in various translations, his privat
 16. [Flaubert Reads Cyrano](/2022/10/fu-lou-bai-du-xi-la-nuo/)
 17. [Flaubert Reads Turgenev](/2022/07/fu-lou-bai-du-tu-ge-nie-fu/)
 18. [Flaubert Reads Zola](/2022/08/fu-lou-bai-du-zuo-mo/)
+19. [Flaubert Reads Cervantes](/2022/04/fu-lou-bai-du-sai-wan-ti-si/)
 
 ## Volume V · The Trial of Madame Bovary
 
-19. [The Trial of Madame Bovary](/2023/12/bao-fa-li-fu-ren-shou-su-song/)
-20. [Pinard's Prosecution Speech](/2026/01/pi-na-er-de-gong-su-ci/)
-21. [Sénard's Defense Speech](/2026/01/sai-na-er-de-bian-hu-ci/)
-22. [The Verdict on Madame Bovary](/2026/02/bao-fa-li-fu-ren-pan-jue-shu/)
-23. {{< tbd >}}Madame Bovary Censored{{< /tbd >}}
+20. [The Trial of Madame Bovary](/2023/12/bao-fa-li-fu-ren-shou-su-song/)
+21. [Pinard's Prosecution Speech](/2026/01/pi-na-er-de-gong-su-ci/)
+22. [Sénard's Defense Speech](/2026/01/sai-na-er-de-bian-hu-ci/)
+23. [The Verdict on Madame Bovary](/2026/02/bao-fa-li-fu-ren-pan-jue-shu/)
+24. {{< tbd >}}Madame Bovary Censored{{< /tbd >}}
 
 ## Volume VI · Flaubert's Nineteenth Century
 
-24. [Flaubert's Nineteenth Century](/2025/12/fu-lou-bai-de-shi-jiu-shi-ji/)
-25. [The Du Camp Memoir](/2024/12/di-kang-hui-yi-lu/)
-26. [The Death of Flaubert](/2020/05/fu-lou-bai-zhi-si/)
-27. {{< tbd >}}Sunday at Flaubert's{{< /tbd >}}
-28. {{< tbd >}}Visiting Rouen's Graves{{< /tbd >}}
+25. [Flaubert's Nineteenth Century](/2025/12/fu-lou-bai-de-shi-jiu-shi-ji/)
+26. [The Du Camp Memoir](/2024/12/di-kang-hui-yi-lu/)
+27. [The Death of Flaubert](/2020/05/fu-lou-bai-zhi-si/)
+28. {{< tbd >}}Sunday at Flaubert's{{< /tbd >}}
+29. {{< tbd >}}Visiting Rouen's Graves{{< /tbd >}}

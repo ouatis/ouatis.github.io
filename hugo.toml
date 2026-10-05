@@ -1,0 +1,263 @@
+baseURL = 'https://ouatis.com/'
+hasCJKLanguage = true
+defaultContentLanguage = "zh-CN"
+enableRobotsTXT = true
+uglyURLs = false
+# 站点以北京时间生活:纪念日判断(12.12)与内容日期都按此时区
+timeZone = 'Asia/Shanghai'
+title = '笼城往事 | Once Upon a Time in SigiL'
+theme = 'hugo-theme-sigil'
+copyright = "© **[SigiL](https://github.com/ouatis)**"
+
+[languages."zh-CN"]
+    title = '笼城往事 | Once Upon a Time in SigiL'
+    locale = 'zh-CN'
+    label = '简体中文'
+    weight = 1
+
+    [languages."zh-CN".params]
+        sgKicker = 'Once Upon a Time in SigiL'
+        sgHomeTitle = '笼城往事'
+        [languages."zh-CN".params.homeInfoParams]
+            content = 'SigiL 的个人网站。'
+
+    [[languages."zh-CN".menus.main]]
+        identifier = "about"
+        name = "关于"
+        url = "/about/"
+        weight = 10
+
+    [[languages."zh-CN".menus.main]]
+        identifier = "flaubert"
+        name = "福楼拜讲稿"
+        url = "/flaubert/"
+        weight = 15
+
+    [[languages."zh-CN".menus.main]]
+        identifier = "archives"
+        name = "归档"
+        url = "/archives/"
+        weight = 20
+
+    [[languages."zh-CN".menus.main]]
+        identifier = "categories"
+        name = "分类"
+        url = "/categories/"
+        weight = 25
+
+    [[languages."zh-CN".menus.main]]
+        identifier = "tags"
+        name = "标签"
+        url = "/tags/"
+        weight = 26
+
+    [[languages."zh-CN".menus.main]]
+        identifier = "search"
+        name = "搜索"
+        url = "/search/"
+        weight = 30
+
+[languages.en]
+    title = "Once Upon a Time in SigiL"
+    contentDir = "content/en"
+    disableKinds = ['section', 'taxonomy', 'term']
+    locale = 'en-US'
+    label = 'English'
+    weight = 2
+
+    [[languages.en.menus.main]]
+        identifier = "about"
+        name = "About"
+        url = "/en/about/"
+        weight = 10
+
+    [[languages.en.menus.main]]
+        identifier = "flaubert"
+        name = "Flaubert Lectures"
+        url = "/en/flaubert/"
+        weight = 15
+
+    [[languages.en.menus.main]]
+        identifier = "archives"
+        name = "Archives"
+        url = "/en/archives/"
+        weight = 20
+
+    [[languages.en.menus.main]]
+        identifier = "search"
+        name = "Search"
+        url = "/en/search/"
+        weight = 30
+
+    [languages.en.params]
+        DateFormat = "January 2, 2006"
+        description = "Writing, Flaubert, and other things."
+        sgKicker = "OUATIS"
+        [languages.en.params.homeInfoParams]
+            content = "SigiL's personal site."
+
+[languages.ja]
+    title = "籠城往事 | Once Upon a Time in SigiL"
+    contentDir = "content/ja"
+    disableKinds = ['section', 'taxonomy', 'term']
+    locale = 'ja-JP'
+    label = '日本語'
+    weight = 3
+
+    [[languages.ja.menus.main]]
+        identifier = "about"
+        name = "私について"
+        url = "/ja/about/"
+        weight = 10
+
+    [[languages.ja.menus.main]]
+        identifier = "flaubert"
+        name = "フローベール講義"
+        url = "/ja/flaubert/"
+        weight = 15
+
+    [[languages.ja.menus.main]]
+        identifier = "archives"
+        name = "アーカイブ"
+        url = "/ja/archives/"
+        weight = 20
+
+    [[languages.ja.menus.main]]
+        identifier = "search"
+        name = "検索"
+        url = "/ja/search/"
+        weight = 30
+
+    [languages.ja.params]
+        DateFormat = "2006年1月2日"
+        description = "執筆とフローベール、そしてその他。"
+        sgKicker = "Once Upon a Time in SigiL"
+        sgHomeTitle = "籠城往事"
+        [languages.ja.params.homeInfoParams]
+            content = "SigiL の個人サイト。"
+
+[params.footer]
+
+[permalinks]
+    posts = '/:year/:month/:slug/'
+
+[params]
+    env = 'production'
+    title = '笼城往事'
+    description = '写作、福楼拜，以及其他。'
+    dateFormat = '2006 年 1 月 2 日'
+    author = 'SigiL'
+    ShowBreadCrumbs = true
+    # images = ["/og-image.png"]  # ogAutoCard 起用后由逐页生成的卡片取代通用图
+    keywords = ["笼城往事", "Blog", "SigiL", "异域镇魂曲"]
+    
+    # 界面设置
+    defaultTheme = 'auto'
+    ShowToc = true
+    TocOpen = false
+    showReadingTime = true
+    showShareButtons = false
+    showPostNavLinks = true
+    ShowCodeCopyButtons = true
+    showWordCount = false   # 万事皆三:文章信息只留 日期·时长·作者 三条
+    hideSummary = true
+    sgReading = 'William Faulkner'
+    sgPlaying = 'Crusader Kings III'
+    sgMotto = 'IMAGINE UNPOETIC LION'
+    sgDaysInCage = true    # 状态条 Day N in the Cage,从最早一篇(2012-12-12)起算
+    sgSeriesFrom = '/flaubert/'    # 系列导航:策展页即阅读顺序的事实来源,文内导航自动跟随
+    sgSeriesTab = '讲稿'           # 悬浮页签的竖排短标
+    sgSealImage = '/avatar-640.webp'
+    mainSections = ['posts']
+    homePageSize = 9
+    ShowDefaultLanguageContent = true
+    ShowFullTextinRSS = true
+    ShowContentLanguageNote = true
+    ShowTotalWords = true   # 首页计数旁标注总字数:中文计到万,英日计到 K
+    # 搜索无结果低语:与 404 的「nature of a page」成对
+    sgSearchEmpty = 'What can change the nature of a search?'
+
+    # OG 自动卡片:无封面的文章构建期排 1200×630 卡片(标题+站名,纸底∴);
+    # 字体用标题用字的 SC 子集 TTF(build-fonts.sh 3b 段生成),拉丁默认字体画不了汉字
+    ogAutoCard = true
+    ogCardFont = 'fonts/og/og-card.ttf'
+
+    # llms.txt 的导语段(主题 v0.8.1 起,格式与模板都在主题里)
+    llmsTxtIntro = "SigiL 的个人网站。主要使用简体中文写作，另有英语与日语界面；自 2012 年开始写作。文章正文均为中文。"
+
+    [params.analytics.google]
+        SiteVerificationTag = "digJaGp7JYW7c_R1BNuHNHaaLHYzaCHwcPsEFrcuFvw"
+
+    # schema.org sameAs 要求绝对 URL,覆盖社交图标里的相对 RSS 路径
+    [params.schema]
+        sameAs = ["https://github.com/ouatis", "https://steamcommunity.com/id/ouatis/"]
+
+    [params.assets]
+        theme_color = "#f4f6f3"
+        # 浏览器已优先用 extend_head 里的 favicon.svg 圆印;此项只是旧浏览器的回退
+        favicon = "/favicon-32x32.png"
+        apple_touch_icon = "/apple-touch-icon.png"
+
+    [params.label]
+        text = "笼城往事"
+        icon = "/avatar-640.webp"
+        iconHeight = 35       # 可以调整图片显示高度
+
+    [params.homeInfoParams]
+        Title = "欢迎来到笼城往事。"
+        Content = "这里是 SigiL 的个人网站。SigiL 就是我。"
+
+    # 搜索键与权重:标题 > 分类 > 摘要 > 正文 > 链接(拼音 slug 也能搜到)。
+    # 分类入键:搜「历险记」应命中该分类全部文章,而非仅正文提及者。
+    # threshold 维持 0.4:中文以字为单位,收紧到 0.2 会失去「福楼摆→福楼拜」式错字容错
+    [params.fuseOpts]
+        shouldsort = true
+        minmatchcharlength = 1
+        threshold = 0.4
+        distance = 100
+        ignorelocation = true
+        limit = 100
+        keys = [
+            { name = "title", weight = 3 },
+            { name = "category", weight = 2.5 },
+            { name = "summary", weight = 1.5 },
+            { name = "content", weight = 1 },
+            { name = "permalink", weight = 0.5 },
+        ]
+
+[[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/ouatis"
+
+[[params.socialIcons]]
+    name = "steam"
+    url = "https://steamcommunity.com/id/ouatis/"
+
+[[params.socialIcons]]
+    name = "rss"
+    url = "/index.xml"
+
+[outputs]
+    home = ["HTML", "RSS", "JSON", "JSONFeed"]
+
+# llms.txt / llms-full.txt:机器可读站点索引,格式定义与模板在主题
+# (v0.8.4 起 llms.txt 会自动提示 llms-full.txt);仅默认语言输出
+# (内容以中文为主),英日语首页不生成重复副本。导语段落见 params.llmsTxtIntro
+
+[languages."zh-CN".outputs]
+    home = ["HTML", "RSS", "JSON", "LLMSTXT", "LLMSFULL", "JSONFeed"]
+
+# 相关文章（内链优化：按标签匹配，给孤立文章提供索引信号）
+[related]
+    threshold = 10
+    includeNewer = true
+    toLower = true
+    [[related.indices]]
+        name = "tags"
+        weight = 100
+    [[related.indices]]
+        name = "categories"
+        weight = 30
+    [[related.indices]]
+        name = "date"
+        weight = 10

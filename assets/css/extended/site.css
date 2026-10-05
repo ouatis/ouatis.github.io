@@ -1,0 +1,143 @@
+/* ouatis 站点字体策略:简中字形优先(含日文页)。
+   sigil 主题默认 JP 优先(为通用日文站设计),此处按本站决定覆盖。
+   主题 head.html 的 extended 拼接自 v0.7.1 起主题在前、站点在后,
+   同优先级规则站点必胜,无需再提特异性。 */
+:root {
+    --sg-serif: "IBM Plex Sans SC", "IBM Plex Sans", sans-serif;
+    --sg-sans: "IBM Plex Sans SC", "IBM Plex Sans", sans-serif;
+}
+
+html:lang(ja) {
+    --sg-serif: "IBM Plex Sans SC", "IBM Plex Sans", sans-serif;
+    --sg-sans: "IBM Plex Sans SC", "IBM Plex Sans", sans-serif;
+}
+
+/* 不断之环(Zerthimon):细线断环=「Know that the Circle is broken」,
+   断口朝正上;中心三点=∴,琥珀色跟随 tri-sep,亮暗两态自适应。 */
+.sg-zerthimon {
+    display: block;
+    width: 54px;
+    margin: 2.8em auto;
+    color: var(--secondary);
+}
+
+.sg-zerthimon svg {
+    display: block;
+}
+
+.sg-zerthimon .sg-zerthimon__dot {
+    fill: rgba(var(--sg-amber-rgb), 0.95);
+}
+
+/* 纪念日低语(12 月 12 日):脚本注入 footer 内,独占一行元信息绿 */
+.sg-anniv {
+    flex: 0 0 100%;
+    margin: 2px 0 10px;
+    color: var(--sg-green);
+    font-family: var(--sg-sans);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-align: center;
+}
+
+/* ===== 版式微调(2026-09-20)===== */
+
+/* 引文与正文同字号:元信息色 + 绿色标线已足够建立层级,
+   无衬线字体下再缩 0.94em 显得局促 */
+.post-content blockquote {
+    /* 不打包新字体:有中文衬线字体的系统优先,其余回退到平台 serif。 */
+    font-family: "IBM Plex Serif", "Noto Serif CJK SC", "Source Han Serif SC", "Noto Serif SC", "Songti SC", "STSong", "SimSun", serif;
+    font-size: 1em;
+}
+
+/* 西文/法文段落取消两端对齐:拉丁文本 justify 会拉伸出空河,
+   左对齐更接近原书版式;中文正文维持主题的 justify */
+.post-content p[lang="en"],
+.post-content p[lang="fr"] {
+    text-align: left;
+}
+
+/* 暗色墨绿提亮一档:小字号绿色文本(脚注引用、面包屑、目录页签)
+   在深底上约 4.07:1,略低于 AA;#6b9580 约 5.3:1,色相不变。
+   (曾因主题 sigil.css 排后而整条失效,Lighthouse 实测抓到过 4.07;
+    v0.7.1 拼接契约后回归普通选择器) */
+:root[data-theme="dark"] {
+    --sg-green: #6b9580;
+}
+
+/* ===== 版式微调 · 二(2026-09-20)===== */
+
+/* 中西混排自动加空:CJK 与拉丁/数字之间插入约 1/8 字空隙。
+   Chromium 140+ / Safari 18.4+ 原生支持,旧浏览器静默忽略 */
+body {
+    text-autospace: normal;
+}
+
+/* 元信息数字用旧式数字(旧式数字有降部,更接近纸书;
+   依赖字型 onum 特性,不支持时静默回退为等通数字) */
+.post-meta,
+.breadcrumbs,
+.sg-section-head__count,
+.archive-meta,
+.archive-month-header,
+.archive-count,
+.footer {
+    font-variant-numeric: oldstyle-nums;
+}
+
+/* 首页日期、序号和页码同时保留等宽排列。 */
+.sg-entry__date,
+.sg-entry__number,
+.sg-pagination__pages {
+    font-variant-numeric: oldstyle-nums tabular-nums;
+}
+
+/* 分页省略号 → ∴ :主题把「…」写在模板文本里,这里用零字号藏起
+   原字符,伪元素补 ∴,避免为半个字形复刻整份首页模板 */
+.sg-pagination__gap {
+    color: transparent;
+    font-size: 0;
+}
+
+.sg-pagination__gap::after {
+    color: var(--tertiary);
+    content: "∴";
+    font-size: 13px;
+}
+
+/* 文章 meta 分隔符 ∴(琥珀),与面包屑、页脚一致;
+   两侧各留 0.35em——与 .sg-section-head__words::before 同规格。
+   裸类选择器:文章页 .post-meta 与归档页 .archive-meta 共用同一 partial */
+.sg-meta-sep {
+    color: rgba(var(--sg-amber-rgb), 0.9);
+    font-size: 10px;
+    margin: 0 0.35em;
+}
+
+/* 红色小标线统一为文章页规格:48px × 1px */
+.page-header::after {
+    width: 48px;
+    height: 1px;
+}
+
+/* EN 标题降部空间:拉丁下伸字母在 1.06 行高下发闷 */
+html:lang(en) .sg-hero h1 {
+    line-height: 1.12;
+}
+
+/* 全站最后一颗「·」:文章数与字数之间也用 ∴ */
+.sg-section-head__words::before {
+    content: "∴";
+    margin: 0 0.35em;
+    color: rgba(var(--sg-amber-rgb), 0.9);
+}
+
+/* 状态行从 0.5 提到 0.65:保住克制的声音,不再接近隐形 */
+.sg-now {
+    opacity: 0.65;
+}
+
+/* 亮色:素描沉入纸面(白底圆盘消失),与暗色 invert 的思路对称 */
+:root[data-theme="light"] .sg-seal img {
+    mix-blend-mode: multiply;
+}

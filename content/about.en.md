@@ -1,7 +1,6 @@
 ---
 title: "About"
 layout: "about"
-summary: "about"
 aliases: ["/"]
 showRelated: false
 hideArticleMeta: true

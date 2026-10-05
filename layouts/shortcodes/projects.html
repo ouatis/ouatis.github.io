@@ -1,0 +1,40 @@
+{{- /* 项目索引:学 antfu.me / stephango.com 的纯文字清单——
+       一条 = 项目印记 + 链接名 + 一句话 + 类型,整条可点,无图无框(编号已由图标取代)。
+       图标为 Phosphor light 字重真身 path(内联,currentColor,aria-hidden),
+       与主题书眉/沙漏同一工序。
+       名称/仓库/图标三语共用;一句话与类型按页面语言取文案,
+       日文页暂落英文(日文页未链接本页),文案待定稿后补 ja 槽。 */ -}}
+{{- $icons := dict
+    "circles-three" "M170,76a42,42,0,1,0-42,42A42,42,0,0,0,170,76Zm-42,30a30,30,0,1,1,30-30A30,30,0,0,1,128,106Zm60,24a42,42,0,1,0,42,42A42,42,0,0,0,188,130Zm0,72a30,30,0,1,1,30-30A30,30,0,0,1,188,202ZM68,130a42,42,0,1,0,42,42A42,42,0,0,0,68,130Zm0,72a30,30,0,1,1,30-30A30,30,0,0,1,68,202Z"
+    "feather" "M238,80A62,62,0,0,0,132.18,36.14L62.1,105.41a13.94,13.94,0,0,0-4.1,9.9v74.21L27.76,219.76a6,6,0,1,0,8.48,8.48L66.48,198h74.21a13.94,13.94,0,0,0,9.9-4.1l0,0,68.83-69.63h0l.39-.4A61.6,61.6,0,0,0,238,80ZM140.64,44.64a50,50,0,0,1,72,69.36H150.48l37.76-37.76a6,6,0,0,0-8.48-8.48l-48,48h0L118,129.52V67ZM70,115.31a2,2,0,0,1,.56-1.39l35.44-35v62.63l-36,36Zm72.09,70.11a2,2,0,0,1-1.4.58H78.48l37.76-37.75h0L138.48,126h62.35Z"
+    "lamp" "M245.51,149.64l-48-112A6,6,0,0,0,192,34H64a6,6,0,0,0-5.51,3.64l-48,112A6,6,0,0,0,16,158H122v52H96a6,6,0,0,0,0,12h64a6,6,0,0,0,0-12H134V158h60v34a6,6,0,0,0,12,0V158h34a6,6,0,0,0,5.51-8.36ZM25.1,146,68,46H188L230.9,146Z"
+-}}
+{{- $copy := dict
+    "zh-CN" (dict
+        "k1" "Hugo 主题" "d1" "墨、纸，与万事皆三——本站跑在它上面。"
+        "k2" "Obsidian 主题" "d2" "一张安静的书桌：暖纸色，为长文阅读与写作而造。"
+        "k3" "Obsidian 插件" "d3" "房间大灯关掉，只留一盏。")
+    "en" (dict
+        "k1" "Hugo theme" "d1" "Ink, paper, and everything in threes — this site runs on it."
+        "k2" "Obsidian theme" "d2" "A quiet desk: warm paper, made for long-form reading and writing."
+        "k3" "Obsidian plugin" "d3" "Room lights off, one lamp left on.")
+-}}
+{{- $c := index $copy .Page.Language.Lang | default (index $copy "en") -}}
+{{- $projects := slice
+    (dict "name" "Sigil" "repo" "ouatis/hugo-theme-sigil" "slot" 1 "icon" "circles-three")
+    (dict "name" "Scriptorium" "repo" "ouatis/obsidian-scriptorium" "slot" 2 "icon" "feather")
+    (dict "name" "Desk Lamp" "repo" "ouatis/obsidian-desklamp" "slot" 3 "icon" "lamp")
+-}}
+<div class="sg-index">
+    {{- range $p := $projects }}
+    <div class="sg-index__item">
+        <div class="sg-index__body">
+            <h2 class="sg-index__name">
+                <svg class="sg-index__icon" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true" focusable="false"><path d="{{ index $icons $p.icon }}"/></svg><a href="https://github.com/{{ $p.repo }}">{{ $p.name }}</a>
+            </h2>
+            <p class="sg-index__desc">{{ index $c (printf "d%d" $p.slot) }}</p>
+        </div>
+        <span class="sg-index__kind">{{ index $c (printf "k%d" $p.slot) }}</span>
+    </div>
+    {{- end }}
+</div>

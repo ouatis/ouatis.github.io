@@ -34,22 +34,16 @@ copyright = "© **[SigiL](https://github.com/ouatis)**"
         weight = 15
 
     [[languages."zh-CN".menus.main]]
+        identifier = "projects"
+        name = "传送门"
+        url = "/projects/"
+        weight = 16
+
+    [[languages."zh-CN".menus.main]]
         identifier = "archives"
         name = "归档"
         url = "/archives/"
         weight = 20
-
-    [[languages."zh-CN".menus.main]]
-        identifier = "categories"
-        name = "分类"
-        url = "/categories/"
-        weight = 25
-
-    [[languages."zh-CN".menus.main]]
-        identifier = "tags"
-        name = "标签"
-        url = "/tags/"
-        weight = 26
 
     [[languages."zh-CN".menus.main]]
         identifier = "search"
@@ -76,6 +70,12 @@ copyright = "© **[SigiL](https://github.com/ouatis)**"
         name = "Flaubert Lectures"
         url = "/en/flaubert/"
         weight = 15
+
+    [[languages.en.menus.main]]
+        identifier = "projects"
+        name = "Projects"
+        url = "/en/projects/"
+        weight = 16
 
     [[languages.en.menus.main]]
         identifier = "archives"
@@ -161,6 +161,7 @@ copyright = "© **[SigiL](https://github.com/ouatis)**"
     ShowCodeCopyButtons = true
     showWordCount = false   # 万事皆三:文章信息只留 日期·时长·作者 三条
     hideSummary = true
+    # 状态条三联:中英日站统一英语(全局参数)。上次核对:2026-10-05,用户确认新鲜
     sgReading = 'William Faulkner'
     sgPlaying = 'Crusader Kings III'
     sgMotto = 'IMAGINE UNPOETIC LION'

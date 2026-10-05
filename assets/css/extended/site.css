@@ -12,23 +12,6 @@ html:lang(ja) {
     --sg-sans: "IBM Plex Sans SC", "IBM Plex Sans", sans-serif;
 }
 
-/* 不断之环(Zerthimon):细线断环=「Know that the Circle is broken」,
-   断口朝正上;中心三点=∴,琥珀色跟随 tri-sep,亮暗两态自适应。 */
-.sg-zerthimon {
-    display: block;
-    width: 54px;
-    margin: 2.8em auto;
-    color: var(--secondary);
-}
-
-.sg-zerthimon svg {
-    display: block;
-}
-
-.sg-zerthimon .sg-zerthimon__dot {
-    fill: rgba(var(--sg-amber-rgb), 0.95);
-}
-
 /* 纪念日低语(12 月 12 日):脚本注入 footer 内,独占一行元信息绿 */
 .sg-anniv {
     flex: 0 0 100%;
@@ -140,4 +123,121 @@ html:lang(en) .sg-hero h1 {
 /* 亮色:素描沉入纸面(白底圆盘消失),与暗色 invert 的思路对称 */
 :root[data-theme="light"] .sg-seal img {
     mix-blend-mode: multiply;
+}
+
+/* =====================================================================
+   项目页(/projects/)· 项目索引
+   ---------------------------------------------------------------------
+   学 antfu.me / stephango.com 的纯文字清单:一条 = 编号 + 链接名 +
+   一句话 + 类型,整条可点;无图、无框、无边线,层级全靠字。
+   hover:名字下划线,琥珀 ↗ 浮现;结尾 ∴ 印章由 zerthimon 负责。 */
+
+.sg-index {
+    margin-block: 1.6rem 1.2rem;
+}
+
+.sg-index__item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    column-gap: 1.2rem;
+    align-items: baseline;
+    padding-block: 1.05rem;
+}
+
+
+.sg-index__name {
+    margin: 0;
+    font-size: 1.22rem;
+    line-height: 1.3;
+}
+
+/* 压掉主题给 h2 的装饰线与巨型外边距(特异性要压过 .markdown-preview-view h2) */
+.post-content .sg-index__name {
+    background-image: none;
+    border-bottom: 0;
+    padding-bottom: 0;
+    margin: 0;
+}
+
+/* 项目印记:Phosphor light,淡墨,不参与 hover 动效 */
+.sg-index__icon {
+    width: 1.02em;
+    height: 1.02em;
+    margin-right: 0.42em;
+    vertical-align: -0.1em;
+    color: var(--tertiary);
+}
+
+.post-content .sg-index__desc {
+    margin: 0.28rem 0 0;
+}
+
+.sg-index__name a {
+    color: inherit;
+    text-decoration: none;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.16em;
+}
+
+.sg-index__item:hover .sg-index__name a {
+    text-decoration: underline;
+}
+
+/* 琥珀箭头:悬停浮现,示意出站 */
+.sg-index__name::after {
+    content: "\2197";
+    display: inline-block;
+    margin-left: 0.35em;
+    font-size: 0.78em;
+    color: rgba(var(--sg-amber-rgb), 0.9);
+    opacity: 0;
+    transform: translate(-3px, 3px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.sg-index__item:hover .sg-index__name::after {
+    opacity: 1;
+    transform: none;
+}
+
+/* 整条可点:链接铺满一行 */
+.sg-index__name a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+}
+
+.sg-index__desc {
+    grid-column: 2;
+    margin: 0.28rem 0 0;
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: var(--secondary);
+}
+
+.sg-index__kind {
+    font-size: 0.8rem;
+    letter-spacing: 0.03em;
+    color: var(--tertiary);
+}
+
+/* 触屏无 hover:箭头常显,示意可点 */
+@media (hover: none) {
+    .sg-index__name::after {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* 窄屏:类型标注落到描述之下(三列一行需要 ~560px+,620 以下收拢) */
+@media (max-width: 620px) {
+    .sg-index__item {
+        grid-template-columns: 1fr;
+    }
+
+    .sg-index__kind {
+        grid-column: 1;
+        margin-top: 0.1rem;
+    }
 }

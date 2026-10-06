@@ -2,7 +2,7 @@
 title: "Archives"
 robotsNoIndex: true
 layout: "archives"
-summary: "archives"
+summary: "All posts in chronological order, also browsable by category or tag."
 ---
 
-Or browse by [category](/en/categories/) or [tag](/en/tags/).
+All posts in chronological order — also browsable by [category](/en/categories/) or [tag](/en/tags/).

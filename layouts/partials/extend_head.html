@@ -192,3 +192,88 @@
 {{- if eq (now.Format "01-02") "12-12" }}
 <link rel="icon" type="image/svg+xml" href="{{ "favicon-1212.svg" | relURL }}">
 {{- end }}
+
+{{- /* 卷次总目(福楼拜讲稿):这不是一篇文章。
+     正文 DOM 是系列解析器的事实来源(series-order.html 按
+     h2 卷题/ol[start]/li>a/li>span.sg-tbd 提取阅读顺序),一字不动;
+     此样式块仅在 catalog: true 的页面输出,天然页面级作用域。 */}}
+{{- if .Param "catalog" }}
+<style>
+    /* meta 残渣:孤立分隔符文本节点塌缩,语言链接保留并复原字号 */
+    .post-meta {
+        font-size: 0;
+        gap: 0;
+    }
+
+    .post-meta .i18n_list {
+        font-size: 1rem;
+    }
+
+    /* 卷次标签:撤掉文章节标的通栏线与大边距,降为淡墨小标 */
+    .post-content h2 {
+        margin: 2.8rem 0 0.85rem;
+        padding-bottom: 0;
+        border-bottom: none;
+        font-size: 1.02rem;
+        letter-spacing: 0.05em;
+        color: var(--tertiary);
+    }
+
+    /* 条目:书目行距,淡墨 tabular 序号 */
+    .post-content ol {
+        padding-inline-start: 1.7em;
+    }
+
+    .post-content li {
+        margin-block: 0.42em;
+        line-height: 1.85;
+    }
+
+    .post-content li::marker {
+        color: var(--tertiary);
+        font-variant-numeric: tabular-nums;
+    }
+
+    /* 条目链接:静止安静,悬停下划线 + 琥珀 ↗(与传送门同一语法) */
+    .post-content li a {
+        color: var(--primary);
+        text-decoration: none;
+    }
+
+    .post-content li a::after {
+        content: "\2197";
+        display: inline-block;
+        margin-left: 0.35em;
+        font-size: 0.78em;
+        color: rgba(var(--sg-amber-rgb), 0.9);
+        opacity: 0;
+        transform: translate(-3px, 3px);
+        transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    .post-content li a:hover {
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 0.16em;
+    }
+
+    .post-content li a:hover::after {
+        opacity: 1;
+        transform: none;
+    }
+
+    /* 触屏无 hover:箭头常显,示意可点 */
+    @media (hover: none) {
+        .post-content li a::after {
+            opacity: 1;
+            transform: none;
+        }
+    }
+
+    /* 卷首语:略收一档,让条目成为主角 */
+    .post-content > p {
+        color: var(--secondary);
+        font-size: 0.95rem;
+    }
+</style>
+{{- end }}

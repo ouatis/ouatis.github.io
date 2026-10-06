@@ -10,7 +10,7 @@ GitHub Pages。
 
 ## 致命事实:themes/hugo-theme-sigil 是 junction
 
-`themes/hugo-theme-sigil` 是指向 `../hugo-theme-sigil`(JARDIN 下的独立克隆)
+`themes/hugo-theme-sigil` 是指向 `../hugo-theme-sigil`(Repos 下的独立克隆)
 的 Windows junction——**两者是同一个仓库、同一份工作树**:
 
 - 在任一路径执行 `git checkout` 会同时翻转两边;
@@ -40,7 +40,7 @@ bash scripts/build-fonts.sh   # 字体管线:正文语料子集 + OG 标题字�
 
 - 字体管线需要 python3 + fonttools + brotli;Git Bash 的 PATH 用 POSIX
   形式(`/c/...`),`C:/...` 形式静默不生效;本机 python3 是垫片
-  (JARDIN/.shims),它不支持 venv,要 venv 用真实 Python。
+  (Repos/.shims),它不支持 venv,要 venv 用真实 Python。
 - build-fonts.sh 3b 段生成 `assets/fonts/og/og-card.ttf`(OG 卡片字体,
   `--flavor=none`——pyftsubset 默认沿用输入的 woff2 flavor,写进 .ttf
   文件名的会是 wOF2 字节,Go 解析器直接拒)。

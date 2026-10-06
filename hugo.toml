@@ -117,6 +117,12 @@ copyright = "© **[SigiL](https://github.com/ouatis)**"
         weight = 15
 
     [[languages.ja.menus.main]]
+        identifier = "projects"
+        name = "プロジェクト"
+        url = "/ja/projects/"
+        weight = 16
+
+    [[languages.ja.menus.main]]
         identifier = "archives"
         name = "アーカイブ"
         url = "/ja/archives/"

@@ -199,16 +199,6 @@
      此样式块仅在 catalog: true 的页面输出,天然页面级作用域。 */}}
 {{- if .Param "catalog" }}
 <style>
-    /* meta 残渣:孤立分隔符文本节点塌缩,语言链接保留并复原字号 */
-    .post-meta {
-        font-size: 0;
-        gap: 0;
-    }
-
-    .post-meta .i18n_list {
-        font-size: 1rem;
-    }
-
     /* 卷次标签:撤掉文章节标的通栏线与大边距,降为淡墨小标 */
     .post-content h2 {
         margin: 2.8rem 0 0.85rem;

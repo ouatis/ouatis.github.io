@@ -54,9 +54,7 @@ rm -rf "static/fonts/split" "static/fonts/charset.txt" "${FONT_DIR}"
 
 # 抽取(官方分片 latin;SC 全量 hinted woff2)与合并子集化,一步完成
 python3 - "$IBM_PLEX_VERSION" "$FONT_DIR" <<'PY'
-import fnmatch, glob, hashlib, json, os, re, subprocess, sys
 import fnmatch, glob, hashlib, json, os, re, subprocess, sys, tarfile
-from collections import Counter
 
 version, font_dir = sys.argv[1], sys.argv[2]
 cache = os.environ.get("IBM_PLEX_CACHE_DIR", ".cache/ibm-plex")
@@ -95,7 +93,7 @@ with tarfile.open(sc_tgz, "r:gz") as tar:
                     f.write(src.read())
 
 # --- 3. 语料扫描:全站实际用字(内容、模板、i18n、站点配置) ---
-char_count = Counter()
+corpus = set()
 scan_globs = ["content/**/*.md", "layouts/**/*.html", "i18n/*.yaml",
               "archetypes/*.md", "hugo.toml",
               "themes/hugo-theme-sigil/layouts/**/*.html",
@@ -103,14 +101,13 @@ scan_globs = ["content/**/*.md", "layouts/**/*.html", "i18n/*.yaml",
 for pat in scan_globs:
     for path in glob.glob(pat, recursive=True):
         try:
-            char_count.update(open(path, encoding="utf-8").read())
+            corpus |= set(open(path, encoding="utf-8").read())
         except UnicodeDecodeError:
             pass
 # 只子集 U+2000 起(CJK、kana、全角与中文标点);ASCII 与西文标点交给拉丁分片。
 # Hugo 核心还会生成源文件里没有的字符——脚注回链 ↩(goldmark 默认)——显式补进语料
-char_count["↩"] += 1
-corpus = set(char_count)
-subset_chars = sorted(c for c in corpus if ord(c) >= 0x2000)
+corpus |= set("↩")
+subset_chars = sorted({c for c in corpus if ord(c) >= 0x2000})
 charset_path = os.path.join(cache, "ouatis-charset.txt")
 with open(charset_path, "w", encoding="utf-8") as f:
     f.write("".join(subset_chars))
@@ -182,58 +179,30 @@ def ranges(chars):
 
 unicode_range = ranges(subset_chars)
 
-# --- 4. SC 语料分片:按全站使用频率降序,每 48 字一片 × 各字重。
-#     unicode-range 触发式加载:首访只取页面命中的分片(实测文章页 1.28MB → ~240KB)。
-#     缓存:语料或分片参数未变时跳过全部子集化。
-K = 48
+# --- 4. pyftsubset:三字重各出一个语料子集 woff2 ---
 sc_dest = os.path.join(font_dir, "sc")
 os.makedirs(sc_dest, exist_ok=True)
-ranked = sorted(subset_chars, key=lambda c: (-char_count[c], ord(c)))
-sc_shards = [ranked[i:i + K] for i in range(0, len(ranked), K)]
-shard_digest = hashlib.md5(
-    (str(K) + json.dumps(["".join(s) for s in sc_shards], ensure_ascii=True) + version).encode()
-).hexdigest()
-digest_path = os.path.join(cache, "shard-digest.txt")
-need = True
-if os.path.exists(digest_path) and open(digest_path, encoding="utf-8").read() == shard_digest:
-    expected = [os.path.join(sc_dest, f"IBMPlexSansSC-{w}-c{i:02d}.woff2")
-                for w, _ in weights for i in range(len(sc_shards))]
-    need = not all(os.path.exists(f) for f in expected)
-masters = {}
-if need:
-    for f in glob.glob(os.path.join(sc_dest, "IBMPlexSansSC-*-corpus.woff2")):
-        os.remove(f)
-    for weight, _ in weights:
-        master = os.path.join(sc_dest, f"IBMPlexSansSC-{weight}-corpus.woff2")
-        subprocess.run(
-            [sys.executable, "-m", "fontTools.subset",
-             os.path.join(work, f"IBMPlexSansSC-{weight}.woff2"),
-             f"--text-file={charset_path}", "--flavor=woff2",
-             f"--output-file={master}", "--layout-features=*"],
-            check=True)
-        masters[weight] = master
 subset_css = []
 for weight, wnum in weights:
-    for si, shard in enumerate(sc_shards):
-        out = os.path.join(sc_dest, f"IBMPlexSansSC-{weight}-c{si:02d}.woff2")
-        if need:
-            subprocess.run(
-                [sys.executable, "-m", "fontTools.subset",
-                 master, f"--text={''.join(shard)}", "--flavor=woff2",
-                 f"--output-file={out}", "--layout-features=*"],
-                check=True)
-        subset_css.append(
-            "@font-face {\n"
-            '  font-family: "IBM Plex Sans SC";\n'
-            "  font-style: normal;\n"
-            f"  font-weight: {wnum};\n"
-            "  font-display: swap;\n"
-            f'  src: url("./sc/IBMPlexSansSC-{weight}-c{si:02d}.woff2") format("woff2");\n'
-            f"  unicode-range: {ranges(shard)};\n"
-            "}\n")
-with open(digest_path, "w", encoding="utf-8") as f:
-    f.write(shard_digest)
-print(f"SC 分片: {len(sc_shards)} 桶 × {len(weights)} 字重 (K={K})")
+    src = os.path.join(work, f"IBMPlexSansSC-{weight}.woff2")
+    out = os.path.join(sc_dest, f"IBMPlexSansSC-{weight}-corpus.woff2")
+    subprocess.run(
+        [sys.executable, "-m", "fontTools.subset", src,
+         f"--text-file={charset_path}", "--flavor=woff2",
+         f"--output-file={out}", "--layout-features=*"],
+        check=True)
+    size = os.path.getsize(out) // 1024
+    print(f"subset: IBMPlexSansSC-{weight}-corpus.woff2 ({size}KB)")
+    subset_css.append(
+        "@font-face {\n"
+        '  font-family: "IBM Plex Sans SC";\n'
+        "  font-style: normal;\n"
+        f"  font-weight: {wnum};\n"
+        "  font-display: swap;\n"
+        f'  src: url("./sc/IBMPlexSansSC-{weight}-corpus.woff2") format("woff2");\n'
+        f"  unicode-range: {unicode_range};\n"
+        "}\n")
+
 # --- 5. 拉丁分片 css 改写相对路径 + 补 font-display,与子集 face 合并成单文件 ---
 shards = sorted(glob.glob(os.path.join(latin_dest, "*.css")))
 parts = []

@@ -53,7 +53,7 @@ catalog: true
 21. [皮纳尔的公诉词](/2026/01/pi-na-er-de-gong-su-ci/)
 22. [塞纳尔的辩护词](/2026/01/sai-na-er-de-bian-hu-ci/)
 23. [《包法利夫人》判决书](/2026/02/bao-fa-li-fu-ren-pan-jue-shu/)
-24. {{< tbd >}}包法利夫人受审查{{< /tbd >}}
+24. [包法利夫人受审查](/2026/10/bao-fa-li-fu-ren-shou-shen-cha/)
 
 ## 第六卷 · 福楼拜的十九世纪
 

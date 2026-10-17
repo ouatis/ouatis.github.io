@@ -1,3 +1,15 @@
+{{- partial "figures/assets.html" . -}}
+{{- /* 项目插图的共享样式只在使用 projects 短代码的页面加载。
+     源码属于主题库,不在站点复制;子模块需随主题发布升级后才能部署。 */ -}}
+{{- if .HasShortcode "projects" -}}
+    {{- with resources.Get "css/components/project-figures.css" -}}
+        {{- $figuresCSS := . | minify | fingerprint -}}
+<link rel="stylesheet" href="{{ $figuresCSS.RelPermalink }}" integrity="{{ $figuresCSS.Data.Integrity }}" crossorigin="anonymous">
+    {{- else -}}
+        {{- errorf "The projects shortcode requires SIGIL's css/components/project-figures.css; update the theme before deploying." -}}
+    {{- end -}}
+{{- end -}}
+
 {{- /* 阅读进度条：仅在文章页显示，细线样式，颜色跟随主题变量 */}}
 {{- if (and .IsPage (not .Params.disableReadingProgress)) }}
 <style>

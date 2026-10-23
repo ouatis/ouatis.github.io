@@ -8,16 +8,46 @@ ouatis.com——「笼城往事」,SigiL 的三语博客(zh-CN 为主,en/ja 界�
 构建,主题 `hugo-theme-sigil` 以子模块身份接入,GitHub Actions 部署到
 GitHub Pages。
 
-## 致命事实:themes/hugo-theme-sigil 是 junction
+## 关键事实:themes/hugo-theme-sigil 是 submodule(2026-10-13 订正)
 
-`themes/hugo-theme-sigil` 是指向 `../hugo-theme-sigil`(Repos 下的独立克隆)
-的 Windows junction——**两者是同一个仓库、同一份工作树**:
+**2026-10-13 实测订正:这里已不是 NTFS junction,而是标准 git submodule。**
+此前本文件(与 `ouatis-design` 技能卡)记载的「junction／两份路径同一份工作树」已失效。
 
-- 在任一路径执行 `git checkout` 会同时翻转两边;
-- 永远不要让它处于 detached HEAD——提交会丢在游离态,`main` 不前进;
-- 所谓「子模块 bump」= 主题仓库 HEAD 移动后,在本仓库
-  `git add themes/hugo-theme-sigil` 并提交;
-- amend 之后要确认分支指针真的移动了。
+实测依据:
+
+- `.gitmodules` 有条目:`url = https://github.com/ouatis/hugo-theme-sigil`;
+- `themes/hugo-theme-sigil/.git` 是**文件**而非目录,内容为
+  `gitdir: ../../.git/modules/themes/hugo-theme-sigil`;
+- index 模式 `160000`(gitlink),`git ls-tree HEAD themes/` 可复核 pin;
+- `os.readlink` 报「不是一个重分析点」,即不是 junction。
+
+原 junction 时代的告警**不再适用**,实际规则有三条:
+
+- **两份独立工作树**:独立克隆在 `C:\Users\louxi\Documents\github\_own\hugo-theme-sigil`
+  (branch `main`),与本仓内的 submodule checkout **互不影响**。在独立库改完
+  **不会**自动进本仓,必须显式更新 pin 并单独提交。
+- **detached HEAD 是 submodule 的正常状态**。submodule checkout 默认就停在 pin
+  那个 commit 上,`git submodule update` 也会置于 detached;这不是「提交丢在游离态」
+  的故障。真正的规则是**不要在本仓的 submodule 里直接提交主题改动**,改动一律在独立库做。
+- **「子模块 bump」的动作未变**:主题库 HEAD/tag 移动后,在本仓
+  `git add themes/hugo-theme-sigil` 并**单独**提交,再用 `git ls-tree HEAD themes/`
+  验证 pin 真的移动;amend 后同样要确认分支指针前进。
+
+`scripts/bump-theme.sh` 会消除游离态——它按 submodule 语义实现。
+**改本文件前请先 `git fetch` 比对远端**(见仓库层规则)。
+
+## 事实归属(2026-10-13 增补)
+
+本文件是**本仓库运行时事实的唯一权威源**:仓库路径、submodule/junction 形态、
+构建与部署命令、内容约定、`publish:` 前缀同步机制。技能卡只覆盖设计与跨仓库
+联动;两者冲突时以本文件为准。
+
+- 仓库路径(2026-10-13 实测):主站 `C:\Users\louxi\Documents\github\_own\ouatis.github.io`;
+  主题 `C:\Users\louxi\Documents\github\_own\hugo-theme-sigil`。
+  ⚠️ 技能卡 `ouatis-design` 原记 `Documents\` 下的旧路径,同日已订正,但该卡
+  仍留在 vault 外的 `~/.agents/skills/`,**无同步机制保护**,再次漂移的风险在此。
+- `JARDIN\03-OUATIS` 只是文稿区,**不是内容真理来源**;内容同步进本仓靠
+  `publish:` 前缀提交(见「内容约定」)。
 
 ## 主题升级
 
@@ -25,11 +55,11 @@ GitHub Pages。
 scripts/bump-theme.sh v0.9.x   # 对齐子模块 pin,本地主题 main 跟随
 ```
 
-**junction 陷阱**: themes/hugo-theme-sigil 是指向 ../hugo-theme-sigil 的
-junction——同一仓库同一工作树。任何 checkout tag/`git submodule update`
-都会让主题仓库进入 detached HEAD;`scripts/bump-theme.sh` 会在对齐后把
-main 快进到 pin,消除游离态。主题仓库提交前务必
-`git branch --show-current` 确认在 main 上。
+**submodule 语义**(2026-10-13 订正):`themes/hugo-theme-sigil` 是标准
+submodule,不是 junction。`git submodule update` 让它停在 pin 的 detached HEAD
+属**正常**;`scripts/bump-theme.sh` 对齐 pin 后会消除游离态。**提交主题改动前务必
+在独立库 `C:\Users\louxi\Documents\github\_own\hugo-theme-sigil` 里
+`git branch --show-current` 确认在 `main` 上**,而不是在本仓的 submodule 里。
 
 ## 构建与验证
 
@@ -74,4 +104,4 @@ bash scripts/build-fonts.sh   # 字体管线:正文语料子集 + OG 标题字�
   Torment》的台词;∴ 与三色是全站视觉母题。
 - 关于页/归档页 front matter 的 `description` 同时喂给 llms.txt 的页面
   短注与 og:description,改一处三处受益。
-- 主题的参数契约与坑见主题仓库的 AGENTS.md(junction 路径过去即可)。
+- 主题的参数契约与坑见主题仓库的 AGENTS.md,路径 C:\Users\louxi\Documents\github\_own\hugo-theme-sigil(2026-10-13 订正:已不是 junction,需按绝对路径打开)。

@@ -7,23 +7,31 @@
     "zh-cn" (dict
         "k1" "Hugo 主题" "d1" "墨、纸，与万事皆三——本站跑在它上面。"
         "k2" "Obsidian 主题" "d2" "一张安静的书桌：暖纸色，为长文阅读与写作而造。"
-        "k3" "Obsidian 插件" "d3" "房间大灯关掉，只留一盏。")
+        "k3" "Obsidian 插件" "d3" "房间大灯关掉，只留一盏。"
+        "k4" "Obsidian 插件" "d4" "一份技能源，接线到本机每一个 Agent。"
+        "k5" "Obsidian 插件" "d5" "两份稿子，并排放着。")
     "en" (dict
         "k1" "Hugo theme" "d1" "Ink, paper, and everything in threes — this site runs on it."
         "k2" "Obsidian theme" "d2" "A quiet desk: warm paper, made for long-form reading and writing."
-        "k3" "Obsidian plugin" "d3" "Room lights off, one lamp left on.")
+        "k3" "Obsidian plugin" "d3" "Room lights off, one lamp left on."
+        "k4" "Obsidian plugin" "d4" "One skill source, wired to every agent on this desk."
+        "k5" "Obsidian plugin" "d5" "Two drafts, side by side.")
     "ja" (dict
         "k1" "Hugo テーマ" "d1" "墨、紙、そして万事三つ——このサイト自身がこれで動いています。"
         "k2" "Obsidian テーマ" "d2" "静かな一枚の机。温かい紙色で、長文の読み書きのために。"
-        "k3" "Obsidian プラグイン" "d3" "部屋の灯りを消して、一つだけ残す。")
+        "k3" "Obsidian プラグイン" "d3" "部屋の灯りを消して、一つだけ残す。"
+        "k4" "Obsidian プラグイン" "d4" "一つのスキル源を、この机のすべてのエージェントへ。" "ja-draft" true
+        "k5" "Obsidian プラグイン" "d5" "二つの草稿を、並べて置く。" "ja-draft" true)
 -}}
 {{- /* Hugo lowercases language keys: zh-CN -> zh-cn. Normalize before
        the lookup, or the Chinese page silently falls back to English. */ -}}
 {{- $c := index $copy (lower .Page.Language.Lang) | default (index $copy "en") -}}
 {{- $projects := slice
-    (dict "name" "Sigil" "repo" "ouatis/hugo-theme-sigil" "slot" 1 "figure" "sigil")
+    (dict "name" "SIGIL" "repo" "ouatis/hugo-theme-sigil" "slot" 1 "figure" "sigil")
     (dict "name" "Scriptorium" "repo" "ouatis/obsidian-scriptorium" "slot" 2 "figure" "scriptorium")
     (dict "name" "Desk Lamp" "repo" "ouatis/obsidian-desklamp" "slot" 3 "figure" "desklamp")
+    (dict "name" "Skill Switchboard" "repo" "ouatis/obsidian-skill-switchboard" "slot" 4 "figure" "switchboard")
+    (dict "name" "Collate" "repo" "ouatis/obsidian-bigao" "slot" 5 "figure" "collate")
 -}}
 <div class="sg-index sg-index--illustrated">
     {{- range $p := $projects }}

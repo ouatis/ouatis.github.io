@@ -1,0 +1,22 @@
+{{- /* 异域镇魂曲纪念日:1999.12.12 发售,北京时间每年 12 月 12 日页脚低语一行。
+   脚本注入 footer 内部而非追加其后——footer 之后加块级元素会被
+   min-height 布局永远推到折叠线下,还给全站白添一段滚动。 */ -}}
+{{- if eq (now.Format "01-02") "12-12" }}
+<script>
+(function () {
+    var footer = document.querySelector(".footer");
+    if (!footer) return;
+    var line = document.createElement("p");
+    line.className = "sg-anniv";
+    line.title = "1999.12.12 ∴ Planescape: Torment";
+    line.textContent = "∴ 笼城记得";
+    footer.appendChild(line);
+})();
+</script>
+{{- end }}
+
+{{- /* 控制台铭文:开 F12 的 berk 才看得到 */ -}}
+<script>
+console.log("%c∴ 你凑近笼城的栏杆,看见上面刻着一行小字:", "color:#648f77;font-family:Georgia,serif;font-size:12px;");
+console.log("%c「What can change the nature of a man?」", "color:#e07061;font-style:italic;font-size:13px;");
+</script>

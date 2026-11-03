@@ -1,0 +1,3 @@
+[submodule "themes/hugo-theme-sigil"]
+	path = themes/hugo-theme-sigil
+	url = https://github.com/ouatis/hugo-theme-sigil

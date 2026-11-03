@@ -1,0 +1,17 @@
+{{- /* GA4:主题 head.html 在生产环境调用本 partial,站点层提供实现。
+     MeasurementID 写在 hugo.toml 的 [params.analytics.google] 下,未配置则零输出。
+     全站只此一处加载 gtag.js 且只 config 一次——page_view 由 config 自动发送,
+     不要再手动发送 gtag('event', 'page_view'),否则同一页面会被计两次。 */ -}}
+{{- with site.Params.analytics.google.MeasurementID }}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '{{ . }}', {
+  send_page_view: true,
+  allow_google_signals: false,
+  allow_ad_personalization_signals: false
+});
+</script>
+{{- end }}

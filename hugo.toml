@@ -248,6 +248,15 @@ copyright = "© **[SigiL](https://github.com/ouatis)**"
 [outputs]
     home = ["HTML", "RSS", "JSON", "JSONFeed"]
 
+# Goldmark 默认丢弃 raw HTML。about.md 的任务清单用 <span class="sg-task-date">
+# 标注完成日期,主题已备好对应样式(sigil.css 的 .sg-task-date:小号次色),
+# 但渲染器不放行,那段 span 被整个丢掉,日期只剩裸文本贴在句末。
+# 开启 unsafe 让它按设计显示。
+#
+# 本站内容全部是自己写的 Markdown,没有用户输入,不存在注入面。
+[markup.goldmark.renderer]
+    unsafe = true
+
 # llms.txt / llms-full.txt:机器可读站点索引,格式定义与模板在主题
 # (v0.8.4 起 llms.txt 会自动提示 llms-full.txt);仅默认语言输出
 # (内容以中文为主),英日语首页不生成重复副本。导语段落见 params.llmsTxtIntro

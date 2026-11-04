@@ -11,20 +11,16 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
   actions: write
 
 concurrency:
-  group: "pages"
+  group: "cloudflare-workers"
   cancel-in-progress: false
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v7
         with:
@@ -36,7 +32,6 @@ jobs:
         with:
           hugo-version: '0.167.0'
           extended: true
-
 
       - name: Cache IBM Plex source
         uses: actions/cache@v6
@@ -63,19 +58,22 @@ jobs:
       - name: Build
         run: hugo --minify
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v6
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v5
-        with:
-          path: ./public
-
-      - name: Deploy to GitHub Pages
+      - name: Deploy to Cloudflare Workers
         id: deployment
-        uses: actions/deploy-pages@v5
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          wranglerVersion: "latest"
+          command: deploy
 
+      - name: Show Workers URL
+        run: echo "Deployed to ${{ steps.deployment.outputs.deployment-url }}"
+
+      # 影子部署阶段不应通知搜索引擎;切域验证通过后再把仓库变量
+      # CF_CUSTOM_DOMAIN_READY 设为 true。
       - name: Ping IndexNow
+        if: github.ref == 'refs/heads/main' && vars.CF_CUSTOM_DOMAIN_READY == 'true'
         run: python scripts/indexnow.py public/sitemap.xml
 
       # 清扫历史运行,只留当前——Actions 页面单条滚动
@@ -84,8 +82,4 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           KEEP=${{ github.run_id }}
-          gh api "repos/${{ github.repository }}/actions/runs?per_page=100" --paginate \
-            --jq '.workflow_runs[] | select(.id != '"$KEEP"') | select(.status == "completed") | .id' \
-          | while read -r id; do
-              gh api -X DELETE "repos/${{ github.repository }}/actions/runs/$id" > /dev/null 2>&1 || true
-            done
+          gh api "repos/${{ github.repository }}/actions/runs?per_page=100" --paginate --jq '.workflow_runs[] | select(.id != '"$KEEP"') | select(.status == "completed") | .id' | while read -r id; do gh api -X DELETE "repos/${{ github.repository }}/actions/runs/$id" > /dev/null 2>&1 || true; done

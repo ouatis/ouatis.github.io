@@ -1,0 +1,17 @@
+# Cloudflare Workers Static Assets — final stage (after ouatis.com cutover)
+# Copy this file over wrangler.toml ONLY after the Custom Domain is active and
+# https://ouatis.com/ passes live checks. Redeploy once to disable workers.dev.
+#
+# workers_dev=false disables the *.workers.dev route; preview_urls=false keeps
+# Version/Preview URLs disabled. workers_dev=false does not itself disable those,
+# so both lines stay explicit.
+name = "ouatis-site"
+compatibility_date = "2026-11-04"
+
+workers_dev = false
+preview_urls = false
+
+[assets]
+directory = "./public"
+not_found_handling = "404-page"
+html_handling = "auto-trailing-slash"

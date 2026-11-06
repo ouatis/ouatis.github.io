@@ -2,7 +2,7 @@ name: Deploy Hugo Site
 
 on:
   push:
-    branches: [main]
+    branches: [main, cloudflare-migration]
   workflow_dispatch:
   schedule:
     # 每天 UTC 22:00(北京时间 06:00)重建一次,刷新页脚累计浏览量;
@@ -11,20 +11,16 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
   actions: write
 
 concurrency:
-  group: "pages"
+  group: "cloudflare-workers"
   cancel-in-progress: false
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v7
         with:
@@ -36,7 +32,6 @@ jobs:
         with:
           hugo-version: '0.167.0'
           extended: true
-
 
       - name: Cache IBM Plex source
         uses: actions/cache@v6
@@ -79,29 +74,53 @@ jobs:
           test -s public/hugo-theme-sigil/index.html
           test -s public/hugo-theme-sigil/docs/index.html
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v6
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v5
-        with:
-          path: ./public
-
-      - name: Deploy to GitHub Pages
+      - name: Deploy to Cloudflare Workers
         id: deployment
-        uses: actions/deploy-pages@v5
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          wranglerVersion: "4.158.0"
+          command: deploy
 
+      - name: Show Workers URL
+        run: echo "Deployed to ${{ steps.deployment.outputs.deployment-url }}"
+
+      # 影子部署阶段不应通知搜索引擎;切域验证通过后再把仓库变量
+      # CF_CUSTOM_DOMAIN_READY 设为 true。
       - name: Ping IndexNow
+        if: github.ref == 'refs/heads/main' && vars.CF_CUSTOM_DOMAIN_READY == 'true'
         run: python scripts/indexnow.py public/sitemap.xml
 
-      # 清扫历史运行,只留当前——Actions 页面单条滚动
+      # 按 workflow 分组保留最近 3 条已完成的运行记录
       - name: Prune old workflow runs
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          set -euo pipefail
           KEEP=${{ github.run_id }}
-          gh api "repos/${{ github.repository }}/actions/runs?per_page=100" --paginate \
-            --jq '.workflow_runs[] | select(.id != '"$KEEP"') | select(.status == "completed") | .id' \
-          | while read -r id; do
-              gh api -X DELETE "repos/${{ github.repository }}/actions/runs/$id" > /dev/null 2>&1 || true
-            done
+          deleted=0
+          failed=0
+          ids=$(
+            gh api "repos/${{ github.repository }}/actions/runs?per_page=100&status=completed" --paginate \
+              --jq '.workflow_runs[] | [.workflow_id, .created_at, .id] | @tsv' |
+            sort -k1,1 -k2,2r |
+            awk -v keep="$KEEP" -F '\t' '
+              $3 == keep { next }
+              { n[$1]++; if (n[$1] > 3) print $3 }
+            '
+          )
+          for id in $ids; do
+            if gh api -X DELETE "repos/${{ github.repository }}/actions/runs/$id" >/dev/null 2>&1; then
+              deleted=$((deleted + 1))
+            elif err=$(gh api -X DELETE "repos/${{ github.repository }}/actions/runs/$id" --include 2>&1); then
+              deleted=$((deleted + 1))
+            elif printf '%s' "$err" | grep -Eq '(HTTP/[^ ]+ 404|"status"[[:space:]]*:[[:space:]]*"?404"?)'; then
+              deleted=$((deleted + 1))
+            else
+              failed=$((failed + 1))
+              printf 'delete failed for run %s: %s\n' "$id" "$err" >&2
+            fi
+          done
+          echo "deleted=$deleted failed=$failed"
+          [ "$failed" -eq 0 ] || exit 1

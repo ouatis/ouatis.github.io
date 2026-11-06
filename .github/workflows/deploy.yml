@@ -11,16 +11,20 @@ on:
 
 permissions:
   contents: read
+  pages: write
+  id-token: write
   actions: write
 
 concurrency:
-  group: "cloudflare-workers"
+  group: "pages"
   cancel-in-progress: false
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v7
         with:
@@ -32,6 +36,7 @@ jobs:
         with:
           hugo-version: '0.167.0'
           extended: true
+
 
       - name: Cache IBM Plex source
         uses: actions/cache@v6
@@ -58,53 +63,45 @@ jobs:
       - name: Build
         run: hugo --minify
 
-      - name: Deploy to Cloudflare Workers
-        id: deployment
-        uses: cloudflare/wrangler-action@v4
+      # Keep the theme's public demo at the URL documented by the theme
+      # repository. The main site build above cannot generate this route because
+      # the demo is the theme's separate exampleSite.
+      - name: Build Sigil theme demo
+        run: |
+          DEMO=themes/hugo-theme-sigil/exampleSite
+          rm -rf "$DEMO/public" "$DEMO/resources" public/hugo-theme-sigil
+          mkdir -p "$DEMO/static"
+          rm -rf "$DEMO/static/fonts"
+          cp -R themes/hugo-theme-sigil/static/fonts "$DEMO/static/fonts"
+          hugo --source "$DEMO" --themesDir ../.. --minify \
+            --baseURL https://ouatis.com/hugo-theme-sigil/ \
+            --destination "$GITHUB_WORKSPACE/public/hugo-theme-sigil"
+          test -s public/hugo-theme-sigil/index.html
+          test -s public/hugo-theme-sigil/docs/index.html
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v6
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v5
         with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          wranglerVersion: "4.158.0"
-          command: deploy
+          path: ./public
 
-      - name: Show Workers URL
-        run: echo "Deployed to ${{ steps.deployment.outputs.deployment-url }}"
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
 
-      # 影子部署阶段不应通知搜索引擎;切域验证通过后再把仓库变量
-      # CF_CUSTOM_DOMAIN_READY 设为 true。
       - name: Ping IndexNow
-        if: github.ref == 'refs/heads/main' && vars.CF_CUSTOM_DOMAIN_READY == 'true'
         run: python scripts/indexnow.py public/sitemap.xml
 
-      # 按 workflow 分组保留最近 3 条已完成的运行记录
+      # 清扫历史运行,只留当前——Actions 页面单条滚动
       - name: Prune old workflow runs
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          set -euo pipefail
           KEEP=${{ github.run_id }}
-          deleted=0
-          failed=0
-          ids=$(
-            gh api "repos/${{ github.repository }}/actions/runs?per_page=100&status=completed" --paginate \
-              --jq '.workflow_runs[] | [.workflow_id, .created_at, .id] | @tsv' |
-            sort -k1,1 -k2,2r |
-            awk -v keep="$KEEP" -F '\t' '
-              $3 == keep { next }
-              { n[$1]++; if (n[$1] > 3) print $3 }
-            '
-          )
-          for id in $ids; do
-            if gh api -X DELETE "repos/${{ github.repository }}/actions/runs/$id" >/dev/null 2>&1; then
-              deleted=$((deleted + 1))
-            elif err=$(gh api -X DELETE "repos/${{ github.repository }}/actions/runs/$id" --include 2>&1); then
-              deleted=$((deleted + 1))
-            elif printf '%s' "$err" | grep -Eq '(HTTP/[^ ]+ 404|"status"[[:space:]]*:[[:space:]]*"?404"?)'; then
-              deleted=$((deleted + 1))
-            else
-              failed=$((failed + 1))
-              printf 'delete failed for run %s: %s\n' "$id" "$err" >&2
-            fi
-          done
-          echo "deleted=$deleted failed=$failed"
-          [ "$failed" -eq 0 ] || exit 1
+          gh api "repos/${{ github.repository }}/actions/runs?per_page=100" --paginate \
+            --jq '.workflow_runs[] | select(.id != '"$KEEP"') | select(.status == "completed") | .id' \
+          | while read -r id; do
+              gh api -X DELETE "repos/${{ github.repository }}/actions/runs/$id" > /dev/null 2>&1 || true
+            done

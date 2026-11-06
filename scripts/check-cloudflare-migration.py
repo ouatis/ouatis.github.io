@@ -78,7 +78,7 @@ REQUIRED_WORKFLOW = [
     'cloudflare/wrangler-action@v4',
     'apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}',
     'accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}',
-    'wranglerVersion: "latest"',
+    'wranglerVersion: "4.158.0"',
     'command: deploy',
     "if: github.ref == 'refs/heads/main'",
     'deployment.outputs.deployment-url',
@@ -86,8 +86,17 @@ REQUIRED_WORKFLOW = [
     'scripts/indexnow.py public/sitemap.xml',
     'Prune old workflow runs',
     'GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}',
+    'set -euo pipefail',
     'KEEP=${{ github.run_id }}',
+    'deleted=0',
+    'failed=0',
+    'status=completed',
+    'sort -k1,1 -k2,2r',
     'gh api -X DELETE',
+    'deleted=$((deleted + 1))',
+    'failed=$((failed + 1))',
+    'echo "deleted=$deleted failed=$failed"',
+    '[ "$failed" -eq 0 ] || exit 1',
 ]
 
 REQUIRED_PUBLIC_FILES = [

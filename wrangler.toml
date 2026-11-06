@@ -1,16 +1,14 @@
-# Cloudflare Workers Static Assets — stage 1 (shadow deployment)
-# Generated 2026-11-04 for OUATIS site migration handoff.
+# Cloudflare Workers Static Assets — final stage (after ouatis.com cutover)
+# Copy this file over wrangler.toml ONLY after the Custom Domain is active and
+# https://ouatis.com/ passes live checks. Redeploy once to disable workers.dev.
 #
-# Docs: https://developers.cloudflare.com/workers/static-assets/routing/static-site-generation/
-#       https://developers.cloudflare.com/workers/static-assets/migration-guides/migrate-from-pages/
-#
-# Stage 1 keeps workers_dev=true so the site has a public *.workers.dev shadow URL
-# before ouatis.com is attached. Do NOT attach ouatis.com until live checks pass.
-# After cutover, replace this file with wrangler.toml.final and redeploy.
+# workers_dev=false disables the *.workers.dev route; preview_urls=false keeps
+# Version/Preview URLs disabled. workers_dev=false does not itself disable those,
+# so both lines stay explicit.
 name = "ouatis-site"
 compatibility_date = "2026-11-04"
 
-workers_dev = true
+workers_dev = false
 preview_urls = false
 
 [assets]

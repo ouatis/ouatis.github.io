@@ -2,7 +2,7 @@ name: Deploy Hugo Site
 
 on:
   push:
-    branches: [main, cloudflare-migration]
+    branches: [main]
   workflow_dispatch:
   schedule:
     # 每天 UTC 22:00(北京时间 06:00)重建一次,刷新页脚累计浏览量;

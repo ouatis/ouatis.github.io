@@ -58,6 +58,22 @@ jobs:
       - name: Build
         run: hugo --minify
 
+      # Keep the theme's public demo at the URL documented by the theme
+      # repository. The main site build above cannot generate this route because
+      # the demo is the theme's separate exampleSite.
+      - name: Build Sigil theme demo
+        run: |
+          DEMO=themes/hugo-theme-sigil/exampleSite
+          rm -rf "$DEMO/public" "$DEMO/resources" public/hugo-theme-sigil
+          mkdir -p "$DEMO/static"
+          rm -rf "$DEMO/static/fonts"
+          cp -R themes/hugo-theme-sigil/static/fonts "$DEMO/static/fonts"
+          hugo --source "$DEMO" --themesDir ../.. --minify \
+            --baseURL https://ouatis.com/hugo-theme-sigil/ \
+            --destination "$GITHUB_WORKSPACE/public/hugo-theme-sigil"
+          test -s public/hugo-theme-sigil/index.html
+          test -s public/hugo-theme-sigil/docs/index.html
+
       - name: Deploy to Cloudflare Workers
         id: deployment
         uses: cloudflare/wrangler-action@v4
